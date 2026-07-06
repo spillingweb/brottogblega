@@ -1,0 +1,19 @@
+{
+  "title": "Arrangementer",
+  "items": [
+    {
+      "id": "sommerkveld-dialog",
+      "title": "Sommerkveld med filosofisk dialog",
+      "date": "2026-08-14",
+      "location": "Fevik bedehus",
+      "description": "En åpen kveld med guided dialog om livskvalitet og hverdagsvalg."
+    },
+    {
+      "id": "kvinnehelse-verksted",
+      "title": "Verksted: Bekkenbunn og pust",
+      "date": "2026-09-03",
+      "location": "Brott og Blega, Fevik",
+      "description": "Praktisk kveldssamling med øvelser og råd for kvinnehelse."
+    }
+  ]
+}

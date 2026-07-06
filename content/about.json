@@ -1,0 +1,16 @@
+{
+  "title": "Om oss",
+  "description": "Brott og Blega drives av to kvinner med ulik bakgrunn og felles ønske om å skape et inkluderende rom for helse og refleksjon.",
+  "people": [
+    {
+      "name": "Fysioterapeuten",
+      "role": "Fysioterapeut med fokus på kvinnehelse",
+      "bio": "Jobber med bekkenbunn, graviditet og oppfølging etter fødsel, samt muskel- og skjelettplager hos kvinner i ulike livsfaser."
+    },
+    {
+      "name": "Sykepleieren",
+      "role": "Sykepleier med filosofisk spesialisering",
+      "bio": "Tilbyr filosofisk samtalepraksis og leder dialogbaserte seminarer som styrker refleksjon, trygghet og mestring i hverdagen."
+    }
+  ]
+}

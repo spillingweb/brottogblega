@@ -1,0 +1,17 @@
+{
+  "title": "Tjenester",
+  "items": [
+    {
+      "name": "Kvinnehelse-fysioterapi",
+      "description": "Undersøkelse, behandling og øvelsesveiledning tilpasset kvinnehelse."
+    },
+    {
+      "name": "Filosofisk samtalepraksis",
+      "description": "En-til-en samtaler der vi utforsker spørsmål, verdier og veivalg i livet."
+    },
+    {
+      "name": "Dialog og seminarer",
+      "description": "Små grupper med samtale, refleksjon og temabaserte seminarer."
+    }
+  ]
+}
