@@ -4,6 +4,8 @@ import { Separator } from "../../../components/ui/separator";
 import { Link } from "@tanstack/react-router";
 import UppercaseHeading from "#/components/ui/UppercaseHeading";
 import FooterSocial from "./FooterSocial";
+import { navLinks } from "#/lib/constants";
+import FooterNavLink from "./FooterNavLink";
 
 const Footer = () => {
   return (
@@ -75,46 +77,9 @@ const Footer = () => {
             Sider
           </UppercaseHeading>
           <ul className="flex flex-col items-start gap-2">
-            <li>
-              <Link
-                to="/"
-                className="hover:text-primary-foreground transition-colors"
-              >
-                Hjem
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/om-oss"
-                className="hover:text-primary-foreground transition-colors"
-              >
-                Om oss
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/tjenester"
-                className="hover:text-primary-foreground transition-colors"
-              >
-                Tjenester
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/arrangementer"
-                className="hover:text-primary-foreground transition-colors"
-              >
-                Arrangementer
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/aktuelt"
-                className="hover:text-primary-foreground transition-colors"
-              >
-                Aktuelt
-              </Link>
-            </li>
+            {navLinks.map((nav) => (
+              <FooterNavLink key={nav.to} path={nav.to} label={nav.label} />
+            ))}
           </ul>
         </nav>
       </div>

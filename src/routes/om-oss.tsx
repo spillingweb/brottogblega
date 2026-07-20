@@ -1,3 +1,4 @@
+import About from '#/features/about/About'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/om-oss')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/om-oss')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/om-oss"!</div>
+  return <About />
 }

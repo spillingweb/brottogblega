@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Dialog, DialogTrigger } from "./ui/dialog";
 import ContactDialog from "./ContactDialog";
+import { navLinks } from "#/lib/constants";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,14 +23,6 @@ const Header = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const navLinks = [
-    { to: "/", label: "Hjem" },
-    { to: "/om-oss", label: "Om oss" },
-    { to: "/tjenester", label: "Tjenester" },
-    { to: "/arrangementer", label: "Arrangementer" },
-    { to: "/aktuelt", label: "Aktuelt" },
-  ];
 
   return (
     <header
@@ -61,8 +54,8 @@ const Header = () => {
             ))}
           </ul>
           <Dialog open={contactOpen} onOpenChange={setContactOpen}>
-            <DialogTrigger asChild>
-              <Button className="w-fit">Kontakt oss</Button>
+            <DialogTrigger className="cursor-pointer" asChild>
+              <Button size="sm">Kontakt oss</Button>
             </DialogTrigger>
             <ContactDialog />
           </Dialog>

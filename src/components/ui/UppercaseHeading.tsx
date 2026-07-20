@@ -8,7 +8,7 @@ const UppercaseHeading = ({
   className?: string;
 }) => {
   return (
-    <p className={cn("uppercase tracking-widest text-xs", className)}>
+    <p className={cn("uppercase tracking-widest text-xs text-primary", className)}>
       {children}
     </p>
   );
