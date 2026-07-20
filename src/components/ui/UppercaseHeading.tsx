@@ -5,7 +5,7 @@ const UppercaseHeading = ({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) => {
   return (
     <p className={cn("uppercase tracking-widest text-xs", className)}>

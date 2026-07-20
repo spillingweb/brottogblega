@@ -10,14 +10,14 @@ interface HeadingProps {
 const Heading = ({ children, level = 1, className = "" }: HeadingProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
-  let headingClassNames = "font-serif ";
+  let headingClassNames = "font-medium text-balance ";
 
   switch (level) {
     case 1:
-      headingClassNames += "text-4xl font-semibold";
+      headingClassNames += "text-4xl font-medium";
       break;
     case 2:
-      headingClassNames += "text-2xl";
+      headingClassNames += "text-3xl";
       break;
     case 3:
       headingClassNames += "text-2xl";
@@ -32,7 +32,7 @@ const Heading = ({ children, level = 1, className = "" }: HeadingProps) => {
       headingClassNames += "text-base";
       break;
     default:
-      headingClassNames += "text-4xl";
+      headingClassNames += "text-4xl font-medium";
   }
 
   return <Tag className={cn(headingClassNames, className)}>{children}</Tag>;

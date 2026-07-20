@@ -47,21 +47,25 @@ const Header = () => {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 self-start">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className="text-sm tracking-wide text-foreground/70 hover:text-primary"
-            >
-              {link.label}
-            </NavLink>
-          ))}
-          <button
-            onClick={() => setContactOpen(true)}
-            className="ml-2 px-5 py-2 text-sm bg-primary text-primary-foreground rounded-sm hover:bg-primary/90 transition-colors"
-          >
-            Kontakt oss
-          </button>
+          <ul className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className="text-sm tracking-wide text-foreground/70 hover:text-primary"
+                  activeProps="border-b border-primary pb-0.5"
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <Dialog open={contactOpen} onOpenChange={setContactOpen}>
+            <DialogTrigger asChild>
+              <Button className="w-fit">Kontakt oss</Button>
+            </DialogTrigger>
+            <ContactDialog />
+          </Dialog>
         </nav>
 
         <button
@@ -74,16 +78,19 @@ const Header = () => {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-border px-6 py-6 flex flex-col gap-5">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className="text-sm tracking-wide text-foreground/70 hover:text-primary"
-            >
-              {link.label}
-            </NavLink>
-          ))}
+        <div className="md:hidden bg-white border-t border-border px-6 py-6">
+          <ul className="flex flex-col gap-5 mb-7">
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className="text-md tracking-wide text-foreground/70 hover:text-primary"
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
           <Dialog open={contactOpen} onOpenChange={setContactOpen}>
             <DialogTrigger asChild>
               <Button className="w-fit">Kontakt oss</Button>

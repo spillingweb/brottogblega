@@ -74,36 +74,48 @@ const Footer = () => {
           <UppercaseHeading className="text-primary-foreground/50">
             Sider
           </UppercaseHeading>
-          <Link
-            to="/"
-            className="hover:text-primary-foreground transition-colors"
-          >
-            Hjem
-          </Link>
-          <Link
-            to="/om-oss"
-            className="hover:text-primary-foreground transition-colors"
-          >
-            Om oss
-          </Link>
-          <Link
-            to="/tjenester"
-            className="hover:text-primary-foreground transition-colors"
-          >
-            Tjenester
-          </Link>
-          <Link
-            to="/arrangementer"
-            className="hover:text-primary-foreground transition-colors"
-          >
-            Arrangementer
-          </Link>
-          <Link
-            to="/aktuelt"
-            className="hover:text-primary-foreground transition-colors"
-          >
-            Aktuelt
-          </Link>
+          <ul className="flex flex-col items-start gap-2">
+            <li>
+              <Link
+                to="/"
+                className="hover:text-primary-foreground transition-colors"
+              >
+                Hjem
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/om-oss"
+                className="hover:text-primary-foreground transition-colors"
+              >
+                Om oss
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/tjenester"
+                className="hover:text-primary-foreground transition-colors"
+              >
+                Tjenester
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/arrangementer"
+                className="hover:text-primary-foreground transition-colors"
+              >
+                Arrangementer
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/aktuelt"
+                className="hover:text-primary-foreground transition-colors"
+              >
+                Aktuelt
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
       <Separator className="bg-primary-foreground/10 max-w-6xl w-full mx-auto" />
