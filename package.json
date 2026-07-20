@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@faker-js/faker": "^10.3.0",
+    "@fontsource-variable/dm-sans": "^5.2.8",
+    "@fontsource-variable/lora": "^5.2.8",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/match-sorter-utils": "latest",
     "@tanstack/react-devtools": "latest",
@@ -33,6 +35,7 @@
     "radix-ui": "^1.6.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "shadcn": "^4.13.1",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.1.18",
     "tinacms": "^3.11.0",

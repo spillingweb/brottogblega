@@ -10,33 +10,74 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AktueltRouteImport } from './routes/aktuelt'
+import { Route as ArrangementerRouteImport } from './routes/arrangementer'
+import { Route as OmOssRouteImport } from './routes/om-oss'
+import { Route as TjenesterRouteImport } from './routes/tjenester'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AktueltRoute = AktueltRouteImport.update({
+  id: '/aktuelt',
+  path: '/aktuelt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArrangementerRoute = ArrangementerRouteImport.update({
+  id: '/arrangementer',
+  path: '/arrangementer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OmOssRoute = OmOssRouteImport.update({
+  id: '/om-oss',
+  path: '/om-oss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TjenesterRoute = TjenesterRouteImport.update({
+  id: '/tjenester',
+  path: '/tjenester',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aktuelt': typeof AktueltRoute
+  '/arrangementer': typeof ArrangementerRoute
+  '/om-oss': typeof OmOssRoute
+  '/tjenester': typeof TjenesterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aktuelt': typeof AktueltRoute
+  '/arrangementer': typeof ArrangementerRoute
+  '/om-oss': typeof OmOssRoute
+  '/tjenester': typeof TjenesterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aktuelt': typeof AktueltRoute
+  '/arrangementer': typeof ArrangementerRoute
+  '/om-oss': typeof OmOssRoute
+  '/tjenester': typeof TjenesterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/aktuelt' | '/arrangementer' | '/om-oss' | '/tjenester'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/aktuelt' | '/arrangementer' | '/om-oss' | '/tjenester'
+  id:
+    '__root__' | '/' | '/aktuelt' | '/arrangementer' | '/om-oss' | '/tjenester'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AktueltRoute: typeof AktueltRoute
+  ArrangementerRoute: typeof ArrangementerRoute
+  OmOssRoute: typeof OmOssRoute
+  TjenesterRoute: typeof TjenesterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +89,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aktuelt': {
+      id: '/aktuelt'
+      path: '/aktuelt'
+      fullPath: '/aktuelt'
+      preLoaderRoute: typeof AktueltRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arrangementer': {
+      id: '/arrangementer'
+      path: '/arrangementer'
+      fullPath: '/arrangementer'
+      preLoaderRoute: typeof ArrangementerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/om-oss': {
+      id: '/om-oss'
+      path: '/om-oss'
+      fullPath: '/om-oss'
+      preLoaderRoute: typeof OmOssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tjenester': {
+      id: '/tjenester'
+      path: '/tjenester'
+      fullPath: '/tjenester'
+      preLoaderRoute: typeof TjenesterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AktueltRoute: AktueltRoute,
+  ArrangementerRoute: ArrangementerRoute,
+  OmOssRoute: OmOssRoute,
+  TjenesterRoute: TjenesterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
