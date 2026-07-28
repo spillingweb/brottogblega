@@ -10,10 +10,13 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
     <section className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <div className="aspect-4/5 rounded-sm overflow-hidden bg-secondary">
+          <div
+            className="aspect-4/5 rounded-sm overflow-hidden bg-secondary"
+            data-tina-field={tinaField(page, "profileImage")}
+          >
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&h=875&fit=crop&auto=format"
-              alt="To kvinner i rolig, profesjonell samtale"
+              src={page.profileImage || ""}
+              alt="Bilde av Hilde og Tina Maria, grunnleggerne av Brott & Blega"
               className="w-full h-full object-cover"
             />
           </div>
