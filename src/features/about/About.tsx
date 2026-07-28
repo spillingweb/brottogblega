@@ -2,7 +2,7 @@ import CallToAction from "#/components/CallToAction";
 import ContactDialog from "#/components/ContactDialog";
 import Heading from "#/components/ui/Heading";
 import UppercaseHeading from "#/components/ui/UppercaseHeading";
-import IndividualSection from "./IndividualSection";
+// import IndividualSection from "./IndividualSection";
 import SharedSection from "./SharedSection";
 
 const About = () => {
