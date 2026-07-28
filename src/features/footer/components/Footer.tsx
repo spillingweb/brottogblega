@@ -1,7 +1,6 @@
 import { Globe, Mail, Phone } from "lucide-react";
 import Logo from "../../../components/Logo";
 import { Separator } from "../../../components/ui/separator";
-import { Link } from "@tanstack/react-router";
 import UppercaseHeading from "#/components/ui/UppercaseHeading";
 import FooterSocial from "./FooterSocial";
 import { navLinks } from "#/lib/constants";
