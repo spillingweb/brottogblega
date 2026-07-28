@@ -1,0 +1,71 @@
+fragment PagesParts on Pages {
+  __typename
+  ... on PagesHomepage {
+    kicker
+    titleMain
+    titleItalic
+    subtitle
+    heroImage
+    intro1Title
+    intro1Text
+    intro2Title
+    intro2Text
+    intro3Title
+    intro3Text
+    profileImage
+    aboutTitle
+    aboutText1
+    aboutText2
+    testimonials {
+      __typename
+      quote
+      name
+      role
+    }
+    ctaTitle
+    ctaDescription
+    servicesHeading
+    blogHeading
+  }
+  ... on PagesStandard {
+    title
+    subtitle
+    intro
+    profileImage
+    body
+    contactName
+    contactLocation
+    contactEmail
+    verdier {
+      __typename
+      tittel
+      tekst
+    }
+  }
+  ... on PagesHeader {
+    title
+    intro
+  }
+  ... on PagesServices {
+    title
+    subtitle
+    intro
+    infoBadge
+    faq {
+      __typename
+      question
+      answer
+    }
+  }
+  ... on PagesKontakt {
+    title
+    kicker
+    heading
+    description
+    addressLine1
+    addressLine2
+    addressLine3
+    email
+    phone
+  }
+}
