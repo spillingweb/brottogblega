@@ -1,6 +1,6 @@
 import { Button } from "#/components/ui/button";
 import Heading from "#/components/ui/Heading";
-import UppercaseHeading from "#/components/ui/UppercaseHeading";
+import Kicker from "#/components/ui/Kicker";
 import { Link } from "@tanstack/react-router";
 import ServiceCard from "./ServiceCard";
 
@@ -39,9 +39,9 @@ const ServicesTeaser = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-14">
           <div>
-            <UppercaseHeading className="text-primary mb-4">
+            <Kicker className="text-primary mb-4">
               Tjenester
-            </UppercaseHeading>
+            </Kicker>
             <Heading level={2} className="md:text-4xl">
               Hva vi tilbyr
             </Heading>

@@ -2,7 +2,7 @@ import { Button } from "#/components/ui/button";
 import { Dialog, DialogTrigger } from "#/components/ui/dialog";
 import { cn } from "#/lib/utils";
 import Heading from "./ui/Heading";
-import UppercaseHeading from "./ui/UppercaseHeading";
+import Kicker from "./ui/Kicker";
 
 const CallToAction = ({
   className,
@@ -24,7 +24,7 @@ const CallToAction = ({
   return (
     <section className={cn("py-20 md:py-28 text-center", className)}>
       <div className="max-w-xl mx-auto px-6">
-        {smallHeading && <UppercaseHeading>{smallHeading}</UppercaseHeading>}
+        {smallHeading && <Kicker>{smallHeading}</Kicker>}
         <Heading level={2} className={cn("mb-5", headingClass)}>
           {title}
         </Heading>

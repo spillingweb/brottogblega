@@ -1,5 +1,5 @@
 import Heading from "#/components/ui/Heading";
-import UppercaseHeading from "#/components/ui/UppercaseHeading";
+import Kicker from "#/components/ui/Kicker";
 import type React from "react";
 
 type IndividualProps = {
@@ -34,7 +34,7 @@ const IndividualSection = ({
         />
       </div>
       <div>
-        <UppercaseHeading className="mb-2">{profession}</UppercaseHeading>
+        <Kicker className="mb-2">{profession}</Kicker>
         <Heading level={2} className="md:text-4xl mb-5">
           {name}
         </Heading>

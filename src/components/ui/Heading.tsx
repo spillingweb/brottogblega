@@ -7,7 +7,12 @@ interface HeadingProps {
   className?: string;
 }
 
-const Heading = ({ children, level = 1, className = "" }: HeadingProps) => {
+const Heading = ({
+  children,
+  level = 1,
+  className = "",
+  ...props
+}: HeadingProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   let headingClassNames = "font-medium text-balance ";
@@ -35,7 +40,11 @@ const Heading = ({ children, level = 1, className = "" }: HeadingProps) => {
       headingClassNames += "text-4xl font-medium";
   }
 
-  return <Tag className={cn(headingClassNames, className)}>{children}</Tag>;
+  return (
+    <Tag className={cn(headingClassNames, className)} {...props}>
+      {children}
+    </Tag>
+  );
 };
 
 export default Heading;

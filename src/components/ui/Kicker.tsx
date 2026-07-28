@@ -1,6 +1,6 @@
 import { cn } from "#/lib/utils";
 
-const UppercaseHeading = ({
+const Kicker = ({
   children,
   className,
 }: {
@@ -14,4 +14,4 @@ const UppercaseHeading = ({
   );
 };
 
-export default UppercaseHeading;
+export default Kicker;

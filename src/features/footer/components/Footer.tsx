@@ -1,7 +1,7 @@
 import { Globe, Mail, Phone } from "lucide-react";
 import Logo from "../../../components/Logo";
 import { Separator } from "../../../components/ui/separator";
-import UppercaseHeading from "#/components/ui/UppercaseHeading";
+import Kicker from "#/components/ui/Kicker";
 import FooterSocial from "./FooterSocial";
 import { navLinks } from "#/lib/constants";
 import FooterNavLink from "./FooterNavLink";
@@ -23,9 +23,9 @@ const Footer = () => {
         {/* Contact info */}
         {/* TODO: Make editable with TinaCMS */}
         <div className="flex flex-col items-start gap-2">
-          <UppercaseHeading className="text-primary-foreground/50">
+          <Kicker className="text-primary-foreground/50">
             Kontakt
-          </UppercaseHeading>
+          </Kicker>
           <div className="flex flex-col items-start gap-1">
             <p className="italic text-primary-foreground/50">
               Heidi fysioterapeut
@@ -72,9 +72,9 @@ const Footer = () => {
 
         {/* Navigation */}
         <nav className="flex flex-col items-start gap-2">
-          <UppercaseHeading className="text-primary-foreground/50">
+          <Kicker className="text-primary-foreground/50">
             Sider
-          </UppercaseHeading>
+          </Kicker>
           <ul className="flex flex-col items-start gap-2">
             {navLinks.map((nav) => (
               <FooterNavLink key={nav.to} path={nav.to} label={nav.label} />

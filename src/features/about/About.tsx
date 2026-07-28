@@ -1,7 +1,7 @@
 import CallToAction from "#/components/CallToAction";
 import ContactDialog from "#/components/ContactDialog";
 import Heading from "#/components/ui/Heading";
-import UppercaseHeading from "#/components/ui/UppercaseHeading";
+import Kicker from "#/components/ui/Kicker";
 // import IndividualSection from "./IndividualSection";
 import SharedSection from "./SharedSection";
 
@@ -10,7 +10,7 @@ const About = () => {
     <div className="pt-28">
       {/* Intro header */}
       <section className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-        <UppercaseHeading className="mb-4">Om oss</UppercaseHeading>
+        <Kicker className="mb-4">Om oss</Kicker>
         <Heading level={1} className="md:text-5xl max-w-2xl leading-tight mb-6">
           Brott & Blega — et møtested for kropp og tanke
         </Heading>

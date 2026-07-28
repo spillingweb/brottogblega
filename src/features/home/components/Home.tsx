@@ -1,16 +1,19 @@
 import CallToAction from "#/components/CallToAction";
 import ContactDialog from "#/components/ContactDialog";
+import type { PagesHomepage, PagesQuery } from "../../../../tina/__generated__/types";
 import AboutTeaser from "./AboutTeaser";
 import Hero from "./Hero";
 import Intro from "./Intro";
 import ServicesTeaser from "./ServicesTeaser";
 
-const Home = () => {
+const Home = ({ pageData }: { pageData: PagesQuery }) => {
+  const page = pageData.pages as PagesHomepage;
+
   return (
     <div>
-      <Hero />
-      <Intro />
-      <AboutTeaser />
+      <Hero page={page} />
+      <Intro page={page} />
+      <AboutTeaser page={page} />
       <ServicesTeaser />
       <CallToAction
         title="Klar til å ta et skritt mot bedre helse?"

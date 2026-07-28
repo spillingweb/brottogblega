@@ -2,33 +2,48 @@ import ContactDialog from "#/components/ContactDialog";
 import { Button } from "#/components/ui/button";
 import { Dialog, DialogTrigger } from "#/components/ui/dialog";
 import Heading from "#/components/ui/Heading";
-import UppercaseHeading from "#/components/ui/UppercaseHeading";
+import Kicker from "#/components/ui/Kicker";
 import { Link } from "@tanstack/react-router";
+import { tinaField } from "tinacms/tina-field";
+import type { PagesHomepage } from "../../../../tina/__generated__/types";
 
-const Hero = () => {
+const Hero = ({ page }: { page: PagesHomepage }) => {
+  const { kicker, titleMain, titleItalic, subtitle, heroImage } = page;
   return (
     <section className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-primary/10">
         <img
-          src="https://images.unsplash.com/photo-1739217416358-0f84b45d918f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Rolig hav ved Fevik, Sørlandskysten"
+          src={heroImage || ""}
+          alt="Hero image"
           className="w-full h-full object-cover opacity-40"
+          data-tina-field={tinaField(page, "heroImage")}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-linear-to-b from-primary/20 via-background/30 to-background" />
       </div>
       <div className="relative max-w-6xl mx-auto px-6 w-full">
         <div className="max-w-xl flex flex-col gap-4">
-          <UppercaseHeading className="text-primary font-medium">
-            Fevik, Aust-Agder
-          </UppercaseHeading>
-          <Heading className="md:text-6xl leading-tight">
-            Helse og ro,
-            <br />
-            <em>for deg som kvinne</em>
+          <Kicker
+            className="text-primary font-medium"
+            data-tina-field={tinaField(page, "kicker")}
+          >
+            {kicker}
+          </Kicker>
+          <Heading className="md:text-6xl leading-tight flex flex-col">
+            <span data-tina-field={tinaField(page, "titleMain")}>
+              {titleMain}
+            </span>
+            <em data-tina-field={tinaField(page, "titleItalic")}>
+              {titleItalic}
+            </em>
           </Heading>
-          <p className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-md">
-            Vi tilbyr fysioterapi, filosofisk samtale og seminarer med fokus på
-            kvinnehelse og indre velvære — i trygge og omsorgsfulle omgivelser.
+          <p
+            className="text-base md:text-lg text-foreground/70 leading-relaxed max-w-md"
+            data-tina-field={tinaField(page, "subtitle")}
+          >
+            {subtitle}
           </p>
           <div className="flex flex-wrap gap-4 mt-5">
             <Button size="lg" asChild>
