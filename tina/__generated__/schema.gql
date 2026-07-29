@@ -85,13 +85,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = PagesHomepage | PagesStandard | PagesHeader | PagesServices | PagesKontakt | Folder
-
-type PagesHomepageTestimonials {
-  quote: String!
-  name: String!
-  role: String
-}
+union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesHeader | PagesServices | PagesKontakt | Folder
 
 type PagesHomepage implements Node & Document {
   kicker: String
@@ -109,11 +103,38 @@ type PagesHomepage implements Node & Document {
   aboutTitle: String
   aboutText1: String
   aboutText2: String
-  testimonials: [PagesHomepageTestimonials]
+  servicesHeading: String
+  newsHeading: String
   ctaTitle: String
   ctaDescription: String
-  servicesHeading: String
-  blogHeading: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+type PagesAboutKeywords {
+  keyword: String!
+}
+
+type PagesAboutVerdier {
+  tittel: String!
+  tekst: String!
+}
+
+type PagesAbout implements Node & Document {
+  title: String!
+  intro: String
+  sharedImage: String
+  sharedImageAlt: String
+  sharedKicker: String
+  sharedIntro: String
+  sharedContent: JSON
+  hildeImage: String
+  hildeKicker: String
+  hildeIntro: String
+  hildeContent: JSON
+  keywords: [PagesAboutKeywords]
+  verdier: [PagesAboutVerdier]
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -178,7 +199,7 @@ type PagesKontakt implements Node & Document {
   _values: JSON!
 }
 
-union Pages = PagesHomepage | PagesStandard | PagesHeader | PagesServices | PagesKontakt
+union Pages = PagesHomepage | PagesAbout | PagesStandard | PagesHeader | PagesServices | PagesKontakt
 
 input StringFilter {
   startsWith: String
@@ -192,12 +213,6 @@ input ImageFilter {
   eq: String
   exists: Boolean
   in: [String]
-}
-
-input PagesHomepageTestimonialsFilter {
-  quote: StringFilter
-  name: StringFilter
-  role: StringFilter
 }
 
 input PagesHomepageFilter {
@@ -216,17 +231,41 @@ input PagesHomepageFilter {
   aboutTitle: StringFilter
   aboutText1: StringFilter
   aboutText2: StringFilter
-  testimonials: PagesHomepageTestimonialsFilter
+  servicesHeading: StringFilter
+  newsHeading: StringFilter
   ctaTitle: StringFilter
   ctaDescription: StringFilter
-  servicesHeading: StringFilter
-  blogHeading: StringFilter
 }
 
 input RichTextFilter {
   startsWith: String
   eq: String
   exists: Boolean
+}
+
+input PagesAboutKeywordsFilter {
+  keyword: StringFilter
+}
+
+input PagesAboutVerdierFilter {
+  tittel: StringFilter
+  tekst: StringFilter
+}
+
+input PagesAboutFilter {
+  title: StringFilter
+  intro: StringFilter
+  sharedImage: ImageFilter
+  sharedImageAlt: StringFilter
+  sharedKicker: StringFilter
+  sharedIntro: StringFilter
+  sharedContent: RichTextFilter
+  hildeImage: ImageFilter
+  hildeKicker: StringFilter
+  hildeIntro: StringFilter
+  hildeContent: RichTextFilter
+  keywords: PagesAboutKeywordsFilter
+  verdier: PagesAboutVerdierFilter
 }
 
 input PagesStandardVerdierFilter {
@@ -278,6 +317,7 @@ input PagesKontaktFilter {
 
 input PagesFilter {
   homepage: PagesHomepageFilter
+  about: PagesAboutFilter
   standard: PagesStandardFilter
   header: PagesHeaderFilter
   services: PagesServicesFilter
@@ -314,12 +354,6 @@ input DocumentMutation {
   pages: PagesMutation
 }
 
-input PagesHomepageTestimonialsMutation {
-  quote: String
-  name: String
-  role: String
-}
-
 input PagesHomepageMutation {
   kicker: String
   titleMain: String
@@ -336,11 +370,35 @@ input PagesHomepageMutation {
   aboutTitle: String
   aboutText1: String
   aboutText2: String
-  testimonials: [PagesHomepageTestimonialsMutation]
+  servicesHeading: String
+  newsHeading: String
   ctaTitle: String
   ctaDescription: String
-  servicesHeading: String
-  blogHeading: String
+}
+
+input PagesAboutKeywordsMutation {
+  keyword: String
+}
+
+input PagesAboutVerdierMutation {
+  tittel: String
+  tekst: String
+}
+
+input PagesAboutMutation {
+  title: String
+  intro: String
+  sharedImage: String
+  sharedImageAlt: String
+  sharedKicker: String
+  sharedIntro: String
+  sharedContent: JSON
+  hildeImage: String
+  hildeKicker: String
+  hildeIntro: String
+  hildeContent: JSON
+  keywords: [PagesAboutKeywordsMutation]
+  verdier: [PagesAboutVerdierMutation]
 }
 
 input PagesStandardVerdierMutation {
@@ -392,6 +450,7 @@ input PagesKontaktMutation {
 
 input PagesMutation {
   homepage: PagesHomepageMutation
+  about: PagesAboutMutation
   standard: PagesStandardMutation
   header: PagesHeaderMutation
   services: PagesServicesMutation

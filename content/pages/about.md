@@ -1,4 +1,5 @@
 ---
+_template: about
 title: Tina Maria Lie
 subtitle: Sykepleier · Videreutdanning i filosofi og psykologi · Grunnlegger av Filosamtale
 intro: Jeg er bosatt på Fevik i Agder og har jobbet med filosofisk praksis siden 2022. Min bakgrunn kombinerer klinisk sykepleiepraksis med praktisk filosofi — og det er nettopp denne kombinasjonen som preger min tilnærming til samtale og veiledning.
@@ -15,7 +16,6 @@ verdier:
     tekst: Filosofi er ikke bare teori — det er et levd praksisfelt som gir konkrete verktøy for et bedre liv.
   - tittel: Helhetlig menneskesyn
     tekst: 'Som sykepleier og filosof ser jeg hele mennesket: kropp, sjel og de spørsmålene vi bærer på.'
-_template: standard
 ---
 
 ## Hvorfor Filosamtale?

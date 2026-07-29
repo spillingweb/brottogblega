@@ -24,16 +24,32 @@ export const PagesPartsFragmentDoc = gql`
     aboutTitle
     aboutText1
     aboutText2
-    testimonials {
-      __typename
-      quote
-      name
-      role
-    }
+    servicesHeading
+    newsHeading
     ctaTitle
     ctaDescription
-    servicesHeading
-    blogHeading
+  }
+  ... on PagesAbout {
+    title
+    intro
+    sharedImage
+    sharedImageAlt
+    sharedKicker
+    sharedIntro
+    sharedContent
+    hildeImage
+    hildeKicker
+    hildeIntro
+    hildeContent
+    keywords {
+      __typename
+      keyword
+    }
+    verdier {
+      __typename
+      tittel
+      tekst
+    }
   }
   ... on PagesStandard {
     title

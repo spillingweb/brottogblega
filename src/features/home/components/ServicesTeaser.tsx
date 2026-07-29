@@ -1,8 +1,10 @@
 import { Button } from "#/components/ui/button";
 import Heading from "#/components/ui/Heading";
-import Kicker from "#/components/ui/Kicker";
+import type { PagesHomepage } from "../../../../tina/__generated__/types";
 import { Link } from "@tanstack/react-router";
 import ServiceCard from "./ServiceCard";
+import Kicker from "#/components/ui/Kicker";
+import { tinaField } from "tinacms/tina-field";
 
 export type Service = {
   label: string;
@@ -33,7 +35,7 @@ const DUMMY_SERVICES = [
   },
 ];
 
-const ServicesTeaser = () => {
+const ServicesTeaser = ({ page }: { page: PagesHomepage }) => {
   return (
     <section className="bg-muted py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
@@ -42,8 +44,8 @@ const ServicesTeaser = () => {
             <Kicker className="text-primary mb-4">
               Tjenester
             </Kicker>
-            <Heading level={2} className="md:text-4xl">
-              Hva vi tilbyr
+            <Heading level={2} className="md:text-4xl" data-tina-field={tinaField(page, "servicesHeading")}>
+              {page.servicesHeading}
             </Heading>
           </div>
           <Button variant="link" className="p-0 h-fit" asChild>

@@ -2,10 +2,13 @@ import CallToAction from "#/components/CallToAction";
 import ContactDialog from "#/components/ContactDialog";
 import Heading from "#/components/ui/Heading";
 import Kicker from "#/components/ui/Kicker";
+import type { PagesQuery } from "../../../tina/__generated__/types";
 // import IndividualSection from "./IndividualSection";
 import SharedSection from "./SharedSection";
 
-const About = () => {
+const About = ({ pageData }: { pageData: PagesQuery }) => {
+  const page = pageData.pages;
+
   return (
     <div className="pt-28">
       {/* Intro header */}
