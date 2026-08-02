@@ -1,5 +1,6 @@
 ---
 _template: homepage
+pageName: Forside
 kicker: "Fevik, Aust-Agder"
 titleMain: "Helse og ro,"
 titleItalic: for deg som kvinne

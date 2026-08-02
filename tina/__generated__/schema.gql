@@ -85,9 +85,10 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesHeader | PagesServices | PagesKontakt | Folder
+union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt | Folder
 
 type PagesHomepage implements Node & Document {
+  pageName: String!
   kicker: String
   titleMain: String!
   titleItalic: String
@@ -112,16 +113,16 @@ type PagesHomepage implements Node & Document {
   _values: JSON!
 }
 
-type PagesAboutKeywords {
+type PagesAboutHildeKeywords {
   keyword: String!
 }
 
-type PagesAboutVerdier {
-  tittel: String!
-  tekst: String!
+type PagesAboutTinaMariaKeywords {
+  keyword: String!
 }
 
 type PagesAbout implements Node & Document {
+  pageName: String!
   title: String!
   intro: String
   sharedImage: String
@@ -131,54 +132,34 @@ type PagesAbout implements Node & Document {
   sharedContent: JSON
   hildeImage: String
   hildeKicker: String
-  hildeIntro: String
+  hildeTitle: String
   hildeContent: JSON
-  keywords: [PagesAboutKeywords]
-  verdier: [PagesAboutVerdier]
+  hildeKeywords: [PagesAboutHildeKeywords]
+  tinaMariaImage: String
+  tinaMariaKicker: String
+  tinaMariaTitle: String
+  tinaMariaContent: JSON
+  tinaMariaKeywords: [PagesAboutTinaMariaKeywords]
+  valuesTitle: String
+  value1Title: String
+  value1Text: String
+  value2Title: String
+  value2Text: String
+  value3Title: String
+  value3Text: String
+  ctaTitle: String
+  ctaDescription: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
-}
-
-type PagesStandardVerdier {
-  tittel: String!
-  tekst: String!
 }
 
 type PagesStandard implements Node & Document {
-  title: String!
-  subtitle: String
-  intro: String
-  profileImage: String
-  body: JSON
-  contactName: String
-  contactLocation: String
-  contactEmail: String
-  verdier: [PagesStandardVerdier]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-type PagesHeader implements Node & Document {
+  pageName: String!
   title: String!
   intro: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-type PagesServicesFaq {
-  question: String!
-  answer: String!
-}
-
-type PagesServices implements Node & Document {
-  title: String!
-  subtitle: String
-  intro: String
-  infoBadge: String
-  faq: [PagesServicesFaq]
+  ctaTitle: String
+  ctaDescription: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -199,7 +180,7 @@ type PagesKontakt implements Node & Document {
   _values: JSON!
 }
 
-union Pages = PagesHomepage | PagesAbout | PagesStandard | PagesHeader | PagesServices | PagesKontakt
+union Pages = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt
 
 input StringFilter {
   startsWith: String
@@ -216,6 +197,7 @@ input ImageFilter {
 }
 
 input PagesHomepageFilter {
+  pageName: StringFilter
   kicker: StringFilter
   titleMain: StringFilter
   titleItalic: StringFilter
@@ -243,16 +225,16 @@ input RichTextFilter {
   exists: Boolean
 }
 
-input PagesAboutKeywordsFilter {
+input PagesAboutHildeKeywordsFilter {
   keyword: StringFilter
 }
 
-input PagesAboutVerdierFilter {
-  tittel: StringFilter
-  tekst: StringFilter
+input PagesAboutTinaMariaKeywordsFilter {
+  keyword: StringFilter
 }
 
 input PagesAboutFilter {
+  pageName: StringFilter
   title: StringFilter
   intro: StringFilter
   sharedImage: ImageFilter
@@ -262,45 +244,31 @@ input PagesAboutFilter {
   sharedContent: RichTextFilter
   hildeImage: ImageFilter
   hildeKicker: StringFilter
-  hildeIntro: StringFilter
+  hildeTitle: StringFilter
   hildeContent: RichTextFilter
-  keywords: PagesAboutKeywordsFilter
-  verdier: PagesAboutVerdierFilter
-}
-
-input PagesStandardVerdierFilter {
-  tittel: StringFilter
-  tekst: StringFilter
+  hildeKeywords: PagesAboutHildeKeywordsFilter
+  tinaMariaImage: ImageFilter
+  tinaMariaKicker: StringFilter
+  tinaMariaTitle: StringFilter
+  tinaMariaContent: RichTextFilter
+  tinaMariaKeywords: PagesAboutTinaMariaKeywordsFilter
+  valuesTitle: StringFilter
+  value1Title: StringFilter
+  value1Text: StringFilter
+  value2Title: StringFilter
+  value2Text: StringFilter
+  value3Title: StringFilter
+  value3Text: StringFilter
+  ctaTitle: StringFilter
+  ctaDescription: StringFilter
 }
 
 input PagesStandardFilter {
-  title: StringFilter
-  subtitle: StringFilter
-  intro: StringFilter
-  profileImage: ImageFilter
-  body: RichTextFilter
-  contactName: StringFilter
-  contactLocation: StringFilter
-  contactEmail: StringFilter
-  verdier: PagesStandardVerdierFilter
-}
-
-input PagesHeaderFilter {
+  pageName: StringFilter
   title: StringFilter
   intro: StringFilter
-}
-
-input PagesServicesFaqFilter {
-  question: StringFilter
-  answer: StringFilter
-}
-
-input PagesServicesFilter {
-  title: StringFilter
-  subtitle: StringFilter
-  intro: StringFilter
-  infoBadge: StringFilter
-  faq: PagesServicesFaqFilter
+  ctaTitle: StringFilter
+  ctaDescription: StringFilter
 }
 
 input PagesKontaktFilter {
@@ -319,8 +287,6 @@ input PagesFilter {
   homepage: PagesHomepageFilter
   about: PagesAboutFilter
   standard: PagesStandardFilter
-  header: PagesHeaderFilter
-  services: PagesServicesFilter
   kontakt: PagesKontaktFilter
 }
 
@@ -355,6 +321,7 @@ input DocumentMutation {
 }
 
 input PagesHomepageMutation {
+  pageName: String
   kicker: String
   titleMain: String
   titleItalic: String
@@ -376,16 +343,16 @@ input PagesHomepageMutation {
   ctaDescription: String
 }
 
-input PagesAboutKeywordsMutation {
+input PagesAboutHildeKeywordsMutation {
   keyword: String
 }
 
-input PagesAboutVerdierMutation {
-  tittel: String
-  tekst: String
+input PagesAboutTinaMariaKeywordsMutation {
+  keyword: String
 }
 
 input PagesAboutMutation {
+  pageName: String
   title: String
   intro: String
   sharedImage: String
@@ -395,45 +362,31 @@ input PagesAboutMutation {
   sharedContent: JSON
   hildeImage: String
   hildeKicker: String
-  hildeIntro: String
+  hildeTitle: String
   hildeContent: JSON
-  keywords: [PagesAboutKeywordsMutation]
-  verdier: [PagesAboutVerdierMutation]
-}
-
-input PagesStandardVerdierMutation {
-  tittel: String
-  tekst: String
+  hildeKeywords: [PagesAboutHildeKeywordsMutation]
+  tinaMariaImage: String
+  tinaMariaKicker: String
+  tinaMariaTitle: String
+  tinaMariaContent: JSON
+  tinaMariaKeywords: [PagesAboutTinaMariaKeywordsMutation]
+  valuesTitle: String
+  value1Title: String
+  value1Text: String
+  value2Title: String
+  value2Text: String
+  value3Title: String
+  value3Text: String
+  ctaTitle: String
+  ctaDescription: String
 }
 
 input PagesStandardMutation {
-  title: String
-  subtitle: String
-  intro: String
-  profileImage: String
-  body: JSON
-  contactName: String
-  contactLocation: String
-  contactEmail: String
-  verdier: [PagesStandardVerdierMutation]
-}
-
-input PagesHeaderMutation {
+  pageName: String
   title: String
   intro: String
-}
-
-input PagesServicesFaqMutation {
-  question: String
-  answer: String
-}
-
-input PagesServicesMutation {
-  title: String
-  subtitle: String
-  intro: String
-  infoBadge: String
-  faq: [PagesServicesFaqMutation]
+  ctaTitle: String
+  ctaDescription: String
 }
 
 input PagesKontaktMutation {
@@ -452,8 +405,6 @@ input PagesMutation {
   homepage: PagesHomepageMutation
   about: PagesAboutMutation
   standard: PagesStandardMutation
-  header: PagesHeaderMutation
-  services: PagesServicesMutation
   kontakt: PagesKontaktMutation
 }
 

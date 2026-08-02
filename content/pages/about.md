@@ -1,60 +1,52 @@
 ---
+pageName: Om oss
+title: Brott & Blega — et møtested for kropp og tanke
+intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at ekte helse krever at vi tar hele mennesket på alvor — ikke bare diagnosen, ikke bare symptomene, men livet du lever.'
+sharedImage: /sharedImage.avif
+sharedImageAlt: Brott & Blega ansatte
+sharedKicker: Vår felles visjon
+sharedIntro: 'Vi tror at kvinner fortjener å bli møtt helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
+sharedContent: |
+  Hilde bringer kroppen inn. Tina Maria bringer tankene. Sammen skaper vi et rom der disse to ikke lenger behandles som atskilte størrelser.
+
+  Brott & Blega er ikke en klinikk i tradisjonell forstand. Det er et sted der du kan tenke høyt, bevege deg trygt og finne frem til det som faktisk hjelper — for deg, i din livssituasjon.
+hildeImage: /kari.avif
+hildeKicker: Fysioterapeut
+hildeTitle: Hilde Stenqvist
+hildeContent: |
+  Hilde er autorisert fysioterapeut med over 12 års erfaring, spesialisert i kvinnehelse og bekkenbunnsfunksjon. Hun har videreutdanning fra Høgskolen i Oslo og Akershus, og har jobbet tett med kvinner gjennom svangerskap, etter fødsel og inn i overgangsalderen.
+
+  Hilde tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at å lytte til kroppen er et grunnleggende steg mot bedre helse. Hun møter hver pasient der de er, med tålmodighet og faglig dybde. 
+
+  *«Jeg ønsker at alle kvinner skal kjenne seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
+hildeKeywords:
+  - keyword: Bekkenbunnsfysioterapi
+  - keyword: Svangerskap & fødsel
+  - keyword: Overgangsalder
+  - keyword: Bevegelsesanalyse
+tinaMariaImage: /ingrid.avif
+tinaMariaKicker: Sykepleier & filosof
+tinaMariaTitle: Tina Maria Lie
+tinaMariaContent: |
+  Tina Maria er utdannet sykepleier og har en mastergrad i filosofi fra Universitetet i Oslo, med fordypning i fenomenologi og eksistensiell filosofi. Hennes tilnærming bringer humanistisk tenkning inn i klinisk omsorg på en måte som er både tilgjengelig og meningsfull.
+
+  Tina Maria tilbyr filosofisk terapi og dialoggrupper der spørsmål om mening, verdier og livsvalg får rom. Hun mener at filosofi ikke tilhører akademia alene — det er et verktøy for livet vi alle kan bruke.
+
+  *«Å tenke grundig gjennom hvem du er og hva du ønsker — det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»*
+tinaMariaKeywords:
+  - keyword: Eksistensiell filosofi
+  - keyword: Fenomenologi
+  - keyword: Filosofisk samtale
+  - keyword: Etikk & verdier
+valuesTitle: Det vi tror på
+value1Title: Helhet
+value1Text: 'Vi ser kropp, sinn og livshistorie som ett — og møter deg med et helhetsperspektiv som du ikke alltid finner i tradisjonell helseomsorg.'
+value2Title: Trygghet
+value2Text: 'Vi skaper et rom der du kan være ærlig, sårbar og nysgjerrig — uten å måtte prestere eller forklare deg.'
+value3Title: Respekt
+value3Text: 'Din erfaring og dine valg er gyldige. Vi er veiledere og støttespillere, ikke fasitsvar på hvem du bør være.'
+ctaTitle: Vil du bli bedre kjent med oss?
+ctaDescription: Ta gjerne kontakt for en uforpliktende prat om hva vi kan tilby deg.
 _template: about
-title: Tina Maria Lie
-subtitle: Sykepleier · Videreutdanning i filosofi og psykologi · Grunnlegger av Filosamtale
-intro: Jeg er bosatt på Fevik i Agder og har jobbet med filosofisk praksis siden 2022. Min bakgrunn kombinerer klinisk sykepleiepraksis med praktisk filosofi — og det er nettopp denne kombinasjonen som preger min tilnærming til samtale og veiledning.
-profileImage: /uploads/profile.jpg
-contactName: Tina Maria Lie
-contactLocation: 'Feviktoppen 19, 4870 Fevik.'
-contactEmail: filosamtale@gmail.com
-verdier:
-  - tittel: Nysgjerrighet
-    tekst: Ekte filosofi begynner med vilje til å stille spørsmål ved det vi tar for gitt — inkludert egne forestillinger.
-  - tittel: Respekt og trygghet
-    tekst: 'Alle samtaler er konfidensielle. Det er ingen dumme spørsmål, og ingen «riktig» måte å tenke på.'
-  - tittel: Praktisk visdom
-    tekst: Filosofi er ikke bare teori — det er et levd praksisfelt som gir konkrete verktøy for et bedre liv.
-  - tittel: Helhetlig menneskesyn
-    tekst: 'Som sykepleier og filosof ser jeg hele mennesket: kropp, sjel og de spørsmålene vi bærer på.'
 ---
 
-## Hvorfor Filosamtale?
-
-Jeg startet Filosamtale fordi jeg så et gap mellom det helsevesenet kan tilby og det mennesker faktisk trenger. Vi har god behandling av kroppen — men vi er dårligere på å møte mennesker i deres eksistensielle uro. Man må ikke nødvendigvis være “sjuk” for å ha behov for å prate med noen. Livet gir oss mange omveier, vi opplever akutte og kroniske sykdommer, smerter, sorg, og vi blir stilt ovenfor vanskelige valg og dilemmaer.
-
-Filosofisk dialog handler ikke om å "fikse" deg. Det handler om å skape rom for de spørsmålene livet reiser, og å hjelpe deg til å leve bedre med den usikkerheten livet innebærer. Sammen skaper vi et rom hvor vi nøster i tanker, forstår bakgrunn for følelser, og oppnår en klarere realisering av hvem du er.
-
-## Min bakgrunn
-
-Jeg startet min karriere som sykepleier ved akuttmottaket på Oslo Universitetssykehus. Der møtte jeg mennesker i livets sårbare øyeblikk — jeg var sykeleier i de store krisene, og når store spørsmål måtte stilles. Det var nettopp der, i de stille samtalene mellom medikamentadministrering og stelle av pasienter, at jeg begynte å ønske meg en annen tilnæring til møtet mellom sykepleier og pasient.
-
-Etter flere år i somatikken følte jeg behovet for å utvikle meg som sykepleier på andre områder. Jeg ble ferdig med min bachelor i filosofi og videreutdannet meg i Filosofisk Praksis.
-
-Filosofisk Praksis er en relativt ny disiplin som handler om å bruke filosofisk metode i samtale og veiledning med enkeltpersoner og grupper.
-
-Siden 2024 har jeg drevet egen praksis i Agder, med samtaler, grupper og seminarer for folk som lurer på de store spørsmålene: *Hva er meningen med livet? Hvordan skal jeg leve? Hva er verdifullt? Hvordan skal jeg ta det riktige valget?*
-
-## Mine verdier
-
-Det jeg tilbyr er en undersøkende samtale der vi sammen utforsker spørsmål som ikke har enkle svar. 
-
-Alle samtaler er konfidensielle, og det finnes ingen "riktig" måte å tenke på. Filosofi er ikke bare teori — det er et levd praksisfelt som gir konkrete verktøy for et bedre liv.
-
-Som sykepleier og filosof ser jeg hele mennesket: kropp, sjel og de spørsmålene vi bærer på.
-
-## Utdanning og kompetanse
-
-* **2022** — Videreutdanning i filosofisk praksis, NSPF (Norsk Selskap for Filosofisk Praksis)
-* **2021** — Bachelorgrad i Filosofi, Universitetet i Agder
-* **2018** — Videreutdanning i Interkulturelle studier, OsloMet
-* **2016** — Bachelor of Science, Sykepleie, Universitetet i Stavanger
-
-Jeg er medlem av **NSPF** og følger foreningens etiske retningslinjer for filosofisk praksis.
-
-## Arbeidsfilosofi
-
-Sokrates mente at visdom begynner med å innrømme hva man ikke vet. Det er ikke defaitisme — det er åpningen for ekte nysgjerrighet.
-
-I mine samtaler begynner vi gjerne med et åpent spørsmål. Vi utforsker premissene og utfordrer antakelsene for å nøste i tankene og la dem arbeide fritt. Resultatet er sjelden et enkelt, ferdig svar – men ofte en dypere forståelse av deg selv og det du egentlig står i.  Målet er å bidra til større klarhet i egne verdier, slik at det blir lettere å stå i de vanskelige valgene livet bringer med seg.
-
-Med solid forankring i min sykepleierfaglighet har jeg et nært forhold til hvordan vi mennesker møter livets utfordringer. Jeg er opptatt av den eksistensielle helsen, spesielt i møte med sykdom og lidelse. Sammen kan vi finne en måte å møte det vonde på, øve på å akseptere der man er, og finne styrken til å tåle forandringene livet bringer.

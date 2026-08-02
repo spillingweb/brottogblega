@@ -21,6 +21,16 @@ var config_default = defineConfig({
       publicFolder: "public"
     }
   },
+  // Search configuration for the Tina Cloud search service.
+  // See the documentation for more details: https://tina.io/docs/reference/search/overview
+  search: {
+    tina: {
+      indexerToken: "a6db23183aaa3c8c5429cd74387440c24f83b687",
+      stopwordLanguages: ["nob", "eng"]
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100
+  },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
@@ -50,20 +60,26 @@ var config_default = defineConfig({
             fields: [
               {
                 type: "string",
+                name: "pageName",
+                label: "Sidetittel",
+                isTitle: true,
+                required: true
+              },
+              {
+                type: "string",
                 name: "kicker",
                 label: "Kicker-tekst (liten tekst over tittel)"
               },
               {
                 type: "string",
                 name: "titleMain",
-                label: "Hovedtittel",
-                isTitle: true,
+                label: "Overskrift topp",
                 required: true
               },
               {
                 type: "string",
                 name: "titleItalic",
-                label: "Undertittel i kursiv",
+                label: "Overskrift under i kursiv",
                 required: false
               },
               {
@@ -189,9 +205,15 @@ var config_default = defineConfig({
             fields: [
               {
                 type: "string",
-                name: "title",
+                name: "pageName",
                 label: "Sidetittel",
                 isTitle: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Overskrift",
                 required: true
               },
               {
@@ -208,7 +230,7 @@ var config_default = defineConfig({
               {
                 type: "string",
                 name: "sharedImageAlt",
-                label: "Alt-tekst for fellesbilde"
+                label: "Bildebeskrivelse for fellesbilde"
               },
               {
                 type: "string",
@@ -238,8 +260,8 @@ var config_default = defineConfig({
               },
               {
                 type: "string",
-                name: "hildeIntro",
-                label: "Hilde intro-tekst"
+                name: "hildeTitle",
+                label: "Hilde tittel"
               },
               {
                 type: "rich-text",
@@ -248,7 +270,7 @@ var config_default = defineConfig({
               },
               {
                 type: "object",
-                name: "keywords",
+                name: "hildeKeywords",
                 label: "Stikkord",
                 list: true,
                 ui: {
@@ -266,30 +288,93 @@ var config_default = defineConfig({
                 ]
               },
               {
+                type: "image",
+                name: "tinaMariaImage",
+                label: "Tina Maria bilde"
+              },
+              {
+                type: "string",
+                name: "tinaMariaKicker",
+                label: "Tina Maria kicker-tekst",
+                description: "Liten tekst over Tina Maria sin tittel"
+              },
+              {
+                type: "string",
+                name: "tinaMariaTitle",
+                label: "Tina Maria tittel"
+              },
+              {
+                type: "rich-text",
+                name: "tinaMariaContent",
+                label: "Tina Maria innhold"
+              },
+              {
                 type: "object",
-                name: "verdier",
-                label: "Verdier",
+                name: "tinaMariaKeywords",
+                label: "Stikkord",
                 list: true,
                 ui: {
                   itemProps: (item) => {
-                    return { label: item?.tittel || "Ny verdi" };
+                    return { label: item?.keyword || "Nytt stikkord" };
                   }
                 },
                 fields: [
                   {
                     type: "string",
-                    name: "tittel",
-                    label: "Tittel",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "tekst",
-                    label: "Beskrivelse",
-                    ui: { component: "textarea" },
+                    name: "keyword",
+                    label: "Stikkord",
                     required: true
                   }
                 ]
+              },
+              {
+                type: "string",
+                name: "valuesTitle",
+                label: "Verdier - tittel"
+              },
+              {
+                type: "string",
+                name: "value1Title",
+                label: "Verdi 1 - tittel"
+              },
+              {
+                type: "string",
+                name: "value1Text",
+                label: "Verdi 1 - tekst",
+                ui: { component: "textarea" }
+              },
+              {
+                type: "string",
+                name: "value2Title",
+                label: "Verdi 2 - tittel"
+              },
+              {
+                type: "string",
+                name: "value2Text",
+                label: "Verdi 2 - tekst",
+                ui: { component: "textarea" }
+              },
+              {
+                type: "string",
+                name: "value3Title",
+                label: "Verdi 3 - tittel"
+              },
+              {
+                type: "string",
+                name: "value3Text",
+                label: "Verdi 3 - tekst",
+                ui: { component: "textarea" }
+              },
+              {
+                type: "string",
+                name: "ctaTitle",
+                label: "Call-to-action tittel"
+              },
+              {
+                type: "string",
+                name: "ctaDescription",
+                label: "Call-to-action beskrivelse",
+                ui: { component: "textarea" }
               }
             ]
           },
@@ -299,86 +384,15 @@ var config_default = defineConfig({
             fields: [
               {
                 type: "string",
-                name: "title",
+                name: "pageName",
                 label: "Sidetittel",
                 isTitle: true,
                 required: true
               },
               {
                 type: "string",
-                name: "subtitle",
-                label: "Undertittel",
-                ui: { component: "textarea" }
-              },
-              {
-                type: "string",
-                name: "intro",
-                label: "Introtekst",
-                ui: { component: "textarea" }
-              },
-              {
-                type: "image",
-                name: "profileImage",
-                label: "Profilbilde"
-              },
-              {
-                type: "rich-text",
-                name: "body",
-                label: "Innhold",
-                isBody: true
-              },
-              {
-                type: "string",
-                name: "contactName",
-                label: "Kontaktinfo: Navn"
-              },
-              {
-                type: "string",
-                name: "contactLocation",
-                label: "Kontaktinfo: Sted"
-              },
-              {
-                type: "string",
-                name: "contactEmail",
-                label: "Kontaktinfo: E-post"
-              },
-              {
-                type: "object",
-                name: "verdier",
-                label: "Verdier",
-                list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.tittel || "Ny verdi" };
-                  }
-                },
-                fields: [
-                  {
-                    type: "string",
-                    name: "tittel",
-                    label: "Tittel",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "tekst",
-                    label: "Beskrivelse",
-                    ui: { component: "textarea" },
-                    required: true
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            name: "header",
-            label: "Side med kun header",
-            fields: [
-              {
-                type: "string",
                 name: "title",
-                label: "Sidetittel",
-                isTitle: true,
+                label: "Overskrift",
                 required: true
               },
               {
@@ -386,62 +400,17 @@ var config_default = defineConfig({
                 name: "intro",
                 label: "Introtekst",
                 ui: { component: "textarea" }
-              }
-            ]
-          },
-          {
-            name: "services",
-            label: "Tjenester-side",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Sidetittel",
-                isTitle: true,
-                required: true
               },
               {
                 type: "string",
-                name: "subtitle",
-                label: "Undertittel"
+                name: "ctaTitle",
+                label: "Call-to-action tittel"
               },
               {
                 type: "string",
-                name: "intro",
-                label: "Introtekst",
+                name: "ctaDescription",
+                label: "Call-to-action beskrivelse",
                 ui: { component: "textarea" }
-              },
-              {
-                type: "string",
-                name: "infoBadge",
-                label: "Informasjonsbadge tekst",
-                description: "Tekst som vises i infoboksen \xF8verst p\xE5 siden"
-              },
-              {
-                type: "object",
-                name: "faq",
-                label: "Vanlige sp\xF8rsm\xE5l",
-                list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.question || "Nytt sp\xF8rsm\xE5l" };
-                  }
-                },
-                fields: [
-                  {
-                    type: "string",
-                    name: "question",
-                    label: "Sp\xF8rsm\xE5l",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "answer",
-                    label: "Svar",
-                    ui: { component: "textarea" },
-                    required: true
-                  }
-                ]
               }
             ]
           },

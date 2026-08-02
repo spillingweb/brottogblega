@@ -9,6 +9,7 @@ export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
   __typename
   ... on PagesHomepage {
+    pageName
     kicker
     titleMain
     titleItalic
@@ -30,6 +31,7 @@ export const PagesPartsFragmentDoc = gql`
     ctaDescription
   }
   ... on PagesAbout {
+    pageName
     title
     intro
     sharedImage
@@ -39,47 +41,36 @@ export const PagesPartsFragmentDoc = gql`
     sharedContent
     hildeImage
     hildeKicker
-    hildeIntro
+    hildeTitle
     hildeContent
-    keywords {
+    hildeKeywords {
       __typename
       keyword
     }
-    verdier {
+    tinaMariaImage
+    tinaMariaKicker
+    tinaMariaTitle
+    tinaMariaContent
+    tinaMariaKeywords {
       __typename
-      tittel
-      tekst
+      keyword
     }
+    valuesTitle
+    value1Title
+    value1Text
+    value2Title
+    value2Text
+    value3Title
+    value3Text
+    ctaTitle
+    ctaDescription
   }
   ... on PagesStandard {
-    title
-    subtitle
-    intro
-    profileImage
-    body
-    contactName
-    contactLocation
-    contactEmail
-    verdier {
-      __typename
-      tittel
-      tekst
-    }
-  }
-  ... on PagesHeader {
+    pageName
     title
     intro
-  }
-  ... on PagesServices {
-    title
-    subtitle
-    intro
-    infoBadge
-    faq {
-      __typename
-      question
-      answer
-    }
+    ctaTitle
+    ctaDescription
   }
   ... on PagesKontakt {
     title
