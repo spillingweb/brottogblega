@@ -37,9 +37,8 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
   return (
     <section className="bg-secondary py-14 md:py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-          {/* Intro 1 */}
-            <div className="flex gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 stagger-grid">
+          <div className="anim-scroll flex gap-5">
               <span className="text-xs font-medium text-primary/40 pt-1 select-none">
                 01
               </span>
@@ -60,8 +59,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
               </div>
             </div>
 
-            {/* Intro 2 */}
-             <div className="flex gap-5">
+            <div className="anim-scroll flex gap-5">
               <span className="text-xs font-medium text-primary/40 pt-1 select-none">
                 02
               </span>
@@ -82,8 +80,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
               </div>
             </div>
 
-            {/* Intro 3 */}
-            <div className="flex gap-5">
+            <div className="anim-scroll flex gap-5">
               <span className="text-xs font-medium text-primary/40 pt-1 select-none">
                 03
               </span>

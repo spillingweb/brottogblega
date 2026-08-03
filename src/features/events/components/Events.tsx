@@ -4,14 +4,19 @@ import PageWrapper from "#/components/PageWrapper";
 import type {
   PagesQuery,
   PagesStandard,
-} from "../../../tina/__generated__/types";
+} from "../../../../tina/__generated__/types";
+import { events } from "../constants";
+import EventItem from "./EventItem";
 
 const Events = ({ pageData }: { pageData: PagesQuery }) => {
   const page = pageData.pages as PagesStandard;
   return (
     <PageWrapper kicker={"Arrangementer"} page={page}>
-      <div className="max-w-6xl mx-auto px-6 pb-24">
-        Her kommer det mer informasjon om våre arrangementer....
+      {/* Events list */}
+      <div className="max-w-6xl mx-auto px-6 pb-24 space-y-8">
+        {events.map((event) => (
+          <EventItem key={event.id} event={event} />
+        ))}
       </div>
       <CallToAction
         btnText="Ta kontakt"

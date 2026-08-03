@@ -1,5 +1,5 @@
 import { tinaField } from "tinacms/tina-field";
-import type { PagesAbout } from "../../../tina/__generated__/types";
+import type { PagesAbout } from "../../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 const SharedSection = ({ page }: { page: PagesAbout }) => {

@@ -3,7 +3,7 @@ import type { Service } from "./ServicesTeaser";
 
 const ServiceCard = ({ service }: { service: Service }) => {
   return (
-    <Card className="pt-0">
+    <Card className="group pt-0 anim-scroll">
       <div className="aspect-4/3 overflow-hidden bg-secondary">
         <img
           src={service.img}

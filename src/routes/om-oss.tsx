@@ -1,4 +1,4 @@
-import About from '#/features/about/About'
+import About from '#/features/about/components/About'
 import { createFileRoute } from '@tanstack/react-router'
 import client from '../../tina/__generated__/client';
 import { useTina } from 'tinacms/react';

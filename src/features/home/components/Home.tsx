@@ -19,6 +19,7 @@ const Home = ({ pageData }: { pageData: PagesQuery }) => {
       <ServicesTeaser page={page} />
       <NewsTeaser page={page} />
       <CallToAction
+        className="anim-scroll"
         title={page.ctaTitle || "Klar til å ta et skritt mot bedre helse?"}
         headingClass="md:text-4xl"
         description={

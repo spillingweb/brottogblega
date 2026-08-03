@@ -39,7 +39,7 @@ const ServicesTeaser = ({ page }: { page: PagesHomepage }) => {
   return (
     <section className="bg-muted py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-14 anim-scroll">
           <div>
             <Kicker className="text-primary mb-4">
               Tjenester
@@ -54,7 +54,9 @@ const ServicesTeaser = ({ page }: { page: PagesHomepage }) => {
             </Link>
           </Button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+
+        {/* Services list */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 stagger-grid">
           {DUMMY_SERVICES.map((s) => (
             <ServiceCard key={s.label} service={s} />
           ))}

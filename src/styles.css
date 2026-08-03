@@ -144,10 +144,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.rise-in {
-  animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -156,6 +152,143 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.anim-hero {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-hero { animation: none; }
+}
+
+
+
+@keyframes soft-zoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hero-breathe {
+  from {
+    opacity: 0.35;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: rise-in 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
+}
+
+.anim-zoom {
+  animation: soft-zoom 1300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 350ms;
+}
+
+.anim-float {
+  animation: float-gentle 8s ease-in-out infinite;
+}
+
+
+.stagger-grid > * {
+  animation: rise-in 1700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--stagger-step, 0ms) + 240ms);
+  will-change: opacity, transform;
+}
+
+.stagger-grid > *:nth-child(1) {
+  --stagger-step: 0ms;
+}
+
+.stagger-grid > *:nth-child(2) {
+  --stagger-step: 260ms;
+}
+
+.stagger-grid > *:nth-child(3) {
+  --stagger-step: 520ms;
+}
+
+.stagger-grid > *:nth-child(4) {
+  --stagger-step: 780ms;
+}
+
+@supports (animation-timeline: view()) {
+  .anim-scroll {
+    animation-name: rise-in;
+    animation-duration: 1100ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+
+  .anim-zoom {
+    animation-name: soft-zoom;
+    animation-duration: 1300ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  .stagger-grid > * {
+    animation-name: rise-in;
+    animation-duration: 1700ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in,
+  .anim-scroll,
+  .anim-zoom {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .anim-float,
+  .stagger-grid > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

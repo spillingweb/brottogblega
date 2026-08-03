@@ -1,7 +1,7 @@
-import News from "#/features/news/News";
 import { createFileRoute } from "@tanstack/react-router";
 import { useTina } from "tinacms/react";
 import { client } from '../../tina/__generated__/client';
+import News from "#/features/news/components/News";
 
 export const Route = createFileRoute("/aktuelt")({
   loader: async () => {

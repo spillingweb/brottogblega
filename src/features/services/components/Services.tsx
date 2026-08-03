@@ -4,14 +4,14 @@ import PageWrapper from "#/components/PageWrapper";
 import type {
   PagesQuery,
   PagesStandard,
-} from "../../../tina/__generated__/types";
+} from "../../../../tina/__generated__/types";
 
-const News = ({ pageData }: { pageData: PagesQuery }) => {
+const Services = ({ pageData }: { pageData: PagesQuery }) => {
   const page = pageData.pages as PagesStandard;
   return (
-    <PageWrapper kicker={"Nyheter"} page={page}>
+    <PageWrapper kicker={"Tjenester"} page={page}>
       <div className="max-w-6xl mx-auto px-6 pb-24">
-        Her kommer det mer informasjon om våre nyheter....
+        Her kommer det mer informasjon om våre tjenester....
       </div>
       <CallToAction
         btnText="Ta kontakt"
@@ -26,4 +26,4 @@ const News = ({ pageData }: { pageData: PagesQuery }) => {
   );
 };
 
-export default News;
+export default Services;

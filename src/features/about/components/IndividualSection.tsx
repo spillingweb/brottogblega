@@ -1,7 +1,7 @@
 import Heading from "#/components/ui/Heading";
 import Kicker from "#/components/ui/Kicker";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import type { PagesAbout } from "../../../tina/__generated__/types";
+import type { PagesAbout } from "../../../../tina/__generated__/types";
 import { tinaField } from "tinacms/tina-field";
 import { cn } from "#/lib/utils";
 

@@ -11,12 +11,15 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
   const { kicker, titleMain, titleItalic, subtitle, heroImage } = page;
   return (
     <section className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-primary/10">
+      <div
+        className="absolute inset-0 bg-primary/10"
+        data-tina-field={tinaField(page, "heroImage")}
+      >
         <img
           src={heroImage || ""}
           alt="Hero image"
           className="w-full h-full object-cover opacity-40"
-          data-tina-field={tinaField(page, "heroImage")}
+
           loading="eager"
           fetchPriority="high"
           decoding="async"
@@ -24,7 +27,7 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
         <div className="absolute inset-0 bg-linear-to-b from-primary/20 via-background/30 to-background" />
       </div>
       <div className="relative max-w-6xl mx-auto px-6 w-full">
-        <div className="max-w-xl flex flex-col gap-4">
+        <div className="max-w-xl flex flex-col gap-4 anim-hero">
           <Kicker
             className="text-primary font-medium"
             data-tina-field={tinaField(page, "kicker")}
@@ -51,7 +54,7 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
             </Button>
             <Dialog>
               <DialogTrigger className="cursor-pointer" asChild>
-                <Button variant="outline" size="lg" className="text-primary">
+                <Button variant="outline" size="lg">
                   Kontakt oss
                 </Button>
               </DialogTrigger>

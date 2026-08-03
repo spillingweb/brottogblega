@@ -11,18 +11,18 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="relative">
           <div
-            className="aspect-4/5 rounded-sm overflow-hidden bg-secondary"
+            className="aspect-4/5 rounded-sm overflow-hidden bg-secondary anim-zoom"
             data-tina-field={tinaField(page, "profileImage")}
           >
             <img
               src={page.profileImage || ""}
               alt="Bilde av Hilde og Tina Maria, grunnleggerne av Brott & Blega"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover anim-float"
             />
           </div>
           <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-accent rounded-sm hidden md:block" />
         </div>
-        <div>
+        <div className="anim-scroll">
           <Kicker className="text-primary mb-4">Om oss</Kicker>
           <Heading
             level={2}

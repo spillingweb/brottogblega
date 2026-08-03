@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { client } from '../../tina/__generated__/client';
-import Services from '#/features/services/Services';
+import Services from '#/features/services/components/Services';
 import { useTina } from 'tinacms/react';
 
 export const Route = createFileRoute('/tjenester')({

@@ -5,7 +5,7 @@ import type {
   PagesAbout,
   PagesQuery,
   PagesStandard,
-} from "../../../tina/__generated__/types";
+} from "../../../../tina/__generated__/types";
 import IndividualSection from "./IndividualSection";
 import SharedSection from "./SharedSection";
 import PageWrapper from "#/components/PageWrapper";

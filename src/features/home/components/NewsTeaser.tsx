@@ -71,14 +71,14 @@ const NewsTeaser = ({ page }: { page: PagesHomepage }) => {
             Se alle innlegg →
           </NavLink>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-grid">
           {teaserArticles.map((article) => (
             <NavLink
               key={article.id}
               to="/aktuelt"
               className="anim-scroll group flex flex-col bg-card border border-border rounded-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
             >
-              <div className="aspect-16/9 overflow-hidden bg-secondary shrink-0">
+              <div className="aspect-video overflow-hidden bg-secondary shrink-0">
                 <img
                   src={article.img}
                   alt={article.title}
