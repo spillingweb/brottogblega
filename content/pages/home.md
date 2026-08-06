@@ -14,7 +14,7 @@ intro3Title: Fellesskap
 intro3Text: Seminarer og samtalegrupper hvor kvinner møtes og støtter hverandre.
 profileImage: /photo-1573496359142-b8d87734a5a2.avif
 aboutTitle: "To kvinner, én felles visjon"
-aboutText1: "Kari er fysioterapeut med spesialkompetanse i kvinnehelse, bekkenbunn og livsfaser. Ingrid er sykepleier og filosof med fordypning i eksistensiell og fenomenologisk tenkning."
+aboutText1: "Hilde er fysioterapeut med spesialkompetanse i kvinnehelse, bekkenbunn og livsfaser. Tina Maria er sykepleier og filosof med fordypning i eksistensiell og fenomenologisk tenkning."
 aboutText2: Sammen tilbyr vi en helhetlig tilnærming der kropp og sinn sees i sammenheng — fordi vi tror at ekte velvære krever begge deler.
 testimonials:
   - quote: Samtalene med Tina har hjulpet meg å se livet mitt i et nytt perspektiv. Hun har en unik evne til å stille spørsmål som får meg til å tenke dypere.

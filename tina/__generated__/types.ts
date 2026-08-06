@@ -84,6 +84,14 @@ export type Query = {
   document: DocumentNode;
   pages: Pages;
   pagesConnection: PagesConnection;
+  services: Services;
+  servicesConnection: ServicesConnection;
+  articles: Articles;
+  articlesConnection: ArticlesConnection;
+  events: Events;
+  eventsConnection: EventsConnection;
+  eventCategories: EventCategories;
+  eventCategoriesConnection: EventCategoriesConnection;
 };
 
 
@@ -122,8 +130,72 @@ export type QueryPagesConnectionArgs = {
   filter?: InputMaybe<PagesFilter>;
 };
 
+
+export type QueryServicesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryServicesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ServicesFilter>;
+};
+
+
+export type QueryArticlesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryArticlesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ArticlesFilter>;
+};
+
+
+export type QueryEventsArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryEventsConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<EventsFilter>;
+};
+
+
+export type QueryEventCategoriesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryEventCategoriesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<EventCategoriesFilter>;
+};
+
 export type DocumentFilter = {
   pages?: InputMaybe<PagesFilter>;
+  services?: InputMaybe<ServicesFilter>;
+  articles?: InputMaybe<ArticlesFilter>;
+  events?: InputMaybe<EventsFilter>;
+  eventCategories?: InputMaybe<EventCategoriesFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -163,7 +235,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt | Folder;
+export type DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt | Services | Articles | Events | EventCategories | Folder;
 
 export type PagesHomepage = Node & Document & {
   __typename?: 'PagesHomepage';
@@ -387,6 +459,185 @@ export type PagesConnection = Connection & {
   edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
 };
 
+export type ServicesPriser = {
+  __typename?: 'ServicesPriser';
+  label: Scalars['String']['output'];
+  pris: Scalars['String']['output'];
+};
+
+export type Services = Node & Document & {
+  __typename?: 'Services';
+  tittel: Scalars['String']['output'];
+  undertittel: Scalars['String']['output'];
+  badge?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  description: Scalars['JSON']['output'];
+  detaljer?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  priser?: Maybe<Array<Maybe<ServicesPriser>>>;
+  orden?: Maybe<Scalars['Float']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ServicesPriserFilter = {
+  label?: InputMaybe<StringFilter>;
+  pris?: InputMaybe<StringFilter>;
+};
+
+export type NumberFilter = {
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  eq?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Float']['input']>>>;
+};
+
+export type ServicesFilter = {
+  tittel?: InputMaybe<StringFilter>;
+  undertittel?: InputMaybe<StringFilter>;
+  badge?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+  description?: InputMaybe<RichTextFilter>;
+  detaljer?: InputMaybe<StringFilter>;
+  priser?: InputMaybe<ServicesPriserFilter>;
+  orden?: InputMaybe<NumberFilter>;
+};
+
+export type ServicesConnectionEdges = {
+  __typename?: 'ServicesConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Services>;
+};
+
+export type ServicesConnection = Connection & {
+  __typename?: 'ServicesConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ServicesConnectionEdges>>>;
+};
+
+export type Articles = Node & Document & {
+  __typename?: 'Articles';
+  title: Scalars['String']['output'];
+  excerpt: Scalars['String']['output'];
+  author: Scalars['String']['output'];
+  date: Scalars['String']['output'];
+  category: Scalars['String']['output'];
+  readingTime?: Maybe<Scalars['Float']['output']>;
+  coverImage?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type DatetimeFilter = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ArticlesFilter = {
+  title?: InputMaybe<StringFilter>;
+  excerpt?: InputMaybe<StringFilter>;
+  author?: InputMaybe<StringFilter>;
+  date?: InputMaybe<DatetimeFilter>;
+  category?: InputMaybe<StringFilter>;
+  readingTime?: InputMaybe<NumberFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ArticlesConnectionEdges = {
+  __typename?: 'ArticlesConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Articles>;
+};
+
+export type ArticlesConnection = Connection & {
+  __typename?: 'ArticlesConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ArticlesConnectionEdges>>>;
+};
+
+export type Events = Node & Document & {
+  __typename?: 'Events';
+  title: Scalars['String']['output'];
+  description: Scalars['JSON']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+  date: Scalars['String']['output'];
+  endDate?: Maybe<Scalars['String']['output']>;
+  host: Scalars['String']['output'];
+  time: Scalars['String']['output'];
+  location: Scalars['String']['output'];
+  spots: Scalars['String']['output'];
+  tags: Array<Scalars['String']['output']>;
+  price: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type EventsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<RichTextFilter>;
+  image?: InputMaybe<ImageFilter>;
+  date?: InputMaybe<DatetimeFilter>;
+  endDate?: InputMaybe<DatetimeFilter>;
+  host?: InputMaybe<StringFilter>;
+  time?: InputMaybe<StringFilter>;
+  location?: InputMaybe<StringFilter>;
+  spots?: InputMaybe<StringFilter>;
+  tags?: InputMaybe<StringFilter>;
+  price?: InputMaybe<StringFilter>;
+};
+
+export type EventsConnectionEdges = {
+  __typename?: 'EventsConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Events>;
+};
+
+export type EventsConnection = Connection & {
+  __typename?: 'EventsConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<EventsConnectionEdges>>>;
+};
+
+export type EventCategories = Node & Document & {
+  __typename?: 'EventCategories';
+  value: Scalars['String']['output'];
+  label: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type EventCategoriesFilter = {
+  value?: InputMaybe<StringFilter>;
+  label?: InputMaybe<StringFilter>;
+};
+
+export type EventCategoriesConnectionEdges = {
+  __typename?: 'EventCategoriesConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<EventCategories>;
+};
+
+export type EventCategoriesConnection = Connection & {
+  __typename?: 'EventCategoriesConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<EventCategoriesConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -396,6 +647,14 @@ export type Mutation = {
   createFolder: DocumentNode;
   updatePages: Pages;
   createPages: Pages;
+  updateServices: Services;
+  createServices: Services;
+  updateArticles: Articles;
+  createArticles: Articles;
+  updateEvents: Events;
+  createEvents: Events;
+  updateEventCategories: EventCategories;
+  createEventCategories: EventCategories;
 };
 
 
@@ -443,13 +702,69 @@ export type MutationCreatePagesArgs = {
   params: PagesMutation;
 };
 
+
+export type MutationUpdateServicesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ServicesMutation;
+};
+
+
+export type MutationCreateServicesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ServicesMutation;
+};
+
+
+export type MutationUpdateArticlesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ArticlesMutation;
+};
+
+
+export type MutationCreateArticlesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ArticlesMutation;
+};
+
+
+export type MutationUpdateEventsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: EventsMutation;
+};
+
+
+export type MutationCreateEventsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: EventsMutation;
+};
+
+
+export type MutationUpdateEventCategoriesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: EventCategoriesMutation;
+};
+
+
+export type MutationCreateEventCategoriesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: EventCategoriesMutation;
+};
+
 export type DocumentUpdateMutation = {
   pages?: InputMaybe<PagesMutation>;
+  services?: InputMaybe<ServicesMutation>;
+  articles?: InputMaybe<ArticlesMutation>;
+  events?: InputMaybe<EventsMutation>;
+  eventCategories?: InputMaybe<EventCategoriesMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
   pages?: InputMaybe<PagesMutation>;
+  services?: InputMaybe<ServicesMutation>;
+  articles?: InputMaybe<ArticlesMutation>;
+  events?: InputMaybe<EventsMutation>;
+  eventCategories?: InputMaybe<EventCategoriesMutation>;
 };
 
 export type PagesHomepageMutation = {
@@ -540,6 +855,52 @@ export type PagesMutation = {
   kontakt?: InputMaybe<PagesKontaktMutation>;
 };
 
+export type ServicesPriserMutation = {
+  label?: InputMaybe<Scalars['String']['input']>;
+  pris?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ServicesMutation = {
+  tittel?: InputMaybe<Scalars['String']['input']>;
+  undertittel?: InputMaybe<Scalars['String']['input']>;
+  badge?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['JSON']['input']>;
+  detaljer?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  priser?: InputMaybe<Array<InputMaybe<ServicesPriserMutation>>>;
+  orden?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type ArticlesMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  readingTime?: InputMaybe<Scalars['Float']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type EventsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['JSON']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  endDate?: InputMaybe<Scalars['String']['input']>;
+  host?: InputMaybe<Scalars['String']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  location?: InputMaybe<Scalars['String']['input']>;
+  spots?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  price?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type EventCategoriesMutation = {
+  value?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
+};
+
 type PagesParts_PagesHomepage_Fragment = { __typename: 'PagesHomepage', pageName: string, kicker?: string | null, titleMain: string, titleItalic?: string | null, subtitle?: string | null, heroImage?: string | null, intro1Title?: string | null, intro1Text?: string | null, intro2Title?: string | null, intro2Text?: string | null, intro3Title?: string | null, intro3Text?: string | null, profileImage?: string | null, aboutTitle?: string | null, aboutText1?: string | null, aboutText2?: string | null, servicesHeading?: string | null, newsHeading?: string | null, ctaTitle?: string | null, ctaDescription?: string | null };
 
 type PagesParts_PagesAbout_Fragment = { __typename: 'PagesAbout', pageName: string, title: string, intro?: string | null, sharedImage?: string | null, sharedImageAlt?: string | null, sharedKicker?: string | null, sharedIntro?: string | null, sharedContent?: any | null, hildeImage?: string | null, hildeKicker?: string | null, hildeTitle?: string | null, hildeContent?: any | null, tinaMariaImage?: string | null, tinaMariaKicker?: string | null, tinaMariaTitle?: string | null, tinaMariaContent?: any | null, valuesTitle?: string | null, value1Title?: string | null, value1Text?: string | null, value2Title?: string | null, value2Text?: string | null, value3Title?: string | null, value3Text?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, hildeKeywords?: Array<{ __typename: 'PagesAboutHildeKeywords', keyword: string } | null> | null, tinaMariaKeywords?: Array<{ __typename: 'PagesAboutTinaMariaKeywords', keyword: string } | null> | null };
@@ -549,6 +910,14 @@ type PagesParts_PagesStandard_Fragment = { __typename: 'PagesStandard', pageName
 type PagesParts_PagesKontakt_Fragment = { __typename: 'PagesKontakt', title: string, kicker?: string | null, heading: string, description: string, addressLine1?: string | null, addressLine2?: string | null, addressLine3?: string | null, email: string, phone: string };
 
 export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_PagesAbout_Fragment | PagesParts_PagesStandard_Fragment | PagesParts_PagesKontakt_Fragment;
+
+export type ServicesPartsFragment = { __typename: 'Services', tittel: string, undertittel: string, badge?: string | null, image?: string | null, description: any, detaljer?: Array<string | null> | null, orden?: number | null, priser?: Array<{ __typename: 'ServicesPriser', label: string, pris: string } | null> | null };
+
+export type ArticlesPartsFragment = { __typename: 'Articles', title: string, excerpt: string, author: string, date: string, category: string, readingTime?: number | null, coverImage?: string | null, body?: any | null };
+
+export type EventsPartsFragment = { __typename: 'Events', title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string };
+
+export type EventCategoriesPartsFragment = { __typename: 'EventCategories', value: string, label: string };
 
 export type PagesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -568,6 +937,82 @@ export type PagesConnectionQueryVariables = Exact<{
 
 
 export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'PagesHomepage', id: string, pageName: string, kicker?: string | null, titleMain: string, titleItalic?: string | null, subtitle?: string | null, heroImage?: string | null, intro1Title?: string | null, intro1Text?: string | null, intro2Title?: string | null, intro2Text?: string | null, intro3Title?: string | null, intro3Text?: string | null, profileImage?: string | null, aboutTitle?: string | null, aboutText1?: string | null, aboutText2?: string | null, servicesHeading?: string | null, newsHeading?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesAbout', id: string, pageName: string, title: string, intro?: string | null, sharedImage?: string | null, sharedImageAlt?: string | null, sharedKicker?: string | null, sharedIntro?: string | null, sharedContent?: any | null, hildeImage?: string | null, hildeKicker?: string | null, hildeTitle?: string | null, hildeContent?: any | null, tinaMariaImage?: string | null, tinaMariaKicker?: string | null, tinaMariaTitle?: string | null, tinaMariaContent?: any | null, valuesTitle?: string | null, value1Title?: string | null, value1Text?: string | null, value2Title?: string | null, value2Text?: string | null, value3Title?: string | null, value3Text?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hildeKeywords?: Array<{ __typename: 'PagesAboutHildeKeywords', keyword: string } | null> | null, tinaMariaKeywords?: Array<{ __typename: 'PagesAboutTinaMariaKeywords', keyword: string } | null> | null } | { __typename: 'PagesStandard', id: string, pageName: string, title: string, intro?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesKontakt', id: string, title: string, kicker?: string | null, heading: string, description: string, addressLine1?: string | null, addressLine2?: string | null, addressLine3?: string | null, email: string, phone: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ServicesQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ServicesQuery = { __typename?: 'Query', services: { __typename: 'Services', id: string, tittel: string, undertittel: string, badge?: string | null, image?: string | null, description: any, detaljer?: Array<string | null> | null, orden?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, priser?: Array<{ __typename: 'ServicesPriser', label: string, pris: string } | null> | null } };
+
+export type ServicesConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ServicesFilter>;
+}>;
+
+
+export type ServicesConnectionQuery = { __typename?: 'Query', servicesConnection: { __typename?: 'ServicesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ServicesConnectionEdges', cursor: string, node?: { __typename: 'Services', id: string, tittel: string, undertittel: string, badge?: string | null, image?: string | null, description: any, detaljer?: Array<string | null> | null, orden?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, priser?: Array<{ __typename: 'ServicesPriser', label: string, pris: string } | null> | null } | null } | null> | null } };
+
+export type ArticlesQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ArticlesQuery = { __typename?: 'Query', articles: { __typename: 'Articles', id: string, title: string, excerpt: string, author: string, date: string, category: string, readingTime?: number | null, coverImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ArticlesConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ArticlesFilter>;
+}>;
+
+
+export type ArticlesConnectionQuery = { __typename?: 'Query', articlesConnection: { __typename?: 'ArticlesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ArticlesConnectionEdges', cursor: string, node?: { __typename: 'Articles', id: string, title: string, excerpt: string, author: string, date: string, category: string, readingTime?: number | null, coverImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type EventsQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type EventsQuery = { __typename?: 'Query', events: { __typename: 'Events', id: string, title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type EventsConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<EventsFilter>;
+}>;
+
+
+export type EventsConnectionQuery = { __typename?: 'Query', eventsConnection: { __typename?: 'EventsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'EventsConnectionEdges', cursor: string, node?: { __typename: 'Events', id: string, title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type EventCategoriesQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type EventCategoriesQuery = { __typename?: 'Query', eventCategories: { __typename: 'EventCategories', id: string, value: string, label: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type EventCategoriesConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<EventCategoriesFilter>;
+}>;
+
+
+export type EventCategoriesConnectionQuery = { __typename?: 'Query', eventCategoriesConnection: { __typename?: 'EventCategoriesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'EventCategoriesConnectionEdges', cursor: string, node?: { __typename: 'EventCategories', id: string, value: string, label: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
@@ -649,6 +1094,59 @@ export const PagesPartsFragmentDoc = gql`
   }
 }
     `;
+export const ServicesPartsFragmentDoc = gql`
+    fragment ServicesParts on Services {
+  __typename
+  tittel
+  undertittel
+  badge
+  image
+  description
+  detaljer
+  priser {
+    __typename
+    label
+    pris
+  }
+  orden
+}
+    `;
+export const ArticlesPartsFragmentDoc = gql`
+    fragment ArticlesParts on Articles {
+  __typename
+  title
+  excerpt
+  author
+  date
+  category
+  readingTime
+  coverImage
+  body
+}
+    `;
+export const EventsPartsFragmentDoc = gql`
+    fragment EventsParts on Events {
+  __typename
+  title
+  description
+  image
+  date
+  endDate
+  host
+  time
+  location
+  spots
+  tags
+  price
+}
+    `;
+export const EventCategoriesPartsFragmentDoc = gql`
+    fragment EventCategoriesParts on EventCategories {
+  __typename
+  value
+  label
+}
+    `;
 export const PagesDocument = gql`
     query pages($relativePath: String!) {
   pages(relativePath: $relativePath) {
@@ -706,6 +1204,234 @@ export const PagesConnectionDocument = gql`
   }
 }
     ${PagesPartsFragmentDoc}`;
+export const ServicesDocument = gql`
+    query services($relativePath: String!) {
+  services(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ServicesParts
+  }
+}
+    ${ServicesPartsFragmentDoc}`;
+export const ServicesConnectionDocument = gql`
+    query servicesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ServicesFilter) {
+  servicesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ServicesParts
+      }
+    }
+  }
+}
+    ${ServicesPartsFragmentDoc}`;
+export const ArticlesDocument = gql`
+    query articles($relativePath: String!) {
+  articles(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ArticlesParts
+  }
+}
+    ${ArticlesPartsFragmentDoc}`;
+export const ArticlesConnectionDocument = gql`
+    query articlesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ArticlesFilter) {
+  articlesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ArticlesParts
+      }
+    }
+  }
+}
+    ${ArticlesPartsFragmentDoc}`;
+export const EventsDocument = gql`
+    query events($relativePath: String!) {
+  events(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...EventsParts
+  }
+}
+    ${EventsPartsFragmentDoc}`;
+export const EventsConnectionDocument = gql`
+    query eventsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: EventsFilter) {
+  eventsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EventsParts
+      }
+    }
+  }
+}
+    ${EventsPartsFragmentDoc}`;
+export const EventCategoriesDocument = gql`
+    query eventCategories($relativePath: String!) {
+  eventCategories(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...EventCategoriesParts
+  }
+}
+    ${EventCategoriesPartsFragmentDoc}`;
+export const EventCategoriesConnectionDocument = gql`
+    query eventCategoriesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: EventCategoriesFilter) {
+  eventCategoriesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EventCategoriesParts
+      }
+    }
+  }
+}
+    ${EventCategoriesPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -714,6 +1440,30 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     pagesConnection(variables?: PagesConnectionQueryVariables, options?: C): Promise<{data: PagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesConnectionQueryVariables, query: string}> {
         return requester<{data: PagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesConnectionQueryVariables, query: string}, PagesConnectionQueryVariables>(PagesConnectionDocument, variables, options);
+      },
+    services(variables: ServicesQueryVariables, options?: C): Promise<{data: ServicesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServicesQueryVariables, query: string}> {
+        return requester<{data: ServicesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServicesQueryVariables, query: string}, ServicesQueryVariables>(ServicesDocument, variables, options);
+      },
+    servicesConnection(variables?: ServicesConnectionQueryVariables, options?: C): Promise<{data: ServicesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServicesConnectionQueryVariables, query: string}> {
+        return requester<{data: ServicesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ServicesConnectionQueryVariables, query: string}, ServicesConnectionQueryVariables>(ServicesConnectionDocument, variables, options);
+      },
+    articles(variables: ArticlesQueryVariables, options?: C): Promise<{data: ArticlesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArticlesQueryVariables, query: string}> {
+        return requester<{data: ArticlesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArticlesQueryVariables, query: string}, ArticlesQueryVariables>(ArticlesDocument, variables, options);
+      },
+    articlesConnection(variables?: ArticlesConnectionQueryVariables, options?: C): Promise<{data: ArticlesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArticlesConnectionQueryVariables, query: string}> {
+        return requester<{data: ArticlesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArticlesConnectionQueryVariables, query: string}, ArticlesConnectionQueryVariables>(ArticlesConnectionDocument, variables, options);
+      },
+    events(variables: EventsQueryVariables, options?: C): Promise<{data: EventsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventsQueryVariables, query: string}> {
+        return requester<{data: EventsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventsQueryVariables, query: string}, EventsQueryVariables>(EventsDocument, variables, options);
+      },
+    eventsConnection(variables?: EventsConnectionQueryVariables, options?: C): Promise<{data: EventsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventsConnectionQueryVariables, query: string}> {
+        return requester<{data: EventsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventsConnectionQueryVariables, query: string}, EventsConnectionQueryVariables>(EventsConnectionDocument, variables, options);
+      },
+    eventCategories(variables: EventCategoriesQueryVariables, options?: C): Promise<{data: EventCategoriesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventCategoriesQueryVariables, query: string}> {
+        return requester<{data: EventCategoriesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventCategoriesQueryVariables, query: string}, EventCategoriesQueryVariables>(EventCategoriesDocument, variables, options);
+      },
+    eventCategoriesConnection(variables?: EventCategoriesConnectionQueryVariables, options?: C): Promise<{data: EventCategoriesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventCategoriesConnectionQueryVariables, query: string}> {
+        return requester<{data: EventCategoriesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: EventCategoriesConnectionQueryVariables, query: string}, EventCategoriesConnectionQueryVariables>(EventCategoriesConnectionDocument, variables, options);
       }
     };
   }

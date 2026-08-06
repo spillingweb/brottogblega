@@ -1,14 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useTina } from "tinacms/react";
-import { client } from '../../tina/__generated__/client';
-import News from "#/features/news/components/News";
+import { Outlet, createFileRoute } from "@tanstack/react-router";
+import { client } from "../../tina/__generated__/client";
 
 export const Route = createFileRoute("/aktuelt")({
   loader: async () => {
-    const pageResult = await client.queries.pages({
-      relativePath: "news.md",
-    });
+    const [articlesResult, pageResult] = await Promise.all([
+      client.queries.articlesConnection({
+        sort: "date",
+        last: -1,
+      }),
+      client.queries.pages({ relativePath: "news.md" }),
+    ]);
+
     return {
+      articles: articlesResult,
       page: pageResult,
     };
   },
@@ -16,13 +20,5 @@ export const Route = createFileRoute("/aktuelt")({
 });
 
 function RouteComponent() {
-  const initialData = Route.useLoaderData();
-
-  // Enable live preview when editing in TinaCMS
-  const { data: pageData } = useTina({
-    query: initialData.page.query,
-    variables: initialData.page.variables,
-    data: initialData.page.data,
-  });
-  return <News pageData={pageData} />;
+  return <Outlet />;
 }

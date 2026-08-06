@@ -40,6 +40,7 @@
     "tailwindcss": "^4.1.18",
     "tinacms": "^3.11.0",
     "tw-animate-css": "^1.3.6",
+    "usehooks-ts": "^3.1.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {

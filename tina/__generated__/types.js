@@ -85,6 +85,59 @@ export const PagesPartsFragmentDoc = gql`
   }
 }
     `;
+export const ServicesPartsFragmentDoc = gql`
+    fragment ServicesParts on Services {
+  __typename
+  tittel
+  undertittel
+  badge
+  image
+  description
+  detaljer
+  priser {
+    __typename
+    label
+    pris
+  }
+  orden
+}
+    `;
+export const ArticlesPartsFragmentDoc = gql`
+    fragment ArticlesParts on Articles {
+  __typename
+  title
+  excerpt
+  author
+  date
+  category
+  readingTime
+  coverImage
+  body
+}
+    `;
+export const EventsPartsFragmentDoc = gql`
+    fragment EventsParts on Events {
+  __typename
+  title
+  description
+  image
+  date
+  endDate
+  host
+  time
+  location
+  spots
+  tags
+  price
+}
+    `;
+export const EventCategoriesPartsFragmentDoc = gql`
+    fragment EventCategoriesParts on EventCategories {
+  __typename
+  value
+  label
+}
+    `;
 export const PagesDocument = gql`
     query pages($relativePath: String!) {
   pages(relativePath: $relativePath) {
@@ -142,6 +195,234 @@ export const PagesConnectionDocument = gql`
   }
 }
     ${PagesPartsFragmentDoc}`;
+export const ServicesDocument = gql`
+    query services($relativePath: String!) {
+  services(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ServicesParts
+  }
+}
+    ${ServicesPartsFragmentDoc}`;
+export const ServicesConnectionDocument = gql`
+    query servicesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ServicesFilter) {
+  servicesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ServicesParts
+      }
+    }
+  }
+}
+    ${ServicesPartsFragmentDoc}`;
+export const ArticlesDocument = gql`
+    query articles($relativePath: String!) {
+  articles(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ArticlesParts
+  }
+}
+    ${ArticlesPartsFragmentDoc}`;
+export const ArticlesConnectionDocument = gql`
+    query articlesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ArticlesFilter) {
+  articlesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ArticlesParts
+      }
+    }
+  }
+}
+    ${ArticlesPartsFragmentDoc}`;
+export const EventsDocument = gql`
+    query events($relativePath: String!) {
+  events(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...EventsParts
+  }
+}
+    ${EventsPartsFragmentDoc}`;
+export const EventsConnectionDocument = gql`
+    query eventsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: EventsFilter) {
+  eventsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EventsParts
+      }
+    }
+  }
+}
+    ${EventsPartsFragmentDoc}`;
+export const EventCategoriesDocument = gql`
+    query eventCategories($relativePath: String!) {
+  eventCategories(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...EventCategoriesParts
+  }
+}
+    ${EventCategoriesPartsFragmentDoc}`;
+export const EventCategoriesConnectionDocument = gql`
+    query eventCategoriesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: EventCategoriesFilter) {
+  eventCategoriesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EventCategoriesParts
+      }
+    }
+  }
+}
+    ${EventCategoriesPartsFragmentDoc}`;
 export function getSdk(requester) {
   return {
     pages(variables, options) {
@@ -149,6 +430,30 @@ export function getSdk(requester) {
     },
     pagesConnection(variables, options) {
       return requester(PagesConnectionDocument, variables, options);
+    },
+    services(variables, options) {
+      return requester(ServicesDocument, variables, options);
+    },
+    servicesConnection(variables, options) {
+      return requester(ServicesConnectionDocument, variables, options);
+    },
+    articles(variables, options) {
+      return requester(ArticlesDocument, variables, options);
+    },
+    articlesConnection(variables, options) {
+      return requester(ArticlesConnectionDocument, variables, options);
+    },
+    events(variables, options) {
+      return requester(EventsDocument, variables, options);
+    },
+    eventsConnection(variables, options) {
+      return requester(EventsConnectionDocument, variables, options);
+    },
+    eventCategories(variables, options) {
+      return requester(EventCategoriesDocument, variables, options);
+    },
+    eventCategoriesConnection(variables, options) {
+      return requester(EventCategoriesConnectionDocument, variables, options);
     }
   };
 }

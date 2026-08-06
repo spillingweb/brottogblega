@@ -11,7 +11,7 @@ const teaserArticles = [
       "Hva skjer egentlig i kroppen under overgangsalderen — og hvorfor snakker vi ikke mer om det?",
     excerpt:
       "Overgangsalderen er en av de mest undervurderte og misforståtte fasene i et kvinneliv.",
-    author: "Kari Andersen",
+    author: "Hilde Stenqvist",
     readTime: "6 min",
     img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=420&fit=crop&auto=format",
   },
@@ -22,8 +22,8 @@ const teaserArticles = [
     title:
       "Filosofisk samtale som helsearbeid — en annen måte å møte seg selv på",
     excerpt:
-      "Ingrid Solberg utforsker hva det vil si å bruke filosofi som et klinisk verktøy.",
-    author: "Ingrid Solberg",
+      "Tina Maria Lie utforsker hva det vil si å bruke filosofi som et klinisk verktøy.",
+    author: "Tina Maria Lie",
     readTime: "8 min",
     img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&h=420&fit=crop&auto=format",
   },

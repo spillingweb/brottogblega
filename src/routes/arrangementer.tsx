@@ -5,10 +5,14 @@ import Events from "#/features/events/components/Events";
 
 export const Route = createFileRoute("/arrangementer")({
   loader: async () => {
-    const pageResult = await client.queries.pages({
-      relativePath: "events.md",
-    });
+    const [eventsResult, pageResult] = await Promise.all([
+      client.queries.eventsConnection({
+        sort: "date",
+      }),
+      client.queries.pages({ relativePath: "events.md" }),
+    ]);
     return {
+      events: eventsResult,
       page: pageResult,
     };
   },
@@ -18,11 +22,18 @@ export const Route = createFileRoute("/arrangementer")({
 function RouteComponent() {
   const initialData = Route.useLoaderData();
 
+  // Enable live preview for blog posts
+  const { data: eventsData } = useTina({
+    query: initialData.events.query,
+    variables: initialData.events.variables,
+    data: initialData.events.data,
+  });
+
   // Enable live preview when editing in TinaCMS
   const { data: pageData } = useTina({
     query: initialData.page.query,
     variables: initialData.page.variables,
     data: initialData.page.data,
   });
-  return <Events pageData={pageData} />;
+  return <Events eventsData={eventsData} pageData={pageData} />;
 }

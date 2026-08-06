@@ -56,10 +56,22 @@ type Query {
   document(collection: String, relativePath: String): DocumentNode!
   pages(relativePath: String): Pages!
   pagesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PagesFilter): PagesConnection!
+  services(relativePath: String): Services!
+  servicesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ServicesFilter): ServicesConnection!
+  articles(relativePath: String): Articles!
+  articlesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ArticlesFilter): ArticlesConnection!
+  events(relativePath: String): Events!
+  eventsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: EventsFilter): EventsConnection!
+  eventCategories(relativePath: String): EventCategories!
+  eventCategoriesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: EventCategoriesFilter): EventCategoriesConnection!
 }
 
 input DocumentFilter {
   pages: PagesFilter
+  services: ServicesFilter
+  articles: ArticlesFilter
+  events: EventsFilter
+  eventCategories: EventCategoriesFilter
 }
 
 type DocumentConnectionEdges {
@@ -85,7 +97,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt | Folder
+union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt | Services | Articles | Events | EventCategories | Folder
 
 type PagesHomepage implements Node & Document {
   pageName: String!
@@ -301,6 +313,172 @@ type PagesConnection implements Connection {
   edges: [PagesConnectionEdges]
 }
 
+type ServicesPriser {
+  label: String!
+  pris: String!
+}
+
+type Services implements Node & Document {
+  tittel: String!
+  undertittel: String!
+  badge: String
+  image: String
+  description: JSON!
+  detaljer: [String]
+  priser: [ServicesPriser]
+  orden: Float
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input ServicesPriserFilter {
+  label: StringFilter
+  pris: StringFilter
+}
+
+input NumberFilter {
+  lt: Float
+  lte: Float
+  gte: Float
+  gt: Float
+  eq: Float
+  exists: Boolean
+  in: [Float]
+}
+
+input ServicesFilter {
+  tittel: StringFilter
+  undertittel: StringFilter
+  badge: StringFilter
+  image: ImageFilter
+  description: RichTextFilter
+  detaljer: StringFilter
+  priser: ServicesPriserFilter
+  orden: NumberFilter
+}
+
+type ServicesConnectionEdges {
+  cursor: String!
+  node: Services
+}
+
+type ServicesConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ServicesConnectionEdges]
+}
+
+type Articles implements Node & Document {
+  title: String!
+  excerpt: String!
+  author: String!
+  date: String!
+  category: String!
+  readingTime: Float
+  coverImage: String
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input DatetimeFilter {
+  after: String
+  before: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
+input ArticlesFilter {
+  title: StringFilter
+  excerpt: StringFilter
+  author: StringFilter
+  date: DatetimeFilter
+  category: StringFilter
+  readingTime: NumberFilter
+  coverImage: ImageFilter
+  body: RichTextFilter
+}
+
+type ArticlesConnectionEdges {
+  cursor: String!
+  node: Articles
+}
+
+type ArticlesConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ArticlesConnectionEdges]
+}
+
+type Events implements Node & Document {
+  title: String!
+  description: JSON!
+  image: String
+  date: String!
+  endDate: String
+  host: String!
+  time: String!
+  location: String!
+  spots: String!
+  tags: [String!]!
+  price: String!
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input EventsFilter {
+  title: StringFilter
+  description: RichTextFilter
+  image: ImageFilter
+  date: DatetimeFilter
+  endDate: DatetimeFilter
+  host: StringFilter
+  time: StringFilter
+  location: StringFilter
+  spots: StringFilter
+  tags: StringFilter
+  price: StringFilter
+}
+
+type EventsConnectionEdges {
+  cursor: String!
+  node: Events
+}
+
+type EventsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [EventsConnectionEdges]
+}
+
+type EventCategories implements Node & Document {
+  value: String!
+  label: String!
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input EventCategoriesFilter {
+  value: StringFilter
+  label: StringFilter
+}
+
+type EventCategoriesConnectionEdges {
+  cursor: String!
+  node: EventCategories
+}
+
+type EventCategoriesConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [EventCategoriesConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -309,15 +487,31 @@ type Mutation {
   createFolder(collection: String, relativePath: String!): DocumentNode!
   updatePages(relativePath: String!, params: PagesMutation!): Pages!
   createPages(relativePath: String!, params: PagesMutation!): Pages!
+  updateServices(relativePath: String!, params: ServicesMutation!): Services!
+  createServices(relativePath: String!, params: ServicesMutation!): Services!
+  updateArticles(relativePath: String!, params: ArticlesMutation!): Articles!
+  createArticles(relativePath: String!, params: ArticlesMutation!): Articles!
+  updateEvents(relativePath: String!, params: EventsMutation!): Events!
+  createEvents(relativePath: String!, params: EventsMutation!): Events!
+  updateEventCategories(relativePath: String!, params: EventCategoriesMutation!): EventCategories!
+  createEventCategories(relativePath: String!, params: EventCategoriesMutation!): EventCategories!
 }
 
 input DocumentUpdateMutation {
   pages: PagesMutation
+  services: ServicesMutation
+  articles: ArticlesMutation
+  events: EventsMutation
+  eventCategories: EventCategoriesMutation
   relativePath: String
 }
 
 input DocumentMutation {
   pages: PagesMutation
+  services: ServicesMutation
+  articles: ArticlesMutation
+  events: EventsMutation
+  eventCategories: EventCategoriesMutation
 }
 
 input PagesHomepageMutation {
@@ -406,6 +600,52 @@ input PagesMutation {
   about: PagesAboutMutation
   standard: PagesStandardMutation
   kontakt: PagesKontaktMutation
+}
+
+input ServicesPriserMutation {
+  label: String
+  pris: String
+}
+
+input ServicesMutation {
+  tittel: String
+  undertittel: String
+  badge: String
+  image: String
+  description: JSON
+  detaljer: [String]
+  priser: [ServicesPriserMutation]
+  orden: Float
+}
+
+input ArticlesMutation {
+  title: String
+  excerpt: String
+  author: String
+  date: String
+  category: String
+  readingTime: Float
+  coverImage: String
+  body: JSON
+}
+
+input EventsMutation {
+  title: String
+  description: JSON
+  image: String
+  date: String
+  endDate: String
+  host: String
+  time: String
+  location: String
+  spots: String
+  tags: [String]
+  price: String
+}
+
+input EventCategoriesMutation {
+  value: String
+  label: String
 }
 
 schema {

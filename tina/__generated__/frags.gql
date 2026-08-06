@@ -76,3 +76,52 @@ fragment PagesParts on Pages {
     phone
   }
 }
+
+fragment ServicesParts on Services {
+  __typename
+  tittel
+  undertittel
+  badge
+  image
+  description
+  detaljer
+  priser {
+    __typename
+    label
+    pris
+  }
+  orden
+}
+
+fragment ArticlesParts on Articles {
+  __typename
+  title
+  excerpt
+  author
+  date
+  category
+  readingTime
+  coverImage
+  body
+}
+
+fragment EventsParts on Events {
+  __typename
+  title
+  description
+  image
+  date
+  endDate
+  host
+  time
+  location
+  spots
+  tags
+  price
+}
+
+fragment EventCategoriesParts on EventCategories {
+  __typename
+  value
+  label
+}

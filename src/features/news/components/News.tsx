@@ -1,44 +1,87 @@
 import CallToAction from "#/components/CallToAction";
 import ContactDialog from "#/components/ContactDialog";
 import PageWrapper from "#/components/PageWrapper";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
 import type {
+  ArticlesConnectionQuery,
   PagesQuery,
   PagesStandard,
 } from "../../../../tina/__generated__/types";
-import { articles, type Article } from "../constants";
+import { articleCategories } from "../constants";
+import type { ArticleNode } from "../types";
 import NewsItem from "./NewsItem";
 import Featured from "./Featured";
 import { Dialog } from "#/components/ui/dialog";
 import { Button } from "#/components/ui/button";
 import ArticleDialog from "./ArticleDialog";
+import { tinaField } from "tinacms/tina-field";
 
-const News = ({ pageData }: { pageData: PagesQuery }) => {
+const News = ({
+  pageData,
+  articlesData,
+  activeSlug,
+  onOpenArticle,
+  onCloseArticle,
+}: {
+  pageData: PagesQuery;
+  articlesData: ArticlesConnectionQuery;
+  activeSlug?: string;
+  onOpenArticle?: (slug: string) => void;
+  onCloseArticle?: () => void;
+}) => {
   const page = pageData.pages as PagesStandard;
-  const [activeArticle, setActiveArticle] = useState<Article | null>(null);
   const [filter, setFilter] = useState<string>("Alle");
+  const isSmallScreen = useMediaQuery("(max-width: 640px)"); // Adjust the breakpoint as needed
 
-  const categories = [
-    "Alle",
-    ...Array.from(new Set(articles.map((a) => a.category))),
-  ];
+  // Extract articles from connection
+  const articles = (articlesData.articlesConnection.edges || [])
+    .map((edge) => edge?.node)
+    .filter((node): node is ArticleNode => node !== null)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   const filtered =
     filter === "Alle"
       ? articles
       : articles.filter((a) => a.category === filter);
-  const featured = filtered.find((a) => a.featured);
-  const rest = filtered.filter((a) => !a.featured);
+
+  const featured = isSmallScreen ? null : filtered[0];
+  const rest = isSmallScreen ? filtered : filtered.slice(1);
+  const activeArticle = useMemo(() => {
+    if (!activeSlug) return null;
+    return (
+      articles.find((article) => article._sys.filename === activeSlug) ?? null
+    );
+  }, [activeSlug, articles]);
+
+  const handleSelectArticle = (article: ArticleNode) => {
+    onOpenArticle?.(article._sys.filename);
+  };
+
+  const handleDialogOpenChange = (open: boolean) => {
+    if (!open) {
+      onCloseArticle?.();
+    }
+  };
+
+  if (!featured && rest.length === 0) {
+    return (
+      <PageWrapper kicker={"nyheter"} page={page}>
+        <p>Ingen blogginnlegg funnet.</p>
+      </PageWrapper>
+    );
+  }
 
   return (
     <PageWrapper kicker={"nyheter"} page={page}>
       {/* Filter */}
       <div className="max-w-6xl mx-auto px-6 -mt-8 mb-8 flex flex-wrap gap-2">
-        {categories.map((cat) => (
+        {articleCategories.map((cat) => (
           <Button
             key={cat}
             onClick={() => setFilter(cat)}
             variant={filter === cat ? "default" : "outline"}
-            size="sm"
+            size={isSmallScreen ? "xs" : "sm"}
           >
             {cat}
           </Button>
@@ -46,20 +89,26 @@ const News = ({ pageData }: { pageData: PagesQuery }) => {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pb-24">
-        <Dialog>
+        <Dialog
+          open={Boolean(activeArticle)}
+          onOpenChange={handleDialogOpenChange}
+        >
           {/* Featured article */}
           {featured && (
-            <Featured article={featured} setActiveArticle={setActiveArticle} />
+            <Featured
+              article={featured}
+              onSelectArticle={handleSelectArticle}
+            />
           )}
 
           {/* Rest */}
           {rest.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {rest.map((article) => (
                 <NewsItem
                   key={article.id}
                   article={article}
-                  setActiveArticle={setActiveArticle}
+                  onSelectArticle={handleSelectArticle}
                 />
               ))}
             </div>
@@ -72,11 +121,13 @@ const News = ({ pageData }: { pageData: PagesQuery }) => {
       <CallToAction
         btnText="Ta kontakt"
         dialog={<ContactDialog />}
-        title={page.ctaTitle || "Alle tjenester er tilgjengelige i Fevik"}
+        title={page.ctaTitle || "Vil du få nye innlegg rett i innboksen?"}
         description={
           page.ctaDescription ||
-          "Vi holder til sentralt i Fevik og kan i noen tilfeller tilby digitale konsultasjoner. Ta kontakt for mer informasjon om hva som passer best for de"
+          "Send oss en e-post, så legger vi deg til på listen vår. Vi sender kun ut når det er noe nytt og verdt å lese."
         }
+        dataTitle={tinaField(page, "ctaTitle")}
+        dataDescription={tinaField(page, "ctaDescription")}
       />
     </PageWrapper>
   );

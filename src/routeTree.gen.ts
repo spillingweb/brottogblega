@@ -14,6 +14,8 @@ import { Route as AktueltRouteImport } from './routes/aktuelt'
 import { Route as ArrangementerRouteImport } from './routes/arrangementer'
 import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as TjenesterRouteImport } from './routes/tjenester'
+import { Route as AktueltIndexRouteImport } from './routes/aktuelt/index'
+import { Route as AktueltSlugRouteImport } from './routes/aktuelt/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,41 +42,76 @@ const TjenesterRoute = TjenesterRouteImport.update({
   path: '/tjenester',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AktueltIndexRoute = AktueltIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AktueltRoute,
+} as any)
+const AktueltSlugRoute = AktueltSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AktueltRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/aktuelt': typeof AktueltRoute
+  '/aktuelt': typeof AktueltRouteWithChildren
   '/arrangementer': typeof ArrangementerRoute
   '/om-oss': typeof OmOssRoute
   '/tjenester': typeof TjenesterRoute
+  '/aktuelt/$slug': typeof AktueltSlugRoute
+  '/aktuelt/': typeof AktueltIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/aktuelt': typeof AktueltRoute
   '/arrangementer': typeof ArrangementerRoute
   '/om-oss': typeof OmOssRoute
   '/tjenester': typeof TjenesterRoute
+  '/aktuelt/$slug': typeof AktueltSlugRoute
+  '/aktuelt': typeof AktueltIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/aktuelt': typeof AktueltRoute
+  '/aktuelt': typeof AktueltRouteWithChildren
   '/arrangementer': typeof ArrangementerRoute
   '/om-oss': typeof OmOssRoute
   '/tjenester': typeof TjenesterRoute
+  '/aktuelt/$slug': typeof AktueltSlugRoute
+  '/aktuelt/': typeof AktueltIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/aktuelt' | '/arrangementer' | '/om-oss' | '/tjenester'
+  fullPaths:
+    | '/'
+    | '/aktuelt'
+    | '/arrangementer'
+    | '/om-oss'
+    | '/tjenester'
+    | '/aktuelt/$slug'
+    | '/aktuelt/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/aktuelt' | '/arrangementer' | '/om-oss' | '/tjenester'
+  to:
+    | '/'
+    | '/arrangementer'
+    | '/om-oss'
+    | '/tjenester'
+    | '/aktuelt/$slug'
+    | '/aktuelt'
   id:
-    '__root__' | '/' | '/aktuelt' | '/arrangementer' | '/om-oss' | '/tjenester'
+    | '__root__'
+    | '/'
+    | '/aktuelt'
+    | '/arrangementer'
+    | '/om-oss'
+    | '/tjenester'
+    | '/aktuelt/$slug'
+    | '/aktuelt/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AktueltRoute: typeof AktueltRoute
+  AktueltRoute: typeof AktueltRouteWithChildren
   ArrangementerRoute: typeof ArrangementerRoute
   OmOssRoute: typeof OmOssRoute
   TjenesterRoute: typeof TjenesterRoute
@@ -117,12 +154,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TjenesterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aktuelt/': {
+      id: '/aktuelt/'
+      path: '/'
+      fullPath: '/aktuelt/'
+      preLoaderRoute: typeof AktueltIndexRouteImport
+      parentRoute: typeof AktueltRoute
+    }
+    '/aktuelt/$slug': {
+      id: '/aktuelt/$slug'
+      path: '/$slug'
+      fullPath: '/aktuelt/$slug'
+      preLoaderRoute: typeof AktueltSlugRouteImport
+      parentRoute: typeof AktueltRoute
+    }
   }
 }
 
+interface AktueltRouteChildren {
+  AktueltSlugRoute: typeof AktueltSlugRoute
+  AktueltIndexRoute: typeof AktueltIndexRoute
+}
+
+const AktueltRouteChildren: AktueltRouteChildren = {
+  AktueltSlugRoute: AktueltSlugRoute,
+  AktueltIndexRoute: AktueltIndexRoute,
+}
+
+const AktueltRouteWithChildren =
+  AktueltRoute._addFileChildren(AktueltRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AktueltRoute: AktueltRoute,
+  AktueltRoute: AktueltRouteWithChildren,
   ArrangementerRoute: ArrangementerRoute,
   OmOssRoute: OmOssRoute,
   TjenesterRoute: TjenesterRoute,

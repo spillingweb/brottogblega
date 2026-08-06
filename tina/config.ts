@@ -40,6 +40,7 @@ export default defineConfig({
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
+      /* ── PAGES (hovedsider) ───────────────────────────────────────────── */
       {
         name: "pages",
         label: "Hovedsider",
@@ -477,6 +478,340 @@ export default defineConfig({
                 required: true,
               },
             ],
+          },
+        ],
+      },
+
+      /* ── SERVICES (tjenester) ──────────────────────────────── */
+      {
+        name: "services",
+        label: "Tjenester",
+        path: "content/services",
+        format: "json",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) =>
+              values?.["tittel"]
+                ? (values["tittel"] as string)
+                    .toLowerCase()
+                    .replace(/æ/g, "ae")
+                    .replace(/ø/g, "o")
+                    .replace(/å/g, "a")
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-|-$/g, "")
+                : "tjeneste",
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "tittel",
+            label: "Tittel",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "undertittel",
+            label: "Undertittel",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "badge",
+            label: "Badge (valgfritt)",
+            description: 'F.eks. "Populær" eller "Fleksibelt"',
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Bilde (valgfritt)",
+            description: "Bilde som vises for denne tjenesten",
+          },
+          {
+            type: "rich-text",
+            name: "description",
+            label: "Beskrivelse",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "detaljer",
+            label: "Detaljer",
+            list: true,
+          },
+          {
+            type: "object",
+            name: "priser",
+            label: "Priser",
+            list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.label || "Ny pris (Ikke fylt ut)" };
+              },
+              defaultItem: () => {
+                return {
+                  label: "Ny tjeneste",
+                  pris: "0 kr",
+                };
+              },
+              validate: (value: any) => {
+                console.log("Validating priser:", value);
+                if (value?.length > 0) {
+                  for (let i = 0; i < value.length; i++) {
+                    if (!value[i]?.label || !value[i]?.pris) {
+                      return "Alle priser må ha både en label og en pris.";
+                    }
+                  }
+                }
+              },
+            },
+            fields: [
+              {
+                type: "string",
+                name: "label",
+                label: 'Label (f.eks. "60 min")',
+                required: true,
+              },
+              {
+                type: "string",
+                name: "pris",
+                label: 'Pris (f.eks. "950 kr")',
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "number",
+            name: "orden",
+            label: "Sorteringsrekkefølge",
+            description: "Lavere tall vises først",
+          },
+        ],
+      },
+
+      /* ── ARTICLES ─────────────────────────────────────── */
+      {
+        name: "articles",
+        label: "Aktuelt - innlegg",
+        path: "content/articles",
+        format: "md",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) =>
+              values?.["title"]
+                ? (values["title"] as string)
+                    .toLowerCase()
+                    .replace(/æ/g, "ae")
+                    .replace(/ø/g, "o")
+                    .replace(/å/g, "a")
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-|-$/g, "")
+                : "innlegg",
+          },
+          router: ({ document }) => {
+            return `/aktuelt/${document._sys.filename}`;
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Tittel",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "excerpt",
+            label: "Ingress / sammendrag",
+            ui: { component: "textarea" },
+            required: true,
+          },
+          {
+            type: "string",
+            name: "author",
+            label: "Forfatter",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Publiseringsdato",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Kategori",
+            options: ["Kronikk", "Fagartikkel", "Nyhet", "Refleksjon"],
+            required: true,
+          },
+          {
+            type: "number",
+            name: "readingTime",
+            label: "Lesetid (minutter)",
+          },
+          {
+            type: "image",
+            name: "coverImage",
+            label: "Forsidebilde",
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Innhold",
+            isBody: true,
+          },
+        ],
+      },
+
+      /* ── EVENTS ──────────────────────────────────────────── */
+      {
+        name: "events",
+        label: "Arrangementer",
+        path: "content/events",
+        format: "md",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) =>
+              values?.["title"]
+                ? (values["title"] as string)
+                    .toLowerCase()
+                    .replace(/æ/g, "ae")
+                    .replace(/ø/g, "o")
+                    .replace(/å/g, "a")
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-|-$/g, "")
+                : "arrangement",
+          },
+          router: () => {
+            return "/arrangementer";
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Tittel",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "description",
+            label: "Beskrivelse",
+            isBody: true,
+            required: true,
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Bilde",
+            description: "Beskrivende bilde for arrangementet (valgfritt)",
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Startdato",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "endDate",
+            label: "Sluttdato",
+            description: "Valgfritt, hvis arrangementet varer flere dager",
+          },
+          {
+            type: "string",
+            name: "host",
+            label: "Vert / kursholder",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "time",
+            label: "Tidspunkt",
+            description:
+              "F.eks. 18:00-20:00 eller tekst for flerdagersarrangement",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "location",
+            label: "Sted",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "spots",
+            label: "Plass-status",
+            options: [
+              "Åpent",
+              "Noen plasser igjen",
+              "Få plasser igjen",
+              "Fullt",
+            ],
+            required: true,
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "price",
+            label: "Pris",
+            description:
+              "F.eks. 1200 kr eller 350 kr / kveld. 0 kr for gratis arrangementer",
+            required: true,
+          },
+        ],
+      },
+
+      /* ── CATEGORIES (arrangementkategorier) ────────────────────── */
+      {
+        name: "eventCategories",
+        label: "Kategorier - arrangementer",
+        path: "content/eventCategories",
+        format: "json",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) =>
+              values?.["value"]
+                ? (values["value"] as string)
+                    .toLowerCase()
+                    .replace(/æ/g, "ae")
+                    .replace(/ø/g, "o")
+                    .replace(/å/g, "a")
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-|-$/g, "")
+                : "kategori",
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "value",
+            label: "Verdi (brukes i kode, f.eks. 'seminar')",
+            required: true,
+            description:
+              "Intern verdi brukt i URL-er og filtrering. Må være unik.",
+          },
+          {
+            type: "string",
+            name: "label",
+            label: "Visningsnavn (f.eks. 'Seminar')",
+            isTitle: true,
+            required: true,
+            description: "Navnet som vises til brukere i menyer og lister.",
           },
         ],
       },
