@@ -1,50 +1,42 @@
+import { useMemo } from "react";
 import { Button } from "#/components/ui/button";
 import Heading from "#/components/ui/Heading";
-import type { PagesHomepage } from "../../../../tina/__generated__/types";
+import type {
+  PagesHomepage,
+  Services,
+  ServicesConnectionQuery,
+} from "../../../../tina/__generated__/types";
 import { Link } from "@tanstack/react-router";
 import ServiceCard from "./ServiceCard";
 import Kicker from "#/components/ui/Kicker";
 import { tinaField } from "tinacms/tina-field";
 
-export type Service = {
-  label: string;
-  desc: string;
-  img: string;
-};
+const ServicesTeaser = ({
+  page,
+  servicesData,
+}: {
+  page: PagesHomepage;
+  servicesData: ServicesConnectionQuery;
+}) => {
+  const services = useMemo(() => {
+    return (servicesData.servicesConnection.edges || [])
+      .map((edge) => edge?.node)
+      .filter((node): node is NonNullable<typeof node> => node !== null)
+      .sort((a, b) => Number(a.order ?? 9999) - Number(b.order ?? 9999))
+      .slice(0, 4);
+  }, [servicesData]);
 
-const DUMMY_SERVICES = [
-  {
-    label: "Fysioterapi",
-    desc: "Individuell vurdering og behandling av bekken, kropp og bevegelse.",
-    img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop&auto=format",
-  },
-  {
-    label: "Filosofisk samtale",
-    desc: "En-til-en dialog som utforsker livsspørsmål, mening og identitet.",
-    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&auto=format",
-  },
-  {
-    label: "Dialoggrupper",
-    desc: "Ukentlige grupper for kvinner som ønsker fellesskap og refleksjon.",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop&auto=format",
-  },
-  {
-    label: "Seminarer",
-    desc: "Dagsarrangementer og kurs om temaer som berører kvinner direkte.",
-    img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop&auto=format",
-  },
-];
-
-const ServicesTeaser = ({ page }: { page: PagesHomepage }) => {
   return (
     <section className="bg-muted py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-14 anim-scroll">
           <div>
-            <Kicker className="text-primary mb-4">
-              Tjenester
-            </Kicker>
-            <Heading level={2} className="md:text-4xl" data-tina-field={tinaField(page, "servicesHeading")}>
+            <Kicker className="text-primary mb-4">Tjenester</Kicker>
+            <Heading
+              level={2}
+              className="md:text-4xl"
+              data-tina-field={tinaField(page, "servicesHeading")}
+            >
               {page.servicesHeading}
             </Heading>
           </div>
@@ -56,10 +48,16 @@ const ServicesTeaser = ({ page }: { page: PagesHomepage }) => {
         </div>
 
         {/* Services list */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 stagger-grid">
-          {DUMMY_SERVICES.map((s) => (
-            <ServiceCard key={s.label} service={s} />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stagger-grid">
+          {services.length > 0 ? (
+            services.map((s) => (
+              <ServiceCard key={s.id} service={s as Services} />
+            ))
+          ) : (
+            <p className="col-span-full text-sm text-muted-foreground">
+              Ingen tjenester er lagt inn ennå.
+            </p>
+          )}
         </div>
       </div>
     </section>

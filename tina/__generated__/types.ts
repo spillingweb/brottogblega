@@ -459,30 +459,29 @@ export type PagesConnection = Connection & {
   edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
 };
 
-export type ServicesPriser = {
-  __typename?: 'ServicesPriser';
-  label: Scalars['String']['output'];
-  pris: Scalars['String']['output'];
+export type ServicesOffers = {
+  __typename?: 'ServicesOffers';
+  title: Scalars['String']['output'];
+  price: Scalars['String']['output'];
 };
 
 export type Services = Node & Document & {
   __typename?: 'Services';
-  tittel: Scalars['String']['output'];
-  undertittel: Scalars['String']['output'];
-  badge?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
+  category: Scalars['String']['output'];
+  tagline: Scalars['String']['output'];
   image?: Maybe<Scalars['String']['output']>;
-  description: Scalars['JSON']['output'];
-  detaljer?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  priser?: Maybe<Array<Maybe<ServicesPriser>>>;
-  orden?: Maybe<Scalars['Float']['output']>;
+  description: Scalars['String']['output'];
+  offers?: Maybe<Array<Maybe<ServicesOffers>>>;
+  order?: Maybe<Scalars['Float']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type ServicesPriserFilter = {
-  label?: InputMaybe<StringFilter>;
-  pris?: InputMaybe<StringFilter>;
+export type ServicesOffersFilter = {
+  title?: InputMaybe<StringFilter>;
+  price?: InputMaybe<StringFilter>;
 };
 
 export type NumberFilter = {
@@ -496,14 +495,13 @@ export type NumberFilter = {
 };
 
 export type ServicesFilter = {
-  tittel?: InputMaybe<StringFilter>;
-  undertittel?: InputMaybe<StringFilter>;
-  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  tagline?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
-  description?: InputMaybe<RichTextFilter>;
-  detaljer?: InputMaybe<StringFilter>;
-  priser?: InputMaybe<ServicesPriserFilter>;
-  orden?: InputMaybe<NumberFilter>;
+  description?: InputMaybe<StringFilter>;
+  offers?: InputMaybe<ServicesOffersFilter>;
+  order?: InputMaybe<NumberFilter>;
 };
 
 export type ServicesConnectionEdges = {
@@ -855,20 +853,19 @@ export type PagesMutation = {
   kontakt?: InputMaybe<PagesKontaktMutation>;
 };
 
-export type ServicesPriserMutation = {
-  label?: InputMaybe<Scalars['String']['input']>;
-  pris?: InputMaybe<Scalars['String']['input']>;
+export type ServicesOffersMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ServicesMutation = {
-  tittel?: InputMaybe<Scalars['String']['input']>;
-  undertittel?: InputMaybe<Scalars['String']['input']>;
-  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  tagline?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['JSON']['input']>;
-  detaljer?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  priser?: InputMaybe<Array<InputMaybe<ServicesPriserMutation>>>;
-  orden?: InputMaybe<Scalars['Float']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  offers?: InputMaybe<Array<InputMaybe<ServicesOffersMutation>>>;
+  order?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type ArticlesMutation = {
@@ -911,7 +908,7 @@ type PagesParts_PagesKontakt_Fragment = { __typename: 'PagesKontakt', title: str
 
 export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_PagesAbout_Fragment | PagesParts_PagesStandard_Fragment | PagesParts_PagesKontakt_Fragment;
 
-export type ServicesPartsFragment = { __typename: 'Services', tittel: string, undertittel: string, badge?: string | null, image?: string | null, description: any, detaljer?: Array<string | null> | null, orden?: number | null, priser?: Array<{ __typename: 'ServicesPriser', label: string, pris: string } | null> | null };
+export type ServicesPartsFragment = { __typename: 'Services', title: string, category: string, tagline: string, image?: string | null, description: string, order?: number | null, offers?: Array<{ __typename: 'ServicesOffers', title: string, price: string } | null> | null };
 
 export type ArticlesPartsFragment = { __typename: 'Articles', title: string, excerpt: string, author: string, date: string, category: string, readingTime?: number | null, coverImage?: string | null, body?: any | null };
 
@@ -943,7 +940,7 @@ export type ServicesQueryVariables = Exact<{
 }>;
 
 
-export type ServicesQuery = { __typename?: 'Query', services: { __typename: 'Services', id: string, tittel: string, undertittel: string, badge?: string | null, image?: string | null, description: any, detaljer?: Array<string | null> | null, orden?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, priser?: Array<{ __typename: 'ServicesPriser', label: string, pris: string } | null> | null } };
+export type ServicesQuery = { __typename?: 'Query', services: { __typename: 'Services', id: string, title: string, category: string, tagline: string, image?: string | null, description: string, order?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, offers?: Array<{ __typename: 'ServicesOffers', title: string, price: string } | null> | null } };
 
 export type ServicesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -955,7 +952,7 @@ export type ServicesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ServicesConnectionQuery = { __typename?: 'Query', servicesConnection: { __typename?: 'ServicesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ServicesConnectionEdges', cursor: string, node?: { __typename: 'Services', id: string, tittel: string, undertittel: string, badge?: string | null, image?: string | null, description: any, detaljer?: Array<string | null> | null, orden?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, priser?: Array<{ __typename: 'ServicesPriser', label: string, pris: string } | null> | null } | null } | null> | null } };
+export type ServicesConnectionQuery = { __typename?: 'Query', servicesConnection: { __typename?: 'ServicesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ServicesConnectionEdges', cursor: string, node?: { __typename: 'Services', id: string, title: string, category: string, tagline: string, image?: string | null, description: string, order?: number | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, offers?: Array<{ __typename: 'ServicesOffers', title: string, price: string } | null> | null } | null } | null> | null } };
 
 export type ArticlesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1097,18 +1094,17 @@ export const PagesPartsFragmentDoc = gql`
 export const ServicesPartsFragmentDoc = gql`
     fragment ServicesParts on Services {
   __typename
-  tittel
-  undertittel
-  badge
+  title
+  category
+  tagline
   image
   description
-  detaljer
-  priser {
+  offers {
     __typename
-    label
-    pris
+    title
+    price
   }
-  orden
+  order
 }
     `;
 export const ArticlesPartsFragmentDoc = gql`

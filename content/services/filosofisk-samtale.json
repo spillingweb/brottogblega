@@ -1,0 +1,22 @@
+{
+  "title": "Filosofisk samtale",
+  "category": "Tina Maria Lie",
+  "tagline": "Rom for de virkelig viktige spørsmålene",
+  "image": "/photo-1506905925346-21bda4d32df4.avif",
+  "description": "Filosofisk terapi er ikke psykoterapi, men en strukturert og åpen samtale om livsvalg, mening, identitet og verdier. Tina Maria bruker filosofiske metoder for å hjelpe deg å tenke klarere om det som betyr mest.",
+  "offers": [
+    {
+      "title": "Samtale 60 minutter",
+      "price": "600 kr"
+    },
+    {
+      "title": "Fordypningssamtale 90 minutter",
+      "price": "850 kr"
+    },
+    {
+      "title": "Samtalepakke 3 møter",
+      "price": "1 650 kr"
+    }
+  ],
+  "order": 2
+}

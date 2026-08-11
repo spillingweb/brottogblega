@@ -6,9 +6,19 @@ import Hero from "./Hero";
 import Intro from "./Intro";
 import NewsTeaser from "./NewsTeaser";
 import ServicesTeaser from "./ServicesTeaser";
-import type { PagesHomepage, PagesQuery } from "../../../../tina/__generated__/types";
+import type {
+  PagesHomepage,
+  PagesQuery,
+  ServicesConnectionQuery,
+} from "../../../../tina/__generated__/types";
 
-const Home = ({ pageData }: { pageData: PagesQuery }) => {
+const Home = ({
+  pageData,
+  servicesData,
+}: {
+  pageData: PagesQuery;
+  servicesData: ServicesConnectionQuery;
+}) => {
   const page = pageData.pages as PagesHomepage;
 
   return (
@@ -16,7 +26,7 @@ const Home = ({ pageData }: { pageData: PagesQuery }) => {
       <Hero page={page} />
       <Intro page={page} />
       <AboutTeaser page={page} />
-      <ServicesTeaser page={page} />
+      <ServicesTeaser page={page} servicesData={servicesData} />
       <NewsTeaser page={page} />
       <CallToAction
         className="anim-scroll"

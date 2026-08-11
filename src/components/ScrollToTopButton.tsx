@@ -1,0 +1,50 @@
+import { Button } from "#/components/ui/button";
+import { cn } from "#/lib/utils";
+import { ChevronUp } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const SCROLL_SHOW_THRESHOLD = 280;
+
+const ScrollToTopButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsVisible(window.scrollY > SCROLL_SHOW_THRESHOLD);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <div
+      className={cn(
+        "fixed right-5 bottom-5 z-50 transition-all duration-300",
+        isVisible
+          ? "translate-y-0 opacity-100"
+          : "translate-y-2 opacity-0 pointer-events-none",
+      )}
+    >
+      <Button
+        type="button"
+        size="icon"
+        onClick={scrollToTop}
+        className="rounded-full shadow-lg"
+        aria-label="Scroll til toppen"
+      >
+        <ChevronUp />
+      </Button>
+    </div>
+  );
+};
+
+export default ScrollToTopButton;

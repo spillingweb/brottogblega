@@ -79,18 +79,17 @@ fragment PagesParts on Pages {
 
 fragment ServicesParts on Services {
   __typename
-  tittel
-  undertittel
-  badge
+  title
+  category
+  tagline
   image
   description
-  detaljer
-  priser {
+  offers {
     __typename
-    label
-    pris
+    title
+    price
   }
-  orden
+  order
 }
 
 fragment ArticlesParts on Articles {

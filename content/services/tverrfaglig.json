@@ -1,0 +1,22 @@
+{
+  "title": "Tverrfaglig",
+  "category": "Tina Maria Lie + Hilde Stenqvist",
+  "tagline": "Fellesskap som styrker, løfter og gir nye perspektiver",
+  "image": "/photo-1529156069898-49953e39b3ac.avif",
+  "description": "Vi samler mindre grupper og kursdeltakere rundt temaer som kropp, overgangsalder, helse og livsvalg. Her kan du velge et format som passer behovet ditt, enten du ønsker et løpende fellesskap eller en avgrenset læringsarena.",
+  "offers": [
+    {
+      "title": "Dialoggruppe - 2 samlinger i mnd",
+      "price": "1 200 kr / mnd"
+    },
+    {
+      "title": "Overgangsalder - ny forståelse",
+      "price": "Fra 950 kr"
+    },
+    {
+      "title": "Filosofi for hverdagen",
+      "price": "Fra 950 kr"
+    }
+  ],
+  "order": 3
+}

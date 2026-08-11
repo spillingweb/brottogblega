@@ -75,7 +75,7 @@ const News = ({
   return (
     <PageWrapper kicker={"nyheter"} page={page}>
       {/* Filter */}
-      <div className="max-w-6xl mx-auto px-6 -mt-8 mb-8 flex flex-wrap gap-2">
+      <div className="max-w-6xl mx-auto px-6 mb-8 flex flex-wrap gap-2">
         {articleCategories.map((cat) => (
           <Button
             key={cat}

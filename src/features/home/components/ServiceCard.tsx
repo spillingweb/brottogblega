@@ -1,25 +1,32 @@
 import { Card, CardDescription, CardTitle } from "#/components/ui/card";
-import type { Service } from "./ServicesTeaser";
+import { tinaField } from "tinacms/tina-field";
+import type { Services } from "../../../../tina/__generated__/types";
 
-const ServiceCard = ({ service }: { service: Service }) => {
+const ServiceCard = ({ service }: { service: Services }) => {
   return (
     <Card className="group pt-0 anim-scroll">
-      <div className="aspect-4/3 overflow-hidden bg-secondary">
+      <div
+        className="aspect-4/3 overflow-hidden bg-secondary"
+        data-tina-field={tinaField(service, "image")}
+      >
         <img
-          src={service.img}
-          alt={service.label}
+          src={service.image || ""}
+          alt={service.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <div className="p-5">
         <CardTitle
-          className="text-base mb-2"
-          style={{ fontFamily: "'Lora', serif" }}
+          className="text-base mb-2 font-serif"
+          data-tina-field={tinaField(service, "title")}
         >
-          {service.label}
+          {service.title}
         </CardTitle>
-        <CardDescription className="text-xs text-muted-foreground leading-relaxed">
-          {service.desc}
+        <CardDescription
+          className="text-xs text-muted-foreground leading-relaxed"
+          data-tina-field={tinaField(service, "description")}
+        >
+          {service.description}
         </CardDescription>
       </div>
     </Card>

@@ -47,6 +47,8 @@
   --sidebar-border: oklch(0.4143 0.0778 241.93 / 12%);
   --sidebar-ring: oklch(0.4143 0.0778 241.93);
 
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "DM Sans Variable", sans-serif;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
 }

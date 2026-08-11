@@ -313,28 +313,27 @@ type PagesConnection implements Connection {
   edges: [PagesConnectionEdges]
 }
 
-type ServicesPriser {
-  label: String!
-  pris: String!
+type ServicesOffers {
+  title: String!
+  price: String!
 }
 
 type Services implements Node & Document {
-  tittel: String!
-  undertittel: String!
-  badge: String
+  title: String!
+  category: String!
+  tagline: String!
   image: String
-  description: JSON!
-  detaljer: [String]
-  priser: [ServicesPriser]
-  orden: Float
+  description: String!
+  offers: [ServicesOffers]
+  order: Float
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
 
-input ServicesPriserFilter {
-  label: StringFilter
-  pris: StringFilter
+input ServicesOffersFilter {
+  title: StringFilter
+  price: StringFilter
 }
 
 input NumberFilter {
@@ -348,14 +347,13 @@ input NumberFilter {
 }
 
 input ServicesFilter {
-  tittel: StringFilter
-  undertittel: StringFilter
-  badge: StringFilter
+  title: StringFilter
+  category: StringFilter
+  tagline: StringFilter
   image: ImageFilter
-  description: RichTextFilter
-  detaljer: StringFilter
-  priser: ServicesPriserFilter
-  orden: NumberFilter
+  description: StringFilter
+  offers: ServicesOffersFilter
+  order: NumberFilter
 }
 
 type ServicesConnectionEdges {
@@ -602,20 +600,19 @@ input PagesMutation {
   kontakt: PagesKontaktMutation
 }
 
-input ServicesPriserMutation {
-  label: String
-  pris: String
+input ServicesOffersMutation {
+  title: String
+  price: String
 }
 
 input ServicesMutation {
-  tittel: String
-  undertittel: String
-  badge: String
+  title: String
+  category: String
+  tagline: String
   image: String
-  description: JSON
-  detaljer: [String]
-  priser: [ServicesPriserMutation]
-  orden: Float
+  description: String
+  offers: [ServicesOffersMutation]
+  order: Float
 }
 
 input ArticlesMutation {

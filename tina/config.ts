@@ -492,8 +492,8 @@ export default defineConfig({
           filename: {
             readonly: false,
             slugify: (values) =>
-              values?.["tittel"]
-                ? (values["tittel"] as string)
+              values?.["title"]
+                ? (values["title"] as string)
                     .toLowerCase()
                     .replace(/æ/g, "ae")
                     .replace(/ø/g, "o")
@@ -506,85 +506,70 @@ export default defineConfig({
         fields: [
           {
             type: "string",
-            name: "tittel",
+            name: "title",
             label: "Tittel",
             isTitle: true,
             required: true,
           },
           {
             type: "string",
-            name: "undertittel",
-            label: "Undertittel",
+            name: "category",
+            label: "Kategori / ansvarlig",
             required: true,
           },
           {
             type: "string",
-            name: "badge",
-            label: "Badge (valgfritt)",
-            description: 'F.eks. "Populær" eller "Fleksibelt"',
+            name: "tagline",
+            label: "Tagline",
+            required: true,
           },
           {
             type: "image",
             name: "image",
-            label: "Bilde (valgfritt)",
+            label: "Bilde",
             description: "Bilde som vises for denne tjenesten",
           },
           {
-            type: "rich-text",
+            type: "string",
             name: "description",
             label: "Beskrivelse",
+            ui: { component: "textarea" },
             required: true,
           },
           {
-            type: "string",
-            name: "detaljer",
-            label: "Detaljer",
-            list: true,
-          },
-          {
             type: "object",
-            name: "priser",
-            label: "Priser",
+            name: "offers",
+            label: "Tilbud / priser",
             list: true,
             ui: {
               itemProps: (item) => {
-                return { label: item?.label || "Ny pris (Ikke fylt ut)" };
+                return { label: item?.title || "Ny pris (Ikke fylt ut)" };
               },
               defaultItem: () => {
                 return {
-                  label: "Ny tjeneste",
-                  pris: "0 kr",
+                  title: "Ny tjeneste",
+                  price: "0 kr",
                 };
-              },
-              validate: (value: any) => {
-                console.log("Validating priser:", value);
-                if (value?.length > 0) {
-                  for (let i = 0; i < value.length; i++) {
-                    if (!value[i]?.label || !value[i]?.pris) {
-                      return "Alle priser må ha både en label og en pris.";
-                    }
-                  }
-                }
               },
             },
             fields: [
               {
                 type: "string",
-                name: "label",
-                label: 'Label (f.eks. "60 min")',
+                name: "title",
+                label: "Navn",
                 required: true,
               },
               {
                 type: "string",
-                name: "pris",
-                label: 'Pris (f.eks. "950 kr")',
+                name: "price",
+                label: "Pris",
                 required: true,
               },
             ],
           },
           {
             type: "number",
-            name: "orden",
+            name: "order",
             label: "Sorteringsrekkefølge",
             description: "Lavere tall vises først",
           },

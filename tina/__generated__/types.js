@@ -88,18 +88,17 @@ export const PagesPartsFragmentDoc = gql`
 export const ServicesPartsFragmentDoc = gql`
     fragment ServicesParts on Services {
   __typename
-  tittel
-  undertittel
-  badge
+  title
+  category
+  tagline
   image
   description
-  detaljer
-  priser {
+  offers {
     __typename
-    label
-    pris
+    title
+    price
   }
-  orden
+  order
 }
     `;
 export const ArticlesPartsFragmentDoc = gql`

@@ -1,0 +1,22 @@
+{
+  "title": "Fysioterapi",
+  "category": "Hilde Stenqvist",
+  "tagline": "Kroppen din fortjener faglig omsorg",
+  "image": "/photo-1571019613454-1cb2f99b2d8b.avif",
+  "description": "Vi tilbyr individuell fysioterapi med fokus på kvinnehelse i alle livsfaser. Hilde har spesialkompetanse i bekkenbunnsfunksjon, smerter i bekkenet, inkontinens, svangerskap og etterfødsel.",
+  "offers": [
+    {
+      "title": "Førstegangskonsultasjon",
+      "price": "650 kr"
+    },
+    {
+      "title": "Oppfølgingstime",
+      "price": "580 kr"
+    },
+    {
+      "title": "Bekkenbunnsvurdering",
+      "price": "Fra 650 kr"
+    }
+  ],
+  "order": 1
+}
