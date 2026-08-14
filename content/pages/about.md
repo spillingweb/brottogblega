@@ -29,6 +29,7 @@ hildeKeywords:
   - keyword: Overgangsalder
   - keyword: Bevegelsesanalyse
   - keyword: Fysiopilates
+  - keyword: Barseltid
 tinaMariaImage: /ingrid.avif
 tinaMariaKicker: Sykepleier & filosof
 tinaMariaTitle: Tina Maria Lie
