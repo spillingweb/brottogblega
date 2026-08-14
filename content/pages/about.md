@@ -16,7 +16,7 @@ hildeTitle: Hilde Stenqvist
 hildeContent: |
   Hilde er autorisert fysioterapeut med over 12 års erfaring, spesialisert i kvinnehelse og bekkenbunnsfunksjon. Hun har videreutdanning fra Høgskolen i Oslo og Akershus, og har jobbet tett med kvinner gjennom svangerskap, etter fødsel og inn i overgangsalderen.
 
-  Hilde tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at å lytte til kroppen er et grunnleggende steg mot bedre helse. Hun møter hver pasient der de er, med tålmodighet og faglig dybde. 
+  Hilde tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at å lytte til kroppen er et grunnleggende steg mot bedre helse. Hun møter hver pasient der de er, med tålmodighet og faglig dybde.
 
   *«Jeg ønsker at alle kvinner skal kjenne seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
 hildeKeywords:
@@ -24,6 +24,7 @@ hildeKeywords:
   - keyword: Svangerskap & fødsel
   - keyword: Overgangsalder
   - keyword: Bevegelsesanalyse
+  - keyword: Fysiopilates
 tinaMariaImage: /ingrid.avif
 tinaMariaKicker: Sykepleier & filosof
 tinaMariaTitle: Tina Maria Lie
