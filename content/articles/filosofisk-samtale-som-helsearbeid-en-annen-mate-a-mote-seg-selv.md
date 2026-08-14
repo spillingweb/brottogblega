@@ -3,7 +3,7 @@ featured: false
 title: Prestasjonssamfunnet og Slow Living
 excerpt: 'Tina Maria Lie utforsker hva det vil si å bruke filosofi som et klinisk verktøy, og hvorfor eksistensielle spørsmål hører hjemme i helseomsorgen.'
 author: Tina Maria Lie
-date: 2025-06-18T00:00:00.000Z
+date: 2026-08-22T00:00:00.000Z
 category: Fagartikkel
 readingTime: 8
 coverImage: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&h=420&fit=crop&auto=format'
