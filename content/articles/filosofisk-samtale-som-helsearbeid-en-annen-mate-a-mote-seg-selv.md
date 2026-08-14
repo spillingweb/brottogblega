@@ -1,7 +1,7 @@
 ---
 featured: false
 title: Prestasjonssamfunnet og Slow Living
-excerpt: 'Tina Maria Lie utforsker hva det vil si å bruke filosofi som et klinisk verktøy, og hvorfor eksistensielle spørsmål hører hjemme i helseomsorgen.'
+excerpt: Vekst og tempo er blitt et ubegrunnet imperativ vi sjelden stiller spørsmål ved. Med utgangspunkt i Hartmut Rosa og Kari Martinsen spør dette essayet hva vi mister når langsomheten forsvinner fra omsorg og hverdagsliv.
 author: Tina Maria Lie
 date: 2026-08-22T00:00:00.000Z
 category: Refleksjon
