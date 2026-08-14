@@ -7,6 +7,7 @@ location: Brott&Blega Helse
 spots: Åpent
 tags:
   - Fysioterapi
+  - Gruppetime
 price: '2200 kr '
 ---
 
