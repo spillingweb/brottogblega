@@ -3,8 +3,8 @@ title: Mammapraten. Dialoggruppe — oppstart høst 2025
 image: /rodion-kutsaiev-Qdi8UvGd1Ww-unsplash.jpg
 date: 2026-10-07T00:00:00.000Z
 host: Tina Maria Lie
-time: '18:30–20:30'
-location: 'Brott & Blega, Strandveien 14, Fevik'
+time: '10:30-13:30'
+location: 'Brott & Blega Helse, Feviktoppen 19, Fevik'
 spots: Åpent
 tags:
   - Gruppe
