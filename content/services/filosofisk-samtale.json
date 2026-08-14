@@ -7,15 +7,15 @@
   "offers": [
     {
       "title": "Samtale 60 minutter",
-      "price": "600 kr"
+      "price": "900 kr"
     },
     {
-      "title": "Fordypningssamtale 90 minutter",
-      "price": "850 kr"
+      "title": "Hjemmebesøk",
+      "price": "1500 kr"
     },
     {
-      "title": "Samtalepakke 3 møter",
-      "price": "1 650 kr"
+      "title": "Samtalepakke 5 møter",
+      "price": "4500 kr"
     }
   ],
   "order": 2
