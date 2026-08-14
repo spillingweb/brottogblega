@@ -1,18 +1,26 @@
 ---
-title: 'Filosofisk samtale som helsearbeid — en annen måte å møte seg selv på'
+featured: false
+title: Prestasjonssamfunnet og Slow Living
 excerpt: 'Tina Maria Lie utforsker hva det vil si å bruke filosofi som et klinisk verktøy, og hvorfor eksistensielle spørsmål hører hjemme i helseomsorgen.'
+author: Tina Maria Lie
 date: 2025-06-18T00:00:00.000Z
 category: Fagartikkel
-author: Tina Maria Lie
 readingTime: 8
-coverImage: https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&h=420&fit=crop&auto=format
-featured: false
+coverImage: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&h=420&fit=crop&auto=format'
 ---
 
-Vi er vant til å tenke på helse som fravær av sykdom. Men hva om helse også handler om å leve et liv som oppleves meningsfullt — et liv der du kjenner deg selv og vet hva du vil?
+Prestasjonssamfunnet og slow living. Hvorfor er det så vanskelig å gjøre ingenting?
 
-Filosofisk praksis er ikke psykoterapi. Det er ikke diagnostikk, og det er ikke rådgivning i tradisjonell forstand. Det er en strukturert, åpen samtale der filosofiske metoder brukes for å hjelpe deg å tenke klarere, se mønstre i egne valg, og utforske hva som egentlig er viktig for deg.
+Spørsmålet virker enkelt, nesten retorisk: hvorfor er det vanskelig å gjøre ingenting? Men vanskeligheten er ikke tilfeldig. Den er strukturell. Som sykepleier og filosof møter jeg den daglig – i eget arbeid og i pasienters fortellinger om et liv de opplever at de må prestere seg gjennom, også når kroppen ikke lenger orker det.
 
-I min praksis møter jeg ofte kvinner som er slitne — ikke av diagnose, men av å leve i utakt med egne verdier. De gjør det «rette» ifølge andre, men kjenner ikke glede. Filosofisk samtale gir rom for å stille de virkelig grunnleggende spørsmålene: Hvem er jeg? Hva ønsker jeg? Hva er godt nok?
+Hartmut Rosa har argumentert for at det senmoderne samfunnet er bygget rundt en logikk om vekst, akselerasjon og innovasjon som ikke lar seg begrunne utenfra – den forutsettes bare, som et vilkår for at systemet i det hele tatt skal holde seg stabilt. Å stå stille, i en slik logikk, er ikke nøytralt. Det oppleves som tilbakegang. Dette er grunnen til at "å gjøre ingenting" ikke bare krever en beslutning, men et brudd med en strukturell forventning som er internalisert langt inn i selvforståelsen vår.
 
-Det er ingen fasitsvar. Men prosessen med å tenke grundig gjennom disse spørsmålene — i et trygt rom, med en samtalepartner som ikke har en agenda — kan være en av de mest helsefremmende tingene du gjør for deg selv.
+Kari Martinsen har videreført denne analysen inn i omsorgsfeltet, og her blir problemet konkret. Hun skiller mellom vekstomsorg – omsorg rettet mot å gjøre pasienten frisk og arbeidsdyktig igjen – og vedlikeholdsomsorg, som ikke sikter mot et produkt, men mot å opprettholde verdighet og relasjon der helbredelse ikke er målet. Vedlikeholdsomsorgen har ingen sluttrapport. Den lar seg vanskelig måle, telle eller vise fram som resultat. I et system som premierer det produktive, blir den derfor systematisk underprioritert, ikke fordi den er mindre viktig, men fordi den er mindre synlig innenfor prestasjonslogikkens eget vokabular.
+
+Det samme mønsteret finner vi igjen i det enkelte mennesket. Å gjøre ingenting krever at man tåler å være uten begrunnelse for egen eksistens et øyeblikk – uten å produsere, prestere eller vise fram noe. For et selv som er vant til å hente sin verdi fra det målbare, kan dette oppleves som en trussel, ikke som en frihet.
+
+Her blir Rosas resonansbegrep relevant. Resonans betegner ikke harmoni eller ro i seg selv, men et mottakende forhold til verden – en åpenhet for å bli berørt, og selv berøre tilbake. Dette forholdet forutsetter nettopp den langsomheten som prestasjonslogikken presser bort: man kan ikke akselerere seg fram til å bli truffet av noe. Resonans oppstår ikke på kommando, og den lar seg ikke effektivisere.
+
+Slow living kan derfor forstås mindre som en livsstil og mer som et forsøk på å gjenopprette betingelsene for resonans i en tid som strukturelt motarbeider dem. Det handler ikke primært om å gjøre mindre, men om å tåle å være til stede uten at tilstedeværelsen legitimeres av et resultat.
+
+Vanskeligheten med å gjøre ingenting er dermed ikke en personlig svakhet, men et symptom på en samfunnsform. Spørsmålet er om vi – som fagpersoner, og som mennesker – kan forsvare langsomheten på dens egne premisser, i et system som bare anerkjenner det som kan telles.
