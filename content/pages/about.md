@@ -34,7 +34,7 @@ tinaMariaImage: /linkinbilde.jpg
 tinaMariaKicker: Sykepleier & filosof
 tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
-  Tina Maria er utdannet sykepleier og har en mastergrad i filosofi fra Universitetet i Oslo, med fordypning i fenomenologi og eksistensiell filosofi. Hennes tilnærming bringer humanistisk tenkning inn i klinisk omsorg på en måte som er både tilgjengelig og meningsfull.
+  Tina Maria er utdannet sykepleier og har en bachelor filosofi fra Universitetet i Oslo. Hennes tilnærming bringer humanistisk tenkning inn i klinisk omsorg på en måte som er både tilgjengelig og meningsfull.
 
   Tina Maria tilbyr filosofisk terapi og dialoggrupper der spørsmål om mening, verdier og livsvalg får rom. Hun mener at filosofi ikke tilhører akademia alene — det er et verktøy for livet vi alle kan bruke.
 
