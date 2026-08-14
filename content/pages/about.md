@@ -44,7 +44,7 @@ tinaMariaKeywords:
   - keyword: Fenomenologi
   - keyword: Filosofisk samtale
   - keyword: Etikk & verdier
-valuesTitle: Det vi tror på
+valuesTitle: Helhetlig helse
 value1Title: Helhet
 value1Text: 'Vi ser kropp, sinn og livshistorie som ett — og møter deg med et helhetsperspektiv som du ikke alltid finner i tradisjonell helseomsorg.'
 value2Title: Trygghet
