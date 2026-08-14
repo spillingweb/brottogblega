@@ -13,7 +13,7 @@ pageName: Forside
 kicker: 'Feviktoppen 19, Grimstad'
 titleMain: Fysioterapi og samtalepraksis.
 titleItalic: Et rom for helhetlig helse
-subtitle: 'Vi tilbyr fysioterapi, filosofisk samtaleterapi og seminarer med fokus på kvinnehelse og indre velvære — i trygge og omsorgsfulle omgivelser.'
+subtitle: 'Vi tilbyr filosofisk samtaleterapi, fysioterapi og seminarer. med fokus på kvinnehelse og indre velvære — i trygge og omsorgsfulle omgivelser.'
 heroImage: /photo-1739217416358-0f84b45d918f.avif
 intro1Title: Kropp
 intro1Text: Fysioterapi og bevegelsesveiledning tilpasset kvinner i alle livsfaser.
