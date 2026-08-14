@@ -1,6 +1,6 @@
 ---
 title: Filosofi for hverdagen — kveldssamtale
-image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop&auto=format'
+image: /bruh-dev-AjsOy7aoX0Y-unsplash.jpg
 date: 2026-08-26T00:00:00.000Z
 host: Tina Maria Lie
 time: '18:00–20:00'
