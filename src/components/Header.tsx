@@ -69,19 +69,16 @@ const Header = () => {
         isHomePage && !scrolled ? "bg-transparent" : "bg-white/95 backdrop-blur-sm shadow-sm"
       }`}
     >
-      <div className="max-w-6xl mx-auto p-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <Link to="/">
           <img
             src={Logo}
             alt="Brott og Blega logo"
-            className="w-auto h-10"
+            className="w-auto h-15 py-2"
           />
-          <span className="text-3xl font-serif text-primary tracking-wide text-nowrap">
-            Brott og Blega
-          </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8 py-6">
           <ul className="flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.to} className="relative group">

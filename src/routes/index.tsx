@@ -5,13 +5,15 @@ import { useTina } from "tinacms/dist/react";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
-    const [pageResult, servicesResult] = await Promise.all([
+    const [pageResult, servicesResult, articlesResult] = await Promise.all([
       client.queries.pages({ relativePath: "home.md" }),
       client.queries.servicesConnection({ sort: "order" }),
+      client.queries.articlesConnection({ sort: "date", last: -1 }),
     ]);
     return {
       page: pageResult,
       services: servicesResult,
+      articles: articlesResult,
     };
   },
   component: RouteComponent,
@@ -33,5 +35,17 @@ function RouteComponent() {
     data: initialData.services.data,
   });
 
-  return <Home pageData={pageData} servicesData={servicesData} />;
+  const { data: articlesData } = useTina({
+    query: initialData.articles.query,
+    variables: initialData.articles.variables,
+    data: initialData.articles.data,
+  });
+
+  return (
+    <Home
+      pageData={pageData}
+      servicesData={servicesData}
+      articlesData={articlesData}
+    />
+  );
 }

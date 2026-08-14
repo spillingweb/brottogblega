@@ -7,6 +7,7 @@ import Intro from "./Intro";
 import NewsTeaser from "./NewsTeaser";
 import ServicesTeaser from "./ServicesTeaser";
 import type {
+  ArticlesConnectionQuery,
   PagesHomepage,
   PagesQuery,
   ServicesConnectionQuery,
@@ -15,9 +16,11 @@ import type {
 const Home = ({
   pageData,
   servicesData,
+  articlesData,
 }: {
   pageData: PagesQuery;
   servicesData: ServicesConnectionQuery;
+  articlesData: ArticlesConnectionQuery;
 }) => {
   const page = pageData.pages as PagesHomepage;
 
@@ -27,7 +30,7 @@ const Home = ({
       <Intro page={page} />
       <AboutTeaser page={page} />
       <ServicesTeaser page={page} servicesData={servicesData} />
-      <NewsTeaser page={page} />
+      <NewsTeaser page={page} articlesData={articlesData} />
       <CallToAction
         className="anim-scroll"
         title={page.ctaTitle || "Klar til å ta et skritt mot bedre helse?"}

@@ -27,18 +27,18 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
         <div className="absolute inset-0 bg-linear-to-b from-primary/20 via-background/30 to-background" />
       </div>
       <div className="relative max-w-6xl mx-auto px-6 w-full">
-        <div className="max-w-xl flex flex-col gap-4 anim-hero">
+        <div className="max-w-3xl flex flex-col gap-4 anim-hero">
           <Kicker
             className="text-primary font-medium"
             data-tina-field={tinaField(page, "kicker")}
           >
             {kicker}
           </Kicker>
-          <Heading className="md:text-6xl leading-tight flex flex-col">
-            <span data-tina-field={tinaField(page, "titleMain")}>
+          <Heading className="flex flex-col gap-3" level={1}>
+            <span className="md:text-6xl" data-tina-field={tinaField(page, "titleMain")}>
               {titleMain}
             </span>
-            <em data-tina-field={tinaField(page, "titleItalic")}>
+            <em className="md:text-5xl" data-tina-field={tinaField(page, "titleItalic")}>
               {titleItalic}
             </em>
           </Heading>

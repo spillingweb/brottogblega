@@ -1,44 +1,10 @@
 import NavLink from "#/features/header/components/NavLink";
+import { useMemo } from "react";
 import { tinaField } from "tinacms/tina-field";
-import type { PagesHomepage } from "../../../../tina/__generated__/types";
-
-const teaserArticles = [
-  {
-    id: 1,
-    category: "Kronikk",
-    date: "2. juli 2025",
-    title:
-      "Hva skjer egentlig i kroppen under overgangsalderen — og hvorfor snakker vi ikke mer om det?",
-    excerpt:
-      "Overgangsalderen er en av de mest undervurderte og misforståtte fasene i et kvinneliv.",
-    author: "Hilde Stenqvist",
-    readTime: "6 min",
-    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=420&fit=crop&auto=format",
-  },
-  {
-    id: 2,
-    category: "Fagartikkel",
-    date: "18. juni 2025",
-    title:
-      "Filosofisk samtale som helsearbeid — en annen måte å møte seg selv på",
-    excerpt:
-      "Tina Maria Lie utforsker hva det vil si å bruke filosofi som et klinisk verktøy.",
-    author: "Tina Maria Lie",
-    readTime: "8 min",
-    img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&h=420&fit=crop&auto=format",
-  },
-  {
-    id: 3,
-    category: "Nyhet",
-    date: "4. juni 2025",
-    title: "Brott & Blega åpner ny dialoggruppe for kvinner i Fevik til høsten",
-    excerpt:
-      "Fra oktober starter vi opp en ny runde med dialoggrupper. Vi gleder oss til å møte nye deltakere.",
-    author: "Redaksjonen",
-    readTime: "2 min",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&h=420&fit=crop&auto=format",
-  },
-];
+import type {
+  ArticlesConnectionQuery,
+  PagesHomepage,
+} from "../../../../tina/__generated__/types";
 
 const categoryColors: Record<string, string> = {
   Kronikk: "bg-blue-50 text-blue-700",
@@ -47,7 +13,21 @@ const categoryColors: Record<string, string> = {
   Refleksjon: "bg-amber-50 text-amber-700",
 };
 
-const NewsTeaser = ({ page }: { page: PagesHomepage }) => {
+const NewsTeaser = ({
+  page,
+  articlesData,
+}: {
+  page: PagesHomepage;
+  articlesData: ArticlesConnectionQuery;
+}) => {
+  const articles = useMemo(() => {
+    return (articlesData.articlesConnection.edges || [])
+      .map((edge) => edge?.node)
+      .filter((node): node is NonNullable<typeof node> => node !== null)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 3);
+  }, [articlesData]);
+
   return (
     <section className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
@@ -71,53 +51,78 @@ const NewsTeaser = ({ page }: { page: PagesHomepage }) => {
             Se alle innlegg →
           </NavLink>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-grid">
-          {teaserArticles.map((article) => (
-            <NavLink
-              key={article.id}
-              to="/aktuelt"
-              className="anim-scroll group flex flex-col bg-card border border-border rounded-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="aspect-video overflow-hidden bg-secondary shrink-0">
-                <img
-                  src={article.img}
-                  alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5 flex flex-col flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <span
-                    className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-medium ${
-                      categoryColors[article.category] ??
-                      "bg-secondary text-foreground"
-                    }`}
-                  >
-                    {article.category}
-                  </span>
-                  <span className="text-[11px] text-muted-foreground">
-                    {article.date}
-                  </span>
-                </div>
-                <h3
-                  className="text-base leading-snug mb-2 group-hover:text-primary transition-colors"
-                  style={{ fontFamily: "'Lora', serif" }}
+
+        {articles.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-grid">
+            {articles.map((article) => {
+              const categoryColor =
+                categoryColors[article.category] ?? "bg-secondary text-foreground";
+
+              return (
+                <NavLink
+                  key={article.id}
+                  to="/aktuelt"
+                  className="anim-scroll group flex flex-col bg-card border border-border rounded-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
                 >
-                  {article.title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 flex-1 mb-4">
-                  {article.excerpt}
-                </p>
-                <div className="flex items-center justify-between text-xs text-muted-foreground border-t border-border pt-3 mt-auto">
-                  <span className="text-primary font-medium">
-                    {article.author}
-                  </span>
-                  <span>{article.readTime} lesetid</span>
-                </div>
-              </div>
-            </NavLink>
-          ))}
-        </div>
+                  <div className="aspect-video overflow-hidden bg-secondary shrink-0">
+                    <img
+                      src={article.coverImage || ""}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-tina-field={tinaField(article, "coverImage")}
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span
+                        className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-medium ${categoryColor}`}
+                        data-tina-field={tinaField(article, "category")}
+                      >
+                        {article.category}
+                      </span>
+                      <span
+                        className="text-[11px] text-muted-foreground"
+                        data-tina-field={tinaField(article, "date")}
+                      >
+                        {new Date(article.date).toLocaleDateString("nb-NO", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        })}
+                      </span>
+                    </div>
+                    <h3
+                      className="text-base leading-snug mb-2 group-hover:text-primary transition-colors"
+                      style={{ fontFamily: "'Lora', serif" }}
+                      data-tina-field={tinaField(article, "title")}
+                    >
+                      {article.title}
+                    </h3>
+                    <p
+                      className="text-xs text-muted-foreground leading-relaxed line-clamp-2 flex-1 mb-4"
+                      data-tina-field={tinaField(article, "excerpt")}
+                    >
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground border-t border-border pt-3 mt-auto">
+                      <span
+                        className="text-primary font-medium"
+                        data-tina-field={tinaField(article, "author")}
+                      >
+                        {article.author}
+                      </span>
+                      <span data-tina-field={tinaField(article, "readingTime")}>
+                        {article.readingTime ?? "?"} min lesetid
+                      </span>
+                    </div>
+                  </div>
+                </NavLink>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="text-sm text-muted-foreground">Ingen artikler funnet.</p>
+        )}
       </div>
     </section>
   );
