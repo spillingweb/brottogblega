@@ -11,7 +11,7 @@ coverImage: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&
 
 Prestasjonssamfunnet og slow living. Hvorfor er det så vanskelig å gjøre ingenting?
 
-Spørsmålet virker enkelt, nesten retorisk: hvorfor er det vanskelig å gjøre ingenting? Men vanskeligheten er ikke tilfeldig. Den er strukturell. Som sykepleier og filosof møter jeg den daglig – i eget arbeid og i pasienters fortellinger om et liv de opplever at de må prestere seg gjennom, også når kroppen ikke lenger orker det.
+Spørsmålet virker enkelt, nesten retorisk: hvorfor er det vanskelig å gjøre ingenting? Men vanskeligheten er ikke tilfeldig. Den er strukturell. Som sykepleier og filosof møter jeg den daglig – i klienters fortellinger om et liv de opplever at de må prestere seg gjennom, også når kroppen ikke lenger orker det.
 
 Hartmut Rosa har argumentert for at det senmoderne samfunnet er bygget rundt en logikk om vekst, akselerasjon og innovasjon som ikke lar seg begrunne utenfra – den forutsettes bare, som et vilkår for at systemet i det hele tatt skal holde seg stabilt. Å stå stille, i en slik logikk, er ikke nøytralt. Det oppleves som tilbakegang. Dette er grunnen til at "å gjøre ingenting" ikke bare krever en beslutning, men et brudd med en strukturell forventning som er internalisert langt inn i selvforståelsen vår.
 
