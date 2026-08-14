@@ -14,7 +14,11 @@ hildeImage: /kari.avif
 hildeKicker: Fysioterapeut
 hildeTitle: Hilde Stenqvist
 hildeContent: |
-  Hilde er autorisert fysioterapeut med over 12 års erfaring, spesialisert i kvinnehelse og bekkenbunnsfunksjon. Hun har videreutdanning fra Høgskolen i Oslo og Akershus, og har jobbet tett med kvinner gjennom svangerskap, etter fødsel og inn i overgangsalderen.
+  Hilde er autorisert fysioterapeut med over 14 års erfaring og stort hjerte for kvinnehelse. 
+
+  Har kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager gjennom Norges Fysioterapeutforbund. Hun har videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus. Er også utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
+
+  har jobbet tett med kvinner gjennom svangerskap, etter fødsel og inn i overgangsalderen.
 
   Hilde tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at å lytte til kroppen er et grunnleggende steg mot bedre helse. Hun møter hver pasient der de er, med tålmodighet og faglig dybde.
 
