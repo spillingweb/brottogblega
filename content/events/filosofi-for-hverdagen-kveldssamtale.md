@@ -1,5 +1,5 @@
 ---
-title: Filosofi for hverdagen — kveldssamtale
+title: 'Kveldssamtale - Filosofi for hverdagen. '
 image: /bruh-dev-AjsOy7aoX0Y-unsplash.jpg
 date: 2026-08-26T00:00:00.000Z
 host: Tina Maria Lie
