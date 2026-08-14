@@ -24,7 +24,7 @@ hildeContent: |
 
   *«Jeg ønsker at alle kvinner skal kjenne seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
 hildeKeywords:
-  - keyword: Bekkenbunnsfysioterapi
+  - keyword: Bekkenbunn
   - keyword: Svangerskap & fødsel
   - keyword: Overgangsalder
   - keyword: Bevegelsesanalyse
