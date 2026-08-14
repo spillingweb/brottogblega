@@ -25,11 +25,11 @@ hildeContent: |
   *«Jeg ønsker at alle kvinner skal kjenne seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
 hildeKeywords:
   - keyword: Bekkenbunn
+  - keyword: Bekkenrelaterte plager
   - keyword: Svangerskap & fødsel
   - keyword: Overgangsalder
-  - keyword: Bekkenrelaterte plager
-  - keyword: Fysiopilates
   - keyword: Barseltid
+  - keyword: Fysiopilates
 tinaMariaImage: /ingrid.avif
 tinaMariaKicker: Sykepleier & filosof
 tinaMariaTitle: Tina Maria Lie
