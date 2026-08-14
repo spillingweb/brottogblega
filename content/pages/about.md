@@ -27,8 +27,8 @@ hildeKeywords:
   - keyword: Bekkenbunn
   - keyword: Bekkenrelaterte plager
   - keyword: Svangerskap & fødsel
-  - keyword: Overgangsalder
   - keyword: Barseltid
+  - keyword: Overgangsalder
   - keyword: Fysiopilates
 tinaMariaImage: /linkinbilde.jpg
 tinaMariaKicker: Sykepleier med filosofisk videreutdanning
