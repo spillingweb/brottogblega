@@ -31,7 +31,7 @@ hildeKeywords:
   - keyword: Barseltid
   - keyword: Fysiopilates
 tinaMariaImage: /linkinbilde.jpg
-tinaMariaKicker: Sykepleier & filosof
+tinaMariaKicker: Sykepleier med filosofisk videreutdanning
 tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
   Tina Maria er utdannet sykepleier og har en bachelor filosofi fra Universitetet i Oslo. Hennes tilnærming bringer humanistisk tenkning inn i klinisk omsorg på en måte som er både tilgjengelig og meningsfull.
