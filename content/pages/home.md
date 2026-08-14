@@ -11,8 +11,8 @@ testimonials:
     role: Deltaker på seminar
 pageName: Forside
 kicker: 'Feviktoppen 19, Grimstad'
-titleMain: 'Helse og ro,'
-titleItalic: for deg som kvinne
+titleMain: Fysioterapi og samtalepraksis.
+titleItalic: Et rom for helhetlig helse
 subtitle: 'Vi tilbyr fysioterapi, filosofisk samtale og seminarer med fokus på kvinnehelse og indre velvære — i trygge og omsorgsfulle omgivelser.'
 heroImage: /photo-1739217416358-0f84b45d918f.avif
 intro1Title: Kropp
