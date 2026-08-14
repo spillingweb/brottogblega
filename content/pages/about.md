@@ -5,7 +5,7 @@ intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - a
 sharedImage: /sharedImage.avif
 sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
-sharedIntro: 'Vi tror at kvinner fortjener å bli møtt helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
+sharedIntro: 'Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
 sharedContent: |
   Hilde bringer kroppen inn. Tina Maria bringer tankene. Sammen skaper vi et rom der disse to ikke lenger behandles som atskilte størrelser.
 
@@ -27,8 +27,8 @@ hildeKeywords:
   - keyword: Bekkenbunn
   - keyword: Bekkenrelaterte plager
   - keyword: Svangerskap & fødsel
-  - keyword: Barseltid
   - keyword: Overgangsalder
+  - keyword: Barseltid
   - keyword: Fysiopilates
 tinaMariaImage: /linkinbilde.jpg
 tinaMariaKicker: Sykepleier med filosofisk videreutdanning
