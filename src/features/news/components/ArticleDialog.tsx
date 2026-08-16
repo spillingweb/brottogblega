@@ -96,7 +96,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
           </div>
           <Heading
             level={2}
-            className="md:text-3xl mb-3 leading-snug"
+            className="md:text-3xl mb-3 leading-snug break-all"
             data-tina-field={tinaField(article, "title")}
           >
             {article.title}

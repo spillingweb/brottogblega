@@ -14,11 +14,9 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
-  const [serviceLinks, setServiceLinks] = useState([
-    { id: "fysioterapi", title: "Fysioterapi" },
-    { id: "filosofisk-samtale", title: "Filosofisk samtale" },
-    { id: "tverrfaglig", title: "Tverrfaglig" },
-  ]);
+  const [serviceLinks, setServiceLinks] = useState<
+    { id: string; title: string }[]
+  >([]);
   const location = useLocation();
 
   useEffect(() => {
@@ -108,6 +106,7 @@ const Header = () => {
                             key={service.id}
                             href={`/tjenester#${service.id}`}
                             className="block rounded-md px-3 py-2 text-sm text-foreground/80 transition-colors hover:bg-muted hover:text-primary"
+                          onClick={() => setScrolled(true)}
                           >
                             {service.title}
                           </a>
