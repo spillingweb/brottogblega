@@ -1,17 +1,41 @@
+import { Button } from "#/components/ui/button";
 import { DialogContent } from "#/components/ui/dialog";
 import Heading from "#/components/ui/Heading";
 import { ScrollArea } from "#/components/ui/scroll-area";
 import type { ArticleNode } from "../types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { categoryColors } from "../utils";
+import { calculateReadingTime, categoryColors } from "../utils";
 import { tinaField } from "tinacms/tina-field";
+import { PrinterIcon, Share2Icon } from "lucide-react";
+import { cn } from "#/lib/utils";
 
 const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
   if (!article) return null;
+  const readingTime = calculateReadingTime(article.body);
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  const handleShare = async () => {
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+      await navigator.share({
+        title: article.title,
+        text: article.excerpt,
+        url: shareUrl,
+      });
+      return;
+    }
+
+    await navigator.clipboard.writeText(shareUrl);
+    window.prompt("Kopier lenken til innlegget", shareUrl);
+  };
 
   return (
-    <DialogContent className="max-w-[calc(100dvw-2rem)] sm:max-w-xl! md:max-w-2xl! p-0 h-[calc(100dvh-2rem)]">
-      <ScrollArea className="h-full overflow-auto">
+    <DialogContent className="max-w-[calc(100dvw-2rem)] sm:max-w-xl! md:max-w-2xl! p-0 h-[calc(100dvh-2rem)] print:h-auto print:mt-90">
+      <ScrollArea className="h-full overflow-auto print:h-auto print:overflow-visible">
         <div className="overflow-hidden rounded-t-sm bg-secondary h-70">
           <img
             src={article.coverImage || ""}
@@ -20,31 +44,55 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
             data-tina-field={tinaField(article, "coverImage")}
           />
         </div>
-        <div className="p-6 sm:p-8 md:p-10">
-          <div className="flex items-center gap-3 mb-4">
-            <span
-              className={`text-[11px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-medium ${categoryColors[article.category] ?? "bg-secondary text-foreground"}`}
-              data-tina-field={tinaField(article, "category")}
-            >
-              {article.category}
-            </span>
-            <span
-              className="text-xs text-muted-foreground"
-              data-tina-field={tinaField(article, "date")}
-            >
-              {new Date(article.date).toLocaleDateString("nb-NO", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-            </span>
-            <span>·</span>
-            <span
-              className="text-xs text-muted-foreground"
-              data-tina-field={tinaField(article, "readingTime")}
-            >
-              {article.readingTime ?? "?"} min lesetid
-            </span>
+        <div className="p-6 sm:p-8 md:p-10 print:px-0">
+          <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-3">
+              <span
+                className={cn(
+                  "text-[11px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-medium",
+                  categoryColors[article.category] ??
+                    "bg-secondary text-foreground",
+                )}
+                data-tina-field={tinaField(article, "category")}
+              >
+                {article.category}
+              </span>
+              <span
+                className="text-xs text-muted-foreground"
+                data-tina-field={tinaField(article, "date")}
+              >
+                {new Date(article.date).toLocaleDateString("nb-NO", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </span>
+              <span>·</span>
+              <span className="text-xs text-muted-foreground">
+                {readingTime ?? "?"} min lesetid
+              </span>
+            </div>
+
+            <div className="flex items-center gap-2 print:hidden">
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={handlePrint}
+              >
+                <PrinterIcon />
+                Print
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={handleShare}
+              >
+                <Share2Icon />
+                Share
+              </Button>
+            </div>
           </div>
           <Heading
             level={2}
@@ -67,7 +115,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
           </p>
           {article.body && (
             <div
-              className="text-sm md:text-base text-foreground leading-relaxed flex flex-col gap-4"
+              className="text-sm md:text-base text-foreground leading-relaxed flex flex-col gap-4 print:block "
               data-tina-field={tinaField(article, "body")}
             >
               <TinaMarkdown content={article.body} />

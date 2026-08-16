@@ -6,6 +6,7 @@ host: Tina Maria Lie
 time: '18:00–20:00'
 location: 'Brott & Blega Helse, Feviktoppen 19'
 spots: Åpent
+category: content/eventCategories/dialog.json
 tags:
   - Filosofi
 price: '300'

@@ -8,6 +8,7 @@ import { Dialog, DialogTrigger } from "./ui/dialog";
 import ContactDialog from "./ContactDialog";
 import { navLinks } from "#/lib/constants";
 import { client } from "../../tina/__generated__/client";
+import { cn } from "#/lib/utils";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,7 +36,9 @@ const Header = () => {
   useEffect(() => {
     const loadServices = async () => {
       try {
-        const response = await client.queries.servicesConnection({ sort: "order" });
+        const response = await client.queries.servicesConnection({
+          sort: "order",
+        });
         const services = (response?.data?.servicesConnection?.edges || [])
           .map((edge: any) => edge?.node)
           .filter(Boolean)
@@ -65,20 +68,24 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHomePage && !scrolled ? "bg-transparent" : "bg-white/95 backdrop-blur-sm shadow-sm"
-      }`}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 print:hidden",
+        scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent",
+      )}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/">
           <img
             src={Logo}
             alt="Brott og Blega logo"
-            className="w-auto h-15 py-2"
+            className={cn(
+              "w-auto text-primary transition-all duration-300",
+              scrolled ? "h-10" : "h-10 lg:h-25 lg:pt-4",
+            )}
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 py-6">
+        <nav className="hidden lg:flex items-center gap-8 self-start py-2">
           <ul className="flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.to} className="relative group">
@@ -154,7 +161,9 @@ const Header = () => {
 
       <div
         className={`lg:hidden overflow-hidden border-t border-border bg-white/95 backdrop-blur-sm transition-all duration-300 ease-out ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          menuOpen
+            ? "max-h-96 opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
         <div
@@ -176,7 +185,9 @@ const Header = () => {
           </ul>
           <Dialog open={contactOpen} onOpenChange={setContactOpen}>
             <DialogTrigger asChild>
-              <Button className="text-xl" size="lg">Kontakt oss</Button>
+              <Button className="text-xl" size="lg">
+                Kontakt oss
+              </Button>
             </DialogTrigger>
             <ContactDialog />
           </Dialog>

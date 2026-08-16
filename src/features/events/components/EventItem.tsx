@@ -11,7 +11,13 @@ import { tinaField } from "tinacms/tina-field";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { cn } from "#/lib/utils";
 
-const EventItem = ({ event }: { event: Events }) => {
+const EventItem = ({
+  event,
+  categoryLabel,
+}: {
+  event: Events;
+  categoryLabel?: string;
+}) => {
   const month = new Date(event.date).toLocaleString("nb-NO", {
     month: "short",
   });
@@ -42,23 +48,21 @@ const EventItem = ({ event }: { event: Events }) => {
       : `${startDate} - ${endDate}`
     : startDate;
 
-  const isPastEvent =
-    new Date(event.endDate || event.date).getTime() <
-    new Date().setHours(0, 0, 0, 0);
-
   return (
     <article>
-      <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0">
+      <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0  @container">
         {/* Image */}
         <div
           className="relative md:h-auto h-48 overflow-hidden bg-secondary"
           data-tina-field={tinaField(event, "image")}
         >
-          <img
-            src={event.image || ""}
-            alt={event.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          {event.image && (
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          )}
           <div className="absolute inset-0 bg-primary/20" />
           <div
             className="absolute bottom-0 left-0 right-0 p-4 text-white"
@@ -81,6 +85,11 @@ const EventItem = ({ event }: { event: Events }) => {
           <div>
             <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
               <div className="flex flex-wrap gap-1.5">
+                {categoryLabel && (
+                  <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-primary text-primary-foreground rounded-sm font-medium">
+                    {categoryLabel}
+                  </span>
+                )}
                 {event.tags.map((t) => (
                   <span
                     key={t}
@@ -94,13 +103,11 @@ const EventItem = ({ event }: { event: Events }) => {
               <span
                 className={cn(
                   "text-xs px-2 py-0.5 rounded-sm font-medium",
-                  isPastEvent
-                    ? spotsColor("Få plasser igjen")
-                    : spotsColor(event.spots),
+                  spotsColor(event.spots),
                 )}
                 data-tina-field={tinaField(event, "spots")}
               >
-                {isPastEvent ? "Arrangementet er fullført" : event.spots}
+                {event.spots}
               </span>
             </div>
             <Heading
@@ -110,15 +117,15 @@ const EventItem = ({ event }: { event: Events }) => {
             >
               {event.title}
             </Heading>
-            <p
+            <div
               className="text-sm text-muted-foreground leading-relaxed mb-4"
               data-tina-field={tinaField(event, "description")}
             >
               <TinaMarkdown content={event.description} />
-            </p>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               <div
-                className="flex items-center gap-1.5 text-xs text-muted-foreground"
+                className="flex items-center gap-1.5 text-xs text-muted-foreground text-balance"
                 data-tina-field={tinaField(event, "date")}
               >
                 <Calendar size={13} />
@@ -140,30 +147,29 @@ const EventItem = ({ event }: { event: Events }) => {
               </div>
             </div>
           </div>
-          {!isPastEvent && (
-            <div className="flex items-center justify-between border-t border-border pt-5">
-              <div>
-                <span
-                  className="text-base font-medium text-foreground"
-                  data-tina-field={tinaField(event, "price")}
-                >
-                  {event.price}
-                </span>
-                <span
-                  className="text-xs text-muted-foreground ml-2"
-                  data-tina-field={tinaField(event, "host")}
-                >
-                  · {event.host}
-                </span>
-              </div>
-              <Dialog>
-                <DialogTrigger className="cursor-pointer" asChild>
-                  <Button>Meld deg på</Button>
-                </DialogTrigger>
-                <ContactDialog />
-              </Dialog>
+          <div className="flex items-center justify-between border-t border-border pt-5">
+            <div className="flex flex-col @sm:flex-row @sm:items-center @sm:gap-2 text-sm text-muted-foreground">
+              <span
+                className="text-base font-medium text-foreground"
+                data-tina-field={tinaField(event, "price")}
+              >
+                {event.price}
+              </span>
+              <span className="hidden @sm:block">·</span>
+              <span
+                className="text-xs text-muted-foreground"
+                data-tina-field={tinaField(event, "host")}
+              >
+                {event.host}
+              </span>
             </div>
-          )}
+            <Dialog>
+              <DialogTrigger className="cursor-pointer" asChild>
+                <Button>Meld deg på</Button>
+              </DialogTrigger>
+              <ContactDialog />
+            </Dialog>
+          </div>
         </div>
       </Card>
     </article>

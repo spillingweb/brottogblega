@@ -99,7 +99,6 @@ fragment ArticlesParts on Articles {
   author
   date
   category
-  readingTime
   coverImage
   body
 }
@@ -115,6 +114,25 @@ fragment EventsParts on Events {
   time
   location
   spots
+  category {
+    ... on EventCategories {
+      __typename
+      value
+      label
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
   tags
   price
 }

@@ -2,7 +2,7 @@ import { Card } from "#/components/ui/card";
 import { DialogTrigger } from "#/components/ui/dialog";
 import { tinaField } from "tinacms/tina-field";
 import type { ArticleNode } from "../types";
-import { categoryColors } from "../utils";
+import { calculateReadingTime, categoryColors } from "../utils";
 import Heading from "#/components/ui/Heading";
 
 const Featured = ({
@@ -12,6 +12,8 @@ const Featured = ({
   article: ArticleNode;
   onSelectArticle: (article: ArticleNode) => void;
 }) => {
+const readingTime = calculateReadingTime(article.body || ""); // Calculate reading time based on content
+
   return (
     <DialogTrigger
       className="w-full text-left mb-14 group cursor-pointer"
@@ -65,9 +67,8 @@ const Featured = ({
             <span className="text-muted-foreground">·</span>
             <span
               className="text-muted-foreground"
-              data-tina-field={tinaField(article, "readingTime")}
             >
-              {article.readingTime ?? "?"} min lesetid
+              {readingTime ?? "?"} min lesetid
             </span>
             <span className="ml-auto group-hover:translate-x-1 transition-transform">
               →

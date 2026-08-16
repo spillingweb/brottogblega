@@ -524,7 +524,6 @@ export type Articles = Node & Document & {
   author: Scalars['String']['output'];
   date: Scalars['String']['output'];
   category: Scalars['String']['output'];
-  readingTime?: Maybe<Scalars['Float']['output']>;
   coverImage?: Maybe<Scalars['String']['output']>;
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
@@ -546,7 +545,6 @@ export type ArticlesFilter = {
   author?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
   category?: InputMaybe<StringFilter>;
-  readingTime?: InputMaybe<NumberFilter>;
   coverImage?: InputMaybe<ImageFilter>;
   body?: InputMaybe<RichTextFilter>;
 };
@@ -564,6 +562,8 @@ export type ArticlesConnection = Connection & {
   edges?: Maybe<Array<Maybe<ArticlesConnectionEdges>>>;
 };
 
+export type EventsCategory = EventCategories;
+
 export type Events = Node & Document & {
   __typename?: 'Events';
   title: Scalars['String']['output'];
@@ -575,11 +575,16 @@ export type Events = Node & Document & {
   time: Scalars['String']['output'];
   location: Scalars['String']['output'];
   spots: Scalars['String']['output'];
+  category: EventsCategory;
   tags: Array<Scalars['String']['output']>;
   price: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
+};
+
+export type EventsCategoryFilter = {
+  eventCategories?: InputMaybe<EventCategoriesFilter>;
 };
 
 export type EventsFilter = {
@@ -592,6 +597,7 @@ export type EventsFilter = {
   time?: InputMaybe<StringFilter>;
   location?: InputMaybe<StringFilter>;
   spots?: InputMaybe<StringFilter>;
+  category?: InputMaybe<EventsCategoryFilter>;
   tags?: InputMaybe<StringFilter>;
   price?: InputMaybe<StringFilter>;
 };
@@ -874,7 +880,6 @@ export type ArticlesMutation = {
   author?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
   category?: InputMaybe<Scalars['String']['input']>;
-  readingTime?: InputMaybe<Scalars['Float']['input']>;
   coverImage?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
@@ -889,6 +894,7 @@ export type EventsMutation = {
   time?: InputMaybe<Scalars['String']['input']>;
   location?: InputMaybe<Scalars['String']['input']>;
   spots?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   price?: InputMaybe<Scalars['String']['input']>;
 };
@@ -910,9 +916,9 @@ export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_
 
 export type ServicesPartsFragment = { __typename: 'Services', title: string, category: string, tagline: string, image?: string | null, description: string, order?: number | null, offers?: Array<{ __typename: 'ServicesOffers', title: string, price: string } | null> | null };
 
-export type ArticlesPartsFragment = { __typename: 'Articles', title: string, excerpt: string, author: string, date: string, category: string, readingTime?: number | null, coverImage?: string | null, body?: any | null };
+export type ArticlesPartsFragment = { __typename: 'Articles', title: string, excerpt: string, author: string, date: string, category: string, coverImage?: string | null, body?: any | null };
 
-export type EventsPartsFragment = { __typename: 'Events', title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string };
+export type EventsPartsFragment = { __typename: 'Events', title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type EventCategoriesPartsFragment = { __typename: 'EventCategories', value: string, label: string };
 
@@ -959,7 +965,7 @@ export type ArticlesQueryVariables = Exact<{
 }>;
 
 
-export type ArticlesQuery = { __typename?: 'Query', articles: { __typename: 'Articles', id: string, title: string, excerpt: string, author: string, date: string, category: string, readingTime?: number | null, coverImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type ArticlesQuery = { __typename?: 'Query', articles: { __typename: 'Articles', id: string, title: string, excerpt: string, author: string, date: string, category: string, coverImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type ArticlesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -971,14 +977,14 @@ export type ArticlesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ArticlesConnectionQuery = { __typename?: 'Query', articlesConnection: { __typename?: 'ArticlesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ArticlesConnectionEdges', cursor: string, node?: { __typename: 'Articles', id: string, title: string, excerpt: string, author: string, date: string, category: string, readingTime?: number | null, coverImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type ArticlesConnectionQuery = { __typename?: 'Query', articlesConnection: { __typename?: 'ArticlesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ArticlesConnectionEdges', cursor: string, node?: { __typename: 'Articles', id: string, title: string, excerpt: string, author: string, date: string, category: string, coverImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type EventsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type EventsQuery = { __typename?: 'Query', events: { __typename: 'Events', id: string, title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type EventsQuery = { __typename?: 'Query', events: { __typename: 'Events', id: string, title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } } };
 
 export type EventsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -990,7 +996,7 @@ export type EventsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type EventsConnectionQuery = { __typename?: 'Query', eventsConnection: { __typename?: 'EventsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'EventsConnectionEdges', cursor: string, node?: { __typename: 'Events', id: string, title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type EventsConnectionQuery = { __typename?: 'Query', eventsConnection: { __typename?: 'EventsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'EventsConnectionEdges', cursor: string, node?: { __typename: 'Events', id: string, title: string, description: any, image?: string | null, date: string, endDate?: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } } | null } | null> | null } };
 
 export type EventCategoriesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1115,7 +1121,6 @@ export const ArticlesPartsFragmentDoc = gql`
   author
   date
   category
-  readingTime
   coverImage
   body
 }
@@ -1132,6 +1137,25 @@ export const EventsPartsFragmentDoc = gql`
   time
   location
   spots
+  category {
+    ... on EventCategories {
+      __typename
+      value
+      label
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
   tags
   price
 }

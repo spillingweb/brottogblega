@@ -12,6 +12,7 @@ import type {
 } from "../../../../tina/__generated__/types";
 import ServiceItem from "./ServiceItem";
 import { tinaField } from "tinacms/tina-field";
+import { useMediaQuery } from "usehooks-ts";
 
 const Services = ({
   servicesData,
@@ -21,6 +22,7 @@ const Services = ({
   pageData: PagesQuery;
 }) => {
   const page = pageData.pages as PagesStandard;
+  const isSmallScreen = useMediaQuery("(max-width: 640px)"); // Adjust the breakpoint as needed
 
   const services = useMemo(() => {
     return (servicesData.servicesConnection.edges || [])
@@ -57,7 +59,7 @@ const Services = ({
             key={service.id}
             asChild
             variant={i === 0 ? "default" : "outline"}
-            size="sm"
+            size={isSmallScreen ? "xs" : "sm"}
           >
             <Link
               to="."

@@ -109,7 +109,6 @@ export const ArticlesPartsFragmentDoc = gql`
   author
   date
   category
-  readingTime
   coverImage
   body
 }
@@ -126,6 +125,25 @@ export const EventsPartsFragmentDoc = gql`
   time
   location
   spots
+  category {
+    ... on EventCategories {
+      __typename
+      value
+      label
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
   tags
   price
 }

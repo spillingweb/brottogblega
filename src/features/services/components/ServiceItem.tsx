@@ -85,7 +85,7 @@ const ServiceItem = ({
                   >
                     <div className="min-w-0">
                       <p
-                        className="text-sm font-medium text-foreground leading-tight"
+                        className="text-sm font-medium text-foreground leading-tight text-balance"
                         data-tina-field={tinaField(offer, "title")}
                       >
                         {offer.title}

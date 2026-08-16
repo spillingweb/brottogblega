@@ -609,11 +609,6 @@ var config_default = defineConfig({
             required: true
           },
           {
-            type: "number",
-            name: "readingTime",
-            label: "Lesetid (minutter)"
-          },
-          {
             type: "image",
             name: "coverImage",
             label: "Forsidebilde"
@@ -706,10 +701,19 @@ var config_default = defineConfig({
             required: true
           },
           {
+            type: "reference",
+            name: "category",
+            label: "Kategori",
+            collections: ["eventCategories"],
+            required: true,
+            description: "Velg en hovedkategori for filtrering. Trenger du en ny kategori, opprett den under 'Kategorier - arrangementer'."
+          },
+          {
             type: "string",
             name: "tags",
             label: "Tags",
             list: true,
+            description: "Ekstra stikkord som vises p\xE5 kortet (ikke brukt til filtrering).",
             required: true
           },
           {

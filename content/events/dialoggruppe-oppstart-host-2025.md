@@ -6,9 +6,9 @@ host: Tina Maria Lie
 time: '10:30-13:30'
 location: 'Brott & Blega Helse, Feviktoppen 19, Fevik'
 spots: Åpent
+category: content/eventCategories/dialog.json
 tags:
   - Gruppe
-  - Dialog
 price: 1 200 kr / mnd
 ---
 

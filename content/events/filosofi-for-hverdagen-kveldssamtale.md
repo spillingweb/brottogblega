@@ -6,8 +6,8 @@ host: Tina Maria Lie
 time: '18:00–20:00'
 location: 'Brott & Blega, Strandveien 14, Fevik'
 spots: Åpent
+category: content/eventCategories/kurs.json
 tags:
-  - Kurs
   - Filosofi
 price: 350 kr / kveld
 ---

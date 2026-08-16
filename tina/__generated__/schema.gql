@@ -373,7 +373,6 @@ type Articles implements Node & Document {
   author: String!
   date: String!
   category: String!
-  readingTime: Float
   coverImage: String
   body: JSON
   id: ID!
@@ -395,7 +394,6 @@ input ArticlesFilter {
   author: StringFilter
   date: DatetimeFilter
   category: StringFilter
-  readingTime: NumberFilter
   coverImage: ImageFilter
   body: RichTextFilter
 }
@@ -411,6 +409,8 @@ type ArticlesConnection implements Connection {
   edges: [ArticlesConnectionEdges]
 }
 
+union EventsCategory = EventCategories
+
 type Events implements Node & Document {
   title: String!
   description: JSON!
@@ -421,11 +421,16 @@ type Events implements Node & Document {
   time: String!
   location: String!
   spots: String!
+  category: EventsCategory!
   tags: [String!]!
   price: String!
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
+}
+
+input EventsCategoryFilter {
+  eventCategories: EventCategoriesFilter
 }
 
 input EventsFilter {
@@ -438,6 +443,7 @@ input EventsFilter {
   time: StringFilter
   location: StringFilter
   spots: StringFilter
+  category: EventsCategoryFilter
   tags: StringFilter
   price: StringFilter
 }
@@ -621,7 +627,6 @@ input ArticlesMutation {
   author: String
   date: String
   category: String
-  readingTime: Float
   coverImage: String
   body: JSON
 }
@@ -636,6 +641,7 @@ input EventsMutation {
   time: String
   location: String
   spots: String
+  category: String
   tags: [String]
   price: String
 }

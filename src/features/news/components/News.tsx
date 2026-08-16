@@ -103,7 +103,7 @@ const News = ({
 
           {/* Rest */}
           {rest.length > 0 && (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
               {rest.map((article) => (
                 <NewsItem
                   key={article.id}

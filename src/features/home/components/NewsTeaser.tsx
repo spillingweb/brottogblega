@@ -5,6 +5,7 @@ import type {
   ArticlesConnectionQuery,
   PagesHomepage,
 } from "../../../../tina/__generated__/types";
+import { calculateReadingTime } from "#/features/news/utils";
 
 const categoryColors: Record<string, string> = {
   Kronikk: "bg-blue-50 text-blue-700",
@@ -56,12 +57,15 @@ const NewsTeaser = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-grid">
             {articles.map((article) => {
               const categoryColor =
-                categoryColors[article.category] ?? "bg-secondary text-foreground";
+                categoryColors[article.category] ??
+                "bg-secondary text-foreground";
+
+              const readingTime = calculateReadingTime(article.body);
 
               return (
                 <NavLink
                   key={article.id}
-                  to="/aktuelt"
+                  to={`/aktuelt/${article._sys.filename}`}
                   className="anim-scroll group flex flex-col bg-card border border-border rounded-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="aspect-video overflow-hidden bg-secondary shrink-0">
@@ -111,9 +115,7 @@ const NewsTeaser = ({
                       >
                         {article.author}
                       </span>
-                      <span data-tina-field={tinaField(article, "readingTime")}>
-                        {article.readingTime ?? "?"} min lesetid
-                      </span>
+                      <span>{readingTime ?? "?"} min lesetid</span>
                     </div>
                   </div>
                 </NavLink>
@@ -121,7 +123,9 @@ const NewsTeaser = ({
             })}
           </div>
         ) : (
-          <p className="text-sm text-muted-foreground">Ingen artikler funnet.</p>
+          <p className="text-sm text-muted-foreground">
+            Ingen artikler funnet.
+          </p>
         )}
       </div>
     </section>

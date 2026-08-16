@@ -6,8 +6,8 @@ host: Hilde Stenqvist & Tina Maria Lie
 time: '10:00–16:00'
 location: 'Fevik Kulturhus, Havnegata 3'
 spots: Få plasser igjen
+category: content/eventCategories/seminar.json
 tags:
-  - Seminar
   - Kropp & Sinn
 price: 1 200 kr
 ---

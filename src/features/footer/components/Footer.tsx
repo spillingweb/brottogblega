@@ -7,8 +7,10 @@ import { navLinks } from "#/lib/constants";
 import FooterNavLink from "./FooterNavLink";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-primary flex flex-col justify-center gap-4 text-sm text-primary-foreground/70">
+    <footer className="bg-primary flex flex-col justify-center gap-4 text-sm text-primary-foreground/70 print:hidden">
       <div className="grid md:grid-cols-3 gap-10 px-6 py-12 max-w-6xl w-full mx-auto">
         {/* Logo and social media */}
         <div className="flex flex-col items-start justify-between gap-4">
@@ -23,9 +25,7 @@ const Footer = () => {
         {/* Contact info */}
         {/* TODO: Make editable with TinaCMS */}
         <div className="flex flex-col items-start gap-2">
-          <Kicker className="text-primary-foreground/50">
-            Kontakt
-          </Kicker>
+          <Kicker className="text-primary-foreground/50">Kontakt</Kicker>
           <div className="flex flex-col items-start gap-1">
             <p className="italic text-primary-foreground/50">
               Heidi fysioterapeut
@@ -72,9 +72,7 @@ const Footer = () => {
 
         {/* Navigation */}
         <nav className="flex flex-col items-start gap-2">
-          <Kicker className="text-primary-foreground/50">
-            Sider
-          </Kicker>
+          <Kicker className="text-primary-foreground/50">Sider</Kicker>
           <ul className="flex flex-col items-start gap-2">
             {navLinks.map((nav) => (
               <FooterNavLink key={nav.to} path={nav.to} label={nav.label} />
@@ -84,9 +82,8 @@ const Footer = () => {
       </div>
       <Separator className="bg-primary-foreground/10 max-w-6xl w-full mx-auto" />
       <p className="text-xs text-primary-foreground/40 pb-4 px-6 max-w-6xl w-full mx-auto">
-        &copy; {new Date().getFullYear()}{" "}
-        <a href="https://spillingweb.com">Spilling Web</a>. Alle rettigheter
-        forbeholdt.
+        &copy; {year} <a href="https://spillingweb.com">Spilling Web</a>. Alle
+        rettigheter forbeholdt.
       </p>
     </footer>
   );

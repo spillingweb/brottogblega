@@ -6,9 +6,9 @@ host: Hilde Stenqvist
 time: 'kl 10.00-11.00 '
 location: Brott&Blega Helse
 spots: Åpent
+category: content/eventCategories/gruppe.json
 tags:
   - Fysioterapi
-  - Gruppetime
 price: '2200 kr '
 ---
 

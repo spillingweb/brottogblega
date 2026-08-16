@@ -7,8 +7,8 @@ host: Hilde Stenqvist & Tina Maria Lie
 time: 'Lørdag 09:00–17:00, Søndag 10:00–15:00'
 location: 'Grimstad Gjestehus, Grimstad'
 spots: Noen plasser igjen
+category: content/eventCategories/kurs.json
 tags:
-  - Kurs
   - Overgangsalder
 price: 2 400 kr
 ---
