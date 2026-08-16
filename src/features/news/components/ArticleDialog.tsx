@@ -81,7 +81,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
                 onClick={handlePrint}
               >
                 <PrinterIcon />
-                Print
+                Skriv ut
               </Button>
               <Button
                 type="button"
@@ -90,7 +90,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
                 onClick={handleShare}
               >
                 <Share2Icon />
-                Share
+                Del
               </Button>
             </div>
           </div>

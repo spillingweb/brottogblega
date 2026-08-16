@@ -14,14 +14,12 @@ const ServiceItem = ({
   service: Services;
   index: number;
 }) => {
-  const serviceId =
-    (service.title || "tjeneste")
-      .toLowerCase()
-      .replace(/æ/g, "ae")
-      .replace(/ø/g, "o")
-      .replace(/å/g, "a")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, "") || "tjeneste";
+  // Get the service ID from the filename or generate it from the title
+  const serviceId = (service as Services & { _sys?: { filename?: string } })?._sys?.filename
+    ? (service as Services & { _sys?: { filename?: string } })?._sys?.filename.replace(
+        /\.[^/.]+$/, "",
+      )
+    : (service.title || "tjeneste")
 
   return (
     <Card id={serviceId} className="p-0 scroll-mt-28">

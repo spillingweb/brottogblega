@@ -21,8 +21,6 @@ const Header = () => {
   ]);
   const location = useLocation();
 
-  const isHomePage = location.pathname === "/";
-
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
