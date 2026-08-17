@@ -16,4 +16,4 @@ Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og
 
 Den første gangen er en individuell time slik at jeg kan bli kjent med dine målsettinger og eventuelle plager.
 
-Vi treffes 7 onsdager. Ikke gruppe i uke 40 og 41.
+Vi treffes 7 onsdager. NB! Det blir ikke gruppe i uke 40 og 41.
