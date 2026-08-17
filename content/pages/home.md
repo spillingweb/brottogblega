@@ -16,7 +16,7 @@ titleItalic: Et rom for helhetlig helse
 subtitle: 'Vi tilbyr filosofisk samtaleterapi, fysioterapi og tverrfaglige seminarer. '
 heroImage: /photo-1739217416358-0f84b45d918f.avif
 intro1Title: Kropp
-intro1Text: Fysioterapi og bevegelsesveiledning tilpasset kvinner i alle livsfaser.
+intro1Text: Fysioterapi individuelt og i grupper. Kvinnehelse.
 intro2Title: Sinn
 intro2Text: Filosofisk terapi og dialog som skaper rom for refleksjon og mening.
 intro3Title: Fellesskap
