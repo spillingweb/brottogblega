@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
   loader: async () => {
     const [pageResult, servicesResult, articlesResult] = await Promise.all([
       client.queries.pages({ relativePath: "home.md" }),
-      client.queries.servicesConnection({ sort: "order" }),
+      client.queries.servicesConnection(),
       client.queries.articlesConnection({ sort: "date", last: -1 }),
     ]);
     return {

@@ -48,7 +48,7 @@ const ServicesTeaser = ({
         </div>
 
         {/* Services list */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stagger-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-grid">
           {services.length > 0 ? (
             services.map((s) => (
               <ServiceCard key={s.id} service={s as Services} />

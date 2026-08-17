@@ -235,7 +235,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt | Services | Articles | Events | EventCategories | Folder;
+export type DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesContact | Services | Articles | Events | EventCategories | Folder;
 
 export type PagesHomepage = Node & Document & {
   __typename?: 'PagesHomepage';
@@ -320,23 +320,24 @@ export type PagesStandard = Node & Document & {
   _values: Scalars['JSON']['output'];
 };
 
-export type PagesKontakt = Node & Document & {
-  __typename?: 'PagesKontakt';
-  title: Scalars['String']['output'];
-  kicker?: Maybe<Scalars['String']['output']>;
-  heading: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  addressLine1?: Maybe<Scalars['String']['output']>;
-  addressLine2?: Maybe<Scalars['String']['output']>;
-  addressLine3?: Maybe<Scalars['String']['output']>;
-  email: Scalars['String']['output'];
-  phone: Scalars['String']['output'];
+export type PagesContact = Node & Document & {
+  __typename?: 'PagesContact';
+  facebook?: Maybe<Scalars['String']['output']>;
+  instagram?: Maybe<Scalars['String']['output']>;
+  hildeName: Scalars['String']['output'];
+  hildeEmail: Scalars['String']['output'];
+  hildePhone: Scalars['String']['output'];
+  hildeHomePage?: Maybe<Scalars['String']['output']>;
+  tinaName: Scalars['String']['output'];
+  tinaEmail: Scalars['String']['output'];
+  tinaPhone: Scalars['String']['output'];
+  tinaHomePage?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type Pages = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt;
+export type Pages = PagesHomepage | PagesAbout | PagesStandard | PagesContact;
 
 export type StringFilter = {
   startsWith?: InputMaybe<Scalars['String']['input']>;
@@ -427,23 +428,24 @@ export type PagesStandardFilter = {
   ctaDescription?: InputMaybe<StringFilter>;
 };
 
-export type PagesKontaktFilter = {
-  title?: InputMaybe<StringFilter>;
-  kicker?: InputMaybe<StringFilter>;
-  heading?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  addressLine1?: InputMaybe<StringFilter>;
-  addressLine2?: InputMaybe<StringFilter>;
-  addressLine3?: InputMaybe<StringFilter>;
-  email?: InputMaybe<StringFilter>;
-  phone?: InputMaybe<StringFilter>;
+export type PagesContactFilter = {
+  facebook?: InputMaybe<StringFilter>;
+  instagram?: InputMaybe<StringFilter>;
+  hildeName?: InputMaybe<StringFilter>;
+  hildeEmail?: InputMaybe<StringFilter>;
+  hildePhone?: InputMaybe<StringFilter>;
+  hildeHomePage?: InputMaybe<StringFilter>;
+  tinaName?: InputMaybe<StringFilter>;
+  tinaEmail?: InputMaybe<StringFilter>;
+  tinaPhone?: InputMaybe<StringFilter>;
+  tinaHomePage?: InputMaybe<StringFilter>;
 };
 
 export type PagesFilter = {
   homepage?: InputMaybe<PagesHomepageFilter>;
   about?: InputMaybe<PagesAboutFilter>;
   standard?: InputMaybe<PagesStandardFilter>;
-  kontakt?: InputMaybe<PagesKontaktFilter>;
+  contact?: InputMaybe<PagesContactFilter>;
 };
 
 export type PagesConnectionEdges = {
@@ -840,23 +842,24 @@ export type PagesStandardMutation = {
   ctaDescription?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PagesKontaktMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  kicker?: InputMaybe<Scalars['String']['input']>;
-  heading?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  addressLine1?: InputMaybe<Scalars['String']['input']>;
-  addressLine2?: InputMaybe<Scalars['String']['input']>;
-  addressLine3?: InputMaybe<Scalars['String']['input']>;
-  email?: InputMaybe<Scalars['String']['input']>;
-  phone?: InputMaybe<Scalars['String']['input']>;
+export type PagesContactMutation = {
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  hildeName?: InputMaybe<Scalars['String']['input']>;
+  hildeEmail?: InputMaybe<Scalars['String']['input']>;
+  hildePhone?: InputMaybe<Scalars['String']['input']>;
+  hildeHomePage?: InputMaybe<Scalars['String']['input']>;
+  tinaName?: InputMaybe<Scalars['String']['input']>;
+  tinaEmail?: InputMaybe<Scalars['String']['input']>;
+  tinaPhone?: InputMaybe<Scalars['String']['input']>;
+  tinaHomePage?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PagesMutation = {
   homepage?: InputMaybe<PagesHomepageMutation>;
   about?: InputMaybe<PagesAboutMutation>;
   standard?: InputMaybe<PagesStandardMutation>;
-  kontakt?: InputMaybe<PagesKontaktMutation>;
+  contact?: InputMaybe<PagesContactMutation>;
 };
 
 export type ServicesOffersMutation = {
@@ -910,9 +913,9 @@ type PagesParts_PagesAbout_Fragment = { __typename: 'PagesAbout', pageName: stri
 
 type PagesParts_PagesStandard_Fragment = { __typename: 'PagesStandard', pageName: string, title: string, intro?: string | null, ctaTitle?: string | null, ctaDescription?: string | null };
 
-type PagesParts_PagesKontakt_Fragment = { __typename: 'PagesKontakt', title: string, kicker?: string | null, heading: string, description: string, addressLine1?: string | null, addressLine2?: string | null, addressLine3?: string | null, email: string, phone: string };
+type PagesParts_PagesContact_Fragment = { __typename: 'PagesContact', facebook?: string | null, instagram?: string | null, hildeName: string, hildeEmail: string, hildePhone: string, hildeHomePage?: string | null, tinaName: string, tinaEmail: string, tinaPhone: string, tinaHomePage?: string | null };
 
-export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_PagesAbout_Fragment | PagesParts_PagesStandard_Fragment | PagesParts_PagesKontakt_Fragment;
+export type PagesPartsFragment = PagesParts_PagesHomepage_Fragment | PagesParts_PagesAbout_Fragment | PagesParts_PagesStandard_Fragment | PagesParts_PagesContact_Fragment;
 
 export type ServicesPartsFragment = { __typename: 'Services', title: string, category: string, tagline: string, image?: string | null, description: string, order?: number | null, offers?: Array<{ __typename: 'ServicesOffers', title: string, price: string } | null> | null };
 
@@ -927,7 +930,7 @@ export type PagesQueryVariables = Exact<{
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages: { __typename: 'PagesHomepage', id: string, pageName: string, kicker?: string | null, titleMain: string, titleItalic?: string | null, subtitle?: string | null, heroImage?: string | null, intro1Title?: string | null, intro1Text?: string | null, intro2Title?: string | null, intro2Text?: string | null, intro3Title?: string | null, intro3Text?: string | null, profileImage?: string | null, aboutTitle?: string | null, aboutText1?: string | null, aboutText2?: string | null, servicesHeading?: string | null, newsHeading?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesAbout', id: string, pageName: string, title: string, intro?: string | null, sharedImage?: string | null, sharedImageAlt?: string | null, sharedKicker?: string | null, sharedIntro?: string | null, sharedContent?: any | null, hildeImage?: string | null, hildeKicker?: string | null, hildeTitle?: string | null, hildeContent?: any | null, tinaMariaImage?: string | null, tinaMariaKicker?: string | null, tinaMariaTitle?: string | null, tinaMariaContent?: any | null, valuesTitle?: string | null, value1Title?: string | null, value1Text?: string | null, value2Title?: string | null, value2Text?: string | null, value3Title?: string | null, value3Text?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hildeKeywords?: Array<{ __typename: 'PagesAboutHildeKeywords', keyword: string } | null> | null, tinaMariaKeywords?: Array<{ __typename: 'PagesAboutTinaMariaKeywords', keyword: string } | null> | null } | { __typename: 'PagesStandard', id: string, pageName: string, title: string, intro?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesKontakt', id: string, title: string, kicker?: string | null, heading: string, description: string, addressLine1?: string | null, addressLine2?: string | null, addressLine3?: string | null, email: string, phone: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PagesQuery = { __typename?: 'Query', pages: { __typename: 'PagesHomepage', id: string, pageName: string, kicker?: string | null, titleMain: string, titleItalic?: string | null, subtitle?: string | null, heroImage?: string | null, intro1Title?: string | null, intro1Text?: string | null, intro2Title?: string | null, intro2Text?: string | null, intro3Title?: string | null, intro3Text?: string | null, profileImage?: string | null, aboutTitle?: string | null, aboutText1?: string | null, aboutText2?: string | null, servicesHeading?: string | null, newsHeading?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesAbout', id: string, pageName: string, title: string, intro?: string | null, sharedImage?: string | null, sharedImageAlt?: string | null, sharedKicker?: string | null, sharedIntro?: string | null, sharedContent?: any | null, hildeImage?: string | null, hildeKicker?: string | null, hildeTitle?: string | null, hildeContent?: any | null, tinaMariaImage?: string | null, tinaMariaKicker?: string | null, tinaMariaTitle?: string | null, tinaMariaContent?: any | null, valuesTitle?: string | null, value1Title?: string | null, value1Text?: string | null, value2Title?: string | null, value2Text?: string | null, value3Title?: string | null, value3Text?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hildeKeywords?: Array<{ __typename: 'PagesAboutHildeKeywords', keyword: string } | null> | null, tinaMariaKeywords?: Array<{ __typename: 'PagesAboutTinaMariaKeywords', keyword: string } | null> | null } | { __typename: 'PagesStandard', id: string, pageName: string, title: string, intro?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesContact', id: string, facebook?: string | null, instagram?: string | null, hildeName: string, hildeEmail: string, hildePhone: string, hildeHomePage?: string | null, tinaName: string, tinaEmail: string, tinaPhone: string, tinaHomePage?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PagesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -939,7 +942,7 @@ export type PagesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'PagesHomepage', id: string, pageName: string, kicker?: string | null, titleMain: string, titleItalic?: string | null, subtitle?: string | null, heroImage?: string | null, intro1Title?: string | null, intro1Text?: string | null, intro2Title?: string | null, intro2Text?: string | null, intro3Title?: string | null, intro3Text?: string | null, profileImage?: string | null, aboutTitle?: string | null, aboutText1?: string | null, aboutText2?: string | null, servicesHeading?: string | null, newsHeading?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesAbout', id: string, pageName: string, title: string, intro?: string | null, sharedImage?: string | null, sharedImageAlt?: string | null, sharedKicker?: string | null, sharedIntro?: string | null, sharedContent?: any | null, hildeImage?: string | null, hildeKicker?: string | null, hildeTitle?: string | null, hildeContent?: any | null, tinaMariaImage?: string | null, tinaMariaKicker?: string | null, tinaMariaTitle?: string | null, tinaMariaContent?: any | null, valuesTitle?: string | null, value1Title?: string | null, value1Text?: string | null, value2Title?: string | null, value2Text?: string | null, value3Title?: string | null, value3Text?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hildeKeywords?: Array<{ __typename: 'PagesAboutHildeKeywords', keyword: string } | null> | null, tinaMariaKeywords?: Array<{ __typename: 'PagesAboutTinaMariaKeywords', keyword: string } | null> | null } | { __typename: 'PagesStandard', id: string, pageName: string, title: string, intro?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesKontakt', id: string, title: string, kicker?: string | null, heading: string, description: string, addressLine1?: string | null, addressLine2?: string | null, addressLine3?: string | null, email: string, phone: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'PagesHomepage', id: string, pageName: string, kicker?: string | null, titleMain: string, titleItalic?: string | null, subtitle?: string | null, heroImage?: string | null, intro1Title?: string | null, intro1Text?: string | null, intro2Title?: string | null, intro2Text?: string | null, intro3Title?: string | null, intro3Text?: string | null, profileImage?: string | null, aboutTitle?: string | null, aboutText1?: string | null, aboutText2?: string | null, servicesHeading?: string | null, newsHeading?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesAbout', id: string, pageName: string, title: string, intro?: string | null, sharedImage?: string | null, sharedImageAlt?: string | null, sharedKicker?: string | null, sharedIntro?: string | null, sharedContent?: any | null, hildeImage?: string | null, hildeKicker?: string | null, hildeTitle?: string | null, hildeContent?: any | null, tinaMariaImage?: string | null, tinaMariaKicker?: string | null, tinaMariaTitle?: string | null, tinaMariaContent?: any | null, valuesTitle?: string | null, value1Title?: string | null, value1Text?: string | null, value2Title?: string | null, value2Text?: string | null, value3Title?: string | null, value3Text?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hildeKeywords?: Array<{ __typename: 'PagesAboutHildeKeywords', keyword: string } | null> | null, tinaMariaKeywords?: Array<{ __typename: 'PagesAboutTinaMariaKeywords', keyword: string } | null> | null } | { __typename: 'PagesStandard', id: string, pageName: string, title: string, intro?: string | null, ctaTitle?: string | null, ctaDescription?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | { __typename: 'PagesContact', id: string, facebook?: string | null, instagram?: string | null, hildeName: string, hildeEmail: string, hildePhone: string, hildeHomePage?: string | null, tinaName: string, tinaEmail: string, tinaPhone: string, tinaHomePage?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type ServicesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1084,16 +1087,17 @@ export const PagesPartsFragmentDoc = gql`
     ctaTitle
     ctaDescription
   }
-  ... on PagesKontakt {
-    title
-    kicker
-    heading
-    description
-    addressLine1
-    addressLine2
-    addressLine3
-    email
-    phone
+  ... on PagesContact {
+    facebook
+    instagram
+    hildeName
+    hildeEmail
+    hildePhone
+    hildeHomePage
+    tinaName
+    tinaEmail
+    tinaPhone
+    tinaHomePage
   }
 }
     `;

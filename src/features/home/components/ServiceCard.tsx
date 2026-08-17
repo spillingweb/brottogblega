@@ -5,16 +5,18 @@ import type { Services } from "../../../../tina/__generated__/types";
 const ServiceCard = ({ service }: { service: Services }) => {
   return (
     <Card className="group pt-0 anim-scroll">
-      <div
-        className="aspect-4/3 overflow-hidden bg-secondary"
-        data-tina-field={tinaField(service, "image")}
-      >
-        <img
-          src={service.image || ""}
-          alt={service.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-      </div>
+      {service.image && (
+        <div
+          className="aspect-4/3 overflow-hidden bg-secondary"
+          data-tina-field={tinaField(service, "image")}
+        >
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      )}
       <div className="p-5">
         <CardTitle
           className="text-base mb-2 font-serif"

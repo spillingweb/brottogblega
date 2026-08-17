@@ -416,60 +416,66 @@ var config_default = defineConfig({
             ]
           },
           {
-            name: "kontakt",
+            name: "contact",
             label: "Kontaktinformasjon",
             fields: [
               {
                 type: "string",
-                name: "title",
-                label: "Sidetittel",
-                isTitle: true,
+                name: "facebook",
+                label: "Facebook URL"
+              },
+              {
+                type: "string",
+                name: "instagram",
+                label: "Instagram URL"
+              },
+              {
+                type: "string",
+                name: "hildeName",
+                label: "Hildes navn og tittel",
                 required: true
               },
               {
                 type: "string",
-                name: "kicker",
-                label: "Kicker-tekst"
-              },
-              {
-                type: "string",
-                name: "heading",
-                label: "Overskrift",
+                name: "hildeEmail",
+                label: "Hildes e-postadresse",
                 required: true
               },
               {
                 type: "string",
-                name: "description",
-                label: "Beskrivelse",
-                ui: { component: "textarea" },
+                name: "hildePhone",
+                label: "Hildes telefonnummer",
                 required: true
               },
               {
                 type: "string",
-                name: "addressLine1",
-                label: "Adresse linje 1"
+                name: "hildeHomePage",
+                label: "Hildes hjemmeside",
+                description: "Valgfritt"
               },
               {
                 type: "string",
-                name: "addressLine2",
-                label: "Adresse linje 2"
-              },
-              {
-                type: "string",
-                name: "addressLine3",
-                label: "Adresse linje 3"
-              },
-              {
-                type: "string",
-                name: "email",
-                label: "E-postadresse",
+                name: "tinaName",
+                label: "Tina Marias navn og tittel",
                 required: true
               },
               {
                 type: "string",
-                name: "phone",
-                label: "Telefonnummer",
+                name: "tinaEmail",
+                label: "Tina Marias e-postadresse",
                 required: true
+              },
+              {
+                type: "string",
+                name: "tinaPhone",
+                label: "Tina Marias telefonnummer",
+                required: true
+              },
+              {
+                type: "string",
+                name: "tinaHomePage",
+                label: "Tina Marias hjemmeside",
+                description: "Valgfritt"
               }
             ]
           }

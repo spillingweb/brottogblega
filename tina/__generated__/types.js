@@ -72,16 +72,17 @@ export const PagesPartsFragmentDoc = gql`
     ctaTitle
     ctaDescription
   }
-  ... on PagesKontakt {
-    title
-    kicker
-    heading
-    description
-    addressLine1
-    addressLine2
-    addressLine3
-    email
-    phone
+  ... on PagesContact {
+    facebook
+    instagram
+    hildeName
+    hildeEmail
+    hildePhone
+    hildeHomePage
+    tinaName
+    tinaEmail
+    tinaPhone
+    tinaHomePage
   }
 }
     `;

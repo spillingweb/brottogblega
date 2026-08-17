@@ -9,6 +9,8 @@ import appCss from "../styles.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 import Header from "#/components/Header";
 import Footer from "#/features/footer/components/Footer";
+import client from "../../tina/__generated__/client";
+import { useTina } from "tinacms/react";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -39,10 +41,25 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
     ],
   }),
+  loader: async () => {
+      const pageResult = await client.queries.pages({ relativePath: "contact.md" });
+      return {
+        page: pageResult,
+      };
+    },
   shellComponent: RootDocument,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+   const initialData = Route.useLoaderData();
+  
+    // Enable live preview for page content
+    const { data: pageData } = useTina({
+      query: initialData.page.query,
+      variables: initialData.page.variables,
+      data: initialData.page.data,
+    });
+
   return (
     <html lang="en">
       <head>
@@ -51,7 +68,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className="flex min-h-dvh flex-col">
         <Header />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <Footer pageData={pageData} />
         <Scripts />
       </body>
     </html>

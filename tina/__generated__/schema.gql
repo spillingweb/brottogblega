@@ -97,7 +97,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt | Services | Articles | Events | EventCategories | Folder
+union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesContact | Services | Articles | Events | EventCategories | Folder
 
 type PagesHomepage implements Node & Document {
   pageName: String!
@@ -177,22 +177,23 @@ type PagesStandard implements Node & Document {
   _values: JSON!
 }
 
-type PagesKontakt implements Node & Document {
-  title: String!
-  kicker: String
-  heading: String!
-  description: String!
-  addressLine1: String
-  addressLine2: String
-  addressLine3: String
-  email: String!
-  phone: String!
+type PagesContact implements Node & Document {
+  facebook: String
+  instagram: String
+  hildeName: String!
+  hildeEmail: String!
+  hildePhone: String!
+  hildeHomePage: String
+  tinaName: String!
+  tinaEmail: String!
+  tinaPhone: String!
+  tinaHomePage: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
 
-union Pages = PagesHomepage | PagesAbout | PagesStandard | PagesKontakt
+union Pages = PagesHomepage | PagesAbout | PagesStandard | PagesContact
 
 input StringFilter {
   startsWith: String
@@ -283,23 +284,24 @@ input PagesStandardFilter {
   ctaDescription: StringFilter
 }
 
-input PagesKontaktFilter {
-  title: StringFilter
-  kicker: StringFilter
-  heading: StringFilter
-  description: StringFilter
-  addressLine1: StringFilter
-  addressLine2: StringFilter
-  addressLine3: StringFilter
-  email: StringFilter
-  phone: StringFilter
+input PagesContactFilter {
+  facebook: StringFilter
+  instagram: StringFilter
+  hildeName: StringFilter
+  hildeEmail: StringFilter
+  hildePhone: StringFilter
+  hildeHomePage: StringFilter
+  tinaName: StringFilter
+  tinaEmail: StringFilter
+  tinaPhone: StringFilter
+  tinaHomePage: StringFilter
 }
 
 input PagesFilter {
   homepage: PagesHomepageFilter
   about: PagesAboutFilter
   standard: PagesStandardFilter
-  kontakt: PagesKontaktFilter
+  contact: PagesContactFilter
 }
 
 type PagesConnectionEdges {
@@ -587,23 +589,24 @@ input PagesStandardMutation {
   ctaDescription: String
 }
 
-input PagesKontaktMutation {
-  title: String
-  kicker: String
-  heading: String
-  description: String
-  addressLine1: String
-  addressLine2: String
-  addressLine3: String
-  email: String
-  phone: String
+input PagesContactMutation {
+  facebook: String
+  instagram: String
+  hildeName: String
+  hildeEmail: String
+  hildePhone: String
+  hildeHomePage: String
+  tinaName: String
+  tinaEmail: String
+  tinaPhone: String
+  tinaHomePage: String
 }
 
 input PagesMutation {
   homepage: PagesHomepageMutation
   about: PagesAboutMutation
   standard: PagesStandardMutation
-  kontakt: PagesKontaktMutation
+  contact: PagesContactMutation
 }
 
 input ServicesOffersMutation {

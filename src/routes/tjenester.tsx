@@ -6,9 +6,7 @@ import Services from '#/features/services/components/Services';
 export const Route = createFileRoute('/tjenester')({
   loader: async () => {
     const [servicesResult, pageResult] = await Promise.all([
-      client.queries.servicesConnection({
-        sort: "order",
-      }),
+      client.queries.servicesConnection(),
       client.queries.pages({ relativePath: "services.md" }),
     ]);
 
