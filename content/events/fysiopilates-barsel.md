@@ -12,6 +12,10 @@ tags:
 price: 2800 kr
 ---
 
+Gratulerer! Du har gjort en kjempejobb med å bære frem et barn! Det har skjedd store forandringer både i kroppen og i livet ditt - og det skal du lytte til.
+
+I 
+
 Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg. Vi jobber også med bevegelighet, pust og avspenning. Små grupper med maks 7 deltakere.
 
 Den første gangen er en individuell time slik at jeg kan bli kjent med dine målsettinger og eventuelle plager.
