@@ -16,7 +16,7 @@ titleItalic: Et rom for helhetlig helse
 subtitle: 'Vi tilbyr filosofisk samtaleterapi, fysioterapi og tverrfaglige seminarer. '
 heroImage: /photo-1739217416358-0f84b45d918f.avif
 intro1Title: Kropp
-intro1Text: Fysioterapi individuelt og i grupper. Kvinnehelse.
+intro1Text: Fysioterapi individuelt og i grupper. Kompetanse innen kvinnehelse.
 intro2Title: Sinn
 intro2Text: Filosofisk terapi og dialog som skaper rom for refleksjon og mening.
 intro3Title: Fellesskap
@@ -24,7 +24,7 @@ intro3Text: Seminarer og samtalegrupper hvor kvinner møtes og støtter hverandr
 profileImage: /photo-1573496359142-b8d87734a5a2.avif
 aboutTitle: 'To kvinner, én felles visjon'
 aboutText1: 'Hilde er fysioterapeut med interesse for kvinnehelse, bekkenbunn og livsfaser. Tina Maria er sykepleier og filosof med fordypning i eksistensiell og fenomenologisk tenkning.'
-aboutText2: Sammen tilbyr vi en helhetlig tilnærming der kropp og sinn sees i sammenheng — fordi vi tror at ekte velvære krever begge deler.
+aboutText2: Sammen tilbyr vi en helhetlig tilnærming der kropp og sinn sees i sammenheng — fordi vi tror at ekte velvære (livskvalitet) krever begge deler.
 servicesHeading: Hva vi tilbyr
 newsHeading: Siste fra oss
 ctaTitle: Klar til å ta et skritt mot bedre helse?
