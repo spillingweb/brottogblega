@@ -4,7 +4,7 @@ date: 2026-09-02T10:27:33.904Z
 endDate: 2026-10-28T11:27:37.253Z
 host: Hilde Stenqvist
 time: 10.00-11.00
-location: "Brott & Blega Helse, Feviktoppen 19"
+location: 'Brott & Blega Helse, Feviktoppen 19'
 spots: Åpent
 category: content/eventCategories/gruppe.json
 tags:
@@ -16,4 +16,4 @@ Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og
 
 Den første gangen er en individuell time slik at jeg kan bli kjent med dine målsettinger og eventuelle plager.
 
-Vi treffes 7 onsdager. Ikke gruppe i uke 40 og 41.
+Vi treffes 7 onsdager. NB! Det blir ikke gruppe i uke 40 og 41.
