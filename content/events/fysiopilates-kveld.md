@@ -1,5 +1,6 @@
 ---
 title: Fysiopilates kveld
+image: /istockphoto-465050364-612x612.jpg
 date: 2026-09-02T10:16:23.423Z
 endDate: 2026-10-28T11:16:37.845Z
 host: Hilde Stenqvist
