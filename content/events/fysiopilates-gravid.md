@@ -1,5 +1,6 @@
 ---
 title: Fysiopilates GRAVID
+image: /pregnant-woman-practicing-yoga-mat-home_edited.jpg
 date: 2026-09-02T10:22:09.771Z
 endDate: 2026-10-28T11:22:48.444Z
 host: Hilde Stenqvist
@@ -14,7 +15,7 @@ price: 2800 kr
 
 I graviditeten skjer det store forandringer i kroppen. Jeg gir deg øvelser og kunnskap som vil kunne gjøre deg bedre rustet gjennom graviditeten og være mer forberedt på fødselen og tiden etterpå.
 
-Vi jobber med pust, avspenning, styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg. 
+Vi jobber med pust, avspenning, styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg.
 
 Små grupper med maks 7 deltakere.
 
