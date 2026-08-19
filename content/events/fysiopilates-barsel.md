@@ -1,5 +1,6 @@
 ---
 title: Fysiopilates BARSEL
+image: /istockphoto-1217096602-612x612.jpg
 date: 2026-09-02T10:27:33.904Z
 endDate: 2026-10-28T11:27:37.253Z
 host: Hilde Stenqvist
@@ -14,7 +15,7 @@ price: 2800 kr
 
 Gratulerer! Du har gjort en kjempejobb med å bære frem et barn! Det har skjedd store forandringer både i kroppen og i livet ditt - og det skal du lytte til.
 
-I 
+I
 
 Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg. Vi jobber også med bevegelighet, pust og avspenning. Små grupper med maks 7 deltakere.
 
