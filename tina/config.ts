@@ -1,3 +1,4 @@
+import React from "react";
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
@@ -715,6 +716,13 @@ export default defineConfig({
             type: "string",
             name: "host",
             label: "Vert / kursholder",
+            description: "Hvem er ansvarlig for arrangementet?",
+            options: [
+              "Hilde Stenqvist",
+              "Tina Maria Lie",
+              "Hilde Stenqvist & Tina Maria Lie",
+              "Andre",
+            ],
             required: true,
           },
           {
@@ -751,6 +759,15 @@ export default defineConfig({
             required: true,
             description:
               "Velg en hovedkategori for filtrering. Trenger du en ny kategori, opprett den under 'Kategorier - arrangementer'.",
+            ui: {
+              optionComponent: (props: { label?: string }) => {
+                return React.createElement(
+                  "span",
+                  null,
+                  props?.label || "Ukjent kategori",
+                );
+              },
+            },
           },
           {
             type: "string",

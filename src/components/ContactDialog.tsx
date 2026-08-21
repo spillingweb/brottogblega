@@ -22,20 +22,42 @@ import {
 import { useServerFn } from "@tanstack/react-start";
 import { sendKontaktskjema } from "#/server/kontakt";
 
-const ContactDialog = () => {
+type formState = {
+  person: "hilde" | "tina";
+  navn: string;
+  epost: string;
+  telefon: string;
+  melding: string;
+};
+
+const ContactDialog = ({
+  sendTo,
+  message,
+}: {
+  sendTo?: "hilde" | "tina";
+  message?: string;
+}) => {
   const send = useServerFn(sendKontaktskjema);
+
+  const getInitialForm = (): formState => ({
+    person: sendTo || "hilde",
+    navn: "",
+    epost: "",
+    telefon: "",
+    melding: message || "",
+  });
 
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "feil">(
     "idle",
   );
   const [feilmelding, setFeilmelding] = useState("");
-  const [form, setForm] = useState({
-    person: "hilde",
-    navn: "",
-    epost: "",
-    telefon: "",
-    melding: "",
-  });
+  const [form, setForm] = useState<formState>(getInitialForm());
+
+  const resetContactForm = () => {
+    setStatus("idle");
+    setFeilmelding("");
+    setForm(getInitialForm());
+  };
 
   const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
@@ -62,7 +84,7 @@ const ContactDialog = () => {
 
       if (result.ok) {
         setStatus("ok");
-        setForm({ person: "", navn: "", epost: "", telefon: "", melding: "" });
+        setForm(getInitialForm());
       } else {
         setStatus("feil");
         setFeilmelding(result.feilmelding ?? "Noe gikk galt.");
@@ -74,7 +96,7 @@ const ContactDialog = () => {
   };
 
   return (
-    <DialogContent>
+    <DialogContent onCloseAutoFocus={resetContactForm}>
       {status === "ok" ? (
         <>
           <DialogHeader>
@@ -89,10 +111,7 @@ const ContactDialog = () => {
           <DialogFooter>
             <Button
               variant="outline"
-              onClick={() => {
-                setStatus("idle");
-                setFeilmelding("");
-              }}
+              onClick={resetContactForm}
               size="sm"
             >
               Send ny melding
@@ -116,7 +135,7 @@ const ContactDialog = () => {
               <Select
                 value={form.person}
                 onValueChange={(value) => {
-                  setForm({ ...form, person: value });
+                  setForm({ ...form, person: value as "hilde" | "tina" });
                   if (status === "feil") setFeilmelding("");
                 }}
               >
@@ -179,7 +198,10 @@ const ContactDialog = () => {
               </p>
             )}
 
-            <Button type="submit" disabled={status === "sending" || !form.person}>
+            <Button
+              type="submit"
+              disabled={status === "sending" || !form.person}
+            >
               {status === "sending" ? "Sender..." : "Send melding"}
             </Button>
           </form>

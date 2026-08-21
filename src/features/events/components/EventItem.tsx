@@ -48,6 +48,13 @@ const EventItem = ({
       : `${startDate} - ${endDate}`
     : startDate;
 
+  const host =
+    event.host === "Hilde Stenqvist"
+      ? "hilde"
+      : event.host === "Tina Maria Lie"
+        ? "tina"
+        : undefined;
+
   return (
     <article>
       <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0  @container">
@@ -153,21 +160,28 @@ const EventItem = ({
                 className="text-base font-medium text-foreground"
                 data-tina-field={tinaField(event, "price")}
               >
-                {event.price}
+                {event.price === "0" ? "Gratis" : event.price}
               </span>
-              <span className="hidden @sm:block">·</span>
-              <span
-                className="text-xs text-muted-foreground"
-                data-tina-field={tinaField(event, "host")}
-              >
-                {event.host}
-              </span>
+              {event.host != "Andre" && (
+                <>
+                  <span className="hidden @sm:block">·</span>
+                  <span
+                    className="text-xs text-muted-foreground"
+                    data-tina-field={tinaField(event, "host")}
+                  >
+                    {event.host}
+                  </span>
+                </>
+              )}
             </div>
             <Dialog>
               <DialogTrigger className="cursor-pointer" asChild>
                 <Button>Meld deg på</Button>
               </DialogTrigger>
-              <ContactDialog />
+              <ContactDialog
+                message={`Jeg ønsker å melde meg på ${event.title}`}
+                sendTo={host}
+              />
             </Dialog>
           </div>
         </div>

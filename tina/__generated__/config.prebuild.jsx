@@ -1,4 +1,5 @@
 // tina/config.ts
+import React from "react";
 import { defineConfig } from "tinacms";
 var branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
 var config_default = defineConfig({
@@ -679,6 +680,13 @@ var config_default = defineConfig({
             type: "string",
             name: "host",
             label: "Vert / kursholder",
+            description: "Hvem er ansvarlig for arrangementet?",
+            options: [
+              "Hilde Stenqvist",
+              "Tina Maria Lie",
+              "Hilde Stenqvist & Tina Maria Lie",
+              "Andre"
+            ],
             required: true
           },
           {
@@ -712,7 +720,16 @@ var config_default = defineConfig({
             label: "Kategori",
             collections: ["eventCategories"],
             required: true,
-            description: "Velg en hovedkategori for filtrering. Trenger du en ny kategori, opprett den under 'Kategorier - arrangementer'."
+            description: "Velg en hovedkategori for filtrering. Trenger du en ny kategori, opprett den under 'Kategorier - arrangementer'.",
+            ui: {
+              optionComponent: (props) => {
+                return React.createElement(
+                  "span",
+                  null,
+                  props?.label || "Ukjent kategori"
+                );
+              }
+            }
           },
           {
             type: "string",
