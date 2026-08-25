@@ -19,4 +19,6 @@ I
 
 Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg. Vi jobber også med bevegelighet, pust og avspenning. Små grupper med maks 7 deltakere.
 
-Den første gangen er en individuell time slik at jeg kan bli kjent med dine målsettinger og eventuelle plager. Deretter treffes vi 6 onsdager. NB! Det blir ikke gruppe i uke 40 og 41.
+Den første gangen er en individuell time slik at jeg kan bli kjent med dine målsettinger og eventuelle plager. Deretter treffes vi 6 onsdager.  Hvis det er ledige plasser kan du melde deg på etter kursstart, da betaler du for resterende antall ganger (315 kr per gang). 
+
+NB! Det blir ikke gruppe i uke 40 og 41.
