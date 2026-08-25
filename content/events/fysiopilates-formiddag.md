@@ -10,11 +10,11 @@ spots: Åpent
 category: content/eventCategories/gruppe.json
 tags:
   - Fysioterapi
-price: '2200 kr '
+price: '1900 kr '
 ---
 
 Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg. Vi jobber også med bevegelighet, pust og avspenning. Små grupper med maks 7 deltakere.
 
 Før du kan delta i gruppe må du ha en introtime slik at jeg kan bli kjent med dine målsettinger og eventuelle plager. Introtime koster 800 kr.
 
-Vi treffes 7 mandager. NB! Det blir ikke gruppe i uke 40 og 41.
+Vi treffes 6 mandager. NB! Det blir ikke gruppe i uke 40 og 41.
