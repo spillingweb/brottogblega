@@ -17,4 +17,4 @@ Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og
 
 Før du kan delta i gruppe må du ha en introtime slik at jeg kan bli kjent med dine målsettinger og eventuelle plager. Introtime koster 800 kr.
 
-Vi treffes 7 mandager. NB! Det blir ikke gruppe i uke 40 og 41.
+Vi treffes 7 onsdager. NB! Det blir ikke gruppe i uke 40 og 41.
