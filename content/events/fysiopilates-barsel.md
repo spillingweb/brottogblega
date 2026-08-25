@@ -15,11 +15,11 @@ price: 2500 kr
 
 Gratulerer, du har gjort en kjempejobb og fått et barn! Det har skjedd store forandringer både i kroppen og i livet ditt - og det er ikke småtterier!
 
-I fysiopilates barsel har vi fokus på å komme i gang igjen etter fødselen, i ditt og babys tempo. 
+I fysiopilates BARSEL har vi fokus på å komme i gang igjen etter fødselen, i ditt og babys tempo. 
 
-Vi jobber jobber vi med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg i tillegg til ergonomi i en travel småbarnshverdag. Vi jobber også med bevegelighet, pust og avspenning. 
+Vi gjør bekkenbunnstrening i hver økt! I tillegg har vi fokus på styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg. Vi jobber også med bevegelighet, pust, avspenning, og ergonomi i en travel småbarnshverdag.
 
-Baby er med i noen øvelser, og kan ligge ved siden av deg på andre. Du kan selvfølgelig amme/mate, bysse, skifte bleie underveis, eller komme etter at timen har begynt - det viktigste er at
+Baby er med i noen øvelser, og kan ligge ved siden av deg på andre. Du kan selvfølgelig amme/mate, bysse, skifte bleie underveis, eller komme etter at timen har begynt - det viktigste er at du gjør noe bra for deg og baby, uten å føle at du skal måtte prestere noe som helst.
 
 Små grupper med maks 7 deltakere. Den første gangen er en individuell time slik at jeg kan bli kjent med dine målsettinger og eventuelle plager, og i tillegg lære deg om riktig kontraksjon av bekkenbunnsmuskulaturen. Deretter treffes vi 6 onsdager.  Hvis det er ledige plasser kan du melde deg på etter kursstart, da betaler du for resterende antall ganger (315 kr per gang).
 
