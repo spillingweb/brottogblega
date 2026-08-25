@@ -1,7 +1,7 @@
 ---
 title: Fysiopilates formiddag
 image: /istockphoto-944619732-612x612.jpg
-date: 2026-08-31T10:07:03.858Z
+date: 2026-09-07T10:07:03.858Z
 endDate: 2026-10-26T11:13:12.258Z
 host: Hilde Stenqvist
 time: 'kl 10.00-11.00 '
