@@ -10,7 +10,7 @@ spots: Åpent
 category: content/eventCategories/gruppe.json
 tags:
   - Gruppetime
-price: 2800 kr
+price: 2500 kr
 ---
 
 I graviditeten skjer det store forandringer i kroppen. Jeg gir deg øvelser og kunnskap som vil kunne gjøre deg bedre rustet gjennom graviditeten og være mer forberedt på fødselen og tiden etterpå.
