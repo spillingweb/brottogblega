@@ -16,7 +16,7 @@ hildeTitle: Hilde Stenqvist
 hildeContent: |
   Hilde er autorisert fysioterapeut med over 14 års erfaring og stort hjerte for kvinnehelse.
 
-  Hun har kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager gjennom Norges Fysioterapeutforbund. Hun har videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
+  Har kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager gjennom Norges Fysioterapeutforbund. Hun har videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
 
   Elsker å være ute.
 
@@ -48,7 +48,7 @@ tinaMariaKeywords:
   - keyword: Etikk & verdier
 valuesTitle: Helhetlig helse
 value1Title: Helhet
-value1Text: 'Vi ser kropp, sinn og livshistorie som ett — og møter deg med et helhetsperspektiv som du ikke alltid får i tradisjonell helseomsorg.'
+value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon.'
 value2Title: Trygghet
 value2Text: 'Vi skaper et rom der du kan være ærlig, sårbar og nysgjerrig — uten å måtte prestere eller forklare deg.'
 value3Title: Respekt
