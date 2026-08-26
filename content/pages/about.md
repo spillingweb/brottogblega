@@ -36,9 +36,11 @@ tinaMariaImage: /linkinbilde.jpg
 tinaMariaKicker: Sykepleier med filosofisk videreutdanning
 tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
-  Tina Maria er utdannet sykepleier og har en bachelor filosofi og videreutdanning i filosofisk praksis. Hennes tilnærming bringer humanistisk tenkning inn i dialogen på en måte som er både tilgjengelig og meningsfull.
+  Tina Maria er utdannet sykepleier og har bachelor i filosofi og videreutdanning i filosofisk praksis. Bakgrunnen gir henne et blikk for både det kroppslige og det eksistensielle i menneskers liv.
 
-  Tina Maria tilbyr en-til-en samtaler og dialoggrupper der spørsmål om mening, verdier og livsvalg får rom. Hun mener at filosofi ikke tilhører akademia alene — det er et verktøy for livet vi alle kan bruke.
+  I en samtale hos Tina Maria jobber dere systematisk med det som opptar deg — enten det er et vanskelig valg, en overgang i livet, eller spørsmål du bærer på uten å ha satt ord på. Hun stiller spørsmål som hjelper deg å tenke tydeligere, ikke for å gi deg svar, men for at du selv skal finne dem. Samtalene passer for deg som ønsker å reflektere grundig — alene i en-til-en-samtale, eller sammen med andre i dialoggrupper.
+
+  Vanlige temaer er identitet og livsvalg, mening og verdier, relasjoner, og hvordan man lever godt i en tid som ofte krever mer enn vi har å gi.
 
   *«Å tenke grundig gjennom hvem du er og hva du ønsker — det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»*
 tinaMariaKeywords:
