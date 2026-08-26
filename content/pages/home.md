@@ -18,9 +18,9 @@ heroImage: /photo-1739217416358-0f84b45d918f.avif
 intro1Title: Kropp
 intro1Text: Fysioterapi individuelt og i grupper. Kompetanse innen kvinnehelse.
 intro2Title: Sinn
-intro2Text: Filosofisk terapi og dialog som skaper rom for refleksjon og mening.
+intro2Text: Samtaleterapi og filosofisk dialog som skaper rom for refleksjon og mening.
 intro3Title: Fellesskap
-intro3Text: Seminarer og samtalegrupper hvor kvinner møtes og støtter hverandre.
+intro3Text: Seminarer og samtalegrupper med et tverrfaglig utgangspunkt.
 profileImage: /photo-1573496359142-b8d87734a5a2.avif
 aboutTitle: 'To kvinner, én felles visjon'
 aboutText1: 'Hilde er fysioterapeut med interesse for kvinnehelse, bekkenbunn og livsfaser. Tina Maria er sykepleier og filosof med fordypning i eksistensiell og fenomenologisk tenkning.'
