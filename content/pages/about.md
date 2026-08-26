@@ -7,9 +7,9 @@ sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
 sharedIntro: 'Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
 sharedContent: |
-  Hilde bringer kroppen inn. Tina Maria bringer tankene. Sammen skaper vi et rom der disse to ikke lenger behandles som atskilte størrelser.
+  Brott & Blega rommer to fagtilbud: fysioterapi ved Hilde Stenqvist, og filosofiske samtaler ved Tina Maria Lie. Begge tar utgangspunkt i at kropp og tanke henger sammen, men tilbyr hver sin faglige inngang.
 
-  Brott & Blega er ikke en klinikk i tradisjonell forstand. Det er et sted der du kan tenke høyt, bevege deg trygt og finne frem til det som faktisk hjelper — for deg, i din livssituasjon.
+  Hos oss får du tid, faglig tyngde og et rom tilpasset dine behov
 hildeImage: /kari.avif
 hildeKicker: Fysioterapeut
 hildeTitle: Hilde Stenqvist
