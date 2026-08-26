@@ -1,7 +1,7 @@
 ---
 pageName: Om oss
 title: Brott & Blega — et møtested for kropp og tanke
-intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at ekte helse krever at vi tar hele mennesket på alvor — ikke bare diagnosen, ikke bare symptomene, men livet du lever.'
+intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at god helse krever at vi tar hele mennesket på alvor. '
 sharedImage: /sharedImage.avif
 sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
@@ -38,7 +38,7 @@ tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
   Tina Maria er utdannet sykepleier og har en bachelor filosofi og videreutdanning i filosofisk praksis. Hennes tilnærming bringer humanistisk tenkning inn i dialogen på en måte som er både tilgjengelig og meningsfull.
 
-  Tina Maria tilbyr filosofisk terapi og dialoggrupper der spørsmål om mening, verdier og livsvalg får rom. Hun mener at filosofi ikke tilhører akademia alene — det er et verktøy for livet vi alle kan bruke.
+  Tina Maria tilbyr en-til-en samtaler og dialoggrupper der spørsmål om mening, verdier og livsvalg får rom. Hun mener at filosofi ikke tilhører akademia alene — det er et verktøy for livet vi alle kan bruke.
 
   *«Å tenke grundig gjennom hvem du er og hva du ønsker — det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»*
 tinaMariaKeywords:
