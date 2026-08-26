@@ -2,7 +2,7 @@
 pageName: Om oss
 title: Brott & Blega — et møtested for kropp og tanke
 intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at god helse krever at vi tar hele mennesket på alvor. '
-sharedImage: /Tm-og-H-inne-i-lokalet.avif
+sharedImage: /sharedImage.avif
 sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
 sharedIntro: 'Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
@@ -44,11 +44,12 @@ tinaMariaContent: |
 
   *«Å tenke grundig gjennom hvem du er og hva du ønsker — det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»*
 tinaMariaKeywords:
-  - keyword: Eksistensiell filosofi
-  - keyword: Fenomenologi
   - keyword: Filosofisk samtale
+  - keyword: Eksistensiell filosofi
   - keyword: Etikk & verdier
   - keyword: Overgangsalder
+  - keyword: Mammagrupper
+  - {}
 valuesTitle: Helhetlig helse
 value1Title: Helhet
 value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon.'
