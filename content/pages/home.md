@@ -24,7 +24,7 @@ intro3Text: Seminarer og samtalegrupper med et tverrfaglig utgangspunkt.
 profileImage: /photo-1573496359142-b8d87734a5a2.avif
 aboutTitle: 'To kvinner, én felles visjon'
 aboutText1: 'Tina Maria er sykepleier med videreutdanning i filosofi, og brenner for de gode samtalene. Hilde er fysioterapeut med interesse for god fysisk utfoldelse og kvinnehelse. '
-aboutText2: Sammen tilbyr vi en helhetlig tilnærming der kropp og sinn sees i sammenheng — fordi vi tror at ekte velvære (livskvalitet) krever begge deler.
+aboutText2: Sammen tilbyr vi en helhetlig tilnærming der kropp og sinn sees i sammenheng — fordi vi tror at livskvalitet krever begge deler.
 servicesHeading: Hva vi tilbyr
 newsHeading: Siste fra oss
 ctaTitle: Klar til å ta et skritt mot bedre helse?
