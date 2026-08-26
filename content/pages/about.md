@@ -48,7 +48,7 @@ tinaMariaKeywords:
   - keyword: Etikk & verdier
 valuesTitle: Helhetlig helse
 value1Title: Helhet
-value1Text: 'Vi ser kropp, sinn og livshistorie som ett — og møter deg med et helhetsperspektiv som du ikke alltid finner i tradisjonell helseomsorg.'
+value1Text: 'Vi ser kropp, sinn og livshistorie som ett — og møter deg med et helhetsperspektiv som du ikke alltid får i tradisjonell helseomsorg.'
 value2Title: Trygghet
 value2Text: 'Vi skaper et rom der du kan være ærlig, sårbar og nysgjerrig — uten å måtte prestere eller forklare deg.'
 value3Title: Respekt
