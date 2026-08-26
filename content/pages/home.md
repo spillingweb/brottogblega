@@ -21,7 +21,7 @@ intro2Title: Sinn
 intro2Text: Samtaleterapi og filosofisk dialog som skaper rom for refleksjon og mening.
 intro3Title: Fellesskap
 intro3Text: Seminarer og samtalegrupper med et tverrfaglig utgangspunkt.
-profileImage: /photo-1573496359142-b8d87734a5a2.avif
+profileImage: /Tm-og-H-utenfor-lokalet.avif
 aboutTitle: 'To kvinner, én felles visjon'
 aboutText1: 'Tina Maria er sykepleier med videreutdanning i filosofi, og brenner for de gode samtalene. Hilde er fysioterapeut med interesse for god fysisk utfoldelse og kvinnehelse. '
 aboutText2: Sammen tilbyr vi en helhetlig tilnærming der kropp og sinn sees i sammenheng — fordi vi tror at livskvalitet krever begge deler.
