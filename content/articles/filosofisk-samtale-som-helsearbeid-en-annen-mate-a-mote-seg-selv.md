@@ -1,11 +1,11 @@
 ---
 featured: false
+readingTime: 6
 title: Prestasjonssamfunnet og Slow Living
-excerpt: Vekst og tempo er blitt et ubegrunnet imperativ vi sjelden stiller spørsmål ved. Med utgangspunkt i Hartmut Rosa og Kari Martinsen spør dette essayet hva vi mister når langsomheten forsvinner fra omsorg og hverdagsliv.
+excerpt: Tekst kommer
 author: Tina Maria Lie
 date: 2026-08-22T00:00:00.000Z
 category: Refleksjon
-readingTime: 6
 coverImage: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&h=420&fit=crop&auto=format'
 ---
 
