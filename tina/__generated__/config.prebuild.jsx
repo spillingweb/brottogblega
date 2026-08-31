@@ -271,23 +271,11 @@ var config_default = defineConfig({
                 label: "Hilde innhold"
               },
               {
-                type: "object",
+                type: "string",
                 name: "hildeKeywords",
                 label: "Stikkord",
                 list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.keyword || "Nytt stikkord" };
-                  }
-                },
-                fields: [
-                  {
-                    type: "string",
-                    name: "keyword",
-                    label: "Stikkord",
-                    required: true
-                  }
-                ]
+                required: true
               },
               {
                 type: "image",
@@ -311,23 +299,11 @@ var config_default = defineConfig({
                 label: "Tina Maria innhold"
               },
               {
-                type: "object",
+                type: "string",
                 name: "tinaMariaKeywords",
                 label: "Stikkord",
                 list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.keyword || "Nytt stikkord" };
-                  }
-                },
-                fields: [
-                  {
-                    type: "string",
-                    name: "keyword",
-                    label: "Stikkord",
-                    required: true
-                  }
-                ]
+                required: true
               },
               {
                 type: "string",

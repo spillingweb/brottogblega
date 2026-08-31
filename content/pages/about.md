@@ -26,12 +26,12 @@ hildeContent: |
 
   *«Jeg ønsker at alle kvinner skal kjenne seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
 hildeKeywords:
-  - keyword: Bekkenbunn
-  - keyword: Bekkenrelaterte plager
-  - keyword: Svangerskap & fødsel
-  - keyword: Overgangsalder
-  - keyword: Barseltid
-  - keyword: Fysiopilates
+  - Bekkenbunn
+  - Bekkenrelaterte plager
+  - Svangerskap & fødsel
+  - Overgangsalder
+  - Barseltid
+  - Fysiopilates
 tinaMariaImage: /linkinbilde.jpg
 tinaMariaKicker: Sykepleier med filosofisk videreutdanning
 tinaMariaTitle: Tina Maria Lie
@@ -44,12 +44,11 @@ tinaMariaContent: |
 
   *«Å tenke grundig gjennom hvem du er og hva du ønsker — det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»*
 tinaMariaKeywords:
-  - keyword: Filosofisk samtale
-  - keyword: Eksistensiell filosofi
-  - keyword: Etikk & verdier
-  - keyword: Overgangsalder
-  - keyword: Mammagrupper
-  - {}
+  - Filosofisk samtale
+  - Eksistensiell filosofi
+  - Etikk & verdier
+  - Overgangsalder
+  - Mammagrupper
 valuesTitle: Helhetlig helse
 value1Title: Helhet
 value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon.'

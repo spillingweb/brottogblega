@@ -11,7 +11,7 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="relative">
           <div
-            className="aspect-4/5 rounded-sm overflow-hidden bg-secondary anim-zoom"
+            className="aspect-4/5 rounded-sm overflow-hidden anim-zoom"
             data-tina-field={tinaField(page, "profileImage")}
           >
             <img

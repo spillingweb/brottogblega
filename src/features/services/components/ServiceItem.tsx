@@ -79,9 +79,9 @@ const ServiceItem = ({
                 return (
                   <div
                     key={offer.title}
-                    className="flex items-center justify-between gap-4 px-4 py-3.5"
+                    className="flex items-start justify-between gap-4 px-4 py-3.5"
                   >
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1 pr-2">
                       <p
                         className="text-sm font-medium text-foreground leading-tight text-balance"
                         data-tina-field={tinaField(offer, "title")}
@@ -90,7 +90,7 @@ const ServiceItem = ({
                       </p>
                     </div>
                     <span
-                      className="text-sm font-semibold text-primary whitespace-nowrap"
+                      className="shrink-0 text-right text-sm font-semibold text-primary min-w-24 max-w-[40%] whitespace-normal wrap-break-word text-balance"
                       data-tina-field={tinaField(offer, "price")}
                     >
                       {offer.price}

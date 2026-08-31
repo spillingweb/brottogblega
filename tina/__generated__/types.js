@@ -43,18 +43,12 @@ export const PagesPartsFragmentDoc = gql`
     hildeKicker
     hildeTitle
     hildeContent
-    hildeKeywords {
-      __typename
-      keyword
-    }
+    hildeKeywords
     tinaMariaImage
     tinaMariaKicker
     tinaMariaTitle
     tinaMariaContent
-    tinaMariaKeywords {
-      __typename
-      keyword
-    }
+    tinaMariaKeywords
     valuesTitle
     value1Title
     value1Text

@@ -125,14 +125,6 @@ type PagesHomepage implements Node & Document {
   _values: JSON!
 }
 
-type PagesAboutHildeKeywords {
-  keyword: String!
-}
-
-type PagesAboutTinaMariaKeywords {
-  keyword: String!
-}
-
 type PagesAbout implements Node & Document {
   pageName: String!
   title: String!
@@ -146,12 +138,12 @@ type PagesAbout implements Node & Document {
   hildeKicker: String
   hildeTitle: String
   hildeContent: JSON
-  hildeKeywords: [PagesAboutHildeKeywords]
+  hildeKeywords: [String!]!
   tinaMariaImage: String
   tinaMariaKicker: String
   tinaMariaTitle: String
   tinaMariaContent: JSON
-  tinaMariaKeywords: [PagesAboutTinaMariaKeywords]
+  tinaMariaKeywords: [String!]!
   valuesTitle: String
   value1Title: String
   value1Text: String
@@ -238,14 +230,6 @@ input RichTextFilter {
   exists: Boolean
 }
 
-input PagesAboutHildeKeywordsFilter {
-  keyword: StringFilter
-}
-
-input PagesAboutTinaMariaKeywordsFilter {
-  keyword: StringFilter
-}
-
 input PagesAboutFilter {
   pageName: StringFilter
   title: StringFilter
@@ -259,12 +243,12 @@ input PagesAboutFilter {
   hildeKicker: StringFilter
   hildeTitle: StringFilter
   hildeContent: RichTextFilter
-  hildeKeywords: PagesAboutHildeKeywordsFilter
+  hildeKeywords: StringFilter
   tinaMariaImage: ImageFilter
   tinaMariaKicker: StringFilter
   tinaMariaTitle: StringFilter
   tinaMariaContent: RichTextFilter
-  tinaMariaKeywords: PagesAboutTinaMariaKeywordsFilter
+  tinaMariaKeywords: StringFilter
   valuesTitle: StringFilter
   value1Title: StringFilter
   value1Text: StringFilter
@@ -543,14 +527,6 @@ input PagesHomepageMutation {
   ctaDescription: String
 }
 
-input PagesAboutHildeKeywordsMutation {
-  keyword: String
-}
-
-input PagesAboutTinaMariaKeywordsMutation {
-  keyword: String
-}
-
 input PagesAboutMutation {
   pageName: String
   title: String
@@ -564,12 +540,12 @@ input PagesAboutMutation {
   hildeKicker: String
   hildeTitle: String
   hildeContent: JSON
-  hildeKeywords: [PagesAboutHildeKeywordsMutation]
+  hildeKeywords: [String]
   tinaMariaImage: String
   tinaMariaKicker: String
   tinaMariaTitle: String
   tinaMariaContent: JSON
-  tinaMariaKeywords: [PagesAboutTinaMariaKeywordsMutation]
+  tinaMariaKeywords: [String]
   valuesTitle: String
   value1Title: String
   value1Text: String

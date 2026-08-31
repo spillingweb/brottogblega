@@ -29,6 +29,11 @@ const IndividualSection = ({ id, page, isHilde = false }: IndividualProps) => {
         keywords: page.tinaMariaKeywords,
       };
 
+  const validKeywords = (keywords ?? []).filter(
+    (keyword): keyword is string =>
+      typeof keyword === "string" && keyword.trim().length > 0,
+  );
+
   return (
     <section
       id={id}
@@ -74,22 +79,17 @@ const IndividualSection = ({ id, page, isHilde = false }: IndividualProps) => {
         >
           <TinaMarkdown content={content} />
         </div>
-        {keywords && keywords.length > 0 && (
+        {validKeywords.length > 0 && (
           <div className="mt-6 flex flex-wrap gap-2">
-            {keywords
-              .filter(
-                (keyword): keyword is NonNullable<typeof keyword> =>
-                  keyword !== null,
-              )
-              .map((item, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 text-xs bg-secondary text-secondary-foreground rounded-sm"
-                  data-tina-field={tinaField(item, "keyword")}
-                >
-                  {item.keyword}
-                </span>
-              ))}
+            {validKeywords.map((keyword, index) => (
+              <span
+                key={`${keyword}-${index}`}
+                className="px-3 py-1 text-xs bg-secondary text-secondary-foreground rounded-sm"
+                data-tina-field={tinaField(page, isHilde ? "hildeKeywords" : "tinaMariaKeywords")}
+              >
+                {keyword}
+              </span>
+            ))}
           </div>
         )}
       </div>

@@ -4,6 +4,9 @@ import {
   createRootRouteWithContext,
 } from "@tanstack/react-router";
 
+import { NotFoundPage } from "./NotFoundPage";
+import { RootErrorPage } from "./RootErrorPage";
+
 import appCss from "../styles.css?url";
 
 import type { QueryClient } from "@tanstack/react-query";
@@ -47,6 +50,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         page: pageResult,
       };
     },
+  errorComponent: RootErrorPage,
+  notFoundComponent: NotFoundPage,
   shellComponent: RootDocument,
 });
 
