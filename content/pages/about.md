@@ -2,7 +2,7 @@
 pageName: Om oss
 title: Brott & Blega — et møtested for kropp og tanke
 intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at god helse krever at vi tar hele mennesket på alvor. '
-sharedImage: /sharedImage.avif
+sharedImage: /Tm-og-H-inne-i-lokalet.avif
 sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
 sharedIntro: 'Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
