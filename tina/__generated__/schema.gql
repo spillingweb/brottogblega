@@ -170,6 +170,7 @@ type PagesStandard implements Node & Document {
 }
 
 type PagesContact implements Node & Document {
+  pageName: String!
   facebook: String
   instagram: String
   hildeName: String!
@@ -269,6 +270,7 @@ input PagesStandardFilter {
 }
 
 input PagesContactFilter {
+  pageName: StringFilter
   facebook: StringFilter
   instagram: StringFilter
   hildeName: StringFilter
@@ -566,6 +568,7 @@ input PagesStandardMutation {
 }
 
 input PagesContactMutation {
+  pageName: String
   facebook: String
   instagram: String
   hildeName: String

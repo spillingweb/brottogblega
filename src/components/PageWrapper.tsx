@@ -20,7 +20,7 @@ const PageWrapper = ({
   const isNewsArticle = location.pathname.startsWith("/aktuelt/");
 
   return (
-    <div className={cn("pt-20 lg:pt-50", isNewsArticle && "print:hidden")}>
+    <div className={cn("lg:pt-20", isNewsArticle && "print:hidden")}>
       <section className="max-w-6xl mx-auto px-6 py-8 md:py-10">
         <Kicker className="mb-4">{kicker}</Kicker>
         <Heading

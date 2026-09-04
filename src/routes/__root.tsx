@@ -10,10 +10,11 @@ import { RootErrorPage } from "./RootErrorPage";
 import appCss from "../styles.css?url";
 
 import type { QueryClient } from "@tanstack/react-query";
-import Header from "#/components/Header";
+import Header from "#/features/header/components/Header";
 import Footer from "#/features/footer/components/Footer";
 import client from "../../tina/__generated__/client";
 import { useTina } from "tinacms/react";
+import { ScrollArea } from "#/components/ui/scroll-area";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -45,35 +46,39 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
   }),
   loader: async () => {
-      const pageResult = await client.queries.pages({ relativePath: "contact.md" });
-      return {
-        page: pageResult,
-      };
-    },
+    const pageResult = await client.queries.pages({
+      relativePath: "contact.md",
+    });
+    return {
+      page: pageResult,
+    };
+  },
   errorComponent: RootErrorPage,
   notFoundComponent: NotFoundPage,
   shellComponent: RootDocument,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-   const initialData = Route.useLoaderData();
-  
-    // Enable live preview for page content
-    const { data: pageData } = useTina({
-      query: initialData.page.query,
-      variables: initialData.page.variables,
-      data: initialData.page.data,
-    });
+  const initialData = Route.useLoaderData();
+
+  // Enable live preview for page content
+  const { data: pageData } = useTina({
+    query: initialData.page.query,
+    variables: initialData.page.variables,
+    data: initialData.page.data,
+  });
 
   return (
     <html lang="en">
       <head>
         <HeadContent />
       </head>
-      <body className="flex min-h-dvh flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer pageData={pageData} />
+      <body className="h-dvh">
+        <ScrollArea className="h-full">
+          <Header />
+          <main>{children}</main>
+          <Footer pageData={pageData} />
+        </ScrollArea>
         <Scripts />
       </body>
     </html>

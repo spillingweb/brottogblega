@@ -65,7 +65,8 @@ var config_default = defineConfig({
                 name: "pageName",
                 label: "Sidetittel",
                 isTitle: true,
-                required: true
+                required: true,
+                ui: { component: "hidden" }
               },
               {
                 type: "string",
@@ -147,37 +148,6 @@ var config_default = defineConfig({
                 label: "Om oss: Avsnitt 2",
                 ui: { component: "textarea" }
               },
-              // {
-              //   type: "object",
-              //   name: "testimonials",
-              //   label: "Referanser fra klienter",
-              //   list: true,
-              //   ui: {
-              //     itemProps: (item) => {
-              //       return { label: item?.name || "Ny referanse" };
-              //     },
-              //   },
-              //   fields: [
-              //     {
-              //       type: "string",
-              //       name: "quote",
-              //       label: "Sitat/referanse",
-              //       ui: { component: "textarea" },
-              //       required: true,
-              //     },
-              //     {
-              //       type: "string",
-              //       name: "name",
-              //       label: "Navn",
-              //       required: true,
-              //     },
-              //     {
-              //       type: "string",
-              //       name: "role",
-              //       label: "Rolle/beskrivelse (valgfritt)",
-              //     },
-              //   ],
-              // },
               {
                 type: "string",
                 name: "servicesHeading",
@@ -210,7 +180,8 @@ var config_default = defineConfig({
                 name: "pageName",
                 label: "Sidetittel",
                 isTitle: true,
-                required: true
+                required: true,
+                ui: { component: "hidden" }
               },
               {
                 type: "string",
@@ -365,7 +336,8 @@ var config_default = defineConfig({
                 name: "pageName",
                 label: "Sidetittel",
                 isTitle: true,
-                required: true
+                required: true,
+                ui: { component: "hidden" }
               },
               {
                 type: "string",
@@ -398,13 +370,23 @@ var config_default = defineConfig({
             fields: [
               {
                 type: "string",
+                name: "pageName",
+                label: "Sidetittel",
+                isTitle: true,
+                required: true,
+                ui: { component: "hidden" }
+              },
+              {
+                type: "string",
                 name: "facebook",
-                label: "Facebook URL"
+                label: "Facebook URL",
+                description: "Lenke n\xE5r bruker trykker p\xE5 facebook-ikonet"
               },
               {
                 type: "string",
                 name: "instagram",
-                label: "Instagram URL"
+                label: "Instagram URL",
+                description: "Lenke n\xE5r bruker trykker p\xE5 instagram-ikonet"
               },
               {
                 type: "string",

@@ -24,6 +24,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
       await navigator.share({
         title: article.title,
         text: article.excerpt,
+
         url: shareUrl,
       });
       return;
@@ -34,9 +35,9 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
   };
 
   return (
-    <DialogContent className="max-w-[calc(100dvw-2rem)] sm:max-w-xl! md:max-w-2xl! p-0 h-[calc(100dvh-2rem)] print:h-auto print:mt-90">
-      <ScrollArea className="h-full overflow-auto print:h-auto print:overflow-visible">
-        <div className="overflow-hidden rounded-t-sm bg-secondary h-70">
+    <DialogContent className="max-w-[calc(100dvw-2rem)] sm:max-w-xl! md:max-w-2xl! p-0 h-[calc(100dvh-2rem)] print:h-full">
+      <ScrollArea className="h-full overflow-auto print:overflow-visible">
+        <div className="overflow-hidden rounded-t-sm bg-secondary h-70 print:h-50">
           <img
             src={article.coverImage || ""}
             alt={article.title}
@@ -44,7 +45,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
             data-tina-field={tinaField(article, "coverImage")}
           />
         </div>
-        <div className="p-6 sm:p-8 md:p-10 print:px-0">
+        <div className="p-6 sm:p-8 md:p-10 print:p-0">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
               <span
@@ -96,7 +97,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
           </div>
           <Heading
             level={2}
-            className="md:text-3xl mb-3 leading-snug break-all"
+            className="md:text-3xl mb-3 leading-snug wrap-break-words"
             data-tina-field={tinaField(article, "title")}
           >
             {article.title}
@@ -115,7 +116,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
           </p>
           {article.body && (
             <div
-              className="text-sm md:text-base text-foreground leading-relaxed flex flex-col gap-4 print:block "
+              className="text-sm md:text-base text-foreground leading-relaxed flex flex-col gap-4 [&>p]:print:break-inside-avoid"
               data-tina-field={tinaField(article, "body")}
             >
               <TinaMarkdown content={article.body} />

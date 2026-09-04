@@ -64,14 +64,6 @@ const News = ({
     }
   };
 
-  if (!featured && rest.length === 0) {
-    return (
-      <PageWrapper kicker={"nyheter"} page={page}>
-        <p>Ingen blogginnlegg funnet.</p>
-      </PageWrapper>
-    );
-  }
-
   return (
     <PageWrapper kicker={"nyheter"} page={page}>
       {/* Filter */}
@@ -89,6 +81,7 @@ const News = ({
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pb-24">
+        {filtered.length === 0 && <p className="italic">Ingen blogginnlegg funnet i denne kategorien.</p>}
         <Dialog
           open={Boolean(activeArticle)}
           onOpenChange={handleDialogOpenChange}

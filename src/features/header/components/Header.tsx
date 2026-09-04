@@ -1,89 +1,43 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import Logo from "../../public/brottogblega_logo.svg";
 import NavLink from "#/features/header/components/NavLink";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
-import { Dialog, DialogTrigger } from "./ui/dialog";
-import ContactDialog from "./ContactDialog";
+import { Button } from "../../../components/ui/button";
+import { Dialog, DialogTrigger } from "../../../components/ui/dialog";
+import ContactDialog from "../../../components/ContactDialog";
 import { navLinks } from "#/lib/constants";
-import { client } from "../../tina/__generated__/client";
+import { useServiceLinks } from "../hooks";
 import { cn } from "#/lib/utils";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
-  const [serviceLinks, setServiceLinks] = useState<
-    { id: string; title: string }[]
-  >([]);
+  const serviceLinks = useServiceLinks();
   const location = useLocation();
 
+  // Close the mobile menu when the location changes,
+  // for example when clicking on the link to a new page
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
   useLayoutEffect(() => {
-    const checkScroll = () => setScrolled(window.scrollY > 20);
-
-    // Check immediately
+    const viewport = document.querySelector<HTMLElement>("[data-slot='scroll-area-viewport']");
+    const target = viewport ?? window;
+    const getScrollTop = () => (viewport ? viewport.scrollTop : window.scrollY);
+    const checkScroll = () => setScrolled(getScrollTop() > 20);
     checkScroll();
-
-    // Check again after a frame to catch restored scroll position
-    const frameId = requestAnimationFrame(checkScroll);
-
-    // Listen to scroll events
-    window.addEventListener("scroll", checkScroll);
-    return () => {
-      cancelAnimationFrame(frameId);
-      window.removeEventListener("scroll", checkScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const loadServices = async () => {
-      try {
-        const response = await client.queries.servicesConnection({
-          sort: "order",
-        });
-        const services = (response?.data?.servicesConnection?.edges || [])
-          .map((edge: any) => edge?.node)
-          .filter(Boolean)
-          .map((service: any) => ({
-            id:
-              service._sys?.filename ||
-              (service.title || "tjeneste")
-                .toLowerCase()
-                .replace(/æ/g, "ae")
-                .replace(/ø/g, "o")
-                .replace(/å/g, "a")
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/^-|-$/g, ""),
-            title: service.title || "Tjeneste",
-          }));
-
-        if (services.length > 0) {
-          setServiceLinks(services);
-        }
-      } catch (error) {
-        console.error("Failed to load services for navigation", error);
-      }
-    };
-
-    loadServices();
+    target.addEventListener("scroll", checkScroll);
+    return () => target.removeEventListener("scroll", checkScroll);
   }, []);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 print:hidden",
-        scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent",
-      )}
-    >
+    <header className={`transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : ""} sticky top-0 z-50 print:hidden`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/">
           <img
-            src={Logo}
+            src="/brottogblega_logo.svg"
             alt="Brott og Blega logo"
             className={cn(
               "w-auto text-primary transition-all duration-300",
@@ -117,7 +71,6 @@ const Header = () => {
                             key={service.id}
                             to="/tjenester"
                             hash={service.id}
-                            onScrollEnd={() => setScrolled(true)}
                             className="block rounded-md px-3 py-2 text-sm text-foreground/80 transition-colors hover:bg-muted hover:text-primary"
                           >
                             {service.title}

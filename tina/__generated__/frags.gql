@@ -59,6 +59,7 @@ fragment PagesParts on Pages {
     ctaDescription
   }
   ... on PagesContact {
+    pageName
     facebook
     instagram
     hildeName

@@ -112,10 +112,11 @@ const Events = ({
   if (upcomingEvents.length === 0) {
     return (
       <PageWrapper kicker={"Arrangementer"} page={page}>
-        <p>Ingen kommende arrangementer.</p>
+        <p className="italic">Ingen kommende arrangementer.</p>
       </PageWrapper>
     );
   }
+
   return (
     <PageWrapper kicker={"Arrangementer"} page={page}>
       {/* Filter */}
@@ -142,7 +143,7 @@ const Events = ({
       {/* Events list */}
       <div className="max-w-6xl mx-auto px-6 pb-24 space-y-8">
         {visibleEvents.length === 0 && (
-          <p>Ingen kommende arrangementer i denne kategorien.</p>
+          <p className="italic">Ingen kommende arrangementer i denne kategorien.</p>
         )}
         {visibleEvents.map((event) => (
           <EventItem

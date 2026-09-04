@@ -10,7 +10,7 @@ import type { PagesHomepage } from "../../../../tina/__generated__/types";
 const Hero = ({ page }: { page: PagesHomepage }) => {
   const { kicker, titleMain, titleItalic, subtitle, heroImage } = page;
   return (
-    <section className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
+    <section className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden -mt-18.5 lg:-mt-33">
       <div
         className="absolute inset-0 bg-primary/10"
         data-tina-field={tinaField(page, "heroImage")}
@@ -19,14 +19,13 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
           src={heroImage || ""}
           alt="Hero image"
           className="w-full h-full object-cover opacity-40"
-
           loading="eager"
           fetchPriority="high"
           decoding="async"
         />
         <div className="absolute inset-0 bg-linear-to-b from-primary/20 via-background/30 to-background" />
       </div>
-      <div className="relative max-w-6xl mx-auto px-6 w-full">
+      <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="max-w-3xl flex flex-col gap-4 anim-hero">
           <Kicker
             className="text-primary font-medium"
@@ -35,10 +34,16 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
             {kicker}
           </Kicker>
           <Heading className="flex flex-col gap-3" level={1}>
-            <span className="md:text-6xl" data-tina-field={tinaField(page, "titleMain")}>
+            <span
+              className="md:text-6xl"
+              data-tina-field={tinaField(page, "titleMain")}
+            >
               {titleMain}
             </span>
-            <em className="md:text-5xl" data-tina-field={tinaField(page, "titleItalic")}>
+            <em
+              className="md:text-5xl"
+              data-tina-field={tinaField(page, "titleItalic")}
+            >
               {titleItalic}
             </em>
           </Heading>

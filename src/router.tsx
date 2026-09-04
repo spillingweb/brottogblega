@@ -4,6 +4,12 @@ import { routeTree } from "./routeTree.gen";
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query";
 import { QueryClient } from "@tanstack/react-query";
 
+declare module "@tanstack/history" {
+  interface HistoryState {
+    skipScrollReset?: boolean;
+  }
+}
+
 export function getRouter() {
   const queryClient = new QueryClient();
 
@@ -12,10 +18,11 @@ export function getRouter() {
     context: {
       queryClient,
     },
-    scrollRestoration: true,
     defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
     defaultViewTransition: true,
+    scrollRestoration: true,
+    scrollToTopSelectors: ["[data-slot='scroll-area-viewport']"],
   });
 
   setupRouterSsrQueryIntegration({ router, queryClient });

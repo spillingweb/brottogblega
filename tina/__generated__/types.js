@@ -67,6 +67,7 @@ export const PagesPartsFragmentDoc = gql`
     ctaDescription
   }
   ... on PagesContact {
+    pageName
     facebook
     instagram
     hildeName

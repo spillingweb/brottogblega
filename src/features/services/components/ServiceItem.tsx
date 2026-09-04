@@ -63,7 +63,7 @@ const ServiceItem = ({
               <DialogTrigger asChild>
                 <Button>Bestill time</Button>
               </DialogTrigger>
-              <ContactDialog />
+              <ContactDialog sendTo={service.category === "Hilde Stenqvist" ? "hilde" : "tina"} />
             </Dialog>
           </div>
           <p
