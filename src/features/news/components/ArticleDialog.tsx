@@ -116,7 +116,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
           </p>
           {article.body && (
             <div
-              className="text-sm md:text-base text-foreground leading-relaxed flex flex-col gap-4 [&>p]:print:break-inside-avoid"
+              className="text-sm md:text-base text-foreground text-balance leading-relaxed flex flex-col gap-4 [&>p]:print:break-inside-avoid"
               data-tina-field={tinaField(article, "body")}
             >
               <TinaMarkdown content={article.body} />

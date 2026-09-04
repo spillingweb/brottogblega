@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import Logo from "../../public/brottogblega_logo.svg";
 import NavLink from "#/features/header/components/NavLink";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Dialog, DialogTrigger } from "./ui/dialog";
@@ -23,19 +23,19 @@ const Header = () => {
     setMenuOpen(false);
   }, [location]);
 
-  useLayoutEffect(() => {
-    const viewport = document.querySelector<HTMLElement>(
-      "[data-slot='scroll-area-viewport']",
-    );
-    const target = viewport ?? window;
-    const getScrollTop = () =>
-      viewport ? viewport.scrollTop : window.scrollY;
-    const checkScroll = () => setScrolled(getScrollTop() > 20);
+  // useLayoutEffect(() => {
+  //   const viewport = document.querySelector<HTMLElement>(
+  //     "[data-slot='scroll-area-viewport']",
+  //   );
+  //   const target = viewport ?? window;
+  //   const getScrollTop = () =>
+  //     viewport ? viewport.scrollTop : window.scrollY;
+  //   const checkScroll = () => setScrolled(getScrollTop() > 20);
 
-    checkScroll();
-    target.addEventListener("scroll", checkScroll);
-    return () => target.removeEventListener("scroll", checkScroll);
-  }, []);
+  //   checkScroll();
+  //   target.addEventListener("scroll", checkScroll);
+  //   return () => target.removeEventListener("scroll", checkScroll);
+  // }, []);
 
   useEffect(() => {
     const loadServices = async () => {

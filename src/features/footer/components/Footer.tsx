@@ -6,9 +6,14 @@ import { navLinks } from "#/lib/constants";
 import FooterNavLink from "./FooterNavLink";
 import type { PagesContact } from "../../../../tina/__generated__/types";
 import { tinaField } from "tinacms/tina-field";
+import { useEffect, useState } from "react";
 
 const Footer = ({ pageData }: { pageData: any }) => {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const page = pageData.pages as PagesContact;
 
