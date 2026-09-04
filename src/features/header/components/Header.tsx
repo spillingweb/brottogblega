@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import NavLink from "#/features/header/components/NavLink";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../../../components/ui/button";
 import { Dialog, DialogTrigger } from "../../../components/ui/dialog";
@@ -22,25 +22,23 @@ const Header = () => {
     setMenuOpen(false);
   }, [location]);
 
-  useEffect(() => {
-    const viewport = document.querySelector<HTMLElement>("[data-slot='scroll-area-viewport']");
+  useLayoutEffect(() => {
+    const viewport = document.querySelector<HTMLElement>(
+      "[data-slot='scroll-area-viewport']",
+    );
     const target = viewport ?? window;
     const getScrollTop = () => (viewport ? viewport.scrollTop : window.scrollY);
     const checkScroll = () => setScrolled(getScrollTop() > 20);
 
+    checkScroll();
     target.addEventListener("scroll", checkScroll);
-
-    // Check scroll after hydration completes
-    const frameId = requestAnimationFrame(() => checkScroll());
-
-    return () => {
-      cancelAnimationFrame(frameId);
-      target.removeEventListener("scroll", checkScroll);
-    };
+    return () => target.removeEventListener("scroll", checkScroll);
   }, []);
 
   return (
-    <header className={`transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : ""} sticky top-0 z-50 print:hidden`}>
+    <header
+      className={`transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : ""} sticky top-0 z-50 print:hidden`}
+    >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/">
           <img
