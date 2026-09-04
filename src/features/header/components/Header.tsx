@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import NavLink from "#/features/header/components/NavLink";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../../../components/ui/button";
 import { Dialog, DialogTrigger } from "../../../components/ui/dialog";
@@ -22,14 +22,13 @@ const Header = () => {
     setMenuOpen(false);
   }, [location]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const viewport = document.querySelector<HTMLElement>("[data-slot='scroll-area-viewport']");
     const target = viewport ?? window;
     const getScrollTop = () => (viewport ? viewport.scrollTop : window.scrollY);
     const checkScroll = () => setScrolled(getScrollTop() > 20);
     checkScroll();
     target.addEventListener("scroll", checkScroll);
-    console.log("this is one run of the scroll check effect");
     return () => target.removeEventListener("scroll", checkScroll);
   }, []);
 

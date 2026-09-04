@@ -41,7 +41,7 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
               {titleMain}
             </span>
             <em
-              className="md:text-5xl"
+              className="text-3xl md:text-5xl"
               data-tina-field={tinaField(page, "titleItalic")}
             >
               {titleItalic}
