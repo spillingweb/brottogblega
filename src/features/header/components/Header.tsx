@@ -29,6 +29,7 @@ const Header = () => {
     const checkScroll = () => setScrolled(getScrollTop() > 20);
     checkScroll();
     target.addEventListener("scroll", checkScroll);
+    console.log("this is one run of the scroll check effect");
     return () => target.removeEventListener("scroll", checkScroll);
   }, []);
 
