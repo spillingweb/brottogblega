@@ -4,6 +4,7 @@ import { tinaField } from "tinacms/tina-field";
 import type { ArticleNode } from "../types";
 import { calculateReadingTime, categoryColors } from "../utils";
 import Heading from "#/components/ui/Heading";
+import { formatArticleDate } from "../utils/dateFormatter";
 
 const Featured = ({
   article,
@@ -40,11 +41,7 @@ const readingTime = calculateReadingTime(article.body || ""); // Calculate readi
               className="text-xs text-muted-foreground"
               data-tina-field={tinaField(article, "date")}
             >
-              {new Date(article.date).toLocaleDateString("nb-NO", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
+              {formatArticleDate(article.date)}
             </span>
           </div>
           <Heading

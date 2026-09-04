@@ -8,6 +8,7 @@ import { calculateReadingTime, categoryColors } from "../utils";
 import { DialogTrigger } from "#/components/ui/dialog";
 import { tinaField } from "tinacms/tina-field";
 import Heading from "#/components/ui/Heading";
+import { formatArticleDate } from "../utils/dateFormatter";
 
 const NewsItem = ({
   article,
@@ -49,11 +50,7 @@ const NewsItem = ({
               className="text-[11px] text-muted-foreground"
               data-tina-field={tinaField(article, "date")}
             >
-              {new Date(article.date).toLocaleDateString("nb-NO", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
+              {formatArticleDate(article.date)}
             </span>
           </div>
           <Heading

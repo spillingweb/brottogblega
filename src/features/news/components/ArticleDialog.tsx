@@ -8,6 +8,7 @@ import { calculateReadingTime, categoryColors } from "../utils";
 import { tinaField } from "tinacms/tina-field";
 import { PrinterIcon, Share2Icon } from "lucide-react";
 import { cn } from "#/lib/utils";
+import { formatArticleDate } from "../utils/dateFormatter";
 
 const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
   if (!article) return null;
@@ -62,11 +63,7 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
                 className="text-xs text-muted-foreground"
                 data-tina-field={tinaField(article, "date")}
               >
-                {new Date(article.date).toLocaleDateString("nb-NO", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
+                {formatArticleDate(article.date)}
               </span>
               <span>·</span>
               <span className="text-xs text-muted-foreground">
