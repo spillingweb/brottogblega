@@ -22,22 +22,22 @@ const Header = () => {
     setMenuOpen(false);
   }, [location]);
 
-  useEffect(() => {
-    const viewport = document.querySelector<HTMLElement>("[data-slot='scroll-area-viewport']");
-    const target = viewport ?? window;
-    const getScrollTop = () => (viewport ? viewport.scrollTop : window.scrollY);
-    const checkScroll = () => setScrolled(getScrollTop() > 20);
+  // useEffect(() => {
+  //   const viewport = document.querySelector<HTMLElement>("[data-slot='scroll-area-viewport']");
+  //   const target = viewport ?? window;
+  //   const getScrollTop = () => (viewport ? viewport.scrollTop : window.scrollY);
+  //   const checkScroll = () => setScrolled(getScrollTop() > 20);
 
-    target.addEventListener("scroll", checkScroll);
+  //   target.addEventListener("scroll", checkScroll);
 
-    // Check scroll after hydration completes
-    const frameId = requestAnimationFrame(() => checkScroll());
+  //   // Check scroll after hydration completes
+  //   const frameId = requestAnimationFrame(() => checkScroll());
 
-    return () => {
-      cancelAnimationFrame(frameId);
-      target.removeEventListener("scroll", checkScroll);
-    };
-  }, []);
+  //   return () => {
+  //     cancelAnimationFrame(frameId);
+  //     target.removeEventListener("scroll", checkScroll);
+  //   };
+  // }, []);
 
   return (
     <header className={`transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : ""} sticky top-0 z-50 print:hidden`}>
