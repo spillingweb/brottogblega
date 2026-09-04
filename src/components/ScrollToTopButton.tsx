@@ -9,20 +9,32 @@ const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const viewport = document.querySelector<HTMLElement>("[data-slot='scroll-area-viewport']");
+    const target = viewport ?? window;
+    
+    const getScrollTop = () => (viewport ? viewport.scrollTop : window.scrollY);
     const onScroll = () => {
-      setIsVisible(window.scrollY > SCROLL_SHOW_THRESHOLD);
+      setIsVisible(getScrollTop() > SCROLL_SHOW_THRESHOLD);
     };
 
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    target.addEventListener("scroll", onScroll, { passive: true });
+
+    // Check after hydration completes
+    const frameId = requestAnimationFrame(() => onScroll());
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frameId);
+      target.removeEventListener("scroll", onScroll);
     };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const viewport = document.querySelector<HTMLElement>("[data-slot='scroll-area-viewport']");
+    if (viewport) {
+      viewport.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
