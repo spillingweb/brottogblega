@@ -1,5 +1,4 @@
 import CallToAction from "#/components/CallToAction";
-import ContactDialog from "#/components/ContactDialog";
 import PageWrapper from "#/components/PageWrapper";
 import { Button } from "#/components/ui/button";
 import { useMemo, useState } from "react";
@@ -14,6 +13,7 @@ import type {
 } from "../../../../tina/__generated__/types";
 import EventItem from "./EventItem";
 import { useMediaQuery } from "usehooks-ts";
+import NewsletterDialog from "#/components/NewsletterDialog";
 
 const Events = ({
   eventsData,
@@ -143,7 +143,9 @@ const Events = ({
       {/* Events list */}
       <div className="max-w-6xl mx-auto px-6 pb-24 space-y-8">
         {visibleEvents.length === 0 && (
-          <p className="italic">Ingen kommende arrangementer i denne kategorien.</p>
+          <p className="italic">
+            Ingen kommende arrangementer i denne kategorien.
+          </p>
         )}
         {visibleEvents.map((event) => (
           <EventItem
@@ -156,12 +158,12 @@ const Events = ({
         ))}
       </div>
       <CallToAction
-        btnText="Ta kontakt"
-        dialog={<ContactDialog />}
+        btnText="Meld meg på nyhetsbrevet"
+        dialog={<NewsletterDialog />}
         title={page.ctaTitle || "Vil du høre om nye arrangementer først?"}
         description={
           page.ctaDescription ||
-          "Send oss en e-post, så legger vi deg til på vår liste. Vi sender kun ut meldinger om kommende arrangementer — ikke mer."
+          "Meld deg på vårt nyhetsbrev og få siste nytt om våre innlegg, tjenester, og arrangementer."
         }
         dataTitle={tinaField(page, "ctaTitle")}
         dataDescription={tinaField(page, "ctaDescription")}

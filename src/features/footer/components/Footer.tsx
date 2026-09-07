@@ -84,7 +84,7 @@ const Footer = ({ pageData }: { pageData: any }) => {
             </a>
             {page.hildeHomePage && (
               <a
-                href={page.hildeHomePage}
+                href={`https://${page.hildeHomePage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-primary-foreground transition-colors"
@@ -117,7 +117,7 @@ const Footer = ({ pageData }: { pageData: any }) => {
             </a>
             {page.tinaHomePage && (
               <a
-                href={page.tinaHomePage}
+                href={`https://${page.tinaHomePage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-primary-foreground transition-colors"

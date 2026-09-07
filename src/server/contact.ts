@@ -1,6 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 
-interface KontaktPayload {
+interface ContactPayload {
   person?: string
   navn: string
   epost: string
@@ -8,13 +8,13 @@ interface KontaktPayload {
   melding: string
 }
 
-interface KontaktResult {
+interface ContactResult {
   ok: boolean
   feilmelding?: string
 }
 
-export const sendKontaktskjema = createServerFn({ method: 'POST' })
-  .inputValidator((data: unknown): KontaktPayload => {
+export const sendContactForm = createServerFn({ method: 'POST' })
+  .validator((data: unknown): ContactPayload => {
     const d = data as Record<string, string>
     if (!d.navn?.trim()) throw new Error('Navn er påkrevd')
     if (!d.epost?.trim() || !d.epost.includes('@')) throw new Error('Gyldig e-post er påkrevd')
@@ -28,8 +28,7 @@ export const sendKontaktskjema = createServerFn({ method: 'POST' })
       melding: d.melding.trim(),
     }
   })
-  .handler(async ({ data }): Promise<KontaktResult> => {
-    const defaultApiKey = process.env['BREVO_API_KEY']
+  .handler(async ({ data }): Promise<ContactResult> => {
     const hildeApiKey = process.env['BREVO_API_KEY_HILDE']
     const tinaApiKey = process.env['BREVO_API_KEY_TINA']
 
@@ -46,20 +45,20 @@ export const sendKontaktskjema = createServerFn({ method: 'POST' })
     const fallbackToEmail = process.env['CONTACT_TO_EMAIL'] ?? 'hilde@brottogblega.no'
 
     const apiKeyByPerson: Record<string, string | undefined> = {
-      hilde: hildeApiKey ?? defaultApiKey,
-      tina: tinaApiKey ?? defaultApiKey,
+      hilde: hildeApiKey,
+      tina: tinaApiKey,
     }
-    const apiKey = personKey ? apiKeyByPerson[personKey] : defaultApiKey
+    const apiKey = personKey ? apiKeyByPerson[personKey] : undefined
     const senderEmail = process.env['SENDER_EMAIL'] ?? 'noreply@brottogblega.no'
 
     if (!apiKey) {
-      console.error('[kontakt] Ingen Brevo API-nokkel er satt for valgt mottaker')
+      console.error('[contact] Ingen Brevo API-nokkel er satt for valgt mottaker')
       return { ok: false, feilmelding: 'Konfigurasjonsfeil — prøv igjen senere.' }
     }
 
     const resolvedToEmail = toEmail ?? fallbackToEmail
 
-    console.log('[kontakt] Sender e-post fra', senderEmail, 'til', resolvedToEmail)
+    console.log('[contact] Sender e-post fra', senderEmail, 'til', resolvedToEmail)
 
     const html = `
       <h2>Ny henvendelse fra brottogblega.no</h2>
@@ -90,7 +89,7 @@ export const sendKontaktskjema = createServerFn({ method: 'POST' })
 
     if (!res.ok) {
       const body = await res.text().catch(() => '')
-      console.error('[kontakt] Brevo API feil', res.status, body)
+      console.error('[contact] Brevo API feil', res.status, body)
       
       // Parse error details if available
       let errorMsg = 'Kunne ikke sende meldingen. Prøv igjen.'

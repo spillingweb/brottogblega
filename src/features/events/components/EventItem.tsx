@@ -1,7 +1,6 @@
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { spotsColor } from "../utils";
-import { Dialog } from "#/components/ui/dialog";
-import { DialogTrigger } from "@radix-ui/react-dialog";
+import { Dialog, DialogTrigger } from "#/components/ui/dialog";
 import { Button } from "#/components/ui/button";
 import ContactDialog from "#/components/ContactDialog";
 import { Card } from "#/components/ui/card";

@@ -1,39 +1,7 @@
 import { tinaField } from "tinacms/tina-field";
 import type { PagesHomepage } from "../../../../tina/__generated__/types";
 
-// const IntroArray = [
-//   {
-//     num: "01",
-//     title: "Kropp",
-//     text: "Fysioterapi og bevegelsesveiledning tilpasset kvinner i alle livsfaser.",
-//   },
-//   {
-//     num: "02",
-//     title: "Sinn",
-//     text: "Filosofisk terapi og dialog som skaper rom for refleksjon og mening.",
-//   },
-//   {
-//     num: "03",
-//     title: "Fellesskap",
-//     text: "Seminarer og samtalegrupper hvor kvinner møtes og støtter hverandre.",
-//   },
-// ];
-
 const Intro = ({ page }: { page: PagesHomepage }) => {
-  // const introArray = [
-  //   {
-  //     title: page.intro1Title,
-  //     text: page.intro1Text,
-  //   },
-  //   {
-  //     title: page.intro2Title,
-  //     text: page.intro2Text,
-  //   },
-  //   {
-  //     title: page.intro3Title,
-  //     text: page.intro3Text,
-  //   },
-  // ];
   return (
     <section className="bg-secondary py-14 md:py-20">
       <div className="max-w-6xl mx-auto px-6">

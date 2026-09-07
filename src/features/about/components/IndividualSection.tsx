@@ -39,17 +39,6 @@ const IndividualSection = ({ id, page, isHilde = false }: IndividualProps) => {
       id={id}
       className="scroll-mt-20 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
     >
-      <div className={cn("aspect-3/4 rounded-sm overflow-hidden", isHilde ? "" : "order-2 md:order-1")}>
-        <img
-          src={imgSrc || ""}
-          alt={`Bilde av ${title}`}
-          className="w-full h-full object-cover object-top"
-          data-tina-field={tinaField(
-            page,
-            isHilde ? "hildeImage" : "tinaMariaImage",
-          )}
-        />
-      </div>
       <div>
         <Kicker
           className="mb-2"
@@ -85,13 +74,32 @@ const IndividualSection = ({ id, page, isHilde = false }: IndividualProps) => {
               <span
                 key={`${keyword}-${index}`}
                 className="px-3 py-1 text-xs bg-secondary text-secondary-foreground rounded-sm"
-                data-tina-field={tinaField(page, isHilde ? "hildeKeywords" : "tinaMariaKeywords")}
+                data-tina-field={tinaField(
+                  page,
+                  isHilde ? "hildeKeywords" : "tinaMariaKeywords",
+                )}
               >
                 {keyword}
               </span>
             ))}
           </div>
         )}
+      </div>
+      <div
+        className={cn(
+          "aspect-3/4 rounded-sm overflow-hidden",
+          isHilde ? "md:col-start-1 md:row-start-1" : "",
+        )}
+      >
+        <img
+          src={imgSrc || ""}
+          alt={`Bilde av ${title}`}
+          className="w-full h-full object-cover object-top"
+          data-tina-field={tinaField(
+            page,
+            isHilde ? "hildeImage" : "tinaMariaImage",
+          )}
+        />
       </div>
     </section>
   );

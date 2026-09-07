@@ -1,5 +1,4 @@
 import CallToAction from "#/components/CallToAction";
-import ContactDialog from "#/components/ContactDialog";
 import PageWrapper from "#/components/PageWrapper";
 import { useMemo, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
@@ -16,6 +15,7 @@ import { Dialog } from "#/components/ui/dialog";
 import { Button } from "#/components/ui/button";
 import ArticleDialog from "./ArticleDialog";
 import { tinaField } from "tinacms/tina-field";
+import NewsletterDialog from "#/components/NewsletterDialog";
 
 const News = ({
   pageData,
@@ -81,7 +81,11 @@ const News = ({
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pb-24">
-        {filtered.length === 0 && <p className="italic">Ingen blogginnlegg funnet i denne kategorien.</p>}
+        {filtered.length === 0 && (
+          <p className="italic">
+            Ingen blogginnlegg funnet i denne kategorien.
+          </p>
+        )}
         <Dialog
           open={Boolean(activeArticle)}
           onOpenChange={handleDialogOpenChange}
@@ -112,12 +116,12 @@ const News = ({
       </div>
 
       <CallToAction
-        btnText="Ta kontakt"
-        dialog={<ContactDialog />}
+        btnText="Meld meg på nyhetsbrevet"
+        dialog={<NewsletterDialog />}
         title={page.ctaTitle || "Vil du få nye innlegg rett i innboksen?"}
         description={
           page.ctaDescription ||
-          "Send oss en e-post, så legger vi deg til på listen vår. Vi sender kun ut når det er noe nytt og verdt å lese."
+          "Meld deg på vårt nyhetsbrev og få siste nytt om våre innlegg, tjenester, og arrangementer."
         }
         dataTitle={tinaField(page, "ctaTitle")}
         dataDescription={tinaField(page, "ctaDescription")}

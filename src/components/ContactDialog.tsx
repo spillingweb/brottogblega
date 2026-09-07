@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import { useServerFn } from "@tanstack/react-start";
-import { sendKontaktskjema } from "#/server/kontakt";
+import { sendContactForm } from "#/server/contact";
 
 type formState = {
   person: "hilde" | "tina";
@@ -37,7 +37,7 @@ const ContactDialog = ({
   sendTo?: "hilde" | "tina";
   message?: string;
 }) => {
-  const send = useServerFn(sendKontaktskjema);
+  const send = useServerFn(sendContactForm);
 
   const getInitialForm = (): formState => ({
     person: sendTo || "hilde",
@@ -89,9 +89,13 @@ const ContactDialog = ({
         setStatus("feil");
         setFeilmelding(result.feilmelding ?? "Noe gikk galt.");
       }
-    } catch {
+    } catch (error) {
+      console.error("Feil ved sending av kontaktskjema: ", error);
       setStatus("feil");
-      setFeilmelding("Noe gikk galt. Vennligst prøv igjen.");
+      setFeilmelding(
+        "Noe gikk galt. Vennligst prøv igjen. " +
+          (error instanceof Error ? error.message : "")
+      );
     }
   };
 
@@ -109,11 +113,7 @@ const ContactDialog = ({
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button
-              variant="outline"
-              onClick={resetContactForm}
-              size="sm"
-            >
+            <Button variant="outline" onClick={resetContactForm} size="sm">
               Send ny melding
             </Button>
             <DialogClose asChild>
@@ -198,12 +198,17 @@ const ContactDialog = ({
               </p>
             )}
 
-            <Button
-              type="submit"
-              disabled={status === "sending" || !form.person}
-            >
-              {status === "sending" ? "Sender..." : "Send melding"}
-            </Button>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant="outline">Avbryt</Button>
+              </DialogClose>
+              <Button
+                type="submit"
+                disabled={status === "sending" || !form.person}
+              >
+                {status === "sending" ? "Sender..." : "Send melding"}
+              </Button>
+            </DialogFooter>
           </form>
         </>
       )}

@@ -158,8 +158,14 @@ body {
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .anim-hero {
@@ -167,10 +173,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .anim-hero { animation: none; }
+  .anim-hero {
+    animation: none;
+  }
 }
-
-
 
 @keyframes soft-zoom {
   from {
@@ -214,6 +220,8 @@ body {
   transform: translateY(24px);
   animation: rise-in 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: opacity, transform;
+  animation-timeline: view();
+  animation-range: entry 10% entry 40%;
 }
 
 .anim-zoom {
@@ -224,7 +232,6 @@ body {
 .anim-float {
   animation: float-gentle 8s ease-in-out infinite;
 }
-
 
 .stagger-grid > * {
   animation: rise-in 1700ms cubic-bezier(0.16, 1, 0.3, 1) both;

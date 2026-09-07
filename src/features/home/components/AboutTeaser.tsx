@@ -9,6 +9,7 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
   return (
     <section className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Image */}
         <div className="relative">
           <div
             className="aspect-4/5 rounded-sm overflow-hidden anim-zoom"
@@ -22,6 +23,8 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
           </div>
           <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-accent rounded-sm hidden md:block" />
         </div>
+
+        {/* Text Content */}
         <div className="anim-scroll">
           <Kicker className="text-primary mb-4">Om oss</Kicker>
           <Heading
