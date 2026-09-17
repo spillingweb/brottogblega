@@ -14,9 +14,9 @@ hildeImage: /kari.avif
 hildeKicker: Fysioterapeut
 hildeTitle: Hilde Stenqvist
 hildeContent: |
-  Hilde er autorisert fysioterapeut med over 14 års erfaring og stort hjerte for kvinnehelse.
+  Jeg er autorisert fysioterapeut med over 14 års erfaring og har et stort hjerte for kvinnehelse.
 
-  Har kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager gjennom Norges Fysioterapeutforbund. Hun har videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
+  Gjennom Norges Fysioterapeutforbund har jeg kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager. I tillegg har jeg videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
 
   Elsker å være ute.
 
