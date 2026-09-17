@@ -18,7 +18,7 @@ hildeContent: |
 
   Gjennom Norges Fysioterapeutforbund har jeg kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager. I tillegg har jeg videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
 
-  Elsker å være ute.
+  Elsker å være ute! Hvem vet, plutselig tilbyr jeg en økt eller flere ute i friluft - så følg med under *arrangementer*.
 
   Tilbyr fysikalsk behandling og fysiopilates. Vurdering og oppfølging av plager knyttet til bekkenbunnen tilbys kun til kvinner.
 
