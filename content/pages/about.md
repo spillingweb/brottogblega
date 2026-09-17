@@ -24,7 +24,7 @@ hildeContent: |
 
   Hilde tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at å lytte til kroppen er et grunnleggende steg mot bedre helse. Hun møter hver pasient der de er, med tålmodighet og faglig dybde.
 
-  *«Jeg ønsker at alle kvinner skal kjenne seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
+  *«Jeg ønsker at alle kvinner skal føle seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
 hildeKeywords:
   - Bekkenbunn
   - Bekkenrelaterte plager
