@@ -16,7 +16,7 @@ titleItalic: Et rom for helhetlig helse
 subtitle: 'Vi tilbyr filosofisk samtaleterapi, fysioterapi og tverrfaglige seminarer. '
 heroImage: /photo-1739217416358-0f84b45d918f.avif
 intro1Title: Kropp
-intro1Text: Fysioterapi individuelt og i grupper. Kompetanse innen kvinnehelse.
+intro1Text: Fysioterapi individuelt og i små grupper. Kompetanse innen kvinnehelse.
 intro2Title: Sinn
 intro2Text: Samtaleterapi og filosofisk dialog som skaper rom for refleksjon og mening.
 intro3Title: Fellesskap
