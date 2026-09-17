@@ -20,7 +20,7 @@ hildeContent: |
 
   Elsker å være ute.
 
-  Tilbyr fysikalsk behandling og fysiopilates til både menn og kvinner. Bekkenbunnsundersøkelse tilbys kun til kvinner.
+  Tilbyr fysikalsk behandling og fysiopilates. Vurdering og oppfølging av plager knyttet til bekkenbunnen tilbys kun til kvinner.
 
   Hilde tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at å lytte til kroppen er et grunnleggende steg mot bedre helse. Hun møter hver pasient der de er, med tålmodighet og faglig dybde.
 
