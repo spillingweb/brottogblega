@@ -1,6 +1,6 @@
 ---
 title: Fysiopilates formiddag
-image: /istockphoto-944619732-612x612.jpg
+image: /uploads/istockphoto-944619732-612x612.jpg
 date: 2026-09-07T10:07:03.858Z
 endDate: 2026-10-26T11:13:12.258Z
 host: Hilde Stenqvist
@@ -17,6 +17,6 @@ Vi jobber med styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og
 
 Før du kan delta i gruppe må du ha en introtime slik at jeg kan bli kjent med dine målsettinger og eventuelle plager. Introtime koster 800 kr.
 
-Vi treffes 6 mandager. Hvis det er ledige plasser kan du melde deg på etter kursstart, da betaler du for resterende antall ganger (315 kr per gang).  
+Vi treffes 6 mandager. Hvis det er ledige plasser kan du melde deg på etter kursstart, da betaler du for resterende antall ganger (315 kr per gang).
 
 NB! Det blir ikke gruppe i uke 40 og 41.

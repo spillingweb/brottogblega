@@ -1,6 +1,6 @@
 ---
 title: Fysiopilates BARSEL
-image: /istockphoto-1217096602-612x612.jpg
+image: /uploads/istockphoto-1217096602-612x612.jpg
 date: 2026-09-09T10:27:33.904Z
 endDate: 2026-10-28T11:27:37.253Z
 host: Hilde Stenqvist
@@ -15,7 +15,7 @@ price: 2500 kr
 
 Gratulerer, du har gjort en kjempejobb og fått et barn! Det har skjedd store forandringer både i kroppen og i livet ditt - og det er ikke småtterier!
 
-I fysiopilates BARSEL har vi fokus på å komme i gang igjen etter fødselen, i ditt og babys tempo. 
+I fysiopilates BARSEL har vi fokus på å komme i gang igjen etter fødselen, i ditt og babys tempo.
 
 Vi gjør bekkenbunnstrening i hver økt! I tillegg har vi fokus på styrke, stabilitet og balansert muskelbruk rundt nakke, skuldre og rygg. Vi jobber også med bevegelighet, pust, avspenning, og ergonomi i en travel småbarnshverdag.
 

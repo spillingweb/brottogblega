@@ -18,7 +18,7 @@ var config_default = defineConfig({
   // },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "uploads",
       publicFolder: "public"
     }
   },

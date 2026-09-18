@@ -1,6 +1,6 @@
 ---
 title: Mammapraten. Dialoggruppe — oppstart høst 2025
-image: /rodion-kutsaiev-Qdi8UvGd1Ww-unsplash.jpg
+image: /uploads/rodion-kutsaiev-Qdi8UvGd1Ww-unsplash.jpg
 date: 2026-10-07T00:00:00.000Z
 host: Tina Maria Lie
 time: '10:30-13:30'

@@ -1,6 +1,6 @@
 ---
 title: Fysiopilates GRAVID
-image: /istockphoto-831451878-612x612.jpg
+image: /uploads/istockphoto-831451878-612x612.jpg
 date: 2026-09-09T10:22:09.771Z
 endDate: 2026-10-28T11:22:48.444Z
 host: Hilde Stenqvist

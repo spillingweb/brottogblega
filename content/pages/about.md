@@ -2,7 +2,7 @@
 pageName: Om oss
 title: Brott & Blega — et møtested for kropp og tanke
 intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at god helse krever at vi tar hele mennesket på alvor. '
-sharedImage: /Tm-og-H-inne-i-lokalet.avif
+sharedImage: /uploads/Tm-og-H-inne-i-lokalet.avif
 sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
 sharedIntro: 'Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
@@ -10,7 +10,7 @@ sharedContent: |
   Brott & Blega rommer to tilbud: fysioterapi ved Hilde Stenqvist, og filosofiske samtaler ved Tina Maria Lie. Begge tar utgangspunkt i at kropp og tanke henger sammen, men tilbyr hver sin faglige inngang.
 
   Hos oss får du den tiden og oppmerksomheten du har behov for.
-hildeImage: /kari.avif
+hildeImage: /uploads/kari.avif
 hildeKicker: Fysioterapeut
 hildeTitle: Hilde Stenqvist
 hildeContent: |
@@ -32,7 +32,7 @@ hildeKeywords:
   - Overgangsalder
   - Barseltid
   - Fysiopilates
-tinaMariaImage: /linkinbilde.jpg
+tinaMariaImage: /uploads/profile.jpg
 tinaMariaKicker: Sykepleier med filosofisk videreutdanning
 tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
