@@ -19,6 +19,7 @@ const EventItem = ({
 }) => {
   const month = new Date(event.date).toLocaleString("nb-NO", {
     month: "short",
+    timeZone: "UTC",
   });
   const day = new Date(event.date).getDate();
 
@@ -26,6 +27,7 @@ const EventItem = ({
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   });
 
   const endDate = event.endDate
@@ -33,6 +35,7 @@ const EventItem = ({
         day: "numeric",
         month: "long",
         year: "numeric",
+        timeZone: "UTC",
       })
     : null;
 

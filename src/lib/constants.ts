@@ -6,3 +6,6 @@ export const navLinks = [
   { to: "/arrangementer", label: "Arrangementer" },
   { to: "/aktuelt", label: "Aktuelt" },
 ];
+
+// Site URL
+export const SITE_URL = "https://brottogblega.no";

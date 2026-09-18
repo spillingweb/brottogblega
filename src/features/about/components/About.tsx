@@ -10,6 +10,14 @@ import IndividualSection from "./IndividualSection";
 import SharedSection from "./SharedSection";
 import PageWrapper from "#/components/PageWrapper";
 
+type Values =
+  | "value1Title"
+  | "value1Text"
+  | "value2Title"
+  | "value2Text"
+  | "value3Title"
+  | "value3Text";
+
 const About = ({ pageData }: { pageData: PagesQuery }) => {
   const page = pageData.pages as PagesAbout;
 
@@ -55,19 +63,32 @@ const About = ({ pageData }: { pageData: PagesQuery }) => {
             {page.valuesTitle}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="bg-card p-8 rounded-sm">
-                <h3
-                  className="text-xl mb-3"
-                  style={{ fontFamily: "'Lora', serif" }}
-                >
-                  {value.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {value.text}
-                </p>
-              </div>
-            ))}
+            {values.map((value, index) => {
+              if (index > 2) return null;
+              return (
+                <div key={index} className="bg-card p-8 rounded-sm">
+                  <h3
+                    className="text-xl mb-3"
+                    style={{ fontFamily: "'Lora', serif" }}
+                    data-tina-field={tinaField(
+                      page,
+                      `value${index + 1}Title` as Values,
+                    )}
+                  >
+                    {value.title}
+                  </h3>
+                  <p
+                    className="text-sm text-muted-foreground leading-relaxed"
+                    data-tina-field={tinaField(
+                      page,
+                      `value${index + 1}Text` as Values,
+                    )}
+                  >
+                    {value.text}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

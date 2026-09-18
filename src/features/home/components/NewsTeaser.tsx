@@ -92,6 +92,7 @@ const NewsTeaser = ({
                           day: "numeric",
                           month: "long",
                           year: "numeric",
+                          timeZone: "UTC"
                         })}
                       </span>
                     </div>
