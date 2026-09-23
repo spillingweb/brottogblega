@@ -1,14 +1,11 @@
 import type { ArticleNode } from "../types";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-} from "#/components/ui/card";
+import { Card, CardContent, CardFooter } from "#/components/ui/card";
 import { calculateReadingTime, categoryColors } from "../utils";
 import { DialogTrigger } from "#/components/ui/dialog";
 import { tinaField } from "tinacms/tina-field";
 import Heading from "#/components/ui/Heading";
 import { formatArticleDate } from "../utils/dateFormatter";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const NewsItem = ({
   article,
@@ -32,7 +29,7 @@ const NewsItem = ({
           className="aspect-video overflow-hidden bg-secondary"
           data-tina-field={tinaField(article, "coverImage")}
         >
-          <img
+          <OptimizedImage
             src={article.coverImage || ""}
             alt={article.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

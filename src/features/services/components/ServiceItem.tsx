@@ -6,6 +6,7 @@ import Heading from "#/components/ui/Heading";
 import Kicker from "#/components/ui/Kicker";
 import { tinaField } from "tinacms/tina-field";
 import type { Services } from "../../../../tina/__generated__/types";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const ServiceItem = ({
   service,
@@ -21,7 +22,7 @@ const ServiceItem = ({
           className={`${index % 2 === 1 ? "lg:order-2" : ""} min-h-64 lg:min-h-0`}
         >
           <div className="relative h-full min-h-64 lg:min-h-0 overflow-hidden bg-secondary">
-            <img
+            <OptimizedImage
               src={service.image || ""}
               alt={service.title}
               className="absolute inset-0 h-full w-full object-cover"

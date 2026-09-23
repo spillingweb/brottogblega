@@ -5,6 +5,7 @@ import type { ArticleNode } from "../types";
 import { calculateReadingTime, categoryColors } from "../utils";
 import Heading from "#/components/ui/Heading";
 import { formatArticleDate } from "../utils/dateFormatter";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const Featured = ({
   article,
@@ -13,7 +14,7 @@ const Featured = ({
   article: ArticleNode;
   onSelectArticle: (article: ArticleNode) => void;
 }) => {
-const readingTime = calculateReadingTime(article.body || ""); // Calculate reading time based on content
+  const readingTime = calculateReadingTime(article.body || ""); // Calculate reading time based on content
 
   return (
     <DialogTrigger
@@ -22,7 +23,7 @@ const readingTime = calculateReadingTime(article.body || ""); // Calculate readi
     >
       <Card className="grid md:grid-cols-2 gap-0 hover:shadow-md transition-shadow duration-300 py-0">
         <div className="aspect-4/3 md:aspect-auto overflow-hidden bg-secondary">
-          <img
+          <OptimizedImage
             src={article.coverImage || ""}
             alt={article.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -62,9 +63,7 @@ const readingTime = calculateReadingTime(article.body || ""); // Calculate readi
               {article.author}
             </span>
             <span className="text-muted-foreground">·</span>
-            <span
-              className="text-muted-foreground"
-            >
+            <span className="text-muted-foreground">
               {readingTime ?? "?"} min lesetid
             </span>
             <span className="ml-auto group-hover:translate-x-1 transition-transform">
