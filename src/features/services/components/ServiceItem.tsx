@@ -14,15 +14,8 @@ const ServiceItem = ({
   service: Services;
   index: number;
 }) => {
-  // Get the service ID from the filename or generate it from the title
-  const serviceId = (service as Services & { _sys?: { filename?: string } })?._sys?.filename
-    ? (service as Services & { _sys?: { filename?: string } })?._sys?.filename.replace(
-        /\.[^/.]+$/, "",
-      )
-    : (service.title || "tjeneste")
-
   return (
-    <Card id={serviceId} className="p-0 scroll-mt-28">
+    <Card id={service.title.toLowerCase()} className="p-0 scroll-mt-28">
       <section className="grid grid-cols-1 lg:grid-cols-2 items-stretch gap-0 overflow-hidden">
         <div
           className={`${index % 2 === 1 ? "lg:order-2" : ""} min-h-64 lg:min-h-0`}

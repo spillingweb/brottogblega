@@ -4,6 +4,7 @@ import Heading from "#/components/ui/Heading";
 import Kicker from "#/components/ui/Kicker";
 import { Link } from "@tanstack/react-router";
 import { tinaField } from "tinacms/tina-field";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
   return (
@@ -15,10 +16,13 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
             className="aspect-4/5 rounded-sm overflow-hidden anim-zoom"
             data-tina-field={tinaField(page, "profileImage")}
           >
-            <img
+            <OptimizedImage
               src={page.profileImage || ""}
               alt="Bilde av Hilde og Tina Maria, grunnleggerne av Brott & Blega"
+              defaultWidth={1200} // High resolution starting point if srcSet isn't evaluated
+              sizes="100vw"
               className="w-full h-full object-cover anim-float"
+              data-tina-field={tinaField(page, "profileImage")}
             />
           </div>
           <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-accent rounded-sm hidden md:block" />
@@ -46,7 +50,7 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
           >
             {page.aboutText2}
           </p>
-          <Button variant="link" className="p-0 h-fit" asChild>
+          <Button variant="link" className="p-0 h-fit" asChild tabIndex={-1}>
             <Link to="/om-oss">
               Les mer om oss
               <span>→</span>

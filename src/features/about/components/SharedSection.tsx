@@ -1,19 +1,16 @@
 import { tinaField } from "tinacms/tina-field";
 import type { PagesAbout } from "../../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
+import { Link } from "@tanstack/react-router";
 
 const SharedSection = ({ page }: { page: PagesAbout }) => {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <section className="max-w-6xl mx-auto px-6 pb-16 md:pb-20">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-0 rounded-sm overflow-hidden border border-border">
         {/* Photo */}
         <div className="md:col-span-3 aspect-4/3 md:aspect-auto overflow-hidden bg-secondary">
-          <img
+          <OptimizedImage
             src={page.sharedImage || ""}
             alt={page.sharedImageAlt || "Brott & Blega ansatte"}
             className="w-full h-full object-cover"
@@ -50,24 +47,28 @@ const SharedSection = ({ page }: { page: PagesAbout }) => {
             <p className="text-xs uppercase tracking-widest text-primary-foreground/50 mb-1">
               Bli kjent med oss
             </p>
-            <button
-              onClick={() => scrollTo("hilde")}
+            <Link
+              to="."
+              hash="hilde"
+              hashScrollIntoView
               className="flex items-center justify-between text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors group"
             >
               <span>Hilde Stenqvist — Fysioterapeut</span>
               <span className="group-hover:translate-y-1 transition-transform">
                 ↓
               </span>
-            </button>
-            <button
-              onClick={() => scrollTo("tinaMaria")}
+            </Link>
+            <Link
+              to="."
+              hash="tinaMaria"
+              hashScrollIntoView
               className="flex items-center justify-between text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors group"
             >
               <span>Tina Maria Lie — Sykepleier & filosof</span>
               <span className="group-hover:translate-y-1 transition-transform">
                 ↓
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

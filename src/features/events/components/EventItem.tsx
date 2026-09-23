@@ -9,6 +9,7 @@ import type { Events } from "../../../../tina/__generated__/types";
 import { tinaField } from "tinacms/tina-field";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { cn } from "#/lib/utils";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const EventItem = ({
   event,
@@ -59,17 +60,20 @@ const EventItem = ({
 
   return (
     <article>
-      <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0  @container">
+      <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0 @container">
         {/* Image */}
         <div
           className="relative md:h-auto h-48 overflow-hidden bg-secondary"
           data-tina-field={tinaField(event, "image")}
         >
           {event.image && (
-            <img
+            <OptimizedImage
               src={event.image}
               alt={event.title}
+              defaultWidth={1200} // High resolution starting point if srcSet isn't evaluated
+              sizes="100vw"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-tina-field={tinaField(event, "image")}
             />
           )}
           <div className="absolute inset-0 bg-primary/20" />
@@ -127,7 +131,7 @@ const EventItem = ({
               {event.title}
             </Heading>
             <div
-              className="text-sm text-muted-foreground leading-relaxed mb-4"
+              className="text-sm text-muted-foreground leading-relaxed mb-4 flex flex-col gap-2"
               data-tina-field={tinaField(event, "description")}
             >
               <TinaMarkdown content={event.description} />

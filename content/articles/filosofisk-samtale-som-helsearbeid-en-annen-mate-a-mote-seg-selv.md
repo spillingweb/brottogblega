@@ -6,7 +6,7 @@ excerpt: Tekst kommer
 author: Tina Maria Lie
 date: 2026-08-22T00:00:00.000Z
 category: Refleksjon
-coverImage: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&h=420&fit=crop&auto=format'
+coverImage: /uploads/photo-1481627834876-b7833e8f5570.jpg
 ---
 
 Prestasjonssamfunnet og slow living. Hvorfor er det så vanskelig å gjøre ingenting?

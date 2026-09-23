@@ -11,7 +11,7 @@
 
 :root {
   --font-size: 16px;
-
+  --card-spacing: 1rem;
   --background: oklch(0.9777 0.0051 247.88);
   --foreground: oklch(0.2915 0.0378 242.09);
   --card: oklch(1 0 0);

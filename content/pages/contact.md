@@ -7,7 +7,7 @@ hildeEmail: hilde@brottogblega.no
 hildePhone: '41169737'
 tinaName: Tina Maria Filosamtale
 tinaEmail: filosamtale@gmail.com
-tinaPhone: '00000000'
+tinaPhone: '41145235'
 tinaHomePage: www.filosamtale.no
 _template: contact
 ---

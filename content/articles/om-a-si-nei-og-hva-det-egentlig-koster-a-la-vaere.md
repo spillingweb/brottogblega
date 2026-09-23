@@ -1,12 +1,12 @@
 ---
-title: 'Om å si nei — og hva det egentlig koster å la være'
+readingTime: 4
+featured: false
+title: Om å si nei — og hva det egentlig koster å la være
 excerpt: 'Mange kvinner er eksperter på å prioritere andre. Tina Maria Lie skriver om grenser, verdier og den stille prisen vi betaler når vi stadig setter oss selv sist.'
+author: Tina Maria Lie
 date: 2025-05-08T00:00:00.000Z
 category: Refleksjon
-author: Tina Maria Lie
-readingTime: 4
-coverImage: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&h=420&fit=crop&auto=format
-featured: false
+coverImage: /uploads/photo-1507525428034-b723cf961d3e.jpg
 ---
 
 Å si nei er ikke egoisme. Det er en form for selvrespekt — og i forlengelsen, en form for omsorg for andre. Du kan ikke gi fra et tomt kar.

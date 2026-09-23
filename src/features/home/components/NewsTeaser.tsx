@@ -6,6 +6,17 @@ import type {
   PagesHomepage,
 } from "../../../../tina/__generated__/types";
 import { calculateReadingTime } from "#/features/news/utils";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "#/components/ui/card";
+import { Link } from "@tanstack/react-router";
+import { Button } from "#/components/ui/button";
+import Heading from "#/components/ui/Heading";
 
 const categoryColors: Record<string, string> = {
   Kronikk: "bg-blue-50 text-blue-700",
@@ -45,12 +56,12 @@ const NewsTeaser = ({
               {page.newsHeading}
             </h2>
           </div>
-          <NavLink
-            to="/aktuelt"
-            className="text-sm text-primary font-medium hover:underline shrink-0"
-          >
-            Se alle innlegg →
-          </NavLink>
+          <Button variant="link" className="p-0 h-fit" asChild tabIndex={-1}>
+            <Link to="/aktuelt">
+              Se alle innlegg
+              <span>→</span>
+            </Link>
+          </Button>
         </div>
 
         {articles.length > 0 ? (
@@ -63,53 +74,53 @@ const NewsTeaser = ({
               const readingTime = calculateReadingTime(article.body);
 
               return (
-                <NavLink
+                <Link
                   key={article.id}
-                  to={`/aktuelt/${article._sys.filename}`}
-                  className="anim-scroll group flex flex-col bg-card border border-border rounded-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
+                  to="/aktuelt/$slug"
+                  params={{ slug: article._sys.filename }}
                 >
-                  <div className="aspect-video overflow-hidden bg-secondary shrink-0">
-                    <img
-                      src={article.coverImage || ""}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      data-tina-field={tinaField(article, "coverImage")}
-                    />
-                  </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span
-                        className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-medium ${categoryColor}`}
-                        data-tina-field={tinaField(article, "category")}
-                      >
-                        {article.category}
-                      </span>
-                      <span
-                        className="text-[11px] text-muted-foreground"
-                        data-tina-field={tinaField(article, "date")}
-                      >
-                        {new Date(article.date).toLocaleDateString("nb-NO", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                          timeZone: "UTC"
-                        })}
-                      </span>
+                  <Card className="pt-0 anim-scroll hover:shadow-md transition-shadow duration-300 h-full">
+                    <div className="aspect-video overflow-hidden bg-secondary shrink-0">
+                      <OptimizedImage
+                        src={article.coverImage || ""}
+                        alt={article.title}
+                        defaultWidth={1200}
+                        sizes="100vw"
+                        className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
+                        data-tina-field={tinaField(article, "coverImage")}
+                      />
                     </div>
-                    <h3
-                      className="text-base leading-snug mb-2 group-hover:text-primary transition-colors"
-                      style={{ fontFamily: "'Lora', serif" }}
-                      data-tina-field={tinaField(article, "title")}
-                    >
-                      {article.title}
-                    </h3>
-                    <p
-                      className="text-xs text-muted-foreground leading-relaxed line-clamp-2 flex-1 mb-4"
+                    <CardHeader>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span
+                          className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-sm font-medium ${categoryColor}`}
+                          data-tina-field={tinaField(article, "category")}
+                        >
+                          {article.category}
+                        </span>
+                        <span
+                          className="text-[11px] text-muted-foreground"
+                          data-tina-field={tinaField(article, "date")}
+                        >
+                          {new Date(article.date).toLocaleDateString("nb-NO", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                            timeZone: "UTC",
+                          })}
+                        </span>
+                      </div>
+                      <CardTitle data-tina-field={tinaField(article, "title")}>
+                        {article.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent
+                      className="text-muted-foreground leading-relaxed line-clamp-2 flex-1 mb-4"
                       data-tina-field={tinaField(article, "excerpt")}
                     >
                       {article.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground border-t border-border pt-3 mt-auto">
+                    </CardContent>
+                    <CardFooter className="flex items-center justify-between text-muted-foreground">
                       <span
                         className="text-primary font-medium"
                         data-tina-field={tinaField(article, "author")}
@@ -117,9 +128,9 @@ const NewsTeaser = ({
                         {article.author}
                       </span>
                       <span>{readingTime ?? "?"} min lesetid</span>
-                    </div>
-                  </div>
-                </NavLink>
+                    </CardFooter>
+                  </Card>
+                </Link>
               );
             })}
           </div>

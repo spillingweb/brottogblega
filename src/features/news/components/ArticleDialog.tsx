@@ -9,6 +9,7 @@ import { tinaField } from "tinacms/tina-field";
 import { PrinterIcon, Share2Icon } from "lucide-react";
 import { cn } from "#/lib/utils";
 import { formatArticleDate } from "../utils/dateFormatter";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
   if (!article) return null;
@@ -39,9 +40,11 @@ const ArticleDialog = ({ article }: { article: ArticleNode | null }) => {
     <DialogContent className="max-w-[calc(100dvw-2rem)] sm:max-w-xl! md:max-w-2xl! p-0 h-[calc(100dvh-2rem)] print:h-full">
       <ScrollArea className="h-full overflow-auto print:overflow-visible">
         <div className="overflow-hidden rounded-t-sm bg-secondary h-70 print:h-50">
-          <img
+          <OptimizedImage
             src={article.coverImage || ""}
             alt={article.title}
+            defaultWidth={1200} // High resolution starting point if srcSet isn't evaluated
+            sizes="100vw"
             className="w-full h-full object-cover"
             data-tina-field={tinaField(article, "coverImage")}
           />

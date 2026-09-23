@@ -6,6 +6,7 @@ import Kicker from "#/components/ui/Kicker";
 import { Link } from "@tanstack/react-router";
 import { tinaField } from "tinacms/tina-field";
 import type { PagesHomepage } from "../../../../tina/__generated__/types";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const Hero = ({ page }: { page: PagesHomepage }) => {
   const { kicker, titleMain, titleItalic, subtitle, heroImage } = page;
@@ -15,10 +16,12 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
         className="absolute inset-0 bg-primary/10"
         data-tina-field={tinaField(page, "heroImage")}
       >
-        <img
+        <OptimizedImage
           src={heroImage || ""}
           alt="Hero image"
+          sizes="100vw"
           className="w-full h-full object-cover opacity-40"
+          data-tina-field={tinaField(page, "heroImage")}
           loading="eager"
           fetchPriority="high"
           decoding="async"

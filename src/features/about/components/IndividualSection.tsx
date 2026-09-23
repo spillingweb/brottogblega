@@ -4,6 +4,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { PagesAbout } from "../../../../tina/__generated__/types";
 import { tinaField } from "tinacms/tina-field";
 import { cn } from "#/lib/utils";
+import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 type IndividualProps = {
   id: string;
@@ -91,7 +92,7 @@ const IndividualSection = ({ id, page, isHilde = false }: IndividualProps) => {
           isHilde ? "md:col-start-1 md:row-start-1" : "",
         )}
       >
-        <img
+        <OptimizedImage
           src={imgSrc || ""}
           alt={`Bilde av ${title}`}
           className="w-full h-full object-cover object-top"
