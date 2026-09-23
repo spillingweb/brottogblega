@@ -1,4 +1,3 @@
-import NavLink from "#/features/header/components/NavLink";
 import { useMemo } from "react";
 import { tinaField } from "tinacms/tina-field";
 import type {
@@ -16,7 +15,6 @@ import {
 } from "#/components/ui/card";
 import { Link } from "@tanstack/react-router";
 import { Button } from "#/components/ui/button";
-import Heading from "#/components/ui/Heading";
 
 const categoryColors: Record<string, string> = {
   Kronikk: "bg-blue-50 text-blue-700",

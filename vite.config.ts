@@ -1,21 +1,39 @@
-import { defineConfig } from 'vite'
-import { devtools } from '@tanstack/devtools-vite'
-import { nitro } from 'nitro/vite'
+import { defineConfig } from "vite";
+import { devtools } from "@tanstack/devtools-vite";
+import { nitro } from "nitro/vite";
 
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
-import viteReact from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import viteReact from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools(),
-    nitro({ rollupConfig: { external: [/^@sentry\//] } }),
+    nitro({
+      rollupConfig: { external: [/^@sentry\//] },
+      vercel: {
+        config: {
+          version: 3,
+          images: {
+            domains: [
+              "brottogblega.no",
+              "brottogblega.vercel.app",
+              "assets.tina.io",
+            ],
+            // ✨ Provide standard device widths to satisfy the Vercel typing contract
+            sizes: [256, 384, 512, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+            minimumCacheTTL: 60,
+            formats: ["image/webp"],
+          },
+        },
+      },
+    }),
     tailwindcss(),
     tanstackStart(),
     viteReact(),
   ],
-})
+});
 
-export default config
+export default config;
