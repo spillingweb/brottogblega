@@ -10,7 +10,7 @@ import type { Services } from "../../../../tina/__generated__/types";
 import { OptimizedImage } from "#/components/ui/OptimizedImage";
 import { Link } from "@tanstack/react-router";
 
-const ServiceCard = ({ service }: { service: Services }) => {
+const ServicesTeaserCard = ({ service }: { service: Services }) => {
   return (
     <Link
       to="/tjenester"
@@ -58,4 +58,4 @@ const ServiceCard = ({ service }: { service: Services }) => {
   );
 };
 
-export default ServiceCard;
+export default ServicesTeaserCard;

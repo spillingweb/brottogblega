@@ -1,17 +1,17 @@
 import CallToAction from "#/components/CallToAction";
 import ContactDialog from "#/components/ContactDialog";
 import { tinaField } from "tinacms/tina-field";
-import AboutTeaser from "./AboutTeaser";
+import AboutTeaser from "../../about/components/AboutTeaser";
 import Hero from "./Hero";
 import Intro from "./Intro";
-import NewsTeaser from "./NewsTeaser";
-import ServicesTeaser from "./ServicesTeaser";
+import NewsTeaser from "../../news/components/NewsTeaser";
 import type {
   ArticlesConnectionQuery,
   PagesHomepage,
   PagesQuery,
   ServicesConnectionQuery,
 } from "../../../../tina/__generated__/types";
+import ServicesTeaser from "#/features/services/components/ServicesTeaser";
 
 const Home = ({
   pageData,

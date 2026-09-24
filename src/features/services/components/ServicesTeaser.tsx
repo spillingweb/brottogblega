@@ -7,7 +7,7 @@ import type {
   ServicesConnectionQuery,
 } from "../../../../tina/__generated__/types";
 import { Link } from "@tanstack/react-router";
-import ServiceCard from "./ServiceCard";
+import ServicesTeaserCard from "./ServicesTeaserCard";
 import Kicker from "#/components/ui/Kicker";
 import { tinaField } from "tinacms/tina-field";
 
@@ -29,7 +29,7 @@ const ServicesTeaser = ({
   return (
     <section className="bg-muted py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-14 anim-scroll">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 anim-scroll">
           <div>
             <Kicker className="text-primary mb-4">Tjenester</Kicker>
             <Heading
@@ -51,7 +51,7 @@ const ServicesTeaser = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-grid">
           {services.length > 0 ? (
             services.map((s) => (
-              <ServiceCard key={s.id} service={s as Services} />
+              <ServicesTeaserCard key={s.id} service={s as Services} />
             ))
           ) : (
             <p className="col-span-full text-sm text-muted-foreground">

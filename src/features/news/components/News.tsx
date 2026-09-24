@@ -11,7 +11,7 @@ import { articleCategories } from "../constants";
 import type { ArticleNode } from "../types";
 import NewsItem from "./NewsItem";
 import Featured from "./Featured";
-import { Dialog } from "#/components/ui/dialog";
+import { Dialog, DialogTrigger } from "#/components/ui/dialog";
 import { Button } from "#/components/ui/button";
 import ArticleDialog from "./ArticleDialog";
 import { tinaField } from "tinacms/tina-field";
@@ -102,11 +102,13 @@ const News = ({
           {rest.length > 0 && (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
               {rest.map((article) => (
-                <NewsItem
+                <DialogTrigger
                   key={article.id}
-                  article={article}
-                  onSelectArticle={handleSelectArticle}
-                />
+                  className="cursor-pointer"
+                  onClick={() => handleSelectArticle(article)}
+                >
+                  <NewsItem article={article} />
+                </DialogTrigger>
               ))}
             </div>
           )}
