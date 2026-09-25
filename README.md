@@ -36,7 +36,7 @@ Before setting up the project, make sure you have:
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/spillingweb/brottogblega.git](https://github.com/spillingweb/brottogblega.git)
+   git clone https://github.com/spillingweb/brottogblega.git
    cd brottogblega
    ```
 
@@ -55,7 +55,8 @@ Before setting up the project, make sure you have:
    GITHUB_BRANCH=main
 
    # Brevo (Forms & Newsletter)
-   BREVO_API_KEY=your_brevo_api_key
+  BREVO_API_KEY_HILDE=your_brevo_hilde_key
+  BREVO_API_KEY_TINA=your_brevo_tina_key
    ```
 
 4. **Start the Development Server**
