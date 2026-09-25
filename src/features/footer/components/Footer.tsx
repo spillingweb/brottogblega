@@ -141,8 +141,7 @@ const Footer = ({ pageData }: { pageData: any }) => {
       </div>
       <Separator className="bg-primary-foreground/10 max-w-6xl w-full mx-auto" />
       <p className="text-xs text-primary-foreground/40 pb-4 px-6 max-w-6xl w-full mx-auto">
-        &copy; {year} <a href="https://spillingweb.com">Spilling Web</a>. Alle
-        rettigheter forbeholdt.
+        Utviklet av <a href="https://spillingweb.com">Spilling Web</a> &copy; {year}
       </p>
     </footer>
   );
