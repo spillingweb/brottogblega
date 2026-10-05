@@ -5,7 +5,7 @@ const FooterNavLink = ({ path, label }: { path: string; label: string }) => {
     <li>
       <Link
         to={path}
-        className="hover:text-primary-foreground transition-colors"
+        className="hover:text-primary-foreground/80 transition-colors"
         activeProps={{
           className: "text-primary-foreground font-medium",
         }}

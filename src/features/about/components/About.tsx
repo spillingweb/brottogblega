@@ -9,6 +9,7 @@ import type {
 import IndividualSection from "./IndividualSection";
 import SharedSection from "./SharedSection";
 import PageWrapper from "#/components/PageWrapper";
+import Heading from "#/components/ui/Heading";
 
 type Values =
   | "value1Title"
@@ -55,28 +56,28 @@ const About = ({ pageData }: { pageData: PagesQuery }) => {
           <p className="text-xs uppercase tracking-widest text-primary mb-4 text-center">
             Våre verdier
           </p>
-          <h2
-            className="text-3xl md:text-4xl text-center mb-14"
-            style={{ fontFamily: "'Lora', serif" }}
+          <Heading
+            level={2}
+            className="md:text-4xl text-center mb-14"
             data-tina-field={tinaField(page, "valuesTitle")}
           >
             {page.valuesTitle}
-          </h2>
+          </Heading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => {
               if (index > 2) return null;
               return (
                 <div key={index} className="bg-card p-8 rounded-sm">
-                  <h3
+                  <Heading
+                    level={3}
                     className="text-xl mb-3"
-                    style={{ fontFamily: "'Lora', serif" }}
                     data-tina-field={tinaField(
                       page,
                       `value${index + 1}Title` as Values,
                     )}
                   >
                     {value.title}
-                  </h3>
+                  </Heading>
                   <p
                     className="text-sm text-muted-foreground leading-relaxed"
                     data-tina-field={tinaField(

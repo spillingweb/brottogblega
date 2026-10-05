@@ -8,6 +8,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "#/components/ui/button";
 import NewsItem from "#/features/news/components/NewsItem";
 import Kicker from "#/components/ui/Kicker";
+import Heading from "#/components/ui/Heading";
 
 const NewsTeaser = ({
   page,
@@ -30,13 +31,13 @@ const NewsTeaser = ({
         <div className="anim-scroll flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
           <div>
             <Kicker className="text-primary mb-4">Aktuelt</Kicker>
-            <h2
-              className="text-3xl md:text-4xl"
-              style={{ fontFamily: "'Lora', serif" }}
+            <Heading
+              level={2}
+              className="md:text-4xl"
               data-tina-field={tinaField(page, "newsHeading")}
             >
               {page.newsHeading}
-            </h2>
+            </Heading>
           </div>
           <Button variant="link" className="p-0 h-fit" asChild tabIndex={-1}>
             <Link to="/aktuelt">

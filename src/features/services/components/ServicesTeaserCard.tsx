@@ -42,7 +42,7 @@ const ServicesTeaserCard = ({ service }: { service: Services }) => {
           </CardTitle>
         </CardHeader>
         <CardContent
-          className="text-xs text-muted-foreground leading-relaxed flex-1"
+          className="text-muted-foreground leading-relaxed flex-1"
           data-tina-field={tinaField(service, "description")}
         >
           {service.description}
