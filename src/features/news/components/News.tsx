@@ -1,7 +1,7 @@
 import CallToAction from "#/components/CallToAction";
 import PageWrapper from "#/components/PageWrapper";
 import { useMemo, useState } from "react";
-import { useMediaQuery } from "usehooks-ts";
+import { useMediaQuery } from "#/lib/useMediaQuery";
 import type {
   ArticlesConnectionQuery,
   PagesQuery,

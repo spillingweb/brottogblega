@@ -40,7 +40,7 @@ const ScrollToTopButton = () => {
   return (
     <div
       className={cn(
-        "fixed right-5 bottom-5 z-50 transition-all duration-300",
+        "fixed right-5 bottom-5 z-40 transition-all duration-300",
         isVisible
           ? "translate-y-0 opacity-100"
           : "translate-y-2 opacity-0 pointer-events-none",

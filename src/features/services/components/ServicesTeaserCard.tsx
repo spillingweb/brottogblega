@@ -42,12 +42,12 @@ const ServicesTeaserCard = ({ service }: { service: Services }) => {
           </CardTitle>
         </CardHeader>
         <CardContent
-          className="text-muted-foreground leading-relaxed flex-1"
+          className="text-muted-foreground group-hover/card:text-foreground/90 transition-colors leading-relaxed flex-1"
           data-tina-field={tinaField(service, "description")}
         >
           {service.description}
         </CardContent>
-        <CardFooter className="text-muted-foreground/90 group-hover/card:text-muted-foreground transition-colors">
+        <CardFooter className="text-muted-foreground group-hover/card:text-foreground/90 transition-colors">
           Detaljer
           <span className="ml-1 group-hover/card:translate-x-1 transition-transform">
             →

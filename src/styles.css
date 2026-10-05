@@ -144,6 +144,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:has(header[data-menu-open]) [data-slot="scroll-area-viewport"] {
+  overflow: hidden !important;
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;

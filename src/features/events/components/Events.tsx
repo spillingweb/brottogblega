@@ -12,7 +12,7 @@ import type {
   PagesStandard,
 } from "../../../../tina/__generated__/types";
 import EventItem from "./EventItem";
-import { useMediaQuery } from "usehooks-ts";
+import { useMediaQuery } from "#/lib/useMediaQuery";
 import NewsletterDialog from "#/components/NewsletterDialog";
 
 const Events = ({

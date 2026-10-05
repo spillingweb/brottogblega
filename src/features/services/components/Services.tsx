@@ -12,7 +12,7 @@ import type {
 } from "../../../../tina/__generated__/types";
 import ServiceItem from "./ServiceItem";
 import { tinaField } from "tinacms/tina-field";
-import { useMediaQuery } from "usehooks-ts";
+import { useMediaQuery } from "#/lib/useMediaQuery";
 
 const Services = ({
   servicesData,

@@ -39,7 +39,7 @@ const CallToAction = ({
           {title}
         </Heading>
         <p
-          className="text-muted-foreground text-sm leading-relaxed mb-8 text-balance"
+          className="text-primary/90 text-sm leading-relaxed mb-8 text-balance"
           data-tina-field={dataDescription}
         >
           {description}

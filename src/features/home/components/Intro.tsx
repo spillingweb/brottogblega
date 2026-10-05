@@ -8,7 +8,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 stagger-grid">
           <div className="anim-scroll flex gap-5">
-            <span className="text-xs font-medium text-primary/40 pt-1 select-none">
+            <span className="text-xs font-medium text-primary/90 pt-1.5 select-none">
               01
             </span>
             <div>
@@ -20,7 +20,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
                 {page.intro1Title}
               </Heading>
               <p
-                className="text-sm text-muted-foreground leading-relaxed"
+                className="text-sm text-primary/90 leading-relaxed"
                 data-tina-field={tinaField(page, "intro1Text")}
               >
                 {page.intro1Text}
@@ -29,7 +29,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
           </div>
 
           <div className="anim-scroll flex gap-5">
-            <span className="text-xs font-medium text-primary/40 pt-1 select-none">
+            <span className="text-xs font-medium text-primary/90 pt-1.5 select-none">
               02
             </span>
             <div>
@@ -41,7 +41,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
                 {page.intro2Title}
               </Heading>
               <p
-                className="text-sm text-muted-foreground leading-relaxed"
+                className="text-sm text-primary/90 leading-relaxed"
                 data-tina-field={tinaField(page, "intro2Text")}
               >
                 {page.intro2Text}
@@ -50,7 +50,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
           </div>
 
           <div className="anim-scroll flex gap-5">
-            <span className="text-xs font-medium text-primary/40 pt-1 select-none">
+            <span className="text-xs font-medium text-primary/90 pt-1.5 select-none">
               03
             </span>
             <div>
@@ -62,7 +62,7 @@ const Intro = ({ page }: { page: PagesHomepage }) => {
                 {page.intro3Title}
               </Heading>
               <p
-                className="text-sm text-muted-foreground leading-relaxed"
+                className="text-sm text-primary/90 leading-relaxed"
                 data-tina-field={tinaField(page, "intro3Text")}
               >
                 {page.intro3Text}

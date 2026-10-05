@@ -40,7 +40,10 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : ""} sticky top-0 z-50 print:hidden`}>
+    <header
+      data-menu-open={menuOpen || undefined}
+      className={`transition-all duration-300 ${scrolled || menuOpen ? "bg-white/95 backdrop-blur-sm shadow-sm" : ""} sticky top-0 z-50 print:hidden`}
+    >
       <Dialog open={contactOpen} onOpenChange={setContactOpen}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/">
@@ -54,7 +57,10 @@ const Header = () => {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8 self-start py-2">
+          <nav
+            id="desktop-menu"
+            className="hidden lg:flex items-center gap-8 self-start py-2"
+          >
             <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <li key={link.to} className="relative group">
@@ -127,23 +133,26 @@ const Header = () => {
         </div>
 
         <div
-          className={`lg:hidden overflow-hidden border-t border-border bg-white/95 backdrop-blur-sm transition-all duration-300 ease-out ${
+          className={`lg:hidden absolute top-18 left-0 w-full overflow-hidden border border-border bg-white/95 backdrop-blur-sm transition-all duration-300 ease-out z-50 ${
             menuOpen
-              ? "max-h-96 opacity-100"
+              ? "h-[calc(100vh-4.5rem)] opacity-100"
               : "max-h-0 opacity-0 pointer-events-none"
           }`}
         >
-          <div
-            className={`px-6 py-6 transition-all duration-300 ease-out ${
-              menuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+          <nav
+            id="mobile-menu"
+            className={`px-6 py-6 transition-all duration-300 ease-out flex flex-col h-full ${
+              menuOpen
+                ? "translate-y-0 opacity-100"
+                : "-translate-y-2 opacity-0"
             }`}
           >
-            <ul className="flex flex-col gap-5 mb-10">
+            <ul className="flex-1 flex flex-col gap-6 mb-10">
               {navLinks.map((link) => (
                 <li key={link.to}>
                   <NavLink
                     to={link.to}
-                    className="text-xl tracking-wide text-foreground/70 hover:text-primary"
+                    className="text-3xl tracking-wide text-foreground/70 hover:text-primary"
                   >
                     {link.label}
                   </NavLink>
@@ -155,7 +164,7 @@ const Header = () => {
                 Kontakt oss
               </Button>
             </DialogTrigger>
-          </div>
+          </nav>
         </div>
 
         <ContactDialog />
