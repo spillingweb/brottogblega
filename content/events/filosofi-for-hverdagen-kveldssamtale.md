@@ -1,6 +1,6 @@
 ---
 title: 'Kveldssamtale - Filosofi for hverdagen. '
-image: /bruh-dev-AjsOy7aoX0Y-unsplash.jpg
+image: /uploads/bruh-dev-AjsOy7aoX0Y-unsplash.jpg
 date: 2026-08-26T00:00:00.000Z
 host: Tina Maria Lie
 time: '18:00–20:00'

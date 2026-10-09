@@ -1,3 +1,5 @@
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
+
 const SITE_NAME = "Brott & Blega";
 const DEFAULT_DESCRIPTION =
   "Brott & Blega tilbyr fysioterapi, samtaleterapi og helhetlig helse i Fevik. Vi møter kropp og sinn i sammenheng.";
@@ -111,7 +113,7 @@ export function generateEventSchema({
   url,
 }: {
   name: string;
-  description?: string | null;
+  description?: TinaMarkdownContent | null;
   startDate?: string | null;
   location?: string | null;
   price?: string | null;

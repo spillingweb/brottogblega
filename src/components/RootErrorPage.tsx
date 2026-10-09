@@ -31,7 +31,7 @@ export function RootErrorPage({ error, reset }: ErrorComponentProps) {
 
       {import.meta.env.DEV && (
         <pre className="mt-8 max-w-full overflow-x-auto rounded-md bg-muted p-4 text-left text-xs text-muted-foreground">
-          {error.message}
+          {error instanceof Error ? error.message : String(error)}
         </pre>
       )}
     </div>

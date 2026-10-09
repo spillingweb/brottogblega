@@ -6,7 +6,7 @@ excerpt: 'Fra oktober starter vi opp en ny runde med dialoggrupper. Vi har sett 
 author: Redaksjonen
 date: 2025-06-04T00:00:00.000Z
 category: Nyhet
-coverImage: /uploads/photo-1529156069898-49953e39b3ac.avif
+coverImage: '/uploads/photo-1529156069898-49953e39b3ac.avif'
 ---
 
 Etter stor etterspørsel oppretter vi en ny dialoggruppe med oppstart i oktober 2025. Gruppen er for kvinner mellom 35 og 55 år som ønsker et fast rom for refleksjon, deling og samtale.

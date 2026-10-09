@@ -53,7 +53,7 @@ export const Route = createFileRoute("/arrangementer")({
             .map((event) =>
               generateEventSchema({
                 name: event?.title || "",
-                description: event?.description || "",
+                description: event?.description || null,
                 startDate: event?.date || "",
                 location: event?.location || "",
                 price: event?.price || "",

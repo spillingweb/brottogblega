@@ -4,8 +4,8 @@ import {
   createRootRouteWithContext,
 } from "@tanstack/react-router";
 
-import { NotFoundPage } from "./NotFoundPage";
-import { RootErrorPage } from "./RootErrorPage";
+import { NotFoundPage } from "../components/NotFoundPage";
+import { RootErrorPage } from "../components/RootErrorPage";
 
 import appCss from "../styles.css?url";
 

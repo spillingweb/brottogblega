@@ -6,7 +6,7 @@ excerpt: 'Mange kvinner er eksperter på å prioritere andre. Tina Maria Lie skr
 author: Tina Maria Lie
 date: 2025-05-08T00:00:00.000Z
 category: Refleksjon
-coverImage: /uploads/photo-1507525428034-b723cf961d3e.jpg
+coverImage: '/uploads/photo-1507525428034-b723cf961d3e.jpg'
 ---
 
 Å si nei er ikke egoisme. Det er en form for selvrespekt — og i forlengelsen, en form for omsorg for andre. Du kan ikke gi fra et tomt kar.

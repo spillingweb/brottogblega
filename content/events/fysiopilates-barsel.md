@@ -1,6 +1,6 @@
 ---
 title: Fysiopilates BARSEL
-image: /uploads/istockphoto-1217096602-612x612.jpg
+image: '/uploads/istockphoto-1217096602-612x612.jpg'
 date: 2026-09-09T10:27:33.904Z
 endDate: 2026-10-28T11:27:37.253Z
 host: Hilde Stenqvist
