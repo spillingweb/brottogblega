@@ -56,7 +56,7 @@ const NewsTeaser = ({
                   to="/aktuelt/$slug"
                   params={{ slug: article._sys.filename }}
                 >
-                  <NewsItem article={article} />
+                  <NewsItem article={article} isHomePage={true} />
                 </Link>
               );
             })}

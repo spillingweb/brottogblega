@@ -107,7 +107,7 @@ const News = ({
                   className="cursor-pointer"
                   onClick={() => handleSelectArticle(article)}
                 >
-                  <NewsItem article={article} />
+                  <NewsItem article={article} isHomePage={false} />
                 </DialogTrigger>
               ))}
             </div>

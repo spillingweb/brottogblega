@@ -6,13 +6,11 @@ import Heading from "#/components/ui/Heading";
 import { formatArticleDate } from "../utils/dateFormatter";
 import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
-const NewsItem = ({ article }: { article: ArticleNode }) => {
+const NewsItem = ({ article, isHomePage }: { article: ArticleNode; isHomePage: boolean }) => {
   const categoryColor =
     categoryColors[article.category] || "bg-gray-50 text-gray-700";
 
   const readingTime = calculateReadingTime(article.body || ""); // Calculate reading time based on content
-
-  const isOnHomePage = window.location.pathname === "/";
 
   return (
     <Card className="text-left group hover:shadow-md transition-shadow duration-300 py-0 h-full flex flex-col gap-0">
@@ -42,7 +40,7 @@ const NewsItem = ({ article }: { article: ArticleNode }) => {
           </span>
         </div>
         <Heading
-          level={isOnHomePage ? 3 : 2}
+          level={isHomePage ? 3 : 2}
           className="text-base leading-snug mb-2 group-hover:text-primary transition-colors"
           data-tina-field={tinaField(article, "title")}
         >
