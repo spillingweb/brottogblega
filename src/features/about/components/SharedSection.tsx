@@ -3,6 +3,8 @@ import type { PagesAbout } from "../../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { OptimizedImage } from "#/components/ui/OptimizedImage";
 import { Link } from "@tanstack/react-router";
+import Kicker from "#/components/ui/Kicker";
+import Heading from "#/components/ui/Heading";
 
 const SharedSection = ({ page }: { page: PagesAbout }) => {
   return (
@@ -21,19 +23,19 @@ const SharedSection = ({ page }: { page: PagesAbout }) => {
         {/* Vision text */}
         <div className="md:col-span-2 bg-primary text-primary-foreground p-8 md:p-12 flex flex-col justify-between">
           <div>
-            <p
-              className="text-xs uppercase tracking-widest text-primary-foreground/50 mb-6"
+            <Kicker
+              className="text-primary-foreground/80 mb-6"
               data-tina-field={tinaField(page, "sharedKicker")}
             >
               {page.sharedKicker}
-            </p>
-            <p
-              className="text-lg leading-relaxed mb-5"
-              style={{ fontFamily: "'Lora', serif" }}
+            </Kicker>
+            <Heading
+              level={2}
+              className="text-lg mb-5"
               data-tina-field={tinaField(page, "sharedIntro")}
             >
               {page.sharedIntro}
-            </p>
+            </Heading>
             <div
               className="text-sm text-primary-foreground/75 leading-relaxed flex flex-col gap-4 text-balance"
               data-tina-field={tinaField(page, "sharedContent")}
@@ -44,9 +46,9 @@ const SharedSection = ({ page }: { page: PagesAbout }) => {
 
           {/* Scroll links */}
           <div className="mt-10 pt-8 border-t border-primary-foreground/20 flex flex-col gap-3">
-            <p className="text-xs uppercase tracking-widest text-primary-foreground/50 mb-1">
+            <Kicker className="text-primary-foreground/80 mb-1">
               Bli kjent med oss
-            </p>
+            </Kicker>
             <Link
               to="."
               hash="hilde"

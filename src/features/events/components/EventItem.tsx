@@ -78,18 +78,17 @@ const EventItem = ({
           )}
           <div className="absolute inset-0 bg-primary/20" />
           <div
-            className="absolute bottom-0 left-0 right-0 p-4 text-white"
+            className="absolute bottom-0 left-0 right-0 p-4 text-white flex flex-col items-start"
             data-tina-field={tinaField(event, "date")}
           >
-            <p
-              className="text-3xl font-medium leading-none"
-              style={{ fontFamily: "'Lora', serif" }}
+            <span
+              className="text-3xl font-medium leading-none font-serif"
             >
               {day}
-            </p>
-            <p className="text-xs tracking-widest uppercase mt-0.5 opacity-80">
+            </span>
+            <span className="text-xs tracking-widest uppercase mt-0.5 opacity-80">
               {month}
-            </p>
+            </span>
           </div>
         </div>
 

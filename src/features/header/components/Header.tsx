@@ -58,7 +58,7 @@ const Header = () => {
           </Link>
 
           <nav
-            id="desktop-menu"
+            aria-label="desktop"
             className="hidden lg:flex items-center gap-8 self-start py-2"
           >
             <ul className="flex items-center gap-8">
@@ -140,7 +140,7 @@ const Header = () => {
           }`}
         >
           <nav
-            id="mobile-menu"
+            aria-label="mobile"
             className={`px-6 py-6 transition-all duration-300 ease-out flex flex-col h-full ${
               menuOpen
                 ? "translate-y-0 opacity-100"

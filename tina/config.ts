@@ -711,7 +711,6 @@ export default defineConfig({
             label: "Plass-status",
             options: [
               "Åpent",
-              "Noen plasser igjen",
               "Få plasser igjen",
               "Fullt",
             ],

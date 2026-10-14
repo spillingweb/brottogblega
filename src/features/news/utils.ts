@@ -1,9 +1,9 @@
 // Utility functions and constants for news feature
 export const categoryColors: Record<string, string> = {
-  Kronikk: "bg-chart-1/5 text-chart-1",
-  Fagartikkel: "bg-chart-2/5 text-chart-2",
-  Nyhet: "bg-chart-3/5 text-chart-3",
-  Refleksjon: "bg-chart-4/5 text-chart-4",
+  Refleksjon: "bg-chart-1-bg text-chart-1",
+  Fagartikkel: "bg-chart-2-bg text-chart-2",
+  Kronikk: "bg-chart-3-bg text-chart-3",
+  Nyhet: "bg-chart-4-bg text-chart-4",
 };
 
 // Function to calculate reading time based on word count

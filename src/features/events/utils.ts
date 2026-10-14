@@ -2,11 +2,9 @@
 export const spotsColor = (spots: string) => {
   switch (spots) {
     case "Åpent":
-      return "text-chart-2 bg-chart-2/10";
-    case "Noen plasser igjen":
-      return "text-chart-5 bg-chart-5/10";
+      return "text-chart-2 bg-chart-2-bg";
     case "Få plasser igjen":
-      return "text-chart-1 bg-chart-1/10";
+      return "text-chart-1 bg-chart-1-bg";
     case "Fullt":
       return "text-destructive bg-destructive/10";
     default:

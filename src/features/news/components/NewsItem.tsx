@@ -12,6 +12,8 @@ const NewsItem = ({ article }: { article: ArticleNode }) => {
 
   const readingTime = calculateReadingTime(article.body || ""); // Calculate reading time based on content
 
+  const isOnHomePage = window.location.pathname === "/";
+
   return (
     <Card className="text-left group hover:shadow-md transition-shadow duration-300 py-0 h-full flex flex-col gap-0">
       <div
@@ -40,7 +42,7 @@ const NewsItem = ({ article }: { article: ArticleNode }) => {
           </span>
         </div>
         <Heading
-          level={3}
+          level={isOnHomePage ? 3 : 2}
           className="text-base leading-snug mb-2 group-hover:text-primary transition-colors"
           data-tina-field={tinaField(article, "title")}
         >

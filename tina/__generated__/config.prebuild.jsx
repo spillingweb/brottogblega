@@ -741,7 +741,6 @@ var config_default = defineConfig({
             label: "Plass-status",
             options: [
               "\xC5pent",
-              "Noen plasser igjen",
               "F\xE5 plasser igjen",
               "Fullt"
             ],
