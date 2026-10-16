@@ -1,5 +1,5 @@
 import { Calendar, MapPin, Clock } from "lucide-react";
-import { spotsColor } from "../utils";
+import { spotsColor, formatEventDates } from "../utils";
 import { Dialog, DialogTrigger } from "#/components/ui/dialog";
 import { Button } from "#/components/ui/button";
 import ContactDialog from "#/components/ContactDialog";
@@ -9,7 +9,6 @@ import type { Events } from "../../../../tina/__generated__/types";
 import { tinaField } from "tinacms/tina-field";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { cn } from "#/lib/utils";
-import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const EventItem = ({
   event,
@@ -18,38 +17,7 @@ const EventItem = ({
   event: Events;
   categoryLabel?: string;
 }) => {
-  const month = new Date(event.date).toLocaleString("nb-NO", {
-    month: "short",
-    timeZone: "UTC",
-  });
-  const day = new Date(event.date).getDate();
-
-  const startDate = new Date(event.date).toLocaleDateString("nb-NO", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  });
-
-  const endDate = event.endDate
-    ? new Date(event.endDate).toLocaleDateString("nb-NO", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        timeZone: "UTC",
-      })
-    : null;
-
-  // Displayed date format for the event, if start and end dates are the same month, only show the day for the start date
-  const monthsEqual = event.endDate
-    ? new Date(event.date).getMonth() === new Date(event.endDate).getMonth()
-    : false;
-
-  const formattedDate = endDate
-    ? monthsEqual
-      ? `${day} - ${endDate}`
-      : `${startDate} - ${endDate}`
-    : startDate;
+  const { day, month, formattedDate } = formatEventDates(event.date, event.endDate);
 
   const host =
     event.host === "Hilde Stenqvist"
@@ -67,10 +35,9 @@ const EventItem = ({
           data-tina-field={tinaField(event, "image")}
         >
           {event.image && (
-            <OptimizedImage
+            <img
               src={event.image}
               alt={event.title}
-              defaultWidth={1200} // High resolution starting point if srcSet isn't evaluated
               sizes="100vw"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               data-tina-field={tinaField(event, "image")}

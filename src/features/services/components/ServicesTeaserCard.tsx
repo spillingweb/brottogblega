@@ -7,7 +7,6 @@ import {
 } from "#/components/ui/card";
 import { tinaField } from "tinacms/tina-field";
 import type { Services } from "../../../../tina/__generated__/types";
-import { OptimizedImage } from "#/components/ui/OptimizedImage";
 import { Link } from "@tanstack/react-router";
 
 const ServicesTeaserCard = ({ service }: { service: Services }) => {
@@ -24,10 +23,9 @@ const ServicesTeaserCard = ({ service }: { service: Services }) => {
             className="aspect-4/3 overflow-hidden bg-secondary"
             data-tina-field={tinaField(service, "image")}
           >
-            <OptimizedImage
+            <img
               src={service.image}
               alt={service.title}
-              defaultWidth={1200} // High resolution starting point if srcSet isn't evaluated
               sizes="100vw"
               className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
               data-tina-field={tinaField(service, "image")}

@@ -19,11 +19,38 @@ export type EventDateLike = {
 
 // Treat multi-day events as active until their end date has passed.
 export const isPastEvent = (event: EventDateLike, referenceDate = new Date()) => {
-  const startOfReferenceDate = new Date(referenceDate);
-  startOfReferenceDate.setHours(0, 0, 0, 0);
+  // Compare date-only (UTC) to avoid local-timezone drift on ISO date strings.
+  const toUTC = (d: Date) => Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  return toUTC(new Date(event.endDate || event.date)) < toUTC(referenceDate);
+};
 
-  const eventEndDate = new Date(event.endDate || event.date);
-  eventEndDate.setHours(0, 0, 0, 0);
+// Returns the parts needed to render an event date badge and range label.
+// All formatting is UTC-pinned to prevent server/client hydration mismatches
+// (ISO date-only strings like "2026-10-14" parse as UTC midnight).
+export const formatEventDates = (date: string, endDate?: string | null) => {
+  const start = new Date(date);
+  const end = endDate ? new Date(endDate) : null;
 
-  return eventEndDate.getTime() < startOfReferenceDate.getTime();
+  const locale = "nb-NO";
+  const tz = { timeZone: "UTC" } as const;
+  const formatFull = (d: Date) =>
+    d.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric", ...tz });
+
+  const day = start.getUTCDate();
+  const month = start.toLocaleString(locale, { month: "short", ...tz });
+  const startFormatted = formatFull(start);
+  const endFormatted = end ? formatFull(end) : null;
+
+  const sameMonth =
+    end !== null &&
+    start.getUTCMonth() === end.getUTCMonth() &&
+    start.getUTCFullYear() === end.getUTCFullYear();
+
+  const formattedDate = endFormatted
+    ? sameMonth
+      ? `${day} - ${endFormatted}`
+      : `${startFormatted} - ${endFormatted}`
+    : startFormatted;
+
+  return { day, month, formattedDate };
 };

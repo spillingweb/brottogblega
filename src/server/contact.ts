@@ -13,21 +13,23 @@ interface ContactResult {
   feilmelding?: string
 }
 
+export function validateContactPayload(data: unknown): ContactPayload {
+  const d = data as Record<string, string>
+  if (!d.navn?.trim()) throw new Error('Navn er påkrevd')
+  if (!d.epost?.trim() || !d.epost.includes('@')) throw new Error('Gyldig e-post er påkrevd')
+  if (!d.melding?.trim()) throw new Error('Melding er påkrevd')
+  const person = d.person?.trim().toLowerCase()
+  return {
+    person: person || undefined,
+    navn: d.navn.trim(),
+    epost: d.epost.trim(),
+    telefon: d.telefon?.trim() || undefined,
+    melding: d.melding.trim(),
+  }
+}
+
 export const sendContactForm = createServerFn({ method: 'POST' })
-  .validator((data: unknown): ContactPayload => {
-    const d = data as Record<string, string>
-    if (!d.navn?.trim()) throw new Error('Navn er påkrevd')
-    if (!d.epost?.trim() || !d.epost.includes('@')) throw new Error('Gyldig e-post er påkrevd')
-    if (!d.melding?.trim()) throw new Error('Melding er påkrevd')
-    const person = d.person?.trim().toLowerCase()
-    return {
-      person: person || undefined,
-      navn: d.navn.trim(),
-      epost: d.epost.trim(),
-      telefon: d.telefon?.trim() || undefined,
-      melding: d.melding.trim(),
-    }
-  })
+  .validator(validateContactPayload)
   .handler(async ({ data }): Promise<ContactResult> => {
     const hildeApiKey = process.env['BREVO_API_KEY_HILDE']
     const tinaApiKey = process.env['BREVO_API_KEY_TINA']
@@ -111,7 +113,7 @@ export const sendContactForm = createServerFn({ method: 'POST' })
     return { ok: true }
   })
 
-function escHtml(str: string) {
+export function escHtml(str: string) {
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')

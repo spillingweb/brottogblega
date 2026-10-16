@@ -1,7 +1,6 @@
 import { tinaField } from "tinacms/tina-field";
 import type { PagesAbout } from "../../../../tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { OptimizedImage } from "#/components/ui/OptimizedImage";
 import { Link } from "@tanstack/react-router";
 import Kicker from "#/components/ui/Kicker";
 import Heading from "#/components/ui/Heading";
@@ -12,7 +11,7 @@ const SharedSection = ({ page }: { page: PagesAbout }) => {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-0 rounded-sm overflow-hidden border border-border">
         {/* Photo */}
         <div className="md:col-span-3 aspect-4/3 md:aspect-auto overflow-hidden bg-secondary">
-          <OptimizedImage
+          <img
             src={page.sharedImage || ""}
             alt={page.sharedImageAlt || "Brott & Blega ansatte"}
             className="w-full h-full object-cover"

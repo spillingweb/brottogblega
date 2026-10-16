@@ -5,7 +5,6 @@ import type { ArticleNode } from "../types";
 import { calculateReadingTime, categoryColors } from "../utils";
 import Heading from "#/components/ui/Heading";
 import { formatArticleDate } from "../utils/dateFormatter";
-import { OptimizedImage } from "#/components/ui/OptimizedImage";
 
 const Featured = ({
   article,
@@ -23,7 +22,7 @@ const Featured = ({
     >
       <Card className="grid md:grid-cols-2 gap-0 hover:shadow-md transition-shadow duration-300 py-0">
         <div className="aspect-4/3 md:aspect-auto overflow-hidden bg-secondary">
-          <OptimizedImage
+          <img
             src={article.coverImage || ""}
             alt={article.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

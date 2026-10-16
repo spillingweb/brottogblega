@@ -13,7 +13,7 @@ type RawService = {
 	title?: string | null;
 };
 
-const toServiceId = (service: RawService) => {
+export const toServiceId = (service: RawService) => {
 	if (service._sys?.filename) {
 		return service._sys.filename;
 	}

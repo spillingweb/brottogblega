@@ -19,7 +19,7 @@ This project is built using modern web development tools to ensure performance, 
 
 - **Blazing Fast Performance:** Powered by TanStack Start and React 19 server/client capabilities.
 - **Heavily SEO Optimized:** Built with semantic markup, dynamic Open Graph meta tags, structured data, and clean routing to rank effectively on search engines.
-- **Vercel Image Optimization:** Images are automatically optimized on the fly through Vercel's build and edge infrastructure by prefixing image paths with `/_vercel/image` for minimal asset size and rapid load times.
+- **Image Optimization on upload:** Images are automatically compressed when client uploads using the TinaCMS interface.
 - **Live Visual Editing:** TinaCMS live contextual editing allows non-technical site owners to edit articles, news, and site copy visually with real-time on-page previews.
 - **Accessible & Responsive:** Styled with Tailwind CSS and fully accessible UI components from shadcn/ui.
 - **Privacy First (GDPR Compliant):** All newsletter sign-ups and contact form submissions are routed securely through Brevo, ensuring EU-based data protection compliance.
