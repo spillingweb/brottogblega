@@ -28,7 +28,7 @@ const Hero = ({ page }: { page: PagesHomepage }) => {
         <div className="absolute inset-0 bg-linear-to-b from-primary/20 via-background/30 to-background" />
       </div>
       <div className="max-w-6xl mx-auto px-6 w-full">
-        <div className="max-w-3xl flex flex-col gap-4 anim-hero">
+        <div className="max-w-2xl flex flex-col gap-4 anim-hero">
           <Kicker
             className="text-primary font-medium"
             data-tina-field={tinaField(page, "kicker")}

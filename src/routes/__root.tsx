@@ -21,9 +21,6 @@ import {
 } from "#/lib/structured-data";
 import { SITE_URL } from "#/lib/constants";
 
-const FONTS_URL =
-  "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap";
-
 interface MyRouterContext {
   queryClient: QueryClient;
 }
@@ -129,22 +126,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        {/* Non-render-blocking font load: dynamically created <link> elements are async, unlike static ones */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-      (function() {
-        var link = document.createElement('link');
-        link.href = '${FONTS_URL}';
-        link.rel = 'stylesheet';
-        document.head.appendChild(link);
-      })();
-    `,
-          }}
-        />
-        <noscript>
-          <link rel="stylesheet" href={FONTS_URL} />
-        </noscript>
       </head>
       <body className="h-dvh">
         <ScrollArea className="h-full">
