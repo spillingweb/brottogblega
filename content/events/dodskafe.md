@@ -1,5 +1,6 @@
 ---
 title: Dødskafe
+image: /uploads/jens-aber-cFk0NqfbU7Q-unsplash.jpg
 date: 2026-10-31T09:12:16.397Z
 endDate: 2026-10-31T09:12:29.323Z
 host: Tina Maria Lie
