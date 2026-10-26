@@ -141,7 +141,7 @@ const Header = () => {
         >
           <nav
             aria-label="mobile"
-            className={`px-6 py-6 transition-all duration-300 ease-out flex flex-col h-full ${
+            className={`px-6 py-6 transition-all duration-300 ease-out flex flex-col h-dvh ${
               menuOpen
                 ? "translate-y-0 opacity-100"
                 : "-translate-y-2 opacity-0"
