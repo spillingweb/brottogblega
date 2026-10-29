@@ -17,7 +17,10 @@ const EventItem = ({
   event: Events;
   categoryLabel?: string;
 }) => {
-  const { day, month, formattedDate } = formatEventDates(event.date, event.endDate);
+  const { day, month, formattedDate } = formatEventDates(
+    event.date,
+    event.endDate,
+  );
 
   const host =
     event.host === "Hilde Stenqvist"
@@ -48,9 +51,7 @@ const EventItem = ({
             className="absolute bottom-0 left-0 right-0 p-4 text-white flex flex-col items-start"
             data-tina-field={tinaField(event, "date")}
           >
-            <span
-              className="text-3xl font-medium leading-none font-serif"
-            >
+            <span className="text-3xl font-medium leading-none font-serif">
               {day}
             </span>
             <span className="text-xs tracking-widest uppercase mt-0.5 opacity-80">
@@ -69,15 +70,17 @@ const EventItem = ({
                     {categoryLabel}
                   </span>
                 )}
-                {event.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-secondary text-primary rounded-sm"
-                    data-tina-field={tinaField(event, "tags")}
-                  >
-                    {t}
-                  </span>
-                ))}
+                {event.tags &&
+                  event.tags.length > 0 &&
+                  event.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-secondary text-primary rounded-sm"
+                      data-tina-field={tinaField(event, "tags")}
+                    >
+                      {t}
+                    </span>
+                  ))}
               </div>
               <span
                 className={cn(

@@ -564,7 +564,7 @@ export type Events = Node & Document & {
   location: Scalars['String']['output'];
   spots: Scalars['String']['output'];
   category: EventsCategory;
-  tags: Array<Scalars['String']['output']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   price: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -1074,7 +1074,7 @@ export type ServicesPartsFragment = { __typename: 'Services', title: string, cat
 
 export type ArticlesPartsFragment = { __typename: 'Articles', title: string, excerpt: string, author: string, date: string, category: string, coverImage: string | null, body: TinaMarkdownContent | null };
 
-export type EventsPartsFragment = { __typename: 'Events', title: string, description: TinaMarkdownContent, image: string | null, date: string, endDate: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type EventsPartsFragment = { __typename: 'Events', title: string, description: TinaMarkdownContent, image: string | null, date: string, endDate: string | null, host: string, time: string, location: string, spots: string, tags: Array<string | null> | null, price: string, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type EventCategoriesPartsFragment = { __typename: 'EventCategories', value: string, label: string };
 
@@ -1150,7 +1150,7 @@ export type EventsQueryVariables = Exact<{
 }>;
 
 
-export type EventsQuery = { events: { __typename: 'Events', id: string, title: string, description: TinaMarkdownContent, image: string | null, date: string, endDate: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } } };
+export type EventsQuery = { events: { __typename: 'Events', id: string, title: string, description: TinaMarkdownContent, image: string | null, date: string, endDate: string | null, host: string, time: string, location: string, spots: string, tags: Array<string | null> | null, price: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } } };
 
 export type EventsConnectionQueryVariables = Exact<{
   before?: string | null | undefined;
@@ -1162,7 +1162,7 @@ export type EventsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type EventsConnectionQuery = { eventsConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'Events', id: string, title: string, description: TinaMarkdownContent, image: string | null, date: string, endDate: string | null, host: string, time: string, location: string, spots: string, tags: Array<string>, price: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } } | null } | null> | null } };
+export type EventsConnectionQuery = { eventsConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'Events', id: string, title: string, description: TinaMarkdownContent, image: string | null, date: string, endDate: string | null, host: string, time: string, location: string, spots: string, tags: Array<string | null> | null, price: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, category: { __typename: 'EventCategories', value: string, label: string, id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } } | null } | null> | null } };
 
 export type EventCategoriesQueryVariables = Exact<{
   relativePath: string;

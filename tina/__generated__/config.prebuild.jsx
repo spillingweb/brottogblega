@@ -768,8 +768,7 @@ var config_default = defineConfig({
             name: "tags",
             label: "Tags",
             list: true,
-            description: "Ekstra stikkord som vises p\xE5 kortet (ikke brukt til filtrering).",
-            required: true
+            description: "Ekstra stikkord som vises p\xE5 kortet (ikke brukt til filtrering)."
           },
           {
             type: "string",

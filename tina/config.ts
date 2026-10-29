@@ -741,7 +741,6 @@ export default defineConfig({
             list: true,
             description:
               "Ekstra stikkord som vises på kortet (ikke brukt til filtrering).",
-            required: true,
           },
           {
             type: "string",

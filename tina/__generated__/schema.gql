@@ -413,7 +413,7 @@ type Events implements Node & Document {
   location: String!
   spots: String!
   category: EventsCategory!
-  tags: [String!]!
+  tags: [String]
   price: String!
   id: ID!
   _sys: SystemInfo!
