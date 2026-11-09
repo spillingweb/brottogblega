@@ -1,5 +1,6 @@
 ---
 title: Fysiopilates GRAVID vinter 2027
+image: /uploads/istockphoto-831451878-612x612.jpg
 date: 2027-01-27T11:07:45.476Z
 endDate: 2027-03-17T11:07:11.542Z
 host: Hilde Stenqvist
