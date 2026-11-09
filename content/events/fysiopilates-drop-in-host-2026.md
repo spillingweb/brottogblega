@@ -1,6 +1,6 @@
 ---
 title: Fysiopilates KVELD Drop-in høst 2026
-image: /uploads/istockphoto-967775296-612x612.jpg
+image: /uploads/istockphoto-465050364-612x612.jpg
 date: 2026-11-11T10:29:33.731Z
 endDate: 2026-12-16T10:29:49.519Z
 host: Hilde Stenqvist
