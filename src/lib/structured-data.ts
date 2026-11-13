@@ -1,16 +1,14 @@
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 const SITE_NAME = "Brott & Blega";
-const DEFAULT_DESCRIPTION =
-  "Brott & Blega tilbyr fysioterapi, samtaleterapi og helhetlig helse i Fevik. Vi møter kropp og sinn i sammenheng.";
 
-export function generateWebsiteSchema(baseUrl: string) {
+export function generateWebsiteSchema(baseUrl: string, description: string) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE_NAME,
     url: baseUrl,
-    description: DEFAULT_DESCRIPTION,
+    description: description,
     inLanguage: "nb-NO",
     potentialAction: {
       "@type": "SearchAction",
@@ -20,13 +18,16 @@ export function generateWebsiteSchema(baseUrl: string) {
   };
 }
 
-export function generateLocalBusinessSchema(baseUrl: string) {
+export function generateLocalBusinessSchema(
+  baseUrl: string,
+  description: string,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     name: SITE_NAME,
     url: baseUrl,
-    description: DEFAULT_DESCRIPTION,
+    description: description,
     telephone: "+47 411 69 737",
     address: {
       "@type": "PostalAddress",
@@ -36,7 +37,20 @@ export function generateLocalBusinessSchema(baseUrl: string) {
       addressRegion: "Agder",
       addressCountry: "NO",
     },
-    areaServed: "Fevik, Grimstad, Agder, Norge",
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Fevik",
+      },
+      {
+        "@type": "City",
+        name: "Grimstad",
+      },
+      {
+        "@type": "City",
+        name: "Arendal",
+      },
+    ],
     sameAs: [
       "https://www.instagram.com/brottogblega",
       "https://www.facebook.com/brottogblega",
@@ -64,7 +78,7 @@ export function generateNewsArticleSchema({
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
-    description: description || DEFAULT_DESCRIPTION,
+    description: description,
     url,
     datePublished: datePublished || new Date().toISOString(),
     author: {
@@ -94,7 +108,7 @@ export function generateServiceSchema({
     "@context": "https://schema.org",
     "@type": "Service",
     name,
-    description: description || DEFAULT_DESCRIPTION,
+    description: description,
     url,
     provider: {
       "@type": "Organization",
@@ -113,17 +127,17 @@ export function generateEventSchema({
   url,
 }: {
   name: string;
-  description?: TinaMarkdownContent | null;
-  startDate?: string | null;
-  location?: string | null;
-  price?: string | null;
+  description: TinaMarkdownContent;
+  startDate: string;
+  location: string;
+  price: string;
   url: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Event",
     name,
-    description: description || DEFAULT_DESCRIPTION,
+    description: description,
     startDate: startDate || new Date().toISOString(),
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
@@ -133,7 +147,9 @@ export function generateEventSchema({
     },
     offers: {
       "@type": "Offer",
-      price: price ? price.replace(/[^\d,\.-]/g, "").replace(",", ".") || "0" : "0",
+      price: price
+        ? price.replace(/[^\d,\.-]/g, "").replace(",", ".") || "0"
+        : "0",
       priceCurrency: "NOK",
       url,
     },
@@ -145,5 +161,3 @@ export function generateEventSchema({
     url,
   };
 }
-
-export { DEFAULT_DESCRIPTION };

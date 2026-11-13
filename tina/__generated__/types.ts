@@ -241,6 +241,8 @@ export type DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesCon
 
 export type PagesHomepage = Node & Document & {
   __typename?: 'PagesHomepage';
+  metaTitle: Scalars['String']['output'];
+  metaDescription: Scalars['String']['output'];
   pageName: Scalars['String']['output'];
   kicker?: Maybe<Scalars['String']['output']>;
   titleMain: Scalars['String']['output'];
@@ -268,6 +270,8 @@ export type PagesHomepage = Node & Document & {
 
 export type PagesAbout = Node & Document & {
   __typename?: 'PagesAbout';
+  metaTitle: Scalars['String']['output'];
+  metaDescription: Scalars['String']['output'];
   pageName: Scalars['String']['output'];
   title: Scalars['String']['output'];
   intro?: Maybe<Scalars['String']['output']>;
@@ -302,6 +306,8 @@ export type PagesAbout = Node & Document & {
 
 export type PagesStandard = Node & Document & {
   __typename?: 'PagesStandard';
+  metaTitle: Scalars['String']['output'];
+  metaDescription: Scalars['String']['output'];
   pageName: Scalars['String']['output'];
   title: Scalars['String']['output'];
   intro?: Maybe<Scalars['String']['output']>;
@@ -347,6 +353,8 @@ export type ImageFilter = {
 };
 
 export type PagesHomepageFilter = {
+  metaTitle?: InputMaybe<StringFilter>;
+  metaDescription?: InputMaybe<StringFilter>;
   pageName?: InputMaybe<StringFilter>;
   kicker?: InputMaybe<StringFilter>;
   titleMain?: InputMaybe<StringFilter>;
@@ -376,6 +384,8 @@ export type RichTextFilter = {
 };
 
 export type PagesAboutFilter = {
+  metaTitle?: InputMaybe<StringFilter>;
+  metaDescription?: InputMaybe<StringFilter>;
   pageName?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   intro?: InputMaybe<StringFilter>;
@@ -406,6 +416,8 @@ export type PagesAboutFilter = {
 };
 
 export type PagesStandardFilter = {
+  metaTitle?: InputMaybe<StringFilter>;
+  metaDescription?: InputMaybe<StringFilter>;
   pageName?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   intro?: InputMaybe<StringFilter>;
@@ -760,6 +772,8 @@ export type DocumentMutation = {
 };
 
 export type PagesHomepageMutation = {
+  metaTitle?: InputMaybe<Scalars['String']['input']>;
+  metaDescription?: InputMaybe<Scalars['String']['input']>;
   pageName?: InputMaybe<Scalars['String']['input']>;
   kicker?: InputMaybe<Scalars['String']['input']>;
   titleMain?: InputMaybe<Scalars['String']['input']>;
@@ -783,6 +797,8 @@ export type PagesHomepageMutation = {
 };
 
 export type PagesAboutMutation = {
+  metaTitle?: InputMaybe<Scalars['String']['input']>;
+  metaDescription?: InputMaybe<Scalars['String']['input']>;
   pageName?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   intro?: InputMaybe<Scalars['String']['input']>;
@@ -813,6 +829,8 @@ export type PagesAboutMutation = {
 };
 
 export type PagesStandardMutation = {
+  metaTitle?: InputMaybe<Scalars['String']['input']>;
+  metaDescription?: InputMaybe<Scalars['String']['input']>;
   pageName?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   intro?: InputMaybe<Scalars['String']['input']>;
@@ -901,6 +919,8 @@ export type ImageFilter = {
 };
 
 export type PagesHomepageFilter = {
+  metaTitle?: StringFilter | null | undefined;
+  metaDescription?: StringFilter | null | undefined;
   pageName?: StringFilter | null | undefined;
   kicker?: StringFilter | null | undefined;
   titleMain?: StringFilter | null | undefined;
@@ -930,6 +950,8 @@ export type RichTextFilter = {
 };
 
 export type PagesAboutFilter = {
+  metaTitle?: StringFilter | null | undefined;
+  metaDescription?: StringFilter | null | undefined;
   pageName?: StringFilter | null | undefined;
   title?: StringFilter | null | undefined;
   intro?: StringFilter | null | undefined;
@@ -960,6 +982,8 @@ export type PagesAboutFilter = {
 };
 
 export type PagesStandardFilter = {
+  metaTitle?: StringFilter | null | undefined;
+  metaDescription?: StringFilter | null | undefined;
   pageName?: StringFilter | null | undefined;
   title?: StringFilter | null | undefined;
   intro?: StringFilter | null | undefined;
@@ -1055,11 +1079,11 @@ export type EventCategoriesFilter = {
   label?: StringFilter | null | undefined;
 };
 
-type PagesParts_PagesHomepage_Fragment = { __typename: 'PagesHomepage', pageName: string, kicker: string | null, titleMain: string, titleItalic: string | null, subtitle: string | null, heroImage: string | null, intro1Title: string | null, intro1Text: string | null, intro2Title: string | null, intro2Text: string | null, intro3Title: string | null, intro3Text: string | null, profileImage: string | null, aboutTitle: string | null, aboutText1: string | null, aboutText2: string | null, servicesHeading: string | null, newsHeading: string | null, ctaTitle: string | null, ctaDescription: string | null };
+type PagesParts_PagesHomepage_Fragment = { __typename: 'PagesHomepage', metaTitle: string, metaDescription: string, pageName: string, kicker: string | null, titleMain: string, titleItalic: string | null, subtitle: string | null, heroImage: string | null, intro1Title: string | null, intro1Text: string | null, intro2Title: string | null, intro2Text: string | null, intro3Title: string | null, intro3Text: string | null, profileImage: string | null, aboutTitle: string | null, aboutText1: string | null, aboutText2: string | null, servicesHeading: string | null, newsHeading: string | null, ctaTitle: string | null, ctaDescription: string | null };
 
-type PagesParts_PagesAbout_Fragment = { __typename: 'PagesAbout', pageName: string, title: string, intro: string | null, sharedImage: string | null, sharedImageAlt: string | null, sharedKicker: string | null, sharedIntro: string | null, sharedContent: TinaMarkdownContent | null, hildeImage: string | null, hildeKicker: string | null, hildeTitle: string | null, hildeContent: TinaMarkdownContent | null, hildeKeywords: Array<string>, tinaMariaImage: string | null, tinaMariaKicker: string | null, tinaMariaTitle: string | null, tinaMariaContent: TinaMarkdownContent | null, tinaMariaKeywords: Array<string>, valuesTitle: string | null, value1Title: string | null, value1Text: string | null, value2Title: string | null, value2Text: string | null, value3Title: string | null, value3Text: string | null, ctaTitle: string | null, ctaDescription: string | null };
+type PagesParts_PagesAbout_Fragment = { __typename: 'PagesAbout', metaTitle: string, metaDescription: string, pageName: string, title: string, intro: string | null, sharedImage: string | null, sharedImageAlt: string | null, sharedKicker: string | null, sharedIntro: string | null, sharedContent: TinaMarkdownContent | null, hildeImage: string | null, hildeKicker: string | null, hildeTitle: string | null, hildeContent: TinaMarkdownContent | null, hildeKeywords: Array<string>, tinaMariaImage: string | null, tinaMariaKicker: string | null, tinaMariaTitle: string | null, tinaMariaContent: TinaMarkdownContent | null, tinaMariaKeywords: Array<string>, valuesTitle: string | null, value1Title: string | null, value1Text: string | null, value2Title: string | null, value2Text: string | null, value3Title: string | null, value3Text: string | null, ctaTitle: string | null, ctaDescription: string | null };
 
-type PagesParts_PagesStandard_Fragment = { __typename: 'PagesStandard', pageName: string, title: string, intro: string | null, ctaTitle: string | null, ctaDescription: string | null };
+type PagesParts_PagesStandard_Fragment = { __typename: 'PagesStandard', metaTitle: string, metaDescription: string, pageName: string, title: string, intro: string | null, ctaTitle: string | null, ctaDescription: string | null };
 
 type PagesParts_PagesContact_Fragment = { __typename: 'PagesContact', pageName: string, facebook: string | null, instagram: string | null, hildeName: string, hildeEmail: string, hildePhone: string, hildeHomePage: string | null, tinaName: string, tinaEmail: string, tinaPhone: string, tinaHomePage: string | null };
 
@@ -1084,9 +1108,9 @@ export type PagesQueryVariables = Exact<{
 
 
 export type PagesQuery = { pages:
-    | { __typename: 'PagesHomepage', id: string, pageName: string, kicker: string | null, titleMain: string, titleItalic: string | null, subtitle: string | null, heroImage: string | null, intro1Title: string | null, intro1Text: string | null, intro2Title: string | null, intro2Text: string | null, intro3Title: string | null, intro3Text: string | null, profileImage: string | null, aboutTitle: string | null, aboutText1: string | null, aboutText2: string | null, servicesHeading: string | null, newsHeading: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
-    | { __typename: 'PagesAbout', id: string, pageName: string, title: string, intro: string | null, sharedImage: string | null, sharedImageAlt: string | null, sharedKicker: string | null, sharedIntro: string | null, sharedContent: TinaMarkdownContent | null, hildeImage: string | null, hildeKicker: string | null, hildeTitle: string | null, hildeContent: TinaMarkdownContent | null, hildeKeywords: Array<string>, tinaMariaImage: string | null, tinaMariaKicker: string | null, tinaMariaTitle: string | null, tinaMariaContent: TinaMarkdownContent | null, tinaMariaKeywords: Array<string>, valuesTitle: string | null, value1Title: string | null, value1Text: string | null, value2Title: string | null, value2Text: string | null, value3Title: string | null, value3Text: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
-    | { __typename: 'PagesStandard', id: string, pageName: string, title: string, intro: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
+    | { __typename: 'PagesHomepage', id: string, metaTitle: string, metaDescription: string, pageName: string, kicker: string | null, titleMain: string, titleItalic: string | null, subtitle: string | null, heroImage: string | null, intro1Title: string | null, intro1Text: string | null, intro2Title: string | null, intro2Text: string | null, intro3Title: string | null, intro3Text: string | null, profileImage: string | null, aboutTitle: string | null, aboutText1: string | null, aboutText2: string | null, servicesHeading: string | null, newsHeading: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
+    | { __typename: 'PagesAbout', id: string, metaTitle: string, metaDescription: string, pageName: string, title: string, intro: string | null, sharedImage: string | null, sharedImageAlt: string | null, sharedKicker: string | null, sharedIntro: string | null, sharedContent: TinaMarkdownContent | null, hildeImage: string | null, hildeKicker: string | null, hildeTitle: string | null, hildeContent: TinaMarkdownContent | null, hildeKeywords: Array<string>, tinaMariaImage: string | null, tinaMariaKicker: string | null, tinaMariaTitle: string | null, tinaMariaContent: TinaMarkdownContent | null, tinaMariaKeywords: Array<string>, valuesTitle: string | null, value1Title: string | null, value1Text: string | null, value2Title: string | null, value2Text: string | null, value3Title: string | null, value3Text: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
+    | { __typename: 'PagesStandard', id: string, metaTitle: string, metaDescription: string, pageName: string, title: string, intro: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
     | { __typename: 'PagesContact', id: string, pageName: string, facebook: string | null, instagram: string | null, hildeName: string, hildeEmail: string, hildePhone: string, hildeHomePage: string | null, tinaName: string, tinaEmail: string, tinaPhone: string, tinaHomePage: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
    };
 
@@ -1101,9 +1125,9 @@ export type PagesConnectionQueryVariables = Exact<{
 
 
 export type PagesConnectionQuery = { pagesConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node:
-        | { __typename: 'PagesHomepage', id: string, pageName: string, kicker: string | null, titleMain: string, titleItalic: string | null, subtitle: string | null, heroImage: string | null, intro1Title: string | null, intro1Text: string | null, intro2Title: string | null, intro2Text: string | null, intro3Title: string | null, intro3Text: string | null, profileImage: string | null, aboutTitle: string | null, aboutText1: string | null, aboutText2: string | null, servicesHeading: string | null, newsHeading: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
-        | { __typename: 'PagesAbout', id: string, pageName: string, title: string, intro: string | null, sharedImage: string | null, sharedImageAlt: string | null, sharedKicker: string | null, sharedIntro: string | null, sharedContent: TinaMarkdownContent | null, hildeImage: string | null, hildeKicker: string | null, hildeTitle: string | null, hildeContent: TinaMarkdownContent | null, hildeKeywords: Array<string>, tinaMariaImage: string | null, tinaMariaKicker: string | null, tinaMariaTitle: string | null, tinaMariaContent: TinaMarkdownContent | null, tinaMariaKeywords: Array<string>, valuesTitle: string | null, value1Title: string | null, value1Text: string | null, value2Title: string | null, value2Text: string | null, value3Title: string | null, value3Text: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
-        | { __typename: 'PagesStandard', id: string, pageName: string, title: string, intro: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
+        | { __typename: 'PagesHomepage', id: string, metaTitle: string, metaDescription: string, pageName: string, kicker: string | null, titleMain: string, titleItalic: string | null, subtitle: string | null, heroImage: string | null, intro1Title: string | null, intro1Text: string | null, intro2Title: string | null, intro2Text: string | null, intro3Title: string | null, intro3Text: string | null, profileImage: string | null, aboutTitle: string | null, aboutText1: string | null, aboutText2: string | null, servicesHeading: string | null, newsHeading: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
+        | { __typename: 'PagesAbout', id: string, metaTitle: string, metaDescription: string, pageName: string, title: string, intro: string | null, sharedImage: string | null, sharedImageAlt: string | null, sharedKicker: string | null, sharedIntro: string | null, sharedContent: TinaMarkdownContent | null, hildeImage: string | null, hildeKicker: string | null, hildeTitle: string | null, hildeContent: TinaMarkdownContent | null, hildeKeywords: Array<string>, tinaMariaImage: string | null, tinaMariaKicker: string | null, tinaMariaTitle: string | null, tinaMariaContent: TinaMarkdownContent | null, tinaMariaKeywords: Array<string>, valuesTitle: string | null, value1Title: string | null, value1Text: string | null, value2Title: string | null, value2Text: string | null, value3Title: string | null, value3Text: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
+        | { __typename: 'PagesStandard', id: string, metaTitle: string, metaDescription: string, pageName: string, title: string, intro: string | null, ctaTitle: string | null, ctaDescription: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
         | { __typename: 'PagesContact', id: string, pageName: string, facebook: string | null, instagram: string | null, hildeName: string, hildeEmail: string, hildePhone: string, hildeHomePage: string | null, tinaName: string, tinaEmail: string, tinaPhone: string, tinaHomePage: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } }
        | null } | null> | null } };
 
@@ -1187,6 +1211,8 @@ export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
   __typename
   ... on PagesHomepage {
+    metaTitle
+    metaDescription
     pageName
     kicker
     titleMain
@@ -1209,6 +1235,8 @@ export const PagesPartsFragmentDoc = gql`
     ctaDescription
   }
   ... on PagesAbout {
+    metaTitle
+    metaDescription
     pageName
     title
     intro
@@ -1238,6 +1266,8 @@ export const PagesPartsFragmentDoc = gql`
     ctaDescription
   }
   ... on PagesStandard {
+    metaTitle
+    metaDescription
     pageName
     title
     intro

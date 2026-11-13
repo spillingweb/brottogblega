@@ -1,16 +1,18 @@
 ---
+metaTitle: "Om oss | Brott & Blega"
+metaDescription: "Les om Brott & Blega, våre faglige bakgrunner og vår visjon om helhetlig helse for kropp og sinn."
 pageName: Om oss
 title: Brott & Blega — et møtested for kropp og tanke
-intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at god helse krever at vi tar hele mennesket på alvor. '
-sharedImage: '/uploads/Tm-og-H-inne-i-lokalet.avif'
+intro: "Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at god helse krever at vi tar hele mennesket på alvor. "
+sharedImage: "/uploads/Tm-og-H-inne-i-lokalet.avif"
 sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
-sharedIntro: 'Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
+sharedIntro: "Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er."
 sharedContent: |
   Brott & Blega rommer to tilbud: fysioterapi ved Hilde Stenqvist, og filosofiske samtaler ved Tina Maria Lie. Begge tar utgangspunkt i at kropp og tanke henger sammen, men tilbyr hver sin faglige inngang.
 
   Hos oss får du den tiden og oppmerksomheten du har behov for.
-hildeImage: '/uploads/Hilde.avif'
+hildeImage: "/uploads/Hilde.avif"
 hildeKicker: Fysioterapeut
 hildeTitle: Hilde Stenqvist
 hildeContent: |
@@ -32,7 +34,7 @@ hildeKeywords:
   - Overgangsalder
   - Barseltid
   - Fysiopilates
-tinaMariaImage: '/uploads/profile.jpg'
+tinaMariaImage: "/uploads/profile.jpg"
 tinaMariaKicker: Sykepleier med filosofisk videreutdanning
 tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
@@ -51,13 +53,12 @@ tinaMariaKeywords:
   - Mammagrupper
 valuesTitle: Helhetlig helse
 value1Title: Helhet
-value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon.'
+value1Text: "Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon."
 value2Title: Trygghet
-value2Text: 'Vi skaper et rom der du kan være ærlig, sårbar og nysgjerrig — uten å måtte prestere eller forklare deg.'
+value2Text: "Vi skaper et rom der du kan være ærlig, sårbar og nysgjerrig — uten å måtte prestere eller forklare deg."
 value3Title: Respekt
-value3Text: 'Din erfaring og dine valg er gyldige. Vi er veiledere og støttespillere, ikke fasitsvar på hvem du bør være.'
+value3Text: "Din erfaring og dine valg er gyldige. Vi er veiledere og støttespillere, ikke fasitsvar på hvem du bør være."
 ctaTitle: Vil du bli bedre kjent med oss?
 ctaDescription: Ta gjerne kontakt for en uforpliktende prat om hva vi kan tilby deg.
 _template: about
 ---
-

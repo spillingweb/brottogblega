@@ -137,9 +137,22 @@ var config_default = defineConfig({
             fields: [
               {
                 type: "string",
-                name: "pageName",
-                label: "Sidetittel",
+                name: "metaTitle",
+                label: "Tab-tittel",
                 isTitle: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "metaDescription",
+                label: "Sidebeskrivelse (for Googles\xF8k)",
+                ui: { component: "textarea" },
+                required: true
+              },
+              {
+                type: "string",
+                name: "pageName",
+                label: "Overskrift",
                 required: true,
                 ui: { component: "hidden" }
               },
@@ -252,9 +265,22 @@ var config_default = defineConfig({
             fields: [
               {
                 type: "string",
-                name: "pageName",
-                label: "Sidetittel",
+                name: "metaTitle",
+                label: "Tab-tittel",
                 isTitle: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "metaDescription",
+                label: "Sidebeskrivelse (for Googles\xF8k)",
+                ui: { component: "textarea" },
+                required: true
+              },
+              {
+                type: "string",
+                name: "pageName",
+                label: "Overskrift",
                 required: true,
                 ui: { component: "hidden" }
               },
@@ -408,9 +434,22 @@ var config_default = defineConfig({
             fields: [
               {
                 type: "string",
-                name: "pageName",
-                label: "Sidetittel",
+                name: "metaTitle",
+                label: "Tab-tittel",
                 isTitle: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "metaDescription",
+                label: "Sidebeskrivelse (for Googles\xF8k)",
+                ui: { component: "textarea" },
+                required: true
+              },
+              {
+                type: "string",
+                name: "pageName",
+                label: "Overskrift",
                 required: true,
                 ui: { component: "hidden" }
               },
@@ -447,7 +486,6 @@ var config_default = defineConfig({
                 type: "string",
                 name: "pageName",
                 label: "Sidetittel",
-                isTitle: true,
                 required: true,
                 ui: { component: "hidden" }
               },
@@ -532,7 +570,6 @@ var config_default = defineConfig({
             type: "string",
             name: "title",
             label: "Tittel",
-            isTitle: true,
             required: true
           },
           {
@@ -739,11 +776,7 @@ var config_default = defineConfig({
             type: "string",
             name: "spots",
             label: "Plass-status",
-            options: [
-              "\xC5pent",
-              "F\xE5 plasser igjen",
-              "Fullt"
-            ],
+            options: ["\xC5pent", "F\xE5 plasser igjen", "Fullt"],
             required: true
           },
           {

@@ -4,6 +4,7 @@ import { useTina } from "tinacms/react";
 import Events from "#/features/events/components/Events";
 import { generateEventSchema } from "#/lib/structured-data";
 import { SITE_URL } from "#/lib/constants";
+import type { PagesStandard } from "../../tina/__generated__/types";
 
 export const Route = createFileRoute("/arrangementer")({
   loader: async () => {
@@ -22,48 +23,47 @@ export const Route = createFileRoute("/arrangementer")({
       categories: categoriesResult,
     };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      {
-        title: "Arrangementer | Brott & Blega",
-      },
-      {
-        name: "description",
-        content:
-          "Se våre kommende arrangementer, dialoggrupper, seminarer og kurs i Fevik. Finn et møtepunkt for kropp, refleksjon og fellesskap.",
-      },
-      {
-        property: "og:title",
-        content: "Arrangementer | Brott & Blega",
-      },
-      {
-        property: "og:description",
-        content:
-          "Få oversikt over våre arrangementer innen helse, refleksjon, samtale og livskvalitet. ",
-      },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/arrangementer` }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(
-          (loaderData?.events.data.eventsConnection.edges || [])
-            .map((edge) => edge?.node)
-            .filter(Boolean)
-            .map((event) =>
-              generateEventSchema({
-                name: event?.title || "",
-                description: event?.description || null,
-                startDate: event?.date || "",
-                location: event?.location || "",
-                price: event?.price || "",
+  head: ({ loaderData }) => {
+    if (!loaderData) return {};
+
+    const events = (loaderData?.events.data.eventsConnection.edges || [])
+      .map((edge) => edge?.node)
+      .filter(Boolean);
+
+    const page = loaderData.page.data.pages as PagesStandard;
+
+    return {
+      meta: [
+        { title: page.metaTitle },
+        { name: "description", content: page.metaDescription },
+        { property: "og:title", content: page.metaTitle },
+        { property: "og:description", content: page.metaDescription },
+        { property: "og:url", content: `${SITE_URL}/arrangementer` },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: events[0]?.image || "" },
+        { property: "og:site_name", content: "Brott & Blega" },
+      ],
+      links: [{ rel: "canonical", href: `${SITE_URL}/arrangementer` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            events.map((event) => {
+              if (!event) return null;
+              return generateEventSchema({
+                name: event.title,
+                description: event.description,
+                startDate: event.date,
+                location: event.location,
+                price: event.price,
                 url: `${SITE_URL}/arrangementer`,
-              }),
-            ),
-        ),
-      },
-    ],
-  }),
+              });
+            }),
+          ),
+        },
+      ],
+    };
+  },
   component: RouteComponent,
 });
 

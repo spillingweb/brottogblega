@@ -1,6 +1,9 @@
 import React from "react";
 import { defineConfig } from "tinacms";
-import { attachUploadCompression, canCompressInBrowser } from "./media/uploadCompression";
+import {
+  attachUploadCompression,
+  canCompressInBrowser,
+} from "./media/uploadCompression";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -8,7 +11,6 @@ const branch =
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
   "main";
-
 
 export default defineConfig({
   branch,
@@ -76,9 +78,22 @@ export default defineConfig({
             fields: [
               {
                 type: "string",
-                name: "pageName",
-                label: "Sidetittel",
+                name: "metaTitle",
+                label: "Tab-tittel",
                 isTitle: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "metaDescription",
+                label: "Sidebeskrivelse (for Googlesøk)",
+                ui: { component: "textarea" },
+                required: true,
+              },
+              {
+                type: "string",
+                name: "pageName",
+                label: "Overskrift",
                 required: true,
                 ui: { component: "hidden" },
               },
@@ -191,9 +206,22 @@ export default defineConfig({
             fields: [
               {
                 type: "string",
-                name: "pageName",
-                label: "Sidetittel",
+                name: "metaTitle",
+                label: "Tab-tittel",
                 isTitle: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "metaDescription",
+                label: "Sidebeskrivelse (for Googlesøk)",
+                ui: { component: "textarea" },
+                required: true,
+              },
+              {
+                type: "string",
+                name: "pageName",
+                label: "Overskrift",
                 required: true,
                 ui: { component: "hidden" },
               },
@@ -347,9 +375,22 @@ export default defineConfig({
             fields: [
               {
                 type: "string",
-                name: "pageName",
-                label: "Sidetittel",
+                name: "metaTitle",
+                label: "Tab-tittel",
                 isTitle: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "metaDescription",
+                label: "Sidebeskrivelse (for Googlesøk)",
+                ui: { component: "textarea" },
+                required: true,
+              },
+              {
+                type: "string",
+                name: "pageName",
+                label: "Overskrift",
                 required: true,
                 ui: { component: "hidden" },
               },
@@ -382,11 +423,10 @@ export default defineConfig({
             name: "contact",
             label: "Kontaktinformasjon",
             fields: [
-                 {
+              {
                 type: "string",
                 name: "pageName",
                 label: "Sidetittel",
-                isTitle: true,
                 required: true,
                 ui: { component: "hidden" },
               },
@@ -481,7 +521,6 @@ export default defineConfig({
             type: "string",
             name: "title",
             label: "Tittel",
-            isTitle: true,
             required: true,
           },
           {
@@ -709,11 +748,7 @@ export default defineConfig({
             type: "string",
             name: "spots",
             label: "Plass-status",
-            options: [
-              "Åpent",
-              "Få plasser igjen",
-              "Fullt",
-            ],
+            options: ["Åpent", "Få plasser igjen", "Fullt"],
             required: true,
           },
           {

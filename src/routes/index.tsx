@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import client from "../../tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 import { SITE_URL } from "#/lib/constants";
+import type { PagesHomepage } from "../../tina/__generated__/types";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
@@ -17,29 +18,25 @@ export const Route = createFileRoute("/")({
       articles: articlesResult,
     };
   },
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Brott & Blega | Fysioterapi, samtaleterapi og helhetlig helse i Fevik",
-      },
-      {
-        name: "description",
-        content:
-          "Brott & Blega er et møtested for kropp og tanke i Fevik. Vi tilbyr fysioterapi, samtaleterapi og helhetlig helse i et trygt og varmt miljø.",
-      },
-      {
-        property: "og:title",
-        content: "Brott & Blega | Fysioterapi og samtaleterapi i Fevik",
-      },
-      {
-        property: "og:description",
-        content:
-          "Utforsk våre tjenester innen fysioterapi, samtaleterapi og helhetlig helse. Vi ser kropp og sinn i sammenheng.",
-      },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) return {};
+
+    const page = loaderData.page.data.pages as PagesHomepage;
+
+    return {
+      meta: [
+        { title: page.metaTitle },
+        { name: "description", content: page.metaDescription },
+        { property: "og:title", content: page.metaTitle },
+        { property: "og:description", content: page.metaDescription },
+        { property: "og:url", content: `${SITE_URL}/` },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: page.heroImage || "" },
+        { property: "og:site_name", content: "Brott & Blega" },
+      ],
+      links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    };
+  },
   component: RouteComponent,
 });
 

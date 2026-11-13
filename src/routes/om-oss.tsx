@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import client from "../../tina/__generated__/client";
 import { useTina } from "tinacms/react";
 import { SITE_URL } from "#/lib/constants";
+import type { PagesAbout } from "../../tina/__generated__/types";
 
 export const Route = createFileRoute("/om-oss")({
   loader: async () => {
@@ -11,28 +12,24 @@ export const Route = createFileRoute("/om-oss")({
       page: pageResult,
     };
   },
-  head: () => ({
-    meta: [
-      {
-        title: "Om oss | Brott & Blega",
-      },
-      {
-        name: "description",
-        content:
-          "Les om Brott & Blega, våre faglige bakgrunner og vår visjon om helhetlig helse for kropp og sinn.",
-      },
-      {
-        property: "og:title",
-        content: "Om oss | Brott & Blega",
-      },
-      {
-        property: "og:description",
-        content:
-          "Vi er to kvinner med ulik faglig bakgrunn og felles visjon om helhetlig helse, trygghet og bevisst livskvalitet.",
-      },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/om-oss` }],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) return {};
+    const page = loaderData.page.data.pages as PagesAbout;
+
+    return {
+      meta: [
+        { title: page.metaTitle },
+        { name: "description", content: page.metaDescription },
+        { property: "og:title", content: page.metaTitle },
+        { property: "og:url", content: `${SITE_URL}/om-oss` },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: page.sharedImage || "" },
+        { property: "og:description", content: page.metaDescription },
+        { property: "og:site_name", content: "Brott & Blega" },
+      ],
+      links: [{ rel: "canonical", href: `${SITE_URL}/om-oss` }],
+    };
+  },
   component: RouteComponent,
 });
 

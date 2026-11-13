@@ -103,6 +103,8 @@ type Collection {
 union DocumentNode = PagesHomepage | PagesAbout | PagesStandard | PagesContact | Services | Articles | Events | EventCategories | Folder
 
 type PagesHomepage implements Node & Document {
+  metaTitle: String!
+  metaDescription: String!
   pageName: String!
   kicker: String
   titleMain: String!
@@ -129,6 +131,8 @@ type PagesHomepage implements Node & Document {
 }
 
 type PagesAbout implements Node & Document {
+  metaTitle: String!
+  metaDescription: String!
   pageName: String!
   title: String!
   intro: String
@@ -162,6 +166,8 @@ type PagesAbout implements Node & Document {
 }
 
 type PagesStandard implements Node & Document {
+  metaTitle: String!
+  metaDescription: String!
   pageName: String!
   title: String!
   intro: String
@@ -206,6 +212,8 @@ input ImageFilter {
 }
 
 input PagesHomepageFilter {
+  metaTitle: StringFilter
+  metaDescription: StringFilter
   pageName: StringFilter
   kicker: StringFilter
   titleMain: StringFilter
@@ -235,6 +243,8 @@ input RichTextFilter {
 }
 
 input PagesAboutFilter {
+  metaTitle: StringFilter
+  metaDescription: StringFilter
   pageName: StringFilter
   title: StringFilter
   intro: StringFilter
@@ -265,6 +275,8 @@ input PagesAboutFilter {
 }
 
 input PagesStandardFilter {
+  metaTitle: StringFilter
+  metaDescription: StringFilter
   pageName: StringFilter
   title: StringFilter
   intro: StringFilter
@@ -510,6 +522,8 @@ input DocumentMutation {
 }
 
 input PagesHomepageMutation {
+  metaTitle: String
+  metaDescription: String
   pageName: String
   kicker: String
   titleMain: String
@@ -533,6 +547,8 @@ input PagesHomepageMutation {
 }
 
 input PagesAboutMutation {
+  metaTitle: String
+  metaDescription: String
   pageName: String
   title: String
   intro: String
@@ -563,6 +579,8 @@ input PagesAboutMutation {
 }
 
 input PagesStandardMutation {
+  metaTitle: String
+  metaDescription: String
   pageName: String
   title: String
   intro: String

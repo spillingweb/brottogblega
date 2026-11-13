@@ -3,6 +3,7 @@ import { client } from "../../tina/__generated__/client";
 import { useTina } from "tinacms/react";
 import Services from "#/features/services/components/Services";
 import { SITE_URL } from "#/lib/constants";
+import type { PagesStandard } from "../../tina/__generated__/types";
 
 export const Route = createFileRoute("/tjenester")({
   loader: async () => {
@@ -16,28 +17,28 @@ export const Route = createFileRoute("/tjenester")({
       page: pageResult,
     };
   },
-  head: () => ({
-    meta: [
-      {
-        title: "Tjenester | Brott & Blega",
-      },
-      {
-        name: "description",
-        content:
-          "Se våre tjenester innen fysioterapi, samtaleterapi, dialoggrupper og helhetlig helse. Vi møter deg der du er.",
-      },
-      {
-        property: "og:title",
-        content: "Tjenester | Brott & Blega",
-      },
-      {
-        property: "og:description",
-        content:
-          "Fysioterapi, samtaleterapi og tverrfaglige tilbud i Fevik og på nett. Vi ser kropp og sinn i sammenheng.",
-      },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/tjenester` }],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) return {};
+
+    const page = loaderData.page.data.pages as PagesStandard;
+    const services = (loaderData?.services.data.servicesConnection.edges || [])
+      .map((edge) => edge?.node)
+      .filter(Boolean);
+
+    return {
+      meta: [
+        { title: page.metaTitle },
+        { name: "description", content: page.metaDescription },
+        { property: "og:title", content: page.metaTitle },
+        { property: "og:description", content: page.metaDescription },
+        { property: "og:url", content: `${SITE_URL}/tjenester` },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: services[0]?.image || "" },
+        { property: "og:site_name", content: "Brott & Blega" },
+      ],
+      links: [{ rel: "canonical", href: `${SITE_URL}/tjenester` }],
+    };
+  },
   component: RouteComponent,
 });
 

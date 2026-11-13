@@ -9,6 +9,8 @@ export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
   __typename
   ... on PagesHomepage {
+    metaTitle
+    metaDescription
     pageName
     kicker
     titleMain
@@ -31,6 +33,8 @@ export const PagesPartsFragmentDoc = gql`
     ctaDescription
   }
   ... on PagesAbout {
+    metaTitle
+    metaDescription
     pageName
     title
     intro
@@ -60,6 +64,8 @@ export const PagesPartsFragmentDoc = gql`
     ctaDescription
   }
   ... on PagesStandard {
+    metaTitle
+    metaDescription
     pageName
     title
     intro

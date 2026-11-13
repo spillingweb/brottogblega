@@ -3,6 +3,7 @@ import NewsRouteView from "./-news-view";
 import { generateNewsArticleSchema } from "#/lib/structured-data";
 import client from "../../../tina/__generated__/client";
 import { SITE_URL } from "#/lib/constants";
+import type { Articles } from "../../../tina/__generated__/types";
 
 export const Route = createFileRoute("/aktuelt/$slug")({
   loader: async ({ params }) => {
@@ -20,30 +21,20 @@ export const Route = createFileRoute("/aktuelt/$slug")({
     return { article };
   },
   head: ({ loaderData, params }) => {
-    const article = loaderData?.article;
+    if (!loaderData) return {};
+
+    const article = loaderData.article as Articles;
 
     return {
       meta: [
-        {
-          title: article
-            ? `${article.title} | Brott & Blega`
-            : `Nyhet ${params.slug} | Brott & Blega`,
-        },
-        {
-          name: "description",
-          content:
-            article?.excerpt || "Les mer om dette innlegget fra Brott & Blega.",
-        },
-        {
-          property: "og:title",
-          content: article?.title || "Nyhet | Brott & Blega",
-        },
-        {
-          property: "og:description",
-          content:
-            article?.excerpt || "Les mer om dette innlegget fra Brott & Blega.",
-        },
+        { title: article.title },
+        { name: "description", content: article.excerpt },
+        { property: "og:title", content: article.title },
+        { property: "og:description", content: article.excerpt },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: `${SITE_URL}/aktuelt/${article._sys.filename}` },
+        { property: "og:image", content: article.coverImage || "" },
+        { property: "og:site_name", content: "Brott & Blega" }
       ],
       links: [
         {
