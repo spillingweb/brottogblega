@@ -17,6 +17,6 @@ I Fysiopilates jobber vi med balansert muskelbruk rundt skuldre, rygg og nakke. 
 
 Den første gangen er en individuell time slik at jeg kan bli kjent med deg og eventuelle plager. I tillegg vil jeg lære deg om bekkenbunnens funksjon og hvordan du trener bekkenbunnsmuskulaturen. Deretter treffes vi 8 onsdager til gruppetime.
 
-&#x20;Maks 7 deltakere per gruppe.
+Maks 7 deltakere per gruppe.
 
 Ta kontakt for påmelding, eller en uforpliktende prat! e-post: hilde\@brottogblega.no, eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
