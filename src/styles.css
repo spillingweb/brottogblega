@@ -208,50 +208,10 @@
     animation-range: entry 0% entry 40%;
   }
 }
-/* 
-@utility stagger-grid {
-  @supports (animation-timeline: view()) {
-    view-timeline-name: --stagger-grid;
-    view-timeline-axis: block;
-
-    & > * {
-      animation: rise-in linear both;
-      animation-timeline: --stagger-grid;
-      animation-range: cover var(--stagger-start, 0%) cover
-        var(--stagger-end, 30%);
-    }
-
-    & > *:nth-child(1) {
-      --stagger-start: 0%;
-      --stagger-end: 22%;
-    }
-
-    & > *:nth-child(2) {
-      --stagger-start: 10%;
-      --stagger-end: 32%;
-    }
-
-    & > *:nth-child(3) {
-      --stagger-start: 20%;
-      --stagger-end: 42%;
-    }
-
-    & > *:nth-child(4) {
-      --stagger-start: 30%;
-      --stagger-end: 52%;
-    }
-  }
-} */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-  }
-
-  html,
-  body,
-  #app {
-    min-height: 100%;
   }
 
   html {

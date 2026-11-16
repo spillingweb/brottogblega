@@ -8,7 +8,7 @@ const MobileNav = ({ menuOpen }: { menuOpen: boolean }) => {
     <div
       className={`lg:hidden absolute top-18 left-0 w-full overflow-hidden border border-border bg-card backdrop-blur-sm transition-all duration-300 ease-out z-50 ${
         menuOpen
-          ? "h-[calc(100vh-4.5rem)] opacity-100"
+          ? "h-[calc(100dvh-4.5rem)] opacity-100"
           : "max-h-0 opacity-0 pointer-events-none"
       }`}
     >
