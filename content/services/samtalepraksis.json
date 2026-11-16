@@ -1,7 +1,7 @@
 {
   "title": "Samtalepraksis",
   "category": "Tina Maria Lie",
-  "tagline": "Rom for de viktige spørsmålene",
+  "tagline": "Rom for den gode samtalen.",
   "image": "/uploads/photo-1506905925346-21bda4d32df4.avif",
   "description": "Filosofisk samtalepraksis er en strukturert og åpen dialog om livsvalg, mening, identitet og verdier. Jeg kombinerer klinisk erfaring fra sykepleien med filosofisk tenkning. I samtalen går vi sakte og grundig til verks, for å gi rom til tankene som kan være vanskelige å få tak på.\n",
   "offers": [
@@ -10,16 +10,16 @@
       "price": "950 kr"
     },
     {
+      "title": "Samtale 90 min",
+      "price": "1350 kr"
+    },
+    {
       "title": "Hjemmebesøk 90 min",
       "price": "1500 kr"
     },
     {
       "title": "Samtalepakke 5 møter",
       "price": "4200 kr"
-    },
-    {
-      "title": "Samtalemøte 90 min",
-      "price": "1350 kr"
     }
   ],
   "order": 2
