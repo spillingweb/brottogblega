@@ -16,7 +16,7 @@ Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for 
 
 Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen som er basert på oppdatert forskning.
 
-Vi møtes 10 ganger i gruppe, og du må melde deg på hele kursrekken (ved ledig plass etter at kurset har startet betaler du for resterende kurskvelder). De første kveldene bruker vi god tid på informasjon om bekkenbunnen, å få til en korrekt kontraksjon av bekkenbunnen, samt grunnleggende øvelser i fysiopilates. Vi bygger deretter på med flere øvelser for hele kroppen og progresjon i intensitet for styrketrening av bekkenbunnen.
+Vi møtes 10 ganger i gruppe, og du må melde deg på hele kursrekken (ved ledig plass etter at kurset har startet betaler du for resterende kurskvelder). De første kveldene bruker vi god tid på informasjon om bekkenbunnen og å få til en korrekt kontraksjon av bekkenbunnen. I tillegg går vi gjennom grunnleggende øvelser i fysiopilates. Vi bygger deretter på med flere øvelser for hele kroppen og progresjon i intensitet for styrketrening av bekkenbunnen.
 
 Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! Introtime koster 800 kr for 60 minutter.
 
