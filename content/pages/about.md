@@ -18,13 +18,13 @@ hildeTitle: Hilde Stenqvist
 hildeContent: |
   Jeg er autorisert fysioterapeut med over 14 års erfaring og har et stort hjerte for kvinnehelse.
 
-  Gjennom Norges Fysioterapeutforbund har jeg kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager. I tillegg har jeg videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
+  Gjennom Norges Fysioterapeutforbund har jeg kurs i *Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager*. Jeg har også *Videreutdanning i barnefysioterapi* fra Høgskolen i Oslo og Akershus, er utdannet *treningsveieleder* og studier i *The Female Athlete* fra Norges Idrettshøgskole, og har i tillegg en rekke kurs innen fysiopilates.
 
   Elsker å være ute! Hvem vet, plutselig tilbyr jeg en økt eller flere ute i friluft - så følg med under *arrangementer*.
 
   Tilbyr fysikalsk behandling og fysiopilates-grupper. Vurdering og oppfølging av plager knyttet til bekkenbunnen tilbys kun til kvinner.
 
-  Hilde tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at å lytte til kroppen er et grunnleggende steg mot bedre helse. Hun møter hver pasient der de er, med tålmodighet og faglig dybde.
+  Jeg tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at det å lytte til kroppen er et grunnleggende steg mot bedre helse. Jeg ønsker å møte hver pasient der de er, med tålmodighet og faglig dybde.
 
   *«Jeg ønsker at alle kvinner skal føle seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
 hildeKeywords:
@@ -38,7 +38,7 @@ tinaMariaImage: /uploads/profile.jpg
 tinaMariaKicker: Sykepleier med bachelor i filosofi og filosofisk videreutdanning
 tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
-  Jeg er utdannet sykepleier og har bachelor i filosofi og videreutdanning i filosofisk praksis. Bakgrunnen gir meg et blikk for både det kroppslige og det eksistensielle i menneskers liv. Mine samtaler er åpne for alle mennesker i alle livsfaser.
+  Jeg er utdannet sykepleier og har bachelor i filosofi og videreutdanning i filosofisk praksis. Bakgrunnen gir meg et blikk for både det kroppslige og det eksistensielle i menneskers liv.
 
   I en samtale hos meg jobber vi systematisk med det som opptar deg, enten det er et vanskelig valg, en overgang i livet, eller spørsmål du bærer på uten å ha satt ord på. Jeg stiller spørsmål som hjelper deg å tenke tydeligere, ikke for å gi deg svar, men for at du selv skal finne dem. Samtalene passer for deg som ønsker å reflektere grundig, alene i en-til-en-samtale eller sammen med andre i dialoggrupper.
 
@@ -54,8 +54,6 @@ tinaMariaKeywords:
   - Overgangsalder
   - Mammagrupper
   - Farsrollen
-  - Pappagrupper
-  - Kronisk syk
 valuesTitle: Helhetlig helse
 value1Title: Helhet
 value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon.'
