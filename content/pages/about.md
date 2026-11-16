@@ -45,6 +45,8 @@ tinaMariaContent: |
   Vanlige temaer er livsvalg, mening og verdier, identitet og relasjoner, og hvordan man lever godt i en tid som ofte krever mer enn vi har å gi.
 
   «Å tenke grundig gjennom hvem du er og hva du ønsker – det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»
+
+  Samtalene mine er for alle, også for menn. Mange menn bærer på spørsmål om hva det vil si å være en god far, hvordan man kan være til stede når jobb og familie trekker i hver sin retning, og hva man selv vil gi videre til barna sine. Slike spørsmål får sjelden plass i hverdagen. Her får de det.
 tinaMariaKeywords:
   - Filosofisk samtale
   - Eksistensiell filosofi
