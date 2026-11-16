@@ -12,9 +12,9 @@ price: '1500 kr for 10 klipp, 200 kr for drop-in'
 
 Ønsker du å bli sterkere, få bedre kontakt med egen kropp, redusere muskulære spenninger og stress som har satt seg i kroppen? Da kan fysiopilates KVELD være noe for deg!
 
-1500 kr for 10 klipp, eller 200 kr for drop-in.
-
 I Fysiopilates jobber vi med balansert muskelbruk rundt skuldre, rygg og nakke. I tillegg fokuserer vi på god holdning, bevegelighet, pust, balanse og avspenning. Passer for de aller fleste - uansett utgangspunkt!
+
+1500 kr for 10 klipp, eller 200 kr for drop-in.
 
 Anbefaler at du har en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! Introtime koster 800 kr for 60 minutter.
 
