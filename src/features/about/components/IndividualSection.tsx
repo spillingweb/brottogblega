@@ -39,7 +39,7 @@ const IndividualSection = ({ id, page, isHilde = false }: IndividualProps) => {
       id={id}
       className="scroll-mt-20 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
     >
-      <div>
+      <div className="motion-safe:anim-scroll">
         <Kicker
           className="mb-2"
           data-tina-field={tinaField(

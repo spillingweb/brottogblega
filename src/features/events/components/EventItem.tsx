@@ -135,7 +135,7 @@ const EventItem = ({
                 className="text-base font-medium text-foreground"
                 data-tina-field={tinaField(event, "price")}
               >
-                {event.price === "0" ? "Gratis" : event.price}
+                {event.price === "0" ? "Gratis" : event.price.includes('kr') ? event.price : `${event.price} kr`}
               </span>
               {event.host != "Andre" && (
                 <>

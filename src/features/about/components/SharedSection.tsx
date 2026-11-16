@@ -65,7 +65,7 @@ const SharedSection = ({ page }: { page: PagesAbout }) => {
               hashScrollIntoView
               className="flex items-center justify-between text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors group"
             >
-              <span>Tina Maria Lie — Sykepleier & filosof</span>
+              <span>Tina Maria Lie — Filosamtale</span>
               <span className="group-hover:translate-y-1 transition-transform">
                 ↓
               </span>

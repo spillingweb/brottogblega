@@ -63,11 +63,15 @@ const About = ({ pageData }: { pageData: PagesQuery }) => {
           >
             {page.valuesTitle}
           </Heading>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => {
               if (index > 2) return null;
+
               return (
-                <div key={index} className="bg-card p-8 rounded-sm">
+                <div
+                  key={index}
+                  className={`bg-card p-8 rounded-sm motion-safe:anim-scroll md:[--index:${index}]`}
+                >
                   <Heading
                     level={3}
                     className="text-xl mb-3"
