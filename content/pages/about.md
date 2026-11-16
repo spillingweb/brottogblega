@@ -57,7 +57,7 @@ value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med 
 value2Title: Trygghet
 value2Text: 'Vi skaper et rom der du kan være ærlig, sårbar og nysgjerrig — uten å måtte prestere eller forklare deg.'
 value3Title: Respekt
-value3Text: 'Din erfaring og dine valg er gyldige. Vi er veiledere og støttespillere, ikke fasitsvar på hvem du bør være.'
+value3Text: 'Din erfaring og dine valg er gyldige. Vi er veileder, støttespiller og samtalepartner, og gir ikke fasitsvar på hvem du bør være.'
 ctaTitle: Vil du bli bedre kjent med oss?
 ctaDescription: Ta gjerne kontakt for en uforpliktende prat om hva vi kan tilby deg.
 _template: about
