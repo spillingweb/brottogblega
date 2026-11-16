@@ -38,13 +38,13 @@ tinaMariaImage: /uploads/profile.jpg
 tinaMariaKicker: Sykepleier med bachelor i filosofi og filosofisk videreutdanning
 tinaMariaTitle: Tina Maria Lie
 tinaMariaContent: |
-  Tina Maria er utdannet sykepleier og har bachelor i filosofi og videreutdanning i filosofisk praksis. Bakgrunnen gir henne et blikk for både det kroppslige og det eksistensielle i menneskers liv.
+  Jeg er utdannet sykepleier og har bachelor i filosofi og videreutdanning i filosofisk praksis. Bakgrunnen gir meg et blikk for både det kroppslige og det eksistensielle i menneskers liv.
 
-  I en samtale hos Tina Maria jobber dere systematisk med det som opptar deg — enten det er et vanskelig valg, en overgang i livet, eller spørsmål du bærer på uten å ha satt ord på. Hun stiller spørsmål som hjelper deg å tenke tydeligere, ikke for å gi deg svar, men for at du selv skal finne dem. Samtalene passer for deg som ønsker å reflektere grundig — alene i en-til-en-samtale, eller sammen med andre i dialoggrupper.
+  I en samtale hos meg jobber vi systematisk med det som opptar deg, enten det er et vanskelig valg, en overgang i livet, eller spørsmål du bærer på uten å ha satt ord på. Jeg stiller spørsmål som hjelper deg å tenke tydeligere, ikke for å gi deg svar, men for at du selv skal finne dem. Samtalene passer for deg som ønsker å reflektere grundig, alene i en-til-en-samtale eller sammen med andre i dialoggrupper.
 
-  Vanlige temaer er  livsvalg, mening og verdier, identitet og relasjoner, og hvordan man lever godt i en tid som ofte krever mer enn vi har å gi.
+  Vanlige temaer er livsvalg, mening og verdier, identitet og relasjoner, og hvordan man lever godt i en tid som ofte krever mer enn vi har å gi.
 
-  *«Å tenke grundig gjennom hvem du er og hva du ønsker — det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»*
+  «Å tenke grundig gjennom hvem du er og hva du ønsker – det er en av de mest omsorgsfulle tingene du kan gjøre for deg selv.»
 tinaMariaKeywords:
   - Filosofisk samtale
   - Eksistensiell filosofi
