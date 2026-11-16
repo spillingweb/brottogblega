@@ -53,6 +53,7 @@ tinaMariaKeywords:
   - Etikk & verdier
   - Overgangsalder
   - Mammagrupper
+  - Farsrollen
 valuesTitle: Helhetlig helse
 value1Title: Helhet
 value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon.'
