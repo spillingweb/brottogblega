@@ -22,8 +22,6 @@ hildeContent: |
 
   Elsker å være ute! Hvem vet, plutselig tilbyr jeg en økt eller flere ute i friluft - så følg med under *arrangementer*.
 
-  Tilbyr fysikalsk behandling og fysiopilates-grupper. Vurdering og oppfølging av plager knyttet til bekkenbunnen tilbys kun til kvinner.
-
   Jeg tror at kroppen holder mer kunnskap enn vi ofte anerkjenner, og at det å lytte til kroppen er et grunnleggende steg mot bedre helse. Jeg ønsker å møte hver pasient der de er, med tålmodighet og faglig dybde.
 
   *«Jeg ønsker at alle kvinner skal føle seg sett og hørt — og at de går hjem med verktøy som faktisk hjelper.»*
