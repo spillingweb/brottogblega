@@ -18,7 +18,7 @@ hildeTitle: Hilde Stenqvist
 hildeContent: |
   Jeg er autorisert fysioterapeut med over 14 års erfaring og har et stort hjerte for kvinnehelse.
 
-  Gjennom Norges Fysioterapeutforbund har jeg kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager. I tillegg har jeg videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og har en rekke kurs innen fysiopilates.
+  Gjennom Norges Fysioterapeutforbund har jeg kurs i Fysioterapi før og etter fødsel, Bekkenbunn og underlivsprolaps og Bekkenrelaterte plager. I tillegg har jeg videreutdanning i barnefysioterapi fra Høgskolen i Oslo og Akershus, er utdannet treningsveieleder og studier i The Female Athlete fra Norges Idrettshøgskole, og har en rekke kurs innen fysiopilates.
 
   Elsker å være ute! Hvem vet, plutselig tilbyr jeg en økt eller flere ute i friluft - så følg med under *arrangementer*.
 
@@ -54,8 +54,6 @@ tinaMariaKeywords:
   - Overgangsalder
   - Mammagrupper
   - Farsrollen
-  - Pappagrupper
-  - Kronisk syk
 valuesTitle: Helhetlig helse
 value1Title: Helhet
 value1Text: 'Vi ser kropp, sinn og livshistorie i sammenheng, og møter deg med et helhetlig blikk på din situasjon.'
