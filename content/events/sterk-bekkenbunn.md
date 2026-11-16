@@ -18,6 +18,8 @@ Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen som er basert på 
 
 Vi møtes 10 ganger i gruppe, og du må melde deg på hele kursrekken (ved ledig plass etter at kurset har startet betaler du for resterende kurskvelder). De første kveldene bruker vi god tid på informasjon om bekkenbunnen, å få til en korrekt kontraksjon av bekkenbunnen, samt grunnleggende øvelser i fysiopilates. Vi bygger deretter på med flere øvelser for hele kroppen og progresjon i intensitet for styrketrening av bekkenbunnen.
 
+Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! Introtime koster 800 kr for 60 minutter.
+
 Ta kontakt for påmelding, introtime eller en uforpliktende prat! e-post: hilde\@brottogblega.no, eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
 
 OBS! Oppstartsdato ikke helt bekreftet enda!!! Oppdaterer her når det er i boks, blir mandager eller torsdager!! OBS!!!
