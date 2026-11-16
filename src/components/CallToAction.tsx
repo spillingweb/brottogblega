@@ -29,7 +29,7 @@ const CallToAction = ({
     <section
       className={cn("py-20 md:py-28 text-center bg-secondary", className)}
     >
-      <div className="max-w-xl mx-auto px-6">
+      <div className="max-w-xl mx-auto px-6 motion-safe:anim-zoom">
         {smallHeading && <Kicker>{smallHeading}</Kicker>}
         <Heading
           level={2}
@@ -45,8 +45,8 @@ const CallToAction = ({
           {description}
         </p>
         <Dialog>
-          <DialogTrigger className="cursor-pointer" asChild>
-            <Button size="lg">{btnText}</Button>
+          <DialogTrigger asChild>
+            <Button className="motion-safe:anim-float" size="lg">{btnText}</Button>
           </DialogTrigger>
           {dialog}
         </Dialog>

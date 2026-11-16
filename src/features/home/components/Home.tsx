@@ -32,7 +32,6 @@ const Home = ({
       <ServicesTeaser page={page} servicesData={servicesData} />
       <NewsTeaser page={page} articlesData={articlesData} />
       <CallToAction
-        className="anim-scroll"
         title={page.ctaTitle || "Klar til å ta et skritt mot bedre helse?"}
         headingClass="md:text-4xl"
         description={

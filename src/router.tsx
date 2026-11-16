@@ -20,7 +20,7 @@ export function getRouter() {
     },
     defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
-    defaultViewTransition: true,
+    // defaultViewTransition: true,
     scrollRestoration: true,
     scrollToTopSelectors: ["[data-slot='scroll-area-viewport']"],
   });

@@ -28,7 +28,7 @@ const NewsTeaser = ({
   return (
     <section className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="anim-scroll flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
+        <div className="motion-safe:anim-scroll flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
           <div>
             <Kicker className="text-primary mb-4">Aktuelt</Kicker>
             <Heading
@@ -48,13 +48,24 @@ const NewsTeaser = ({
         </div>
 
         {articles.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-grid">
-            {articles.map((article) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {articles.map((article, index) => {
+              // Calculate staggered animation index for small and large screens
+              const smStagger =
+                index % 2 === 1 ? "sm:[--index:1]" : "sm:[--index:0]";
+
+              const lgStagger = [
+                "lg:[--index:0]",
+                "lg:[--index:1]",
+                "lg:[--index:2]",
+              ][index % 3];
+
               return (
                 <Link
                   key={article.id}
                   to="/aktuelt/$slug"
                   params={{ slug: article._sys.filename }}
+                  className={`anim-scroll ${smStagger} ${lgStagger}`}
                 >
                   <NewsItem article={article} isHomePage={true} />
                 </Link>

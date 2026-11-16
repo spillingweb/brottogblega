@@ -87,7 +87,7 @@ const IndividualSection = ({ id, page, isHilde = false }: IndividualProps) => {
       </div>
       <div
         className={cn(
-          "aspect-3/4 rounded-sm overflow-hidden",
+          "aspect-3/4 rounded-sm overflow-hidden motion-safe:anim-zoom",
           isHilde ? "md:col-start-1 md:row-start-1" : "",
         )}
       >

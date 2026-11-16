@@ -21,7 +21,7 @@ const PageWrapper = ({
 
   return (
     <div className={cn("lg:pt-20", isNewsArticle && "print:hidden")}>
-      <section className="max-w-6xl mx-auto px-6 py-8 md:py-10">
+      <section className="max-w-6xl mx-auto px-6 py-8 md:py-10 motion-safe:rise-in">
         <Kicker className="mb-4">{kicker}</Kicker>
         <Heading
           level={1}

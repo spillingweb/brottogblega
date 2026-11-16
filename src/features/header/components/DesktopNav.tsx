@@ -57,7 +57,7 @@ const DesktopNav = () => {
           </li>
         ))}
       </ul>
-      <DialogTrigger className="cursor-pointer" asChild>
+      <DialogTrigger className="motion-safe:anim-float" asChild>
         <Button size="sm">Kontakt oss</Button>
       </DialogTrigger>
     </nav>

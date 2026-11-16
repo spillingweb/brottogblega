@@ -101,10 +101,14 @@ const News = ({
           {/* Rest */}
           {rest.length > 0 && (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
-              {rest.map((article) => (
+              {rest.map((article, index) => (
                 <DialogTrigger
                   key={article.id}
-                  className="cursor-pointer"
+                  className={`cursor-pointer anim-scroll ${index % 2 === 1 ? "sm:[--index:1]" : "sm:[--index:0]"} ${[
+                    "lg:[--index:0]",
+                    "lg:[--index:1]",
+                    "lg:[--index:2]",
+                  ][index % 3]}`}
                   onClick={() => handleSelectArticle(article)}
                 >
                   <NewsItem article={article} isHomePage={false} />

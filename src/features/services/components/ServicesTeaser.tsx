@@ -29,7 +29,7 @@ const ServicesTeaser = ({
   return (
     <section className="bg-muted py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 anim-scroll">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 motion-safe:anim-scroll">
           <div>
             <Kicker className="text-primary mb-4">Tjenester</Kicker>
             <Heading
@@ -48,11 +48,31 @@ const ServicesTeaser = ({
         </div>
 
         {/* Services list */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.length > 0 ? (
-            services.map((s) => (
-              <ServicesTeaserCard key={s.id} service={s as Services} />
-            ))
+            services.map((service, index) => {
+              // Calculate staggered animation index for small and large screens
+              const smStagger =
+                index % 2 === 1 ? "sm:[--index:1]" : "sm:[--index:0]";
+
+              const lgStagger = [
+                "lg:[--index:0]",
+                "lg:[--index:1]",
+                "lg:[--index:2]",
+              ][index % 3];
+
+              return (
+                <Link
+                  key={service.id}
+                  to="/tjenester"
+                  hash={service.title.toLowerCase()}
+                  hashScrollIntoView
+                  className={`anim-scroll ${smStagger} ${lgStagger}`}
+                >
+                  <ServicesTeaserCard service={service as Services} />
+                </Link>
+              );
+            })
           ) : (
             <p className="col-span-full text-sm text-muted-foreground">
               Ingen tjenester er lagt inn ennå.

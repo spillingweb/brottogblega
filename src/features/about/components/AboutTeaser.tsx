@@ -12,14 +12,14 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
         {/* Image */}
         <div className="relative">
           <div
-            className="aspect-4/5 rounded-sm overflow-hidden anim-zoom"
+            className="aspect-4/5 rounded-sm overflow-hidden motion-safe:anim-zoom"
             data-tina-field={tinaField(page, "profileImage")}
           >
             <img
               src={page.profileImage || ""}
               alt="Bilde av Hilde og Tina Maria, grunnleggerne av Brott & Blega"
               sizes="100vw"
-              className="w-full h-full object-cover anim-float"
+              className="w-full h-full object-cover"
               data-tina-field={tinaField(page, "profileImage")}
             />
           </div>
@@ -27,7 +27,7 @@ const AboutTeaser = ({ page }: { page: PagesHomepage }) => {
         </div>
 
         {/* Text Content */}
-        <div className="anim-scroll">
+        <div className="motion-safe:anim-scroll">
           <Kicker className="text-primary mb-4">Om oss</Kicker>
           <Heading
             level={2}

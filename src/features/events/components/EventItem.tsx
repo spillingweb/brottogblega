@@ -31,7 +31,7 @@ const EventItem = ({
 
   return (
     <article>
-      <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0 @container">
+      <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0 @container motion-safe:anim-scroll">
         {/* Image */}
         <div
           className="relative md:h-auto h-48 overflow-hidden bg-secondary"

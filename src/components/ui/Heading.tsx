@@ -15,7 +15,7 @@ const Heading = ({
 }: HeadingProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
-  let headingClassNames = "font-medium text-balance ";
+  let headingClassNames = "font-serif font-medium text-balance ";
 
   switch (level) {
     case 1:
