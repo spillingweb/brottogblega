@@ -16,6 +16,8 @@ Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for 
 
 Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen som er basert på oppdatert forskning.
 
-Vi møtes 10 ganger i gruppe, og du må melde deg på hele kursrekken (ved ledig plass etter at kurset har startet betaler du for resterende kurskvelder). 
+Vi møtes 10 ganger i gruppe, og du må melde deg på hele kursrekken (ved ledig plass etter at kurset har startet betaler du for resterende kurskvelder). De første kveldene bruker vi god tid på informasjon om bekkenbunnen, å få til en korrekt kontraksjon av bekkenbunnen, samt grunnleggende øvelser i fysiopilates. Vi bygger deretter på med flere øvelser for hele kroppen og progresjon i intensitet for styrketrening av bekkenbunnen.
 
 Ta kontakt for påmelding, introtime eller en uforpliktende prat! e-post: hilde\@brottogblega.no, eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
+
+OBS! Oppstartsdato ikke helt bekreftet enda!!! Oppdaterer her når det er i boks, blir mandager eller torsdager!! OBS!!!
