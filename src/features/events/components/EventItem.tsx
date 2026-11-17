@@ -31,10 +31,10 @@ const EventItem = ({
 
   return (
     <article>
-      <Card className="group grid grid-cols-1 md:grid-cols-[200px_1fr] py-0 @container motion-safe:anim-scroll">
+      <Card className="group grid lg:grid-cols-[20rem_1fr] py-0 motion-safe:anim-scroll">
         {/* Image */}
         <div
-          className="relative md:h-auto h-48 overflow-hidden bg-secondary"
+          className="relative h-50 sm:h-75 lg:h-auto overflow-hidden bg-secondary"
           data-tina-field={tinaField(event, "image")}
         >
           {event.image && (
@@ -61,7 +61,7 @@ const EventItem = ({
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8 flex flex-col justify-between gap-5">
+        <div className="p-6 md:p-8 flex flex-col justify-between gap-5 @container">
           <div>
             <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
               <div className="flex flex-wrap gap-1.5">
@@ -105,7 +105,7 @@ const EventItem = ({
             >
               <TinaMarkdown content={event.description} />
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="grid @xs:grid-cols-[auto_6rem] @lg:grid-cols-[auto_6rem_1fr] gap-3">
               <div
                 className="flex items-center gap-1.5 text-xs text-muted-foreground text-balance"
                 data-tina-field={tinaField(event, "date")}
@@ -114,14 +114,14 @@ const EventItem = ({
                 <span>{formattedDate}</span>
               </div>
               <div
-                className="flex items-center gap-1.5 text-xs text-muted-foreground text-balance"
+                className="@xs:max-lg:justify-end flex items-center gap-1.5 text-xs text-muted-foreground text-balance"
                 data-tina-field={tinaField(event, "time")}
               >
                 <Clock size={13} />
                 <span>{event.time}</span>
               </div>
               <div
-                className="flex items-center gap-1.5 text-xs text-muted-foreground col-span-2 md:col-span-1 text-balance"
+                className="@lg:justify-end flex items-center gap-1.5 text-xs text-muted-foreground @xs:col-span-2 @lg:col-span-1 text-balance"
                 data-tina-field={tinaField(event, "location")}
               >
                 <MapPin size={13} />
@@ -129,17 +129,17 @@ const EventItem = ({
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between border-t border-border pt-5">
-            <div className="flex flex-col @sm:flex-row @sm:items-center @sm:gap-2 text-sm text-muted-foreground">
+          <div className="flex flex-col @md:flex-row gap-3 @md:items-center justify-between border-t border-border pt-5">
+            <div className="flex flex-wrap justify-between items-center gap-2 text-sm text-muted-foreground">
               <span
-                className="text-base font-medium text-foreground"
+                className="text-base font-medium text-foreground text-balance"
                 data-tina-field={tinaField(event, "price")}
               >
                 {event.price === "0" ? "Gratis" : event.price.includes('kr') ? event.price : `${event.price} kr`}
               </span>
               {event.host != "Andre" && (
                 <>
-                  <span className="hidden @sm:block">·</span>
+                  <span className="hidden @lg:block">·</span>
                   <span
                     className="text-xs text-muted-foreground"
                     data-tina-field={tinaField(event, "host")}
