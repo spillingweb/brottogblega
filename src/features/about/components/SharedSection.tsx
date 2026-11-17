@@ -7,10 +7,10 @@ import Heading from "#/components/ui/Heading";
 
 const SharedSection = ({ page }: { page: PagesAbout }) => {
   return (
-    <section className="max-w-6xl mx-auto px-6 pb-16 md:pb-20">
+    <section className="max-w-6xl mx-auto px-6 pb-16 lg:pb-20">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-0 rounded-sm overflow-hidden border border-border">
         {/* Photo */}
-        <div className="md:col-span-3 aspect-4/3 md:aspect-auto overflow-hidden bg-secondary">
+        <div className="md:col-span-2 lg:col-span-3 aspect-4/3 md:aspect-auto overflow-hidden bg-secondary">
           <img
             src={page.sharedImage || ""}
             alt={page.sharedImageAlt || "Brott & Blega ansatte"}
@@ -20,7 +20,7 @@ const SharedSection = ({ page }: { page: PagesAbout }) => {
         </div>
 
         {/* Vision text */}
-        <div className="md:col-span-2 bg-primary text-primary-foreground p-8 md:p-12 flex flex-col justify-between">
+        <div className="md:col-span-3 lg:col-span-2 bg-primary text-primary-foreground p-8 lg:p-12 flex flex-col justify-between">
           <div>
             <Kicker
               className="text-primary-foreground/80 mb-6"

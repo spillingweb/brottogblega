@@ -4,7 +4,7 @@ metaDescription: 'Les om Brott & Blega, våre faglige bakgrunner og vår visjon 
 pageName: Om oss
 title: Brott & Blega — et møtested for kropp og tanke
 intro: 'Vi er to kvinner med ulik faglig bakgrunn og en felles overbevisning - at god helse krever at vi tar hele mennesket på alvor. '
-sharedImage: /uploads/Tm-og-H-inne-i-lokalet.avif
+sharedImage: /uploads/Tina-Maria-og-Hilde.jpg
 sharedImageAlt: Brott & Blega ansatte
 sharedKicker: Vår felles visjon
 sharedIntro: 'Vi møter deg helhetlig — med faglig tyngde, varme og genuin nysgjerrighet på hvem du er.'
