@@ -7,7 +7,7 @@ time: 19.00-20.00
 location: 'Brott & Blega Helse, Feviktoppen 19'
 spots: Åpent
 category: content/eventCategories/kurs.json
-price: 3000 kr
+price: 2950 kr
 ---
 
 Strever du med å holde igjen en fis, eller tisser du på deg når du nyser eller hopper på trampoline sammen med barna dine? Da er du ikke alene - hele 7 av 10 kvinner, og 4 av 10 menn, vil ha plager med lekkasjeproblematikk i løpet av livet.
@@ -20,6 +20,6 @@ Vi møtes 10 ganger i gruppe, og du må melde deg på hele kursrekken (ved ledig
 
 Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! Introtime koster 800 kr for 60 minutter.
 
-Ta kontakt for påmelding, introtime eller en uforpliktende prat! e-post: hilde\@brottogblega.no, eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
+Ta kontakt for påmelding, introtime eller en uforpliktende prat! e-post: [hilde@brottogblega.no](mailto:hilde@brottogblega.no), eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
 
 OBS! Oppstartsdato ikke helt bekreftet enda!!! Oppdaterer her når det er i boks, blir mandager eller torsdager!! OBS!!!
