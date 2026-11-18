@@ -8,7 +8,7 @@ time: 18.00-19.00
 location: 'Brott & Blega Helse, Feviktoppen 19'
 spots: Åpent
 category: content/eventCategories/kurs.json
-price: '3200'
+price: '2950'
 ---
 
 I graviditet og etter fødsel skjer det store forandringer både i kroppen og i livet ditt – og det er ikke småtterier!
@@ -19,4 +19,4 @@ Den første gangen er en individuell time slik at jeg kan bli kjent med deg og e
 
 Maks 7 deltakere per gruppe.
 
-Ta kontakt for påmelding, eller en uforpliktende prat! e-post: hilde\@brottogblega.no, eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
+Ta kontakt for påmelding, eller en uforpliktende prat! e-post: [hilde@brottogblega.no](mailto:hilde@brottogblega.no), eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
