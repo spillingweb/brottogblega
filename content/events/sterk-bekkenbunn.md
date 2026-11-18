@@ -14,7 +14,7 @@ Strever du med å holde igjen en fis, eller tisser du på deg når du nyser elle
 
 Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for at styrketrening av bekkenbunnen både forebygger og behandler problemer med både ufrivillig lekkasje og underlivsprolaps. Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen.
 
-Vi møtes 10 ganger i gruppe, og du må melde deg på hele kursrekken. De første kveldene bruker vi god tid på informasjon om bekkenbunnen og å få til en korrekt kontraksjon av bekkenbunnen. I tillegg går vi gjennom grunnleggende øvelser i fysiopilates. Vi bygger deretter på med flere øvelser for hele kroppen og progresjon i intensitet for styrketrening av bekkenbunnen.
+Vi møtes 10 ganger i gruppe. De første kveldene bruker vi god tid på å bli kjent med øvelser for bekkenbunnen. I tillegg går vi gjennom grunnleggende øvelser i fysiopilates. Vi bygger på med flere øvelser for hele kroppen og progresjon i intensitet for styrketrening av bekkenbunnen.
 
 Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! Introtime koster 800 kr for 60 minutter.
 
