@@ -21,4 +21,4 @@ Kun 7 plasser per uke - førstekvinne til mølla!
 
 Anbefaler at du har en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! Introtime koster 800 kr for 60 minutter.
 
-Ta kontakt for introtime eller en uforpliktende prat! e-post: [hilde@brottogblega.no](mailto:hilde@brottogblega.no), eller sms/ringe: tlf.nr. 41169737. Velkommen 🌸
+Ta kontakt for introtime eller en uforpliktende prat! Velkommen 🌸
