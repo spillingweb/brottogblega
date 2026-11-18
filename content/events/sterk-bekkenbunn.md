@@ -10,7 +10,7 @@ category: content/eventCategories/kurs.json
 price: 2950 kr
 ---
 
-Strever du med å holde igjen en fis, eller tisser du på deg når du nyser eller hopper på trampoline sammen med barna dine? Da er du ikke alene - hele 7 av 10 kvinner, og 4 av 10 menn, vil ha plager med lekkasjeproblematikk i løpet av livet.
+Strever du med å holde igjen en fis, eller tisser du på deg når du nyser eller hopper på trampoline sammen med barna dine? Da er du ikke alene - mange opplever lekkasjeproblemer i løpet av livet, og har du født barn er du ekstra utsatt.
 
 Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for at styrketrening av bekkenbunnen både forebygger og behandler problemer med både ufrivillig lekkasje og underlivsprolaps. Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen.
 
