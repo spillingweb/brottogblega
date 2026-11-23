@@ -1,5 +1,5 @@
 ---
-title: Sterk Bekkenbunn vinter 2027
+title: Sterk Bekkenbunn kveld vinter 2027
 image: /uploads/strong-ladies-(1).jpg
 date: 2027-01-07T12:30:26.009Z
 endDate: 2027-03-18T12:30:36.608Z
