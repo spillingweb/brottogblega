@@ -13,7 +13,7 @@ price: 2950 kr
 
 Strever du med å holde igjen en fis, eller tisser du på deg når du nyser eller hopper på trampoline sammen med barna dine? Da er du ikke alene - mange opplever lekkasjeproblemer i løpet av livet, og det er en ganske vanlig tilstand etter å ha født barn.
 
-Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for at styrketrening av bekkenbunnen både forebygger og behandler problemer med både ufrivillig lekkasje og underlivsprolaps. Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen.
+Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for at styrketrening av bekkenbunnen både forebygger og behandler problemer med ufrivillig lekkasje og underlivsprolaps. Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen.
 
 Vi møtes 10 ganger i gruppe. De første kveldene bruker vi god tid på å bli kjent med øvelser for bekkenbunnen. I tillegg går vi gjennom grunnleggende øvelser i fysiopilates. Vi gjør styrketrening for bekkenbunnen i hver økt og bygger på med nye øvelser for hele kroppen.
 
