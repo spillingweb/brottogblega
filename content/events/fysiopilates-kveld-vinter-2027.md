@@ -14,7 +14,7 @@ price: '1500 kr for 10 klipp, 200 kr for drop-in'
 
 I Fysiopilates jobber vi med balansert muskelbruk rundt skuldre, rygg og nakke. I tillegg fokuserer vi på god holdning, bevegelighet, pust, balanse og avspenning. Passer for de aller fleste - uansett utgangspunkt!
 
-🌸 drop-in 200 kr/ 5 klipp 875 kr/ 10 klipp 1500 kr 🌸
+🌸 drop-in 200 kr/ 5 klipp 850 kr/ 10 klipp 1500 kr 🌸
 
 Anbefaler at du har en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! 
 
