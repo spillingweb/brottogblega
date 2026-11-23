@@ -1,5 +1,5 @@
 ---
-title: Fysiopilates BARSEL vinter/vår 2027
+title: Fysiopilates BARSEL drop-in vårsemester 2027
 date: 2027-01-06T11:23:28.196Z
 endDate: 2027-06-16T10:23:35.854Z
 host: Hilde Stenqvist
