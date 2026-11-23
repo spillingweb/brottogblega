@@ -19,7 +19,7 @@ Vi møtes 10 ganger i gruppe. De første gangene bruker vi god tid på å bli kj
 
 Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! 
 
-🌸 Minimum 3 maksimum 7 deltakere
+🌸 Minimum 3 maksimum 7 deltakere.
 
 Ta kontakt for påmelding, introtime eller en uforpliktende prat! Velkommen 🌸
 
