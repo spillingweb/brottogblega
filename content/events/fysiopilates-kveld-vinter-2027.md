@@ -1,5 +1,5 @@
 ---
-title: Fysiopilates KVELD vinter/ vår 2027
+title: Fysiopilates KVELD drop-in vår 2027
 date: 2027-01-06T11:16:36.331Z
 endDate: 2027-06-16T10:16:43.924Z
 host: Hilde Stenqvist
