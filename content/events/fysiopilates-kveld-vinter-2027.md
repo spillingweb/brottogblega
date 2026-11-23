@@ -7,7 +7,7 @@ time: 19.30-20.30
 location: 'Brott & Blega Helse, Feviktoppen 19'
 spots: Åpent
 category: content/eventCategories/gruppe.json
-price: '1500 kr for 10 klipp, 200 kr for drop-in'
+price: drop-in 200 kr/ 5 klipp 850 kr/ 10 klipp 1500 kr
 ---
 
 Ønsker du å bli sterkere, få bedre kontakt med egen kropp, redusere muskulære spenninger og stress som har satt seg i kroppen? Da kan fysiopilates KVELD være noe for deg!
