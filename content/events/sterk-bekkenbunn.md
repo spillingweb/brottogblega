@@ -15,7 +15,7 @@ Strever du med å holde igjen en fis, eller tisser du på deg når du nyser elle
 
 Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for at styrketrening av bekkenbunnen både forebygger og behandler problemer med ufrivillig lekkasje og underlivsprolaps. Jeg veileder deg i trygge øvelser for å styrke bekkenbunnen.
 
-Vi møtes 10 ganger i gruppe. De første kveldene bruker vi god tid på å bli kjent med øvelser for bekkenbunnen og grunnleggende øvelser i fysiopilates. Vi gjør styrketrening for bekkenbunnen i hver økt og bygger på med nye øvelser for hele kroppen.
+Vi møtes 10 ganger i gruppe. De første gangene bruker vi god tid på å bli kjent med øvelser for bekkenbunnen og grunnleggende øvelser i fysiopilates. Vi gjør styrketrening for bekkenbunnen i hver økt og bygger på med nye øvelser for hele kroppen.
 
 Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! 
 
