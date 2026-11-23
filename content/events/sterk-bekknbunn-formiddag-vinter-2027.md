@@ -17,10 +17,10 @@ Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for 
 
 Vi møtes 10 ganger i gruppe (NB! ikke trening i uke 3). De første gangene bruker vi god tid på å bli kjent med øvelser for bekkenbunnen og grunnleggende fysiopilates. Vi gjør styrketrening for bekkenbunnen i hver økt og bygger på med nye øvelser for hele kroppen.
 
-Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! 
+Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg!
 
 🌸 Minimum 3 maksimum 7 deltakere.
 
-Ta kontakt for påmelding, introtime eller en uforpliktende prat! Velkommen 🌸
+Ta kontakt for påmelding, introtime eller en uforpliktende prat! Velkommen 🌸 
 
 OBS! Ikke bekreftet, oppdatering kommer! OBS!!!
