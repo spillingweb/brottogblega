@@ -17,7 +17,7 @@ Den gode nyheten er at du kan gjøre noe med det! Det er overveldende bevis for 
 
 Vi møtes 10 ganger i gruppe. De første kveldene bruker vi god tid på å bli kjent med øvelser for bekkenbunnen og grunnleggende øvelser i fysiopilates. Vi gjør styrketrening for bekkenbunnen i hver økt og bygger på med nye øvelser for hele kroppen.
 
-Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! Introtime koster 800 kr for 60 minutter.
+Du kan velge å ha en individuell introtime før oppstart slik at jeg kan bli litt kjent med deg, eventuelle plager og mål for trening - da kan jeg nemlig tilpasse timen enda bedre for deg! 
 
 Ta kontakt for påmelding, introtime eller en uforpliktende prat! Velkommen 🌸
 
